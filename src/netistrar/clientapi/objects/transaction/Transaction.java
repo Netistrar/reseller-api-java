@@ -1,7 +1,7 @@
-package netistrar.clientapi.objects.domain;
+package netistrar.clientapi.objects.transaction;
 
-import netistrar.clientapi.objects.domain.DomainNameTransactionElement;
-import netistrar.clientapi.objects.domain.DomainNameError;
+import netistrar.clientapi.objects.transaction.TransactionElement;
+import netistrar.clientapi.objects.transaction.TransactionError;
 import java.util.Map;
 
 
@@ -11,7 +11,7 @@ import java.util.Map;
  *
  *
  */
-public class DomainNameTransaction  {
+public class Transaction  {
 
     /**
      */
@@ -27,31 +27,31 @@ public class DomainNameTransaction  {
 
     /**
      */
-    protected Object netistrarOrderId;
+    protected Integer orderId;
 
     /**
      */
-    protected Object netistrarOrderCurrency;
+    protected String orderCurrency;
 
     /**
      */
-    protected Object netistrarOrderSubtotal;
+    protected Float orderSubtotal;
 
     /**
      */
-    protected Object netistrarOrderTaxes;
+    protected Float orderTaxes;
 
     /**
      */
-    protected Object netistrarOrderTotal;
+    protected Float orderTotal;
 
     /**
      */
-    protected Map<String,DomainNameTransactionElement> transactionElements;
+    protected Map<String,TransactionElement> transactionElements;
 
     /**
      */
-    protected DomainNameError transactionError;
+    protected TransactionError transactionError;
 
 
 
@@ -60,7 +60,7 @@ public class DomainNameTransaction  {
     * Blank Constructor
     *
     */
-    public DomainNameTransaction(){
+    public Transaction(){
     }
 
 
@@ -93,65 +93,65 @@ public class DomainNameTransaction  {
     }
 
     /**
-     * Get the netistrarOrderId
+     * Get the orderId
      *
-     * @return Object
+     * @return Integer
      */
-    public Object getNetistrarOrderId(){
-        return this.netistrarOrderId;
+    public Integer getOrderId(){
+        return this.orderId;
     }
 
     /**
-     * Get the netistrarOrderCurrency
+     * Get the orderCurrency
      *
-     * @return Object
+     * @return String
      */
-    public Object getNetistrarOrderCurrency(){
-        return this.netistrarOrderCurrency;
+    public String getOrderCurrency(){
+        return this.orderCurrency;
     }
 
     /**
-     * Get the netistrarOrderSubtotal
+     * Get the orderSubtotal
      *
-     * @return Object
+     * @return Float
      */
-    public Object getNetistrarOrderSubtotal(){
-        return this.netistrarOrderSubtotal;
+    public Float getOrderSubtotal(){
+        return this.orderSubtotal;
     }
 
     /**
-     * Get the netistrarOrderTaxes
+     * Get the orderTaxes
      *
-     * @return Object
+     * @return Float
      */
-    public Object getNetistrarOrderTaxes(){
-        return this.netistrarOrderTaxes;
+    public Float getOrderTaxes(){
+        return this.orderTaxes;
     }
 
     /**
-     * Get the netistrarOrderTotal
+     * Get the orderTotal
      *
-     * @return Object
+     * @return Float
      */
-    public Object getNetistrarOrderTotal(){
-        return this.netistrarOrderTotal;
+    public Float getOrderTotal(){
+        return this.orderTotal;
     }
 
     /**
      * Get the transactionElements
      *
-     * @return Map<String,DomainNameTransactionElement>
+     * @return Map<String,TransactionElement>
      */
-    public Map<String,DomainNameTransactionElement> getTransactionElements(){
+    public Map<String,TransactionElement> getTransactionElements(){
         return this.transactionElements;
     }
 
     /**
      * Get the transactionError
      *
-     * @return DomainNameError
+     * @return TransactionError
      */
-    public DomainNameError getTransactionError(){
+    public TransactionError getTransactionError(){
         return this.transactionError;
     }
 

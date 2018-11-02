@@ -61,7 +61,7 @@ public class DomainNameObject  {
 
     /**
      */
-    protected Boolean privacyProxy;
+    protected Integer privacyProxy;
 
     /**
      */
@@ -198,9 +198,9 @@ public class DomainNameObject  {
     /**
      * Get the privacyProxy
      *
-     * @return Boolean
+     * @return Integer
      */
-    public Boolean getPrivacyProxy(){
+    public Integer getPrivacyProxy(){
         return this.privacyProxy;
     }
 

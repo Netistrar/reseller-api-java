@@ -1,4 +1,4 @@
-package netistrar.clientapi.objects.domain;
+package netistrar.clientapi.objects.transaction;
 
 import java.util.Map;
 
@@ -6,7 +6,7 @@ import java.util.Map;
 /**
  * Domain name error object
  */
-public class DomainNameError  {
+public class TransactionError  {
 
     /**
      */
@@ -26,7 +26,7 @@ public class DomainNameError  {
 
     /**
      */
-    protected DomainNameError[] relatedErrors;
+    protected Map<String,TransactionError> relatedErrors;
 
 
 
@@ -35,7 +35,7 @@ public class DomainNameError  {
     * Blank Constructor
     *
     */
-    public DomainNameError(){
+    public TransactionError(){
     }
 
 
@@ -79,9 +79,9 @@ public class DomainNameError  {
     /**
      * Get the relatedErrors
      *
-     * @return DomainNameError[]
+     * @return Map<String,TransactionError>
      */
-    public DomainNameError[] getRelatedErrors(){
+    public Map<String,TransactionError> getRelatedErrors(){
         return this.relatedErrors;
     }
 

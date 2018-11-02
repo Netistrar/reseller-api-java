@@ -3,12 +3,18 @@ package netistrar.clientapi.controllers;
 import netistrar.clientapi.framework.WebServiceProxy;
 import java.util.Map;
 import java.util.HashMap;
+import netistrar.clientapi.objects.domain.descriptor.DomainNameAvailabilityDescriptor;
+import netistrar.clientapi.objects.domain.DomainAvailabilityResults;
+import netistrar.clientapi.objects.domain.DomainAvailability;
 import netistrar.clientapi.objects.domain.DomainNameListResults;
 import netistrar.clientapi.objects.domain.DomainNameObject;
+import netistrar.clientapi.exception.TransactionException;
 import netistrar.clientapi.objects.domain.descriptor.DomainNameCreateDescriptor;
-import netistrar.clientapi.objects.domain.DomainNameTransaction;
+import netistrar.clientapi.objects.transaction.TransactionError;
+import netistrar.clientapi.objects.transaction.Transaction;
 import netistrar.clientapi.objects.domain.descriptor.DomainNameUpdateDescriptor;
 import netistrar.clientapi.objects.domain.descriptor.DomainNameRenewDescriptor;
+import netistrar.clientapi.objects.domain.descriptor.DomainNameTransferDescriptor;
 import netistrar.clientapi.objects.domain.DomainNameGlueRecord;
 
 /**
@@ -20,6 +26,39 @@ public class domains extends WebServiceProxy {
 
     public domains(String webServiceURL, Map<String,String> globalParameters){
         super(webServiceURL, globalParameters);
+    }
+
+    /**
+     * Provides fast hinted search results for one or more TLDs or predefined TLD Categories for a supplied domain prefix string.  This allows for rapid indicative search results without the overhead of real time checking via each registry.
+     *
+     * It is strongly recommended that a call is made to the <b>getLiveAvailability</b> function for individual domains before confirming a sale or adding to an application cart.
+     *
+     * Hinted availability is provided via the use of cached zone file data and an indicator of the cache age is returned
+     * as part of the results.  Pricing data is returned according to the availability detected and where premium pricing may apply for a given TLD, a hint of the premium status and pricing is returned via cached premium data where available.
+     * The returned object contains DomainAvailability objects structured according to the parameters passed.
+     *
+     * 
+    * @param DomainNameAvailabilityDescriptor descriptor
+    */
+    public DomainAvailabilityResults hintedAvailability(DomainNameAvailabilityDescriptor descriptor) throws Exception{
+        Map<String, Object> params = new HashMap<String, Object>();
+        
+
+        return (DomainAvailabilityResults)super.callMethod("hinted", "POST", params, descriptor,DomainAvailabilityResults.class);
+    }
+
+    /**
+     * Get live domain availability for a single domain name.  This actually checks the real time availability with the Registry and returns a single <a href="domain-availability-object">DomainAvailability</a> object with actual availability and confirmed pricing.  This method
+     * should be called before committing to a sale (usually at the point of adding to a cart).
+     *
+     * 
+    * @param String domainName
+    */
+    public DomainAvailability liveAvailability(String domainName) throws Exception{
+        Map<String, Object> params = new HashMap<String, Object>();
+        
+
+        return (DomainAvailability)super.callMethod("available/" + domainName + "", "GET", params, null,DomainAvailability.class);
     }
 
     /**
@@ -65,10 +104,12 @@ public class domains extends WebServiceProxy {
      *
      * 
     * @param String[] domainNames
+    * @param Boolean ignoreMissingItems
     */
-    public DomainNameObject[] getMultiple(String[] domainNames) throws Exception{
+    public DomainNameObject[] getMultiple(String[] domainNames, Boolean ignoreMissingItems) throws Exception{
         Map<String, Object> params = new HashMap<String, Object>();
         
+        params.put("ignoreMissingItems", ignoreMissingItems);
 
         return (DomainNameObject[])super.callMethod("multiple", "POST", params, domainNames,DomainNameObject[].class);
     }
@@ -79,11 +120,11 @@ public class domains extends WebServiceProxy {
      * 
     * @param DomainNameCreateDescriptor createDescriptor
     */
-    public Map<String,Object> validate(DomainNameCreateDescriptor createDescriptor) throws Exception{
+    public Map<String,Map<String,TransactionError>> validate(DomainNameCreateDescriptor createDescriptor) throws Exception{
         Map<String, Object> params = new HashMap<String, Object>();
         
 
-        return (Map<String,Object>)super.callMethod("validate", "POST", params, createDescriptor,Map.class);
+        return (Map<String,Map<String,TransactionError>>)super.callMethod("validate", "POST", params, createDescriptor,Map.class);
     }
 
     /**
@@ -93,12 +134,12 @@ public class domains extends WebServiceProxy {
     * @param DomainNameCreateDescriptor createDescriptor
     * @param String bulkOperationProgressKey
     */
-    public DomainNameTransaction create(DomainNameCreateDescriptor createDescriptor, String bulkOperationProgressKey) throws Exception{
+    public Transaction create(DomainNameCreateDescriptor createDescriptor, String bulkOperationProgressKey) throws Exception{
         Map<String, Object> params = new HashMap<String, Object>();
         
         params.put("bulkOperationProgressKey", bulkOperationProgressKey);
 
-        return (DomainNameTransaction)super.callMethod("", "POST", params, createDescriptor,DomainNameTransaction.class);
+        return (Transaction)super.callMethod("", "POST", params, createDescriptor,Transaction.class);
     }
 
     /**
@@ -110,26 +151,102 @@ public class domains extends WebServiceProxy {
     * @param DomainNameUpdateDescriptor updateDescriptor
     * @param String bulkOperationProgressKey
     */
-    public DomainNameTransaction update(DomainNameUpdateDescriptor updateDescriptor, String bulkOperationProgressKey) throws Exception{
+    public Transaction update(DomainNameUpdateDescriptor updateDescriptor, String bulkOperationProgressKey) throws Exception{
         Map<String, Object> params = new HashMap<String, Object>();
         
         params.put("bulkOperationProgressKey", bulkOperationProgressKey);
 
-        return (DomainNameTransaction)super.callMethod("", "PATCH", params, updateDescriptor,DomainNameTransaction.class);
+        return (Transaction)super.callMethod("", "PATCH", params, updateDescriptor,Transaction.class);
     }
 
     /**
+     * Renew multiple domains
      *
      * 
     * @param DomainNameRenewDescriptor renewDescriptor
     * @param String bulkOperationProgressKey
     */
-    public DomainNameTransaction renew(DomainNameRenewDescriptor renewDescriptor, String bulkOperationProgressKey) throws Exception{
+    public Transaction renew(DomainNameRenewDescriptor renewDescriptor, String bulkOperationProgressKey) throws Exception{
         Map<String, Object> params = new HashMap<String, Object>();
         
         params.put("bulkOperationProgressKey", bulkOperationProgressKey);
 
-        return (DomainNameTransaction)super.callMethod("renew", "POST", params, renewDescriptor,DomainNameTransaction.class);
+        return (Transaction)super.callMethod("renew", "POST", params, renewDescriptor,Transaction.class);
+    }
+
+    /**
+     * Check the transfer status for a domain name.  This will return a <b>DomainNameTransferStatus</b> object detailing the timings for the transfer window in progress where the
+     * domain is currently in a transfer cycle or N/A if this is not the case
+     *
+     * 
+    * @param String domainName
+    * @param String authCode
+    */
+    public String transferCheck(String domainName, String authCode) throws Exception{
+        Map<String, Object> params = new HashMap<String, Object>();
+        
+        params.put("authCode", authCode);
+
+        return (String)super.callMethod("transfer/" + domainName + "/" + authCode + "", "GET", params, null,String.class);
+    }
+
+    /**
+     * Validate multiple domains for transfer in.  This accepts a transfer descriptor which encodes one or more domain names for transfer in along with proposed contact details.
+     *
+     * <b>NB: </b>Since the introduction of the 2018 Temporary Specification for GTLD registration data, post transfer contact details need to be supplied upfront when creating / validating incoming transfers
+     * as these are no longer readable via WHOIS due to privacy redaction.
+     *
+     * 
+    * @param DomainNameTransferDescriptor transferDescriptor
+    */
+    public Map<String,Map<String,TransactionError>> transferValidate(DomainNameTransferDescriptor transferDescriptor) throws Exception{
+        Map<String, Object> params = new HashMap<String, Object>();
+        
+
+        return (Map<String,Map<String,TransactionError>>)super.callMethod("transfer/validate", "POST", params, transferDescriptor,Map.class);
+    }
+
+    /**
+     * Create multiple domains for transfer in. This accepts a transfer descriptor which encodes one or more domain names for transfer in along with proposed contact details.  This call should usually be preceded by a call to <b>validateIncomingTransferDomains</b> to confirm auth codes etc.
+     *
+     * <b>NB: </b>Since the introduction of the 2018 Temporary Specification for GTLD registration data, post transfer contact details need to be supplied upfront when creating / validating incoming transfers
+     * as these are no longer readable via WHOIS due to privacy redaction.
+     * <br /><br />
+     * If successful, this method starts the transfer process for the supplied domains by taking payment for the transfer (for Pull Transfer operations) and starting the transfer operation with the Registry.
+     * It returns a <b>DomainNameTransaction</b> object detailing the result of the operation.
+     *
+     * <b>For Pull Transfers:</b> Once a transfer is created it will be added to your account with a status of <i>TRANSFER_IN_AWAITING_RESPONSE</i> until it is either cancelled, accepted,
+     * rejected or automatically accepted after 5 days.
+     *
+     * <b>For Push Transfers</b>: the domain name will be imported and activated within your account.
+     *
+     * 
+    * @param DomainNameTransferDescriptor transferDescriptor
+    * @param String bulkOperationProgressKey
+    */
+    public Transaction transferCreate(DomainNameTransferDescriptor transferDescriptor, String bulkOperationProgressKey) throws Exception{
+        Map<String, Object> params = new HashMap<String, Object>();
+        
+        params.put("bulkOperationProgressKey", bulkOperationProgressKey);
+
+        return (Transaction)super.callMethod("transfer", "POST", params, transferDescriptor,Transaction.class);
+    }
+
+    /**
+     * Cancel incoming transfer operations for one or more domain names.  Domain transfers can be cancelled while domains have <i>TRANSFER_IN_PENDING_CONFIRMATION</i> or <i>TRANSFER_IN_AWAITING_RESPONSE</i>
+     * status (applicable for Pull Transfers only).
+     * This operation if successful will cancel the transfer operation and remove the domain name from your account.
+     *
+     * A <b>DomainNameTransaction</b> object is returned detailing the success or failure for each attempted domain name.
+     *
+     * 
+    * @param String[] domainNames
+    */
+    public Transaction transferCancel(String[] domainNames) throws Exception{
+        Map<String, Object> params = new HashMap<String, Object>();
+        
+
+        return (Transaction)super.callMethod("transfer", "DELETE", params, domainNames,Transaction.class);
     }
 
     /**
@@ -140,11 +257,11 @@ public class domains extends WebServiceProxy {
      * 
     * @param String[] domainNames
     */
-    public DomainNameTransaction cancelPendingOwnerChanges(String[] domainNames) throws Exception{
+    public Transaction ownerChangeCancel(String[] domainNames) throws Exception{
         Map<String, Object> params = new HashMap<String, Object>();
         
 
-        return (DomainNameTransaction)super.callMethod("cancelownerchanges", "DELETE", params, domainNames,DomainNameTransaction.class);
+        return (Transaction)super.callMethod("cancelownerchanges", "DELETE", params, domainNames,Transaction.class);
     }
 
     /**
@@ -158,7 +275,7 @@ public class domains extends WebServiceProxy {
      * 
     * @param String domainName
     */
-    public DomainNameGlueRecord[] listGlueRecords(String domainName) throws Exception{
+    public DomainNameGlueRecord[] glueRecordsList(String domainName) throws Exception{
         Map<String, Object> params = new HashMap<String, Object>();
         
 
@@ -179,12 +296,12 @@ public class domains extends WebServiceProxy {
     * @param DomainNameGlueRecord[] glueRecords
     * @param String bulkOperationProgressKey
     */
-    public DomainNameTransaction setGlueRecords(String domainName, DomainNameGlueRecord[] glueRecords, String bulkOperationProgressKey) throws Exception{
+    public Transaction glueRecordsSet(String domainName, DomainNameGlueRecord[] glueRecords, String bulkOperationProgressKey) throws Exception{
         Map<String, Object> params = new HashMap<String, Object>();
         
         params.put("bulkOperationProgressKey", bulkOperationProgressKey);
 
-        return (DomainNameTransaction)super.callMethod("gluerecords/" + domainName + "", "PATCH", params, glueRecords,DomainNameTransaction.class);
+        return (Transaction)super.callMethod("gluerecords/" + domainName + "", "PATCH", params, glueRecords,Transaction.class);
     }
 
     /**
@@ -200,12 +317,38 @@ public class domains extends WebServiceProxy {
     * @param String[] glueRecordSubdomains
     * @param String bulkOperationProgressKey
     */
-    public DomainNameTransaction removeGlueRecords(String domainName, String[] glueRecordSubdomains, String bulkOperationProgressKey) throws Exception{
+    public Transaction glueRecordsRemove(String domainName, String[] glueRecordSubdomains, String bulkOperationProgressKey) throws Exception{
         Map<String, Object> params = new HashMap<String, Object>();
         
         params.put("bulkOperationProgressKey", bulkOperationProgressKey);
 
-        return (DomainNameTransaction)super.callMethod("gluerecords/" + domainName + "", "DELETE", params, glueRecordSubdomains,DomainNameTransaction.class);
+        return (Transaction)super.callMethod("gluerecords/" + domainName + "", "DELETE", params, glueRecordSubdomains,Transaction.class);
+    }
+
+    /**
+     * Get all available TLDs enabled within the system.  This can optionally be limited by one of the categories obtained from the method <b>getAllTLDCategories</b> below.
+     *
+     * 
+    * @param String categoryName
+    */
+    public String[] tldList(String categoryName) throws Exception{
+        Map<String, Object> params = new HashMap<String, Object>();
+        
+        params.put("categoryName", categoryName);
+
+        return (String[])super.callMethod("tld", "GET", params, null,String[].class);
+    }
+
+    /**
+     * Get all defined TLD categories as a string array.
+     *
+     * 
+    */
+    public String[] tldCategoryList() throws Exception{
+        Map<String, Object> params = new HashMap<String, Object>();
+        
+
+        return (String[])super.callMethod("tldcategory", "GET", params, null,String[].class);
     }
 
 

@@ -3,6 +3,10 @@ package netistrar.clientapi.objects.domain;
 import java.util.Map;
 
 
+/**
+ *
+ * Domain name summary object
+ */
 public class DomainNameSummary  {
 
     /**
@@ -39,7 +43,7 @@ public class DomainNameSummary  {
 
     /**
      */
-    protected Boolean privacyProxy;
+    protected Integer privacyProxy;
 
     /**
      */
@@ -140,9 +144,9 @@ public class DomainNameSummary  {
     /**
      * Get the privacyProxy
      *
-     * @return Boolean
+     * @return Integer
      */
-    public Boolean getPrivacyProxy(){
+    public Integer getPrivacyProxy(){
         return this.privacyProxy;
     }
 

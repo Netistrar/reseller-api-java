@@ -5,14 +5,14 @@ import java.util.Map;
 
 
 /**
- * Descriptor for a domain name update operation.  This should be passed to the update operation on the Domains API.
+ * Descriptor for a domain name create operation.  This should be passed to validate and create transfer operations on the Domains API.
  *
  */
-public class DomainNameUpdateDescriptor  {
+public class DomainNameTransferDescriptor  {
 
     /**
      */
-    private String[] domainNames;
+    private String[] transferIdentifiers;
 
     /**
      */
@@ -32,15 +32,7 @@ public class DomainNameUpdateDescriptor  {
 
     /**
      */
-    private String[] nameservers;
-
-    /**
-     */
-    private Boolean locked;
-
-    /**
-     */
-    private Integer privacyProxy;
+    protected Integer privacyProxy;
 
     /**
      */
@@ -53,53 +45,47 @@ public class DomainNameUpdateDescriptor  {
     * Blank Constructor
     *
     */
-    public DomainNameUpdateDescriptor(){
+    public DomainNameTransferDescriptor(){
     }
 
     /**
      * Updatable Constructor
      *
-    * @param String[] $domainNames
+    * @param String[] $transferIdentifiers
     * @param DomainNameContact $ownerContact
     * @param DomainNameContact $adminContact
     * @param DomainNameContact $billingContact
     * @param DomainNameContact $technicalContact
-    * @param String[] $nameservers
-    * @param Boolean $locked
-    * @param Integer $privacyProxy
     * @param Boolean $autoRenew
     */
-    public DomainNameUpdateDescriptor(String[] domainNames, DomainNameContact ownerContact, DomainNameContact adminContact, DomainNameContact billingContact, DomainNameContact technicalContact, String[] nameservers, Boolean locked, Integer privacyProxy, Boolean autoRenew){
+    public DomainNameTransferDescriptor(String[] transferIdentifiers, DomainNameContact ownerContact, DomainNameContact adminContact, DomainNameContact billingContact, DomainNameContact technicalContact, Boolean autoRenew){
 
-        this.domainNames = domainNames;
+        this.transferIdentifiers = transferIdentifiers;
         this.ownerContact = ownerContact;
         this.adminContact = adminContact;
         this.billingContact = billingContact;
         this.technicalContact = technicalContact;
-        this.nameservers = nameservers;
-        this.locked = locked;
-        this.privacyProxy = privacyProxy;
         this.autoRenew = autoRenew;
         
     }
 
 
     /**
-     * Get the domainNames
+     * Get the transferIdentifiers
      *
      * @return String[]
      */
-    public String[] getDomainNames(){
-        return this.domainNames;
+    public String[] getTransferIdentifiers(){
+        return this.transferIdentifiers;
     }
 
     /**
-     * Set the domainNames
+     * Set the transferIdentifiers
      *
-     * @param String[] $domainNames
+     * @param String[] $transferIdentifiers
      */
-    public void setDomainNames(String[] domainNames){
-        this.domainNames = domainNames;
+    public void setTransferIdentifiers(String[] transferIdentifiers){
+        this.transferIdentifiers = transferIdentifiers;
     }
 
     /**
@@ -175,57 +161,12 @@ public class DomainNameUpdateDescriptor  {
     }
 
     /**
-     * Get the nameservers
-     *
-     * @return String[]
-     */
-    public String[] getNameservers(){
-        return this.nameservers;
-    }
-
-    /**
-     * Set the nameservers
-     *
-     * @param String[] $nameservers
-     */
-    public void setNameservers(String[] nameservers){
-        this.nameservers = nameservers;
-    }
-
-    /**
-     * Get the locked
-     *
-     * @return Boolean
-     */
-    public Boolean getLocked(){
-        return this.locked;
-    }
-
-    /**
-     * Set the locked
-     *
-     * @param Boolean $locked
-     */
-    public void setLocked(Boolean locked){
-        this.locked = locked;
-    }
-
-    /**
      * Get the privacyProxy
      *
      * @return Integer
      */
     public Integer getPrivacyProxy(){
         return this.privacyProxy;
-    }
-
-    /**
-     * Set the privacyProxy
-     *
-     * @param Integer $privacyProxy
-     */
-    public void setPrivacyProxy(Integer privacyProxy){
-        this.privacyProxy = privacyProxy;
     }
 
     /**

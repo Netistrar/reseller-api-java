@@ -58,7 +58,8 @@ public class WebServiceProxy {
 
 				if (params instanceof Map && params.size() > 0) {
 					for (Map.Entry<String, Object> entry : params.entrySet()) {
-						paramList.add(entry.getKey() + "=" + URLEncoder.encode(gson.toJson(entry.getValue()), "UTF-8"));
+					    String entryValue = (entry.getValue() == null ? "" : URLEncoder.encode((String)entry.getValue(), "UTF-8"));
+						paramList.add(entry.getKey() + "=" + entryValue);
 					}
 				}
 
@@ -122,6 +123,7 @@ public class WebServiceProxy {
 			}
 			in.close();
 
+			
 			// Convert to objects using GSON before returning
 			String json = content.toString();
 
