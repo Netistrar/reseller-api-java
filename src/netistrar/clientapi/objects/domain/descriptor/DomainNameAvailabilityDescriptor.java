@@ -21,6 +21,10 @@ public class DomainNameAvailabilityDescriptor  {
      */
     private String[] tlds;
 
+    /**
+     */
+    private Boolean suggestions;
+
 
 
 
@@ -37,12 +41,14 @@ public class DomainNameAvailabilityDescriptor  {
     * @param String $searchString
     * @param String[] $tldCategories
     * @param String[] $tlds
+    * @param Boolean $suggestions
     */
-    public DomainNameAvailabilityDescriptor(String searchString, String[] tldCategories, String[] tlds){
+    public DomainNameAvailabilityDescriptor(String searchString, String[] tldCategories, String[] tlds, Boolean suggestions){
 
         this.searchString = searchString;
         this.tldCategories = tldCategories;
         this.tlds = tlds;
+        this.suggestions = suggestions;
         
     }
 
@@ -99,6 +105,24 @@ public class DomainNameAvailabilityDescriptor  {
      */
     public void setTlds(String[] tlds){
         this.tlds = tlds;
+    }
+
+    /**
+     * Get the suggestions
+     *
+     * @return Boolean
+     */
+    public Boolean getSuggestions(){
+        return this.suggestions;
+    }
+
+    /**
+     * Set the suggestions
+     *
+     * @param Boolean $suggestions
+     */
+    public void setSuggestions(Boolean suggestions){
+        this.suggestions = suggestions;
     }
 
 

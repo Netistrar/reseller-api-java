@@ -22,6 +22,10 @@ public class DomainAvailabilityResults  {
      */
     protected Map<String,DomainAvailability> tldResults;
 
+    /**
+     */
+    protected Map<String,DomainAvailability[]> suggestions;
+
 
 
 
@@ -59,6 +63,15 @@ public class DomainAvailabilityResults  {
      */
     public Map<String,DomainAvailability> getTldResults(){
         return this.tldResults;
+    }
+
+    /**
+     * Get the suggestions
+     *
+     * @return Map<String,DomainAvailability[]>
+     */
+    public Map<String,DomainAvailability[]> getSuggestions(){
+        return this.suggestions;
     }
 
 
