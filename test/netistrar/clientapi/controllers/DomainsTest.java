@@ -327,7 +327,7 @@ class DomainsTest {
 		assertEquals("8.4", element.getOrderLineTotal().toString());
 
 		Calendar expiryCalendar = Calendar.getInstance();
-		expiryCalendar.add(Calendar.YEAR, 2);
+		expiryCalendar.add(Calendar.YEAR, 3);
 		SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
 
 		// Check updated expiry data.

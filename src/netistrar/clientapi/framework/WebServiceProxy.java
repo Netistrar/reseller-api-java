@@ -123,7 +123,6 @@ public class WebServiceProxy {
 			}
 			in.close();
 
-			
 			// Convert to objects using GSON before returning
 			String json = content.toString();
 

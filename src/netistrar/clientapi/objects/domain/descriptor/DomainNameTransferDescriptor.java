@@ -32,7 +32,7 @@ public class DomainNameTransferDescriptor  {
 
     /**
      */
-    protected Integer privacyProxy;
+    private Integer privacyProxy;
 
     /**
      */
@@ -56,15 +56,17 @@ public class DomainNameTransferDescriptor  {
     * @param DomainNameContact $adminContact
     * @param DomainNameContact $billingContact
     * @param DomainNameContact $technicalContact
+    * @param Integer $privacyProxy
     * @param Boolean $autoRenew
     */
-    public DomainNameTransferDescriptor(String[] transferIdentifiers, DomainNameContact ownerContact, DomainNameContact adminContact, DomainNameContact billingContact, DomainNameContact technicalContact, Boolean autoRenew){
+    public DomainNameTransferDescriptor(String[] transferIdentifiers, DomainNameContact ownerContact, DomainNameContact adminContact, DomainNameContact billingContact, DomainNameContact technicalContact, Integer privacyProxy, Boolean autoRenew){
 
         this.transferIdentifiers = transferIdentifiers;
         this.ownerContact = ownerContact;
         this.adminContact = adminContact;
         this.billingContact = billingContact;
         this.technicalContact = technicalContact;
+        this.privacyProxy = privacyProxy;
         this.autoRenew = autoRenew;
         
     }
@@ -167,6 +169,15 @@ public class DomainNameTransferDescriptor  {
      */
     public Integer getPrivacyProxy(){
         return this.privacyProxy;
+    }
+
+    /**
+     * Set the privacyProxy
+     *
+     * @param Integer $privacyProxy
+     */
+    public void setPrivacyProxy(Integer privacyProxy){
+        this.privacyProxy = privacyProxy;
     }
 
     /**
