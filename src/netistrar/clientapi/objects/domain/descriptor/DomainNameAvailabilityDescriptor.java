@@ -1,5 +1,6 @@
 package netistrar.clientapi.objects.domain.descriptor;
 
+import netistrar.clientapi.objects.domain.descriptor.DomainNameSuggestionOptions;
 import java.util.Map;
 
 
@@ -25,6 +26,10 @@ public class DomainNameAvailabilityDescriptor  {
      */
     private Boolean suggestions;
 
+    /**
+     */
+    private DomainNameSuggestionOptions suggestionOptions;
+
 
 
 
@@ -42,13 +47,15 @@ public class DomainNameAvailabilityDescriptor  {
     * @param String[] $tldCategories
     * @param String[] $tlds
     * @param Boolean $suggestions
+    * @param DomainNameSuggestionOptions $suggestionOptions
     */
-    public DomainNameAvailabilityDescriptor(String searchString, String[] tldCategories, String[] tlds, Boolean suggestions){
+    public DomainNameAvailabilityDescriptor(String searchString, String[] tldCategories, String[] tlds, Boolean suggestions, DomainNameSuggestionOptions suggestionOptions){
 
         this.searchString = searchString;
         this.tldCategories = tldCategories;
         this.tlds = tlds;
         this.suggestions = suggestions;
+        this.suggestionOptions = suggestionOptions;
         
     }
 
@@ -123,6 +130,24 @@ public class DomainNameAvailabilityDescriptor  {
      */
     public void setSuggestions(Boolean suggestions){
         this.suggestions = suggestions;
+    }
+
+    /**
+     * Get the suggestionOptions
+     *
+     * @return DomainNameSuggestionOptions
+     */
+    public DomainNameSuggestionOptions getSuggestionOptions(){
+        return this.suggestionOptions;
+    }
+
+    /**
+     * Set the suggestionOptions
+     *
+     * @param DomainNameSuggestionOptions $suggestionOptions
+     */
+    public void setSuggestionOptions(DomainNameSuggestionOptions suggestionOptions){
+        this.suggestionOptions = suggestionOptions;
     }
 
 

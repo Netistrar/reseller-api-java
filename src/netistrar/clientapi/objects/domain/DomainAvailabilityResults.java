@@ -16,7 +16,7 @@ public class DomainAvailabilityResults  {
 
     /**
      */
-    protected Map<String,DomainAvailability> categoryResults;
+    protected Map<String,Map<String,DomainAvailability>> categoryResults;
 
     /**
      */
@@ -24,7 +24,11 @@ public class DomainAvailabilityResults  {
 
     /**
      */
-    protected Map<String,DomainAvailability[]> suggestions;
+    protected Map<String,DomainAvailability[]> tldSuggestions;
+
+    /**
+     */
+    protected DomainAvailability[] suggestions;
 
 
 
@@ -50,9 +54,9 @@ public class DomainAvailabilityResults  {
     /**
      * Get the categoryResults
      *
-     * @return Map<String,DomainAvailability>
+     * @return Map<String,Map<String,DomainAvailability>>
      */
-    public Map<String,DomainAvailability> getCategoryResults(){
+    public Map<String,Map<String,DomainAvailability>> getCategoryResults(){
         return this.categoryResults;
     }
 
@@ -66,11 +70,20 @@ public class DomainAvailabilityResults  {
     }
 
     /**
-     * Get the suggestions
+     * Get the tldSuggestions
      *
      * @return Map<String,DomainAvailability[]>
      */
-    public Map<String,DomainAvailability[]> getSuggestions(){
+    public Map<String,DomainAvailability[]> getTldSuggestions(){
+        return this.tldSuggestions;
+    }
+
+    /**
+     * Get the suggestions
+     *
+     * @return DomainAvailability[]
+     */
+    public DomainAvailability[] getSuggestions(){
         return this.suggestions;
     }
 
