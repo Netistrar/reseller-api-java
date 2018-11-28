@@ -443,4 +443,60 @@ public class DomainNameContact  {
     }
 
 
+
+    /**
+    * Overridden equals method for doing field based equals comparison.
+    */
+    public boolean equals(Object otherObject) {
+
+        if (otherObject == this)
+            return true;
+
+        if (!(otherObject instanceof DomainNameContact))
+            return false;
+
+        DomainNameContact castObject = (DomainNameContact)otherObject;
+
+        boolean equals = true;
+        equals = equals && ( (this.getName() == null && castObject.getName() == null) ||
+            (this.getName() != null && this.getName().equals(castObject.getName())));
+        equals = equals && ( (this.getEmailAddress() == null && castObject.getEmailAddress() == null) ||
+            (this.getEmailAddress() != null && this.getEmailAddress().equals(castObject.getEmailAddress())));
+        equals = equals && ( (this.getOrganisation() == null && castObject.getOrganisation() == null) ||
+            (this.getOrganisation() != null && this.getOrganisation().equals(castObject.getOrganisation())));
+        equals = equals && ( (this.getStreet1() == null && castObject.getStreet1() == null) ||
+            (this.getStreet1() != null && this.getStreet1().equals(castObject.getStreet1())));
+        equals = equals && ( (this.getStreet2() == null && castObject.getStreet2() == null) ||
+            (this.getStreet2() != null && this.getStreet2().equals(castObject.getStreet2())));
+        equals = equals && ( (this.getCity() == null && castObject.getCity() == null) ||
+            (this.getCity() != null && this.getCity().equals(castObject.getCity())));
+        equals = equals && ( (this.getCounty() == null && castObject.getCounty() == null) ||
+            (this.getCounty() != null && this.getCounty().equals(castObject.getCounty())));
+        equals = equals && ( (this.getPostcode() == null && castObject.getPostcode() == null) ||
+            (this.getPostcode() != null && this.getPostcode().equals(castObject.getPostcode())));
+        equals = equals && ( (this.getCountry() == null && castObject.getCountry() == null) ||
+            (this.getCountry() != null && this.getCountry().equals(castObject.getCountry())));
+        equals = equals && ( (this.getTelephoneDiallingCode() == null && castObject.getTelephoneDiallingCode() == null) ||
+            (this.getTelephoneDiallingCode() != null && this.getTelephoneDiallingCode().equals(castObject.getTelephoneDiallingCode())));
+        equals = equals && ( (this.getTelephone() == null && castObject.getTelephone() == null) ||
+            (this.getTelephone() != null && this.getTelephone().equals(castObject.getTelephone())));
+        equals = equals && ( (this.getTelephoneExt() == null && castObject.getTelephoneExt() == null) ||
+            (this.getTelephoneExt() != null && this.getTelephoneExt().equals(castObject.getTelephoneExt())));
+        equals = equals && ( (this.getFaxDiallingCode() == null && castObject.getFaxDiallingCode() == null) ||
+            (this.getFaxDiallingCode() != null && this.getFaxDiallingCode().equals(castObject.getFaxDiallingCode())));
+        equals = equals && ( (this.getFax() == null && castObject.getFax() == null) ||
+            (this.getFax() != null && this.getFax().equals(castObject.getFax())));
+        equals = equals && ( (this.getFaxExt() == null && castObject.getFaxExt() == null) ||
+            (this.getFaxExt() != null && this.getFaxExt().equals(castObject.getFaxExt())));
+        equals = equals && ( (this.getAdditionalData() == null && castObject.getAdditionalData() == null) ||
+            (this.getAdditionalData() != null && this.getAdditionalData().equals(castObject.getAdditionalData())));
+        equals = equals && ( (this.getStatus() == null && castObject.getStatus() == null) ||
+            (this.getStatus() != null && this.getStatus().equals(castObject.getStatus())));
+        equals = equals && ( (this.getPendingContact() == null && castObject.getPendingContact() == null) ||
+            (this.getPendingContact() != null && this.getPendingContact().equals(castObject.getPendingContact())));
+
+        return equals;
+    }
+
+
 }

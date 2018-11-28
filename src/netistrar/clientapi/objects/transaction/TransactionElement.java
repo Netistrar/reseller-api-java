@@ -127,4 +127,40 @@ public class TransactionElement  {
     }
 
 
+
+    /**
+    * Overridden equals method for doing field based equals comparison.
+    */
+    public boolean equals(Object otherObject) {
+
+        if (otherObject == this)
+            return true;
+
+        if (!(otherObject instanceof TransactionElement))
+            return false;
+
+        TransactionElement castObject = (TransactionElement)otherObject;
+
+        boolean equals = true;
+        equals = equals && ( (this.getType() == null && castObject.getType() == null) ||
+            (this.getType() != null && this.getType().equals(castObject.getType())));
+        equals = equals && ( (this.getDescription() == null && castObject.getDescription() == null) ||
+            (this.getDescription() != null && this.getDescription().equals(castObject.getDescription())));
+        equals = equals && ( (this.getElementStatus() == null && castObject.getElementStatus() == null) ||
+            (this.getElementStatus() != null && this.getElementStatus().equals(castObject.getElementStatus())));
+        equals = equals && ( (this.getOperationData() == null && castObject.getOperationData() == null) ||
+            (this.getOperationData() != null && this.getOperationData().equals(castObject.getOperationData())));
+        equals = equals && ( (this.getElementErrors() == null && castObject.getElementErrors() == null) ||
+            (this.getElementErrors() != null && this.getElementErrors().equals(castObject.getElementErrors())));
+        equals = equals && ( (this.getOrderLineSubtotal() == null && castObject.getOrderLineSubtotal() == null) ||
+            (this.getOrderLineSubtotal() != null && this.getOrderLineSubtotal().equals(castObject.getOrderLineSubtotal())));
+        equals = equals && ( (this.getOrderLineTaxes() == null && castObject.getOrderLineTaxes() == null) ||
+            (this.getOrderLineTaxes() != null && this.getOrderLineTaxes().equals(castObject.getOrderLineTaxes())));
+        equals = equals && ( (this.getOrderLineTotal() == null && castObject.getOrderLineTotal() == null) ||
+            (this.getOrderLineTotal() != null && this.getOrderLineTotal().equals(castObject.getOrderLineTotal())));
+
+        return equals;
+    }
+
+
 }

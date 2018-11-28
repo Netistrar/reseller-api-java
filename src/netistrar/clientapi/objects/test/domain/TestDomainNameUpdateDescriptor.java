@@ -151,4 +151,34 @@ public class TestDomainNameUpdateDescriptor  {
     }
 
 
+
+    /**
+    * Overridden equals method for doing field based equals comparison.
+    */
+    public boolean equals(Object otherObject) {
+
+        if (otherObject == this)
+            return true;
+
+        if (!(otherObject instanceof TestDomainNameUpdateDescriptor))
+            return false;
+
+        TestDomainNameUpdateDescriptor castObject = (TestDomainNameUpdateDescriptor)otherObject;
+
+        boolean equals = true;
+        equals = equals && ( (this.getDomainNames() == null && castObject.getDomainNames() == null) ||
+            (this.getDomainNames() != null && this.getDomainNames().equals(castObject.getDomainNames())));
+        equals = equals && ( (this.getStatus() == null && castObject.getStatus() == null) ||
+            (this.getStatus() != null && this.getStatus().equals(castObject.getStatus())));
+        equals = equals && ( (this.getRegisteredDate() == null && castObject.getRegisteredDate() == null) ||
+            (this.getRegisteredDate() != null && this.getRegisteredDate().equals(castObject.getRegisteredDate())));
+        equals = equals && ( (this.getLockedUntil() == null && castObject.getLockedUntil() == null) ||
+            (this.getLockedUntil() != null && this.getLockedUntil().equals(castObject.getLockedUntil())));
+        equals = equals && ( (this.getLocked() == null && castObject.getLocked() == null) ||
+            (this.getLocked() != null && this.getLocked().equals(castObject.getLocked())));
+
+        return equals;
+    }
+
+
 }

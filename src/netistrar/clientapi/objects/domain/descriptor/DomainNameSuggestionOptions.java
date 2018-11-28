@@ -103,4 +103,30 @@ public class DomainNameSuggestionOptions  {
     }
 
 
+
+    /**
+    * Overridden equals method for doing field based equals comparison.
+    */
+    public boolean equals(Object otherObject) {
+
+        if (otherObject == this)
+            return true;
+
+        if (!(otherObject instanceof DomainNameSuggestionOptions))
+            return false;
+
+        DomainNameSuggestionOptions castObject = (DomainNameSuggestionOptions)otherObject;
+
+        boolean equals = true;
+        equals = equals && ( (this.getIncludeTlds() == null && castObject.getIncludeTlds() == null) ||
+            (this.getIncludeTlds() != null && this.getIncludeTlds().equals(castObject.getIncludeTlds())));
+        equals = equals && ( (this.getIncludeCategories() == null && castObject.getIncludeCategories() == null) ||
+            (this.getIncludeCategories() != null && this.getIncludeCategories().equals(castObject.getIncludeCategories())));
+        equals = equals && ( (this.getFillCount() == null && castObject.getFillCount() == null) ||
+            (this.getFillCount() != null && this.getFillCount().equals(castObject.getFillCount())));
+
+        return equals;
+    }
+
+
 }

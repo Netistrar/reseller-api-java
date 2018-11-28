@@ -58,7 +58,7 @@ public class WebServiceProxy {
 
 				if (params instanceof Map && params.size() > 0) {
 					for (Map.Entry<String, Object> entry : params.entrySet()) {
-					    String entryValue = (entry.getValue() == null ? "" : URLEncoder.encode((String)entry.getValue(), "UTF-8"));
+					    String entryValue = (entry.getValue() == null ? "" : URLEncoder.encode(entry.getValue().toString(), "UTF-8"));
 						paramList.add(entry.getKey() + "=" + entryValue);
 					}
 				}

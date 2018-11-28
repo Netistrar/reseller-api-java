@@ -118,4 +118,32 @@ public class DomainNameGlueRecord  {
     }
 
 
+
+    /**
+    * Overridden equals method for doing field based equals comparison.
+    */
+    public boolean equals(Object otherObject) {
+
+        if (otherObject == this)
+            return true;
+
+        if (!(otherObject instanceof DomainNameGlueRecord))
+            return false;
+
+        DomainNameGlueRecord castObject = (DomainNameGlueRecord)otherObject;
+
+        boolean equals = true;
+        equals = equals && ( (this.getDomainName() == null && castObject.getDomainName() == null) ||
+            (this.getDomainName() != null && this.getDomainName().equals(castObject.getDomainName())));
+        equals = equals && ( (this.getSubDomainPrefix() == null && castObject.getSubDomainPrefix() == null) ||
+            (this.getSubDomainPrefix() != null && this.getSubDomainPrefix().equals(castObject.getSubDomainPrefix())));
+        equals = equals && ( (this.getIpv4Address() == null && castObject.getIpv4Address() == null) ||
+            (this.getIpv4Address() != null && this.getIpv4Address().equals(castObject.getIpv4Address())));
+        equals = equals && ( (this.getIpv6Address() == null && castObject.getIpv6Address() == null) ||
+            (this.getIpv6Address() != null && this.getIpv6Address().equals(castObject.getIpv6Address())));
+
+        return equals;
+    }
+
+
 }

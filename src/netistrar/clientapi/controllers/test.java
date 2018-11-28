@@ -44,6 +44,20 @@ public class test extends WebServiceProxy {
     }
 
     /**
+     * Remove a domain name from your account.  This doesn't remove the domain from the registry if it has been previously registered.
+     * This is particularly useful when performing transfer testing etc.
+     *
+     * 
+    * @param String domainName
+    */
+    public void removeDomainFromAccount(String domainName) throws Exception{
+        Map<String, Object> params = new HashMap<String, Object>();
+        
+
+        super.callMethod("removeDomainFromAccount/" + domainName + "", "GET", params, null,Object.class);
+    }
+
+    /**
      * Create one or more .RODEO domains in a different Registrar account, unlocked and ready for a pull transfer.
      *
      * You can create up to 10 domains using this method and it will return an array of entries where each entry is itself a simple array containing the domain name created

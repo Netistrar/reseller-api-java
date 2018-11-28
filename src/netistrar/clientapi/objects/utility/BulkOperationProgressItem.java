@@ -75,4 +75,32 @@ public class BulkOperationProgressItem  {
     }
 
 
+
+    /**
+    * Overridden equals method for doing field based equals comparison.
+    */
+    public boolean equals(Object otherObject) {
+
+        if (otherObject == this)
+            return true;
+
+        if (!(otherObject instanceof BulkOperationProgressItem))
+            return false;
+
+        BulkOperationProgressItem castObject = (BulkOperationProgressItem)otherObject;
+
+        boolean equals = true;
+        equals = equals && ( (this.getTitle() == null && castObject.getTitle() == null) ||
+            (this.getTitle() != null && this.getTitle().equals(castObject.getTitle())));
+        equals = equals && ( (this.getProgressPercentage() == null && castObject.getProgressPercentage() == null) ||
+            (this.getProgressPercentage() != null && this.getProgressPercentage().equals(castObject.getProgressPercentage())));
+        equals = equals && ( (this.getStatus() == null && castObject.getStatus() == null) ||
+            (this.getStatus() != null && this.getStatus().equals(castObject.getStatus())));
+        equals = equals && ( (this.getFailureErrors() == null && castObject.getFailureErrors() == null) ||
+            (this.getFailureErrors() != null && this.getFailureErrors().equals(castObject.getFailureErrors())));
+
+        return equals;
+    }
+
+
 }

@@ -78,4 +78,28 @@ public class DomainNameRenewDescriptor  {
     }
 
 
+
+    /**
+    * Overridden equals method for doing field based equals comparison.
+    */
+    public boolean equals(Object otherObject) {
+
+        if (otherObject == this)
+            return true;
+
+        if (!(otherObject instanceof DomainNameRenewDescriptor))
+            return false;
+
+        DomainNameRenewDescriptor castObject = (DomainNameRenewDescriptor)otherObject;
+
+        boolean equals = true;
+        equals = equals && ( (this.getDomainNames() == null && castObject.getDomainNames() == null) ||
+            (this.getDomainNames() != null && this.getDomainNames().equals(castObject.getDomainNames())));
+        equals = equals && ( (this.getAdditionalYears() == null && castObject.getAdditionalYears() == null) ||
+            (this.getAdditionalYears() != null && this.getAdditionalYears().equals(castObject.getAdditionalYears())));
+
+        return equals;
+    }
+
+
 }

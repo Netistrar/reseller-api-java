@@ -156,4 +156,44 @@ public class Transaction  {
     }
 
 
+
+    /**
+    * Overridden equals method for doing field based equals comparison.
+    */
+    public boolean equals(Object otherObject) {
+
+        if (otherObject == this)
+            return true;
+
+        if (!(otherObject instanceof Transaction))
+            return false;
+
+        Transaction castObject = (Transaction)otherObject;
+
+        boolean equals = true;
+        equals = equals && ( (this.getTransactionType() == null && castObject.getTransactionType() == null) ||
+            (this.getTransactionType() != null && this.getTransactionType().equals(castObject.getTransactionType())));
+        equals = equals && ( (this.getTransactionDateTime() == null && castObject.getTransactionDateTime() == null) ||
+            (this.getTransactionDateTime() != null && this.getTransactionDateTime().equals(castObject.getTransactionDateTime())));
+        equals = equals && ( (this.getTransactionStatus() == null && castObject.getTransactionStatus() == null) ||
+            (this.getTransactionStatus() != null && this.getTransactionStatus().equals(castObject.getTransactionStatus())));
+        equals = equals && ( (this.getOrderId() == null && castObject.getOrderId() == null) ||
+            (this.getOrderId() != null && this.getOrderId().equals(castObject.getOrderId())));
+        equals = equals && ( (this.getOrderCurrency() == null && castObject.getOrderCurrency() == null) ||
+            (this.getOrderCurrency() != null && this.getOrderCurrency().equals(castObject.getOrderCurrency())));
+        equals = equals && ( (this.getOrderSubtotal() == null && castObject.getOrderSubtotal() == null) ||
+            (this.getOrderSubtotal() != null && this.getOrderSubtotal().equals(castObject.getOrderSubtotal())));
+        equals = equals && ( (this.getOrderTaxes() == null && castObject.getOrderTaxes() == null) ||
+            (this.getOrderTaxes() != null && this.getOrderTaxes().equals(castObject.getOrderTaxes())));
+        equals = equals && ( (this.getOrderTotal() == null && castObject.getOrderTotal() == null) ||
+            (this.getOrderTotal() != null && this.getOrderTotal().equals(castObject.getOrderTotal())));
+        equals = equals && ( (this.getTransactionElements() == null && castObject.getTransactionElements() == null) ||
+            (this.getTransactionElements() != null && this.getTransactionElements().equals(castObject.getTransactionElements())));
+        equals = equals && ( (this.getTransactionError() == null && castObject.getTransactionError() == null) ||
+            (this.getTransactionError() != null && this.getTransactionError().equals(castObject.getTransactionError())));
+
+        return equals;
+    }
+
+
 }

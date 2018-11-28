@@ -101,4 +101,36 @@ public class BulkOperationProgress  {
     }
 
 
+
+    /**
+    * Overridden equals method for doing field based equals comparison.
+    */
+    public boolean equals(Object otherObject) {
+
+        if (otherObject == this)
+            return true;
+
+        if (!(otherObject instanceof BulkOperationProgress))
+            return false;
+
+        BulkOperationProgress castObject = (BulkOperationProgress)otherObject;
+
+        boolean equals = true;
+        equals = equals && ( (this.getStatus() == null && castObject.getStatus() == null) ||
+            (this.getStatus() != null && this.getStatus().equals(castObject.getStatus())));
+        equals = equals && ( (this.getTotalNumberOfItems() == null && castObject.getTotalNumberOfItems() == null) ||
+            (this.getTotalNumberOfItems() != null && this.getTotalNumberOfItems().equals(castObject.getTotalNumberOfItems())));
+        equals = equals && ( (this.getCompletedItems() == null && castObject.getCompletedItems() == null) ||
+            (this.getCompletedItems() != null && this.getCompletedItems().equals(castObject.getCompletedItems())));
+        equals = equals && ( (this.getPercentageComplete() == null && castObject.getPercentageComplete() == null) ||
+            (this.getPercentageComplete() != null && this.getPercentageComplete().equals(castObject.getPercentageComplete())));
+        equals = equals && ( (this.getHasFailedItems() == null && castObject.getHasFailedItems() == null) ||
+            (this.getHasFailedItems() != null && this.getHasFailedItems().equals(castObject.getHasFailedItems())));
+        equals = equals && ( (this.getProgressItems() == null && castObject.getProgressItems() == null) ||
+            (this.getProgressItems() != null && this.getProgressItems().equals(castObject.getProgressItems())));
+
+        return equals;
+    }
+
+
 }

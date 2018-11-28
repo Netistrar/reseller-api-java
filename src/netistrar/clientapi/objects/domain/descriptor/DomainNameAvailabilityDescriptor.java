@@ -151,4 +151,34 @@ public class DomainNameAvailabilityDescriptor  {
     }
 
 
+
+    /**
+    * Overridden equals method for doing field based equals comparison.
+    */
+    public boolean equals(Object otherObject) {
+
+        if (otherObject == this)
+            return true;
+
+        if (!(otherObject instanceof DomainNameAvailabilityDescriptor))
+            return false;
+
+        DomainNameAvailabilityDescriptor castObject = (DomainNameAvailabilityDescriptor)otherObject;
+
+        boolean equals = true;
+        equals = equals && ( (this.getSearchString() == null && castObject.getSearchString() == null) ||
+            (this.getSearchString() != null && this.getSearchString().equals(castObject.getSearchString())));
+        equals = equals && ( (this.getTldCategories() == null && castObject.getTldCategories() == null) ||
+            (this.getTldCategories() != null && this.getTldCategories().equals(castObject.getTldCategories())));
+        equals = equals && ( (this.getTlds() == null && castObject.getTlds() == null) ||
+            (this.getTlds() != null && this.getTlds().equals(castObject.getTlds())));
+        equals = equals && ( (this.getSuggestions() == null && castObject.getSuggestions() == null) ||
+            (this.getSuggestions() != null && this.getSuggestions().equals(castObject.getSuggestions())));
+        equals = equals && ( (this.getSuggestionOptions() == null && castObject.getSuggestionOptions() == null) ||
+            (this.getSuggestionOptions() != null && this.getSuggestionOptions().equals(castObject.getSuggestionOptions())));
+
+        return equals;
+    }
+
+
 }

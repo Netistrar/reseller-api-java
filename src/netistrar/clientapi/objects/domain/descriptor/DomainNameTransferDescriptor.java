@@ -199,4 +199,38 @@ public class DomainNameTransferDescriptor  {
     }
 
 
+
+    /**
+    * Overridden equals method for doing field based equals comparison.
+    */
+    public boolean equals(Object otherObject) {
+
+        if (otherObject == this)
+            return true;
+
+        if (!(otherObject instanceof DomainNameTransferDescriptor))
+            return false;
+
+        DomainNameTransferDescriptor castObject = (DomainNameTransferDescriptor)otherObject;
+
+        boolean equals = true;
+        equals = equals && ( (this.getTransferIdentifiers() == null && castObject.getTransferIdentifiers() == null) ||
+            (this.getTransferIdentifiers() != null && this.getTransferIdentifiers().equals(castObject.getTransferIdentifiers())));
+        equals = equals && ( (this.getOwnerContact() == null && castObject.getOwnerContact() == null) ||
+            (this.getOwnerContact() != null && this.getOwnerContact().equals(castObject.getOwnerContact())));
+        equals = equals && ( (this.getAdminContact() == null && castObject.getAdminContact() == null) ||
+            (this.getAdminContact() != null && this.getAdminContact().equals(castObject.getAdminContact())));
+        equals = equals && ( (this.getBillingContact() == null && castObject.getBillingContact() == null) ||
+            (this.getBillingContact() != null && this.getBillingContact().equals(castObject.getBillingContact())));
+        equals = equals && ( (this.getTechnicalContact() == null && castObject.getTechnicalContact() == null) ||
+            (this.getTechnicalContact() != null && this.getTechnicalContact().equals(castObject.getTechnicalContact())));
+        equals = equals && ( (this.getPrivacyProxy() == null && castObject.getPrivacyProxy() == null) ||
+            (this.getPrivacyProxy() != null && this.getPrivacyProxy().equals(castObject.getPrivacyProxy())));
+        equals = equals && ( (this.getAutoRenew() == null && castObject.getAutoRenew() == null) ||
+            (this.getAutoRenew() != null && this.getAutoRenew().equals(castObject.getAutoRenew())));
+
+        return equals;
+    }
+
+
 }

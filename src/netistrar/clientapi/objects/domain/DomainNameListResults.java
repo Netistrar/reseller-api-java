@@ -141,4 +141,42 @@ public class DomainNameListResults  {
     }
 
 
+
+    /**
+    * Overridden equals method for doing field based equals comparison.
+    */
+    public boolean equals(Object otherObject) {
+
+        if (otherObject == this)
+            return true;
+
+        if (!(otherObject instanceof DomainNameListResults))
+            return false;
+
+        DomainNameListResults castObject = (DomainNameListResults)otherObject;
+
+        boolean equals = true;
+        equals = equals && ( (this.getSearchTerm() == null && castObject.getSearchTerm() == null) ||
+            (this.getSearchTerm() != null && this.getSearchTerm().equals(castObject.getSearchTerm())));
+        equals = equals && ( (this.getPageSize() == null && castObject.getPageSize() == null) ||
+            (this.getPageSize() != null && this.getPageSize().equals(castObject.getPageSize())));
+        equals = equals && ( (this.getPage() == null && castObject.getPage() == null) ||
+            (this.getPage() != null && this.getPage().equals(castObject.getPage())));
+        equals = equals && ( (this.getOrderBy() == null && castObject.getOrderBy() == null) ||
+            (this.getOrderBy() != null && this.getOrderBy().equals(castObject.getOrderBy())));
+        equals = equals && ( (this.getOrderDirection() == null && castObject.getOrderDirection() == null) ||
+            (this.getOrderDirection() != null && this.getOrderDirection().equals(castObject.getOrderDirection())));
+        equals = equals && ( (this.getNumberOfDomainsReturned() == null && castObject.getNumberOfDomainsReturned() == null) ||
+            (this.getNumberOfDomainsReturned() != null && this.getNumberOfDomainsReturned().equals(castObject.getNumberOfDomainsReturned())));
+        equals = equals && ( (this.getTotalNumberOfDomains() == null && castObject.getTotalNumberOfDomains() == null) ||
+            (this.getTotalNumberOfDomains() != null && this.getTotalNumberOfDomains().equals(castObject.getTotalNumberOfDomains())));
+        equals = equals && ( (this.getTotalNumberOfPages() == null && castObject.getTotalNumberOfPages() == null) ||
+            (this.getTotalNumberOfPages() != null && this.getTotalNumberOfPages().equals(castObject.getTotalNumberOfPages())));
+        equals = equals && ( (this.getDomainNameSummaries() == null && castObject.getDomainNameSummaries() == null) ||
+            (this.getDomainNameSummaries() != null && this.getDomainNameSummaries().equals(castObject.getDomainNameSummaries())));
+
+        return equals;
+    }
+
+
 }

@@ -178,4 +178,48 @@ public class DomainNameSummary  {
     }
 
 
+
+    /**
+    * Overridden equals method for doing field based equals comparison.
+    */
+    public boolean equals(Object otherObject) {
+
+        if (otherObject == this)
+            return true;
+
+        if (!(otherObject instanceof DomainNameSummary))
+            return false;
+
+        DomainNameSummary castObject = (DomainNameSummary)otherObject;
+
+        boolean equals = true;
+        equals = equals && ( (this.getOwnerName() == null && castObject.getOwnerName() == null) ||
+            (this.getOwnerName() != null && this.getOwnerName().equals(castObject.getOwnerName())));
+        equals = equals && ( (this.getDomainName() == null && castObject.getDomainName() == null) ||
+            (this.getDomainName() != null && this.getDomainName().equals(castObject.getDomainName())));
+        equals = equals && ( (this.getRegisteredDate() == null && castObject.getRegisteredDate() == null) ||
+            (this.getRegisteredDate() != null && this.getRegisteredDate().equals(castObject.getRegisteredDate())));
+        equals = equals && ( (this.getExpiryDate() == null && castObject.getExpiryDate() == null) ||
+            (this.getExpiryDate() != null && this.getExpiryDate().equals(castObject.getExpiryDate())));
+        equals = equals && ( (this.getLocked() == null && castObject.getLocked() == null) ||
+            (this.getLocked() != null && this.getLocked().equals(castObject.getLocked())));
+        equals = equals && ( (this.getLockedUntil() == null && castObject.getLockedUntil() == null) ||
+            (this.getLockedUntil() != null && this.getLockedUntil().equals(castObject.getLockedUntil())));
+        equals = equals && ( (this.getAuthCode() == null && castObject.getAuthCode() == null) ||
+            (this.getAuthCode() != null && this.getAuthCode().equals(castObject.getAuthCode())));
+        equals = equals && ( (this.getAutoRenew() == null && castObject.getAutoRenew() == null) ||
+            (this.getAutoRenew() != null && this.getAutoRenew().equals(castObject.getAutoRenew())));
+        equals = equals && ( (this.getPrivacyProxy() == null && castObject.getPrivacyProxy() == null) ||
+            (this.getPrivacyProxy() != null && this.getPrivacyProxy().equals(castObject.getPrivacyProxy())));
+        equals = equals && ( (this.getStatus() == null && castObject.getStatus() == null) ||
+            (this.getStatus() != null && this.getStatus().equals(castObject.getStatus())));
+        equals = equals && ( (this.getDnsProvider() == null && castObject.getDnsProvider() == null) ||
+            (this.getDnsProvider() != null && this.getDnsProvider().equals(castObject.getDnsProvider())));
+        equals = equals && ( (this.getEmailProvider() == null && castObject.getEmailProvider() == null) ||
+            (this.getEmailProvider() != null && this.getEmailProvider().equals(castObject.getEmailProvider())));
+
+        return equals;
+    }
+
+
 }

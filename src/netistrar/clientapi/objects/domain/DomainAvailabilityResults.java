@@ -88,4 +88,34 @@ public class DomainAvailabilityResults  {
     }
 
 
+
+    /**
+    * Overridden equals method for doing field based equals comparison.
+    */
+    public boolean equals(Object otherObject) {
+
+        if (otherObject == this)
+            return true;
+
+        if (!(otherObject instanceof DomainAvailabilityResults))
+            return false;
+
+        DomainAvailabilityResults castObject = (DomainAvailabilityResults)otherObject;
+
+        boolean equals = true;
+        equals = equals && ( (this.getDirectResult() == null && castObject.getDirectResult() == null) ||
+            (this.getDirectResult() != null && this.getDirectResult().equals(castObject.getDirectResult())));
+        equals = equals && ( (this.getCategoryResults() == null && castObject.getCategoryResults() == null) ||
+            (this.getCategoryResults() != null && this.getCategoryResults().equals(castObject.getCategoryResults())));
+        equals = equals && ( (this.getTldResults() == null && castObject.getTldResults() == null) ||
+            (this.getTldResults() != null && this.getTldResults().equals(castObject.getTldResults())));
+        equals = equals && ( (this.getTldSuggestions() == null && castObject.getTldSuggestions() == null) ||
+            (this.getTldSuggestions() != null && this.getTldSuggestions().equals(castObject.getTldSuggestions())));
+        equals = equals && ( (this.getSuggestions() == null && castObject.getSuggestions() == null) ||
+            (this.getSuggestions() != null && this.getSuggestions().equals(castObject.getSuggestions())));
+
+        return equals;
+    }
+
+
 }

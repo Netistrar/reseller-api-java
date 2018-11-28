@@ -20,6 +20,7 @@ import netistrar.clientapi.objects.test.domain.TestDomainNameUpdateDescriptor;
 import netistrar.clientapi.objects.transaction.Transaction;
 import netistrar.clientapi.objects.transaction.TransactionElement;
 import netistrar.clientapi.objects.transaction.TransactionError;
+import netistrar.clientapi.objects.utility.BulkOperationProgress;
 
 class DomainsTest {
 
@@ -296,8 +297,8 @@ class DomainsTest {
 		// Renew these domains
 		String bulkKey = this.api.utility().createBulkOperation();
 
-		transaction = this.api.domains().renew(new DomainNameRenewDescriptor(new String[] {newUKDomain1, newUKDomain2}, 2),
-				bulkKey);
+		transaction = this.api.domains()
+				.renew(new DomainNameRenewDescriptor(new String[] { newUKDomain1, newUKDomain2 }, 2), bulkKey);
 
 		assertTrue(transaction instanceof Transaction);
 		assertNotNull(transaction.getTransactionDateTime());
@@ -489,8 +490,8 @@ class DomainsTest {
 				"Arbury", "Cambridge", "Cambs", "CB4 2JL", "FR", "+44", "18657878787", "123", "+44", "18657878787",
 				"123", additionalData);
 
-		Transaction transaction = this.api.domains()
-				.update(new DomainNameUpdateDescriptor(new String[] { newUKDomain }, newOwner, null, null, null, null, null, null, null), null);
+		Transaction transaction = this.api.domains().update(new DomainNameUpdateDescriptor(new String[] { newUKDomain },
+				newOwner, null, null, null, null, null, null, null), null);
 
 		assertTrue(transaction instanceof Transaction);
 		assertEquals("DOMAIN_UPDATE", transaction.getTransactionType());
@@ -575,7 +576,7 @@ class DomainsTest {
 		Transaction transaction = this.api.domains()
 				.update(new DomainNameUpdateDescriptor(new String[] { newUKDomain1, newUKDomain2 }, null, null, null,
 						null, new String[] { "ns1.oxil.com", "ns2.oxil.com", "ns3.oxil.com" }, null, null, null), null);
- 
+
 		assertTrue(transaction instanceof Transaction);
 		assertEquals("DOMAIN_UPDATE", transaction.getTransactionType());
 		assertEquals("SUCCEEDED", transaction.getTransactionStatus());
@@ -590,7 +591,7 @@ class DomainsTest {
 		// Now actually pull the domain and check the update
 		DomainNameObject domainName = this.api.domains().get(newUKDomain1);
 		String[] ns = domainName.getNameservers();
-		assertEquals("ns1.oxil.com", ns[0]); 
+		assertEquals("ns1.oxil.com", ns[0]);
 		assertEquals("ns2.oxil.com", ns[1]);
 		assertEquals("ns3.oxil.com", ns[2]);
 
@@ -599,6 +600,126 @@ class DomainsTest {
 		assertEquals("ns1.oxil.com", ns[0]);
 		assertEquals("ns2.oxil.com", ns[1]);
 		assertEquals("ns3.oxil.com", ns[2]);
+
+	}
+
+	@Test
+	void testValidationErrorsOccurIfBulkUpdatingLockedStatusToUnlockedWhenMandatoryLockInPlace() throws Exception {
+
+		String newUKDomain1 = "validdomain-" + new Date().getTime() + ".rodeo";
+		String newUKDomain2 = "validdomain-" + new Date().getTime() + "1.rodeo";
+		DomainNameContact owner = new DomainNameContact("Marky Babes", "mark@oxil.co.uk", "My Org", "33 My Street",
+				null, "Oxford", "Oxon", "OX4 2RD", "GB", "", "", "", "", "", "", null);
+		this.api.domains().create(new DomainNameCreateDescriptor(new String[] { newUKDomain1, newUKDomain2 }, 1, owner,
+				new String[] { "ns1.netistrar.com", "ns2.netistrar.com" }, null, null, null, 2, true), null);
+
+		Transaction transaction = this.api.domains().update(new DomainNameUpdateDescriptor(
+				new String[] { newUKDomain1, newUKDomain2 }, null, null, null, null, null, false, null, null), null);
+
+		assertTrue(transaction instanceof Transaction);
+		assertEquals("DOMAIN_UPDATE", transaction.getTransactionType());
+		assertEquals("ALL_ELEMENTS_FAILED", transaction.getTransactionStatus());
+		assertEquals(2, transaction.getTransactionElements().size());
+
+		TransactionElement element1 = transaction.getTransactionElements().get(newUKDomain1);
+		assertEquals(newUKDomain1, element1.getDescription());
+		assertEquals("FAILED", element1.getElementStatus());
+		assertEquals(1, element1.getElementErrors().size());
+		assertTrue(element1.getElementErrors().containsKey("DOMAIN_IN_MANDATORY_LOCK"));
+
+		TransactionElement element2 = transaction.getTransactionElements().get(newUKDomain2);
+		assertEquals(newUKDomain2, element2.getDescription());
+		assertEquals("FAILED", element2.getElementStatus());
+		assertEquals(1, element2.getElementErrors().size());
+		assertTrue(element2.getElementErrors().containsKey("DOMAIN_IN_MANDATORY_LOCK"));
+
+	}
+
+	@Test
+	void testCanUpdateValidDomainAttributesCorrectlyForDomainNames() throws Exception {
+
+		String newUKDomain1 = "validdomain-" + new Date().getTime() + ".uk";
+		String newUKDomain2 = "validdomain-" + new Date().getTime() + "1.uk";
+		DomainNameContact owner = new DomainNameContact("Marky Babes", "mark@oxil.co.uk", "My Org", "33 My Street",
+				null, "Oxford", "Oxon", "OX4 2RD", "GB", "", "", "", "", "", "", null);
+		Map<String, Object> additionalData = new HashMap<String, Object>();
+		additionalData.put("nominetRegistrantType", "IND");
+		owner.setAdditionalData(additionalData);
+
+		this.api.domains().create(new DomainNameCreateDescriptor(new String[] { newUKDomain1, newUKDomain2 }, 1, owner,
+				new String[] { "ns1.netistrar.com", "ns2.netistrar.com" }, null, null, null, null, null), null);
+
+		this.api.test().updateDomains(
+				new TestDomainNameUpdateDescriptor(new String[] { newUKDomain1 }, null, null, null, null));
+
+		Transaction transaction = this.api.domains().update(new DomainNameUpdateDescriptor(
+				new String[] { newUKDomain1, newUKDomain2 }, null, null, null, null, null, false, 0, true), null);
+
+		assertTrue(transaction instanceof Transaction);
+
+		assertEquals("DOMAIN_UPDATE", transaction.getTransactionType());
+		assertEquals("SUCCEEDED", transaction.getTransactionStatus());
+		assertEquals(2, transaction.getTransactionElements().size());
+
+		TransactionElement transactionElement = transaction.getTransactionElements().get(newUKDomain1);
+		assertEquals("SUCCEEDED", transactionElement.getElementStatus());
+
+		transactionElement = transaction.getTransactionElements().get(newUKDomain2);
+		assertEquals("SUCCEEDED", transactionElement.getElementStatus());
+
+		// Now actually pull the domain and check the update
+		DomainNameObject domainName = this.api.domains().get(newUKDomain1);
+		assertFalse(domainName.getLocked());
+		assertEquals(0, (int) domainName.getPrivacyProxy());
+		assertTrue(domainName.getAutoRenew());
+
+		domainName = this.api.domains().get(newUKDomain2);
+		assertFalse(domainName.getLocked());
+		assertEquals(0, (int) domainName.getPrivacyProxy());
+		assertTrue(domainName.getAutoRenew());
+
+		// Now try and set privacy proxy to 2
+		transaction = this.api.domains().update(new DomainNameUpdateDescriptor(
+				new String[] { newUKDomain1, newUKDomain2 }, null, null, null, null, null, null, 2, null), null);
+
+		// Now actually pull the domain and check the update
+		domainName = this.api.domains().get(newUKDomain1);
+		assertFalse(domainName.getLocked());
+		assertEquals(2, (int) domainName.getPrivacyProxy());
+		assertTrue(domainName.getAutoRenew());
+	}
+
+	@Test
+	void testTransactionProgressForUpdatesAreMonitoredCorrectlyWhenProgressKeyPassed() throws Exception {
+
+		String newUKDomain1 = "validdomain-" + new Date().getTime() + ".rodeo";
+		String newUKDomain2 = "validdomain-" + new Date().getTime() + "1.rodeo";
+		DomainNameContact owner = new DomainNameContact("Marky Babes", "mark@oxil.co.uk", "My Org", "33 My Street",
+				null, "Oxford", "Oxon", "OX4 2RD", "GB", "", "", "", "", "", "", null);
+		this.api.domains().create(new DomainNameCreateDescriptor(new String[] { newUKDomain1, newUKDomain2 }, 1, owner,
+				new String[] { "ns1.netistrar.com", "ns2.netistrar.com" }, null, null, null, null, null), null);
+
+		this.api.test().updateDomains(
+				new TestDomainNameUpdateDescriptor(new String[] { newUKDomain1 }, null, "_UNSET", "_UNSET", null));
+
+		String progressKey = this.api.utility().createBulkOperation();
+
+		// Run transaction
+		Transaction transaction = this.api.domains()
+				.update(new DomainNameUpdateDescriptor(new String[] { newUKDomain1, newUKDomain2 }, null, null, null,
+						null, null, false, 0, true), progressKey);
+
+		assertTrue(transaction instanceof Transaction);
+
+		assertEquals("DOMAIN_UPDATE", transaction.getTransactionType());
+		assertEquals("PARTIALLY_SUCCEEDED", transaction.getTransactionStatus());
+		assertEquals(2, transaction.getTransactionElements().size());
+
+		// Also, check the bulk operation
+		BulkOperationProgress bulkOperationProgress = this.api.utility().getBulkOperationProgress(progressKey);
+		assertEquals("COMPLETED", bulkOperationProgress.getStatus());
+		assertEquals("SUCCEEDED", bulkOperationProgress.getProgressItems()[0].getStatus());
+		assertEquals("FAILED", bulkOperationProgress.getProgressItems()[1].getStatus());
 
 	}
 

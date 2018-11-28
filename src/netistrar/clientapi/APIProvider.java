@@ -5,6 +5,7 @@ import java.util.HashMap;
 import netistrar.clientapi.framework.WebServiceProxy;
 import netistrar.clientapi.controllers.domains;
 import netistrar.clientapi.controllers.utility;
+import netistrar.clientapi.controllers.account;
 import netistrar.clientapi.controllers.test;
 
 public class APIProvider  {
@@ -49,6 +50,18 @@ public class APIProvider  {
             this.instances.put("utility", new utility(this.apiURL + "/utility", this.globalParameters));
         }
         return (utility)this.instances.get("utility");
+    }
+
+    /**
+    * Get an instance of the account API
+    *
+    * @return 
+    */
+    public account account(){
+        if (this.instances.get("account") == null){
+            this.instances.put("account", new account(this.apiURL + "/account", this.globalParameters));
+        }
+        return (account)this.instances.get("account");
     }
 
     /**
