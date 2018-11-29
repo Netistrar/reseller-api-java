@@ -17,6 +17,7 @@ import netistrar.clientapi.objects.transaction.TransactionError;
 import netistrar.clientapi.objects.transaction.Transaction;
 import netistrar.clientapi.objects.domain.descriptor.DomainNameUpdateDescriptor;
 import netistrar.clientapi.objects.domain.descriptor.DomainNameRenewDescriptor;
+import netistrar.clientapi.objects.domain.DomainNameTransferStatus;
 import netistrar.clientapi.objects.domain.descriptor.DomainNameTransferDescriptor;
 import netistrar.clientapi.objects.domain.DomainNameGlueRecord;
 
@@ -248,21 +249,20 @@ public class domains extends WebServiceProxy {
      *
      * 
     * @param String domainName
-    * @param String authCode
     */
-    public String transferCheck(String domainName, String authCode) throws Exception{
+    public DomainNameTransferStatus transferCheck(String domainName) throws Exception{
         Map<String, Object> params = new HashMap<String, Object>();
         
-        params.put("authCode", authCode);
 
         Map<String, String> expectedExceptions = new HashMap<String, String>();
+        expectedExceptions.put("\\Netistrar\\WebServices\\Common\\Exception\\TransactionException","netistrar.clientapi.exception.TransactionException");
 
 
         Type returnType;
 
-        returnType = new TypeToken<String>(){}.getType();
+        returnType = new TypeToken<DomainNameTransferStatus>(){}.getType();
 
-        return (String)super.callMethod("transfer/" + domainName + "/" + authCode + "", "GET", params, null, returnType,expectedExceptions);
+        return (DomainNameTransferStatus)super.callMethod("transfer/" + domainName + "", "GET", params, null, returnType,expectedExceptions);
     }
 
     /**
