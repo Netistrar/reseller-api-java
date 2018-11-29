@@ -3,6 +3,9 @@ package netistrar.clientapi.controllers;
 import netistrar.clientapi.framework.WebServiceProxy;
 import java.util.Map;
 import java.util.HashMap;
+import com.google.gson.reflect.TypeToken;
+import java.lang.reflect.Type;
+
 import netistrar.clientapi.objects.account.AccountNotification;
 
 /**
@@ -25,7 +28,14 @@ public class account extends WebServiceProxy {
         Map<String, Object> params = new HashMap<String, Object>();
         
 
-        return (Float)super.callMethod("balance", "GET", params, null,Float.class);
+        Map<String, String> expectedExceptions = new HashMap<String, String>();
+
+
+        Type returnType;
+
+        returnType = new TypeToken<Float>(){}.getType();
+
+        return (Float)super.callMethod("balance", "GET", params, null, returnType,expectedExceptions);
     }
 
     /**
@@ -44,7 +54,14 @@ public class account extends WebServiceProxy {
         params.put("types", types);
         params.put("subTypes", subTypes);
 
-        return (AccountNotification[])super.callMethod("notification", "GET", params, null,AccountNotification[].class);
+        Map<String, String> expectedExceptions = new HashMap<String, String>();
+
+
+        Type returnType;
+
+        returnType = new TypeToken<AccountNotification[]>(){}.getType();
+
+        return (AccountNotification[])super.callMethod("notification", "GET", params, null, returnType,expectedExceptions);
     }
 
     /**
@@ -57,7 +74,14 @@ public class account extends WebServiceProxy {
         Map<String, Object> params = new HashMap<String, Object>();
         
 
-        return (AccountNotification)super.callMethod("notification/" + notificationId + "", "GET", params, null,AccountNotification.class);
+        Map<String, String> expectedExceptions = new HashMap<String, String>();
+
+
+        Type returnType;
+
+        returnType = new TypeToken<AccountNotification>(){}.getType();
+
+        return (AccountNotification)super.callMethod("notification/" + notificationId + "", "GET", params, null, returnType,expectedExceptions);
     }
 
 

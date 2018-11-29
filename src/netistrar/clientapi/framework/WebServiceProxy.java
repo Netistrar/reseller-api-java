@@ -4,6 +4,7 @@ package netistrar.clientapi.framework;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
+import java.lang.reflect.Type;
 import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -38,7 +39,7 @@ public class WebServiceProxy {
     * @param Map<String,Object> $params
     * @param String returnClass
     */
-    public Object callMethod(String name, String httpMethod, Map<String,Object> params, Object payload, Class returnClass) throws Exception {
+    public Object callMethod(String name, String httpMethod, Map<String,Object> params, Object payload, Object returnClass, Map<String, String> expectedExceptions) throws Exception {
 
           HttpURLConnection con = null;
 
@@ -126,8 +127,10 @@ public class WebServiceProxy {
 			// Convert to objects using GSON before returning
 			String json = content.toString();
 
-
-			return gson.fromJson(json, returnClass);
+            if (returnClass instanceof Class)
+			    return gson.fromJson(json, (Class)returnClass);
+            else
+                return gson.fromJson(json, (Type)returnClass);
 
 		} catch (IOException e) {
 
@@ -141,8 +144,14 @@ public class WebServiceProxy {
 			in.close();
 
 			// Convert to serialisable exception before throwing.
-			Gson gson = new Gson();
-			SerialisableException exception = gson.fromJson(content.toString(), SerialisableException.class);
+            Gson gson = new Gson();
+            Exception exception = gson.fromJson(content.toString(), SerialisableException.class);
+
+            if (expectedExceptions.containsKey(((SerialisableException)exception).getExceptionClass())) {
+                String className = expectedExceptions.get(((SerialisableException)exception).getExceptionClass());
+                exception = (Exception)gson.fromJson(content.toString(), Class.forName(className));
+            }
+
 
 			throw exception;
 		}

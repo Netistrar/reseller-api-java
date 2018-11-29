@@ -3,6 +3,9 @@ package netistrar.clientapi.controllers;
 import netistrar.clientapi.framework.WebServiceProxy;
 import java.util.Map;
 import java.util.HashMap;
+import com.google.gson.reflect.TypeToken;
+import java.lang.reflect.Type;
+
 import netistrar.clientapi.objects.utility.BulkOperationProgress;
 
 /**
@@ -25,7 +28,14 @@ public class utility extends WebServiceProxy {
         Map<String, Object> params = new HashMap<String, Object>();
         
 
-        return (String)super.callMethod("ping", "GET", params, null,String.class);
+        Map<String, String> expectedExceptions = new HashMap<String, String>();
+
+
+        Type returnType;
+
+        returnType = new TypeToken<String>(){}.getType();
+
+        return (String)super.callMethod("ping", "GET", params, null, returnType,expectedExceptions);
     }
 
     /**
@@ -38,7 +48,14 @@ public class utility extends WebServiceProxy {
         Map<String, Object> params = new HashMap<String, Object>();
         
 
-        return (String)super.callMethod("bulkoperation", "POST", params, null,String.class);
+        Map<String, String> expectedExceptions = new HashMap<String, String>();
+
+
+        Type returnType;
+
+        returnType = new TypeToken<String>(){}.getType();
+
+        return (String)super.callMethod("bulkoperation", "POST", params, null, returnType,expectedExceptions);
     }
 
     /**
@@ -52,7 +69,14 @@ public class utility extends WebServiceProxy {
         Map<String, Object> params = new HashMap<String, Object>();
         
 
-        return (BulkOperationProgress)super.callMethod("bulkoperation/" + bulkOperationProgressKey + "", "GET", params, null,BulkOperationProgress.class);
+        Map<String, String> expectedExceptions = new HashMap<String, String>();
+
+
+        Type returnType;
+
+        returnType = new TypeToken<BulkOperationProgress>(){}.getType();
+
+        return (BulkOperationProgress)super.callMethod("bulkoperation/" + bulkOperationProgressKey + "", "GET", params, null, returnType,expectedExceptions);
     }
 
 

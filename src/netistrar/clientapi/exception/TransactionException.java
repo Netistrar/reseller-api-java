@@ -12,7 +12,7 @@ public class TransactionException extends Exception {
 
     /**
      */
-    protected TransactionError[] transactionErrors;
+    protected Map<String,TransactionError> transactionErrors;
 
     /**
      */
@@ -49,9 +49,9 @@ public class TransactionException extends Exception {
     /**
      * Get the transactionErrors
      *
-     * @return TransactionError[]
+     * @return Map<String,TransactionError>
      */
-    public TransactionError[] getTransactionErrors(){
+    public Map<String,TransactionError> getTransactionErrors(){
         return this.transactionErrors;
     }
 

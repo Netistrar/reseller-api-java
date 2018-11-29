@@ -3,6 +3,9 @@ package netistrar.clientapi.controllers;
 import netistrar.clientapi.framework.WebServiceProxy;
 import java.util.Map;
 import java.util.HashMap;
+import com.google.gson.reflect.TypeToken;
+import java.lang.reflect.Type;
+
 import netistrar.clientapi.objects.domain.descriptor.DomainNameAvailabilityDescriptor;
 import netistrar.clientapi.objects.domain.DomainAvailabilityResults;
 import netistrar.clientapi.objects.domain.DomainAvailability;
@@ -44,7 +47,14 @@ public class domains extends WebServiceProxy {
         Map<String, Object> params = new HashMap<String, Object>();
         
 
-        return (DomainAvailabilityResults)super.callMethod("hinted", "POST", params, descriptor,DomainAvailabilityResults.class);
+        Map<String, String> expectedExceptions = new HashMap<String, String>();
+
+
+        Type returnType;
+
+        returnType = new TypeToken<DomainAvailabilityResults>(){}.getType();
+
+        return (DomainAvailabilityResults)super.callMethod("hinted", "POST", params, descriptor, returnType,expectedExceptions);
     }
 
     /**
@@ -58,7 +68,14 @@ public class domains extends WebServiceProxy {
         Map<String, Object> params = new HashMap<String, Object>();
         
 
-        return (DomainAvailability)super.callMethod("available/" + domainName + "", "GET", params, null,DomainAvailability.class);
+        Map<String, String> expectedExceptions = new HashMap<String, String>();
+
+
+        Type returnType;
+
+        returnType = new TypeToken<DomainAvailability>(){}.getType();
+
+        return (DomainAvailability)super.callMethod("available/" + domainName + "", "GET", params, null, returnType,expectedExceptions);
     }
 
     /**
@@ -82,7 +99,14 @@ public class domains extends WebServiceProxy {
         params.put("orderBy", orderBy);
         params.put("orderDirection", orderDirection);
 
-        return (DomainNameListResults)super.callMethod("", "GET", params, null,DomainNameListResults.class);
+        Map<String, String> expectedExceptions = new HashMap<String, String>();
+
+
+        Type returnType;
+
+        returnType = new TypeToken<DomainNameListResults>(){}.getType();
+
+        return (DomainNameListResults)super.callMethod("", "GET", params, null, returnType,expectedExceptions);
     }
 
     /**
@@ -96,7 +120,15 @@ public class domains extends WebServiceProxy {
         Map<String, Object> params = new HashMap<String, Object>();
         
 
-        return (DomainNameObject)super.callMethod("" + domainName + "", "GET", params, null,DomainNameObject.class);
+        Map<String, String> expectedExceptions = new HashMap<String, String>();
+        expectedExceptions.put("\\Netistrar\\WebServices\\Common\\Exception\\TransactionException","netistrar.clientapi.exception.TransactionException");
+
+
+        Type returnType;
+
+        returnType = new TypeToken<DomainNameObject>(){}.getType();
+
+        return (DomainNameObject)super.callMethod("" + domainName + "", "GET", params, null, returnType,expectedExceptions);
     }
 
     /**
@@ -106,12 +138,20 @@ public class domains extends WebServiceProxy {
     * @param String[] domainNames
     * @param Boolean ignoreMissingItems
     */
-    public DomainNameObject[] getMultiple(String[] domainNames, Boolean ignoreMissingItems) throws Exception{
+    public Map<String,DomainNameObject> getMultiple(String[] domainNames, Boolean ignoreMissingItems) throws Exception{
         Map<String, Object> params = new HashMap<String, Object>();
         
         params.put("ignoreMissingItems", ignoreMissingItems);
 
-        return (DomainNameObject[])super.callMethod("multiple", "POST", params, domainNames,DomainNameObject[].class);
+        Map<String, String> expectedExceptions = new HashMap<String, String>();
+        expectedExceptions.put("\\Netistrar\\WebServices\\Common\\Exception\\TransactionException","netistrar.clientapi.exception.TransactionException");
+
+
+        Type returnType;
+
+        returnType = new TypeToken<Map<String,DomainNameObject>>(){}.getType();
+
+        return (Map<String,DomainNameObject>)super.callMethod("multiple", "POST", params, domainNames, returnType,expectedExceptions);
     }
 
     /**
@@ -124,7 +164,14 @@ public class domains extends WebServiceProxy {
         Map<String, Object> params = new HashMap<String, Object>();
         
 
-        return (Map<String,Map<String,TransactionError>>)super.callMethod("validate", "POST", params, createDescriptor,Map.class);
+        Map<String, String> expectedExceptions = new HashMap<String, String>();
+
+
+        Type returnType;
+
+        returnType = new TypeToken<Map<String,Map<String,TransactionError>>>(){}.getType();
+
+        return (Map<String,Map<String,TransactionError>>)super.callMethod("validate", "POST", params, createDescriptor, returnType,expectedExceptions);
     }
 
     /**
@@ -139,7 +186,14 @@ public class domains extends WebServiceProxy {
         
         params.put("bulkOperationProgressKey", bulkOperationProgressKey);
 
-        return (Transaction)super.callMethod("", "POST", params, createDescriptor,Transaction.class);
+        Map<String, String> expectedExceptions = new HashMap<String, String>();
+
+
+        Type returnType;
+
+        returnType = new TypeToken<Transaction>(){}.getType();
+
+        return (Transaction)super.callMethod("", "POST", params, createDescriptor, returnType,expectedExceptions);
     }
 
     /**
@@ -156,7 +210,14 @@ public class domains extends WebServiceProxy {
         
         params.put("bulkOperationProgressKey", bulkOperationProgressKey);
 
-        return (Transaction)super.callMethod("", "PATCH", params, updateDescriptor,Transaction.class);
+        Map<String, String> expectedExceptions = new HashMap<String, String>();
+
+
+        Type returnType;
+
+        returnType = new TypeToken<Transaction>(){}.getType();
+
+        return (Transaction)super.callMethod("", "PATCH", params, updateDescriptor, returnType,expectedExceptions);
     }
 
     /**
@@ -171,7 +232,14 @@ public class domains extends WebServiceProxy {
         
         params.put("bulkOperationProgressKey", bulkOperationProgressKey);
 
-        return (Transaction)super.callMethod("renew", "POST", params, renewDescriptor,Transaction.class);
+        Map<String, String> expectedExceptions = new HashMap<String, String>();
+
+
+        Type returnType;
+
+        returnType = new TypeToken<Transaction>(){}.getType();
+
+        return (Transaction)super.callMethod("renew", "POST", params, renewDescriptor, returnType,expectedExceptions);
     }
 
     /**
@@ -187,7 +255,14 @@ public class domains extends WebServiceProxy {
         
         params.put("authCode", authCode);
 
-        return (String)super.callMethod("transfer/" + domainName + "/" + authCode + "", "GET", params, null,String.class);
+        Map<String, String> expectedExceptions = new HashMap<String, String>();
+
+
+        Type returnType;
+
+        returnType = new TypeToken<String>(){}.getType();
+
+        return (String)super.callMethod("transfer/" + domainName + "/" + authCode + "", "GET", params, null, returnType,expectedExceptions);
     }
 
     /**
@@ -203,7 +278,14 @@ public class domains extends WebServiceProxy {
         Map<String, Object> params = new HashMap<String, Object>();
         
 
-        return (Map<String,Map<String,TransactionError>>)super.callMethod("transfer/validate", "POST", params, transferDescriptor,Map.class);
+        Map<String, String> expectedExceptions = new HashMap<String, String>();
+
+
+        Type returnType;
+
+        returnType = new TypeToken<Map<String,Map<String,TransactionError>>>(){}.getType();
+
+        return (Map<String,Map<String,TransactionError>>)super.callMethod("transfer/validate", "POST", params, transferDescriptor, returnType,expectedExceptions);
     }
 
     /**
@@ -229,7 +311,14 @@ public class domains extends WebServiceProxy {
         
         params.put("bulkOperationProgressKey", bulkOperationProgressKey);
 
-        return (Transaction)super.callMethod("transfer", "POST", params, transferDescriptor,Transaction.class);
+        Map<String, String> expectedExceptions = new HashMap<String, String>();
+
+
+        Type returnType;
+
+        returnType = new TypeToken<Transaction>(){}.getType();
+
+        return (Transaction)super.callMethod("transfer", "POST", params, transferDescriptor, returnType,expectedExceptions);
     }
 
     /**
@@ -246,7 +335,14 @@ public class domains extends WebServiceProxy {
         Map<String, Object> params = new HashMap<String, Object>();
         
 
-        return (Transaction)super.callMethod("transfer", "DELETE", params, domainNames,Transaction.class);
+        Map<String, String> expectedExceptions = new HashMap<String, String>();
+
+
+        Type returnType;
+
+        returnType = new TypeToken<Transaction>(){}.getType();
+
+        return (Transaction)super.callMethod("transfer", "DELETE", params, domainNames, returnType,expectedExceptions);
     }
 
     /**
@@ -261,7 +357,14 @@ public class domains extends WebServiceProxy {
         Map<String, Object> params = new HashMap<String, Object>();
         
 
-        return (Transaction)super.callMethod("cancelownerchanges", "DELETE", params, domainNames,Transaction.class);
+        Map<String, String> expectedExceptions = new HashMap<String, String>();
+
+
+        Type returnType;
+
+        returnType = new TypeToken<Transaction>(){}.getType();
+
+        return (Transaction)super.callMethod("cancelownerchanges", "DELETE", params, domainNames, returnType,expectedExceptions);
     }
 
     /**
@@ -279,7 +382,15 @@ public class domains extends WebServiceProxy {
         Map<String, Object> params = new HashMap<String, Object>();
         
 
-        return (DomainNameGlueRecord[])super.callMethod("gluerecords/" + domainName + "", "GET", params, null,DomainNameGlueRecord[].class);
+        Map<String, String> expectedExceptions = new HashMap<String, String>();
+        expectedExceptions.put("\\Netistrar\\WebServices\\Common\\Exception\\TransactionException","netistrar.clientapi.exception.TransactionException");
+
+
+        Type returnType;
+
+        returnType = new TypeToken<DomainNameGlueRecord[]>(){}.getType();
+
+        return (DomainNameGlueRecord[])super.callMethod("gluerecords/" + domainName + "", "GET", params, null, returnType,expectedExceptions);
     }
 
     /**
@@ -301,7 +412,14 @@ public class domains extends WebServiceProxy {
         
         params.put("bulkOperationProgressKey", bulkOperationProgressKey);
 
-        return (Transaction)super.callMethod("gluerecords/" + domainName + "", "PATCH", params, glueRecords,Transaction.class);
+        Map<String, String> expectedExceptions = new HashMap<String, String>();
+
+
+        Type returnType;
+
+        returnType = new TypeToken<Transaction>(){}.getType();
+
+        return (Transaction)super.callMethod("gluerecords/" + domainName + "", "PATCH", params, glueRecords, returnType,expectedExceptions);
     }
 
     /**
@@ -322,7 +440,14 @@ public class domains extends WebServiceProxy {
         
         params.put("bulkOperationProgressKey", bulkOperationProgressKey);
 
-        return (Transaction)super.callMethod("gluerecords/" + domainName + "", "DELETE", params, glueRecordSubdomains,Transaction.class);
+        Map<String, String> expectedExceptions = new HashMap<String, String>();
+
+
+        Type returnType;
+
+        returnType = new TypeToken<Transaction>(){}.getType();
+
+        return (Transaction)super.callMethod("gluerecords/" + domainName + "", "DELETE", params, glueRecordSubdomains, returnType,expectedExceptions);
     }
 
     /**
@@ -336,7 +461,14 @@ public class domains extends WebServiceProxy {
         
         params.put("categoryName", categoryName);
 
-        return (String[])super.callMethod("tld", "GET", params, null,String[].class);
+        Map<String, String> expectedExceptions = new HashMap<String, String>();
+
+
+        Type returnType;
+
+        returnType = new TypeToken<String[]>(){}.getType();
+
+        return (String[])super.callMethod("tld", "GET", params, null, returnType,expectedExceptions);
     }
 
     /**
@@ -348,7 +480,14 @@ public class domains extends WebServiceProxy {
         Map<String, Object> params = new HashMap<String, Object>();
         
 
-        return (String[])super.callMethod("tldcategory", "GET", params, null,String[].class);
+        Map<String, String> expectedExceptions = new HashMap<String, String>();
+
+
+        Type returnType;
+
+        returnType = new TypeToken<String[]>(){}.getType();
+
+        return (String[])super.callMethod("tldcategory", "GET", params, null, returnType,expectedExceptions);
     }
 
 

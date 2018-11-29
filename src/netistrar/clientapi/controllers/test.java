@@ -3,6 +3,9 @@ package netistrar.clientapi.controllers;
 import netistrar.clientapi.framework.WebServiceProxy;
 import java.util.Map;
 import java.util.HashMap;
+import com.google.gson.reflect.TypeToken;
+import java.lang.reflect.Type;
+
 import netistrar.clientapi.objects.test.domain.TestDomainNameUpdateDescriptor;
 import netistrar.clientapi.exception.TransactionException;
 
@@ -27,7 +30,14 @@ public class test extends WebServiceProxy {
         Map<String, Object> params = new HashMap<String, Object>();
         
 
-        super.callMethod("updateBalance/" + newBalance + "", "GET", params, null,Object.class);
+        Map<String, String> expectedExceptions = new HashMap<String, String>();
+
+
+        Type returnType;
+
+        returnType = Object.class;
+
+        super.callMethod("updateBalance/" + newBalance + "", "GET", params, null, returnType,expectedExceptions);
     }
 
     /**
@@ -40,7 +50,15 @@ public class test extends WebServiceProxy {
         Map<String, Object> params = new HashMap<String, Object>();
         
 
-        return (Boolean)super.callMethod("updateDomains", "PUT", params, testDomainNameUpdateDescriptor,Boolean.class);
+        Map<String, String> expectedExceptions = new HashMap<String, String>();
+        expectedExceptions.put("\\Netistrar\\WebServices\\Common\\Exception\\TransactionException","netistrar.clientapi.exception.TransactionException");
+
+
+        Type returnType;
+
+        returnType = new TypeToken<Boolean>(){}.getType();
+
+        return (Boolean)super.callMethod("updateDomains", "PUT", params, testDomainNameUpdateDescriptor, returnType,expectedExceptions);
     }
 
     /**
@@ -54,7 +72,14 @@ public class test extends WebServiceProxy {
         Map<String, Object> params = new HashMap<String, Object>();
         
 
-        super.callMethod("removeDomainFromAccount/" + domainName + "", "GET", params, null,Object.class);
+        Map<String, String> expectedExceptions = new HashMap<String, String>();
+
+
+        Type returnType;
+
+        returnType = Object.class;
+
+        super.callMethod("removeDomainFromAccount/" + domainName + "", "GET", params, null, returnType,expectedExceptions);
     }
 
     /**
@@ -70,7 +95,14 @@ public class test extends WebServiceProxy {
         Map<String, Object> params = new HashMap<String, Object>();
         
 
-        return (String[][])super.callMethod("createPullTransfer/" + numberOfDomains + "", "GET", params, null,String[][].class);
+        Map<String, String> expectedExceptions = new HashMap<String, String>();
+
+
+        Type returnType;
+
+        returnType = new TypeToken<String[][]>(){}.getType();
+
+        return (String[][])super.callMethod("createPullTransfer/" + numberOfDomains + "", "GET", params, null, returnType,expectedExceptions);
     }
 
     /**
@@ -84,7 +116,14 @@ public class test extends WebServiceProxy {
         Map<String, Object> params = new HashMap<String, Object>();
         
 
-        return (String[])super.callMethod("createPushTransfer/" + numberOfDomains + "", "GET", params, null,String[].class);
+        Map<String, String> expectedExceptions = new HashMap<String, String>();
+
+
+        Type returnType;
+
+        returnType = new TypeToken<String[]>(){}.getType();
+
+        return (String[])super.callMethod("createPushTransfer/" + numberOfDomains + "", "GET", params, null, returnType,expectedExceptions);
     }
 
     /**
@@ -98,7 +137,14 @@ public class test extends WebServiceProxy {
         Map<String, Object> params = new HashMap<String, Object>();
         
 
-        super.callMethod("startTransferOut", "POST", params, domainNames,Object.class);
+        Map<String, String> expectedExceptions = new HashMap<String, String>();
+
+
+        Type returnType;
+
+        returnType = Object.class;
+
+        super.callMethod("startTransferOut", "POST", params, domainNames, returnType,expectedExceptions);
     }
 
     /**
@@ -119,7 +165,14 @@ public class test extends WebServiceProxy {
         Map<String, Object> params = new HashMap<String, Object>();
         
 
-        super.callMethod("acceptOwnershipConfirmation", "POST", params, domainNames,Object.class);
+        Map<String, String> expectedExceptions = new HashMap<String, String>();
+
+
+        Type returnType;
+
+        returnType = Object.class;
+
+        super.callMethod("acceptOwnershipConfirmation", "POST", params, domainNames, returnType,expectedExceptions);
     }
 
     /**
@@ -140,7 +193,14 @@ public class test extends WebServiceProxy {
         Map<String, Object> params = new HashMap<String, Object>();
         
 
-        super.callMethod("declineOwnershipConfirmation", "POST", params, domainNames,Object.class);
+        Map<String, String> expectedExceptions = new HashMap<String, String>();
+
+
+        Type returnType;
+
+        returnType = Object.class;
+
+        super.callMethod("declineOwnershipConfirmation", "POST", params, domainNames, returnType,expectedExceptions);
     }
 
     /**
@@ -154,7 +214,14 @@ public class test extends WebServiceProxy {
         Map<String, Object> params = new HashMap<String, Object>();
         
 
-        super.callMethod("approveIncomingTransfer", "POST", params, domainNames,Object.class);
+        Map<String, String> expectedExceptions = new HashMap<String, String>();
+
+
+        Type returnType;
+
+        returnType = Object.class;
+
+        super.callMethod("approveIncomingTransfer", "POST", params, domainNames, returnType,expectedExceptions);
     }
 
     /**
@@ -168,7 +235,14 @@ public class test extends WebServiceProxy {
         Map<String, Object> params = new HashMap<String, Object>();
         
 
-        super.callMethod("rejectIncomingTransfer", "POST", params, domainNames,Object.class);
+        Map<String, String> expectedExceptions = new HashMap<String, String>();
+
+
+        Type returnType;
+
+        returnType = Object.class;
+
+        super.callMethod("rejectIncomingTransfer", "POST", params, domainNames, returnType,expectedExceptions);
     }
 
 

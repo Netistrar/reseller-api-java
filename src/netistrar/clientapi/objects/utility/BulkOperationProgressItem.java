@@ -1,5 +1,6 @@
 package netistrar.clientapi.objects.utility;
 
+import netistrar.clientapi.objects.transaction.TransactionError;
 import java.util.Map;
 
 
@@ -16,7 +17,7 @@ public class BulkOperationProgressItem  {
 
     /**
      */
-    protected Integer progressPercentage;
+    protected Float progressPercentage;
 
     /**
      */
@@ -24,7 +25,7 @@ public class BulkOperationProgressItem  {
 
     /**
      */
-    protected Object[] failureErrors;
+    protected Map<String,TransactionError> failureErrors;
 
 
 
@@ -50,9 +51,9 @@ public class BulkOperationProgressItem  {
     /**
      * Get the progressPercentage
      *
-     * @return Integer
+     * @return Float
      */
-    public Integer getProgressPercentage(){
+    public Float getProgressPercentage(){
         return this.progressPercentage;
     }
 
@@ -68,9 +69,9 @@ public class BulkOperationProgressItem  {
     /**
      * Get the failureErrors
      *
-     * @return Object[]
+     * @return Map<String,TransactionError>
      */
-    public Object[] getFailureErrors(){
+    public Map<String,TransactionError> getFailureErrors(){
         return this.failureErrors;
     }
 

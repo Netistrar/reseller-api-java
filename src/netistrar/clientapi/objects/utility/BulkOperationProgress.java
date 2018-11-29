@@ -24,7 +24,7 @@ public class BulkOperationProgress  {
 
     /**
      */
-    protected Integer percentageComplete;
+    protected Float percentageComplete;
 
     /**
      */
@@ -76,9 +76,9 @@ public class BulkOperationProgress  {
     /**
      * Get the percentageComplete
      *
-     * @return Integer
+     * @return Float
      */
-    public Integer getPercentageComplete(){
+    public Float getPercentageComplete(){
         return this.percentageComplete;
     }
 
