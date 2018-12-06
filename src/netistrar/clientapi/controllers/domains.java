@@ -222,13 +222,34 @@ public class domains extends WebServiceProxy {
     }
 
     /**
+     * Renew a single domain for the number of years supplied.
+     *
+     * 
+    * @param String domainName
+    * @param Integer numberOfYears
+    */
+    public Transaction renew(String domainName, Integer numberOfYears) throws Exception{
+        Map<String, Object> params = new HashMap<String, Object>();
+        
+
+        Map<String, String> expectedExceptions = new HashMap<String, String>();
+
+
+        Type returnType;
+
+        returnType = new TypeToken<Transaction>(){}.getType();
+
+        return (Transaction)super.callMethod("renew/" + domainName + "/" + numberOfYears + "", "Get", params, numberOfYears, returnType,expectedExceptions);
+    }
+
+    /**
      * Renew multiple domains
      *
      * 
     * @param DomainNameRenewDescriptor renewDescriptor
     * @param String bulkOperationProgressKey
     */
-    public Transaction renew(DomainNameRenewDescriptor renewDescriptor, String bulkOperationProgressKey) throws Exception{
+    public Transaction renewMultiple(DomainNameRenewDescriptor renewDescriptor, String bulkOperationProgressKey) throws Exception{
         Map<String, Object> params = new HashMap<String, Object>();
         
         params.put("bulkOperationProgressKey", bulkOperationProgressKey);

@@ -46,6 +46,10 @@ public class DomainNameCreateDescriptor  {
      */
     private Boolean autoRenew;
 
+    /**
+     */
+    private String[] tags;
+
 
 
 
@@ -68,8 +72,9 @@ public class DomainNameCreateDescriptor  {
     * @param DomainNameContact $technicalContact
     * @param Integer $privacyProxy
     * @param Boolean $autoRenew
+    * @param String[] $tags
     */
-    public DomainNameCreateDescriptor(String[] domainNames, Integer registrationYears, DomainNameContact ownerContact, String[] nameservers, DomainNameContact adminContact, DomainNameContact billingContact, DomainNameContact technicalContact, Integer privacyProxy, Boolean autoRenew){
+    public DomainNameCreateDescriptor(String[] domainNames, Integer registrationYears, DomainNameContact ownerContact, String[] nameservers, DomainNameContact adminContact, DomainNameContact billingContact, DomainNameContact technicalContact, Integer privacyProxy, Boolean autoRenew, String[] tags){
 
         this.domainNames = domainNames;
         this.registrationYears = registrationYears;
@@ -80,6 +85,7 @@ public class DomainNameCreateDescriptor  {
         this.technicalContact = technicalContact;
         this.privacyProxy = privacyProxy;
         this.autoRenew = autoRenew;
+        this.tags = tags;
         
     }
 
@@ -246,6 +252,24 @@ public class DomainNameCreateDescriptor  {
         this.autoRenew = autoRenew;
     }
 
+    /**
+     * Get the tags
+     *
+     * @return String[]
+     */
+    public String[] getTags(){
+        return this.tags;
+    }
+
+    /**
+     * Set the tags
+     *
+     * @param String[] $tags
+     */
+    public void setTags(String[] tags){
+        this.tags = tags;
+    }
+
 
 
     /**
@@ -280,6 +304,8 @@ public class DomainNameCreateDescriptor  {
             (this.getPrivacyProxy() != null && this.getPrivacyProxy().equals(castObject.getPrivacyProxy())));
         equals = equals && ( (this.getAutoRenew() == null && castObject.getAutoRenew() == null) ||
             (this.getAutoRenew() != null && this.getAutoRenew().equals(castObject.getAutoRenew())));
+        equals = equals && ( (this.getTags() == null && castObject.getTags() == null) ||
+            (this.getTags() != null && this.getTags().equals(castObject.getTags())));
 
         return equals;
     }

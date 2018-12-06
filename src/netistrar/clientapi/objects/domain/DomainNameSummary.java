@@ -51,6 +51,10 @@ public class DomainNameSummary  {
 
     /**
      */
+    protected String[] tags;
+
+    /**
+     */
     protected String dnsProvider;
 
     /**
@@ -160,6 +164,15 @@ public class DomainNameSummary  {
     }
 
     /**
+     * Get the tags
+     *
+     * @return String[]
+     */
+    public String[] getTags(){
+        return this.tags;
+    }
+
+    /**
      * Get the dnsProvider
      *
      * @return String
@@ -213,6 +226,8 @@ public class DomainNameSummary  {
             (this.getPrivacyProxy() != null && this.getPrivacyProxy().equals(castObject.getPrivacyProxy())));
         equals = equals && ( (this.getStatus() == null && castObject.getStatus() == null) ||
             (this.getStatus() != null && this.getStatus().equals(castObject.getStatus())));
+        equals = equals && ( (this.getTags() == null && castObject.getTags() == null) ||
+            (this.getTags() != null && this.getTags().equals(castObject.getTags())));
         equals = equals && ( (this.getDnsProvider() == null && castObject.getDnsProvider() == null) ||
             (this.getDnsProvider() != null && this.getDnsProvider().equals(castObject.getDnsProvider())));
         equals = equals && ( (this.getEmailProvider() == null && castObject.getEmailProvider() == null) ||

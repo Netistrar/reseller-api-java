@@ -17,6 +17,7 @@ import netistrar.clientapi.exception.TransactionException;
 import netistrar.clientapi.objects.domain.DomainNameContact;
 import netistrar.clientapi.objects.domain.DomainNameListResults;
 import netistrar.clientapi.objects.domain.DomainNameObject;
+import netistrar.clientapi.objects.domain.DomainNameSummary;
 import netistrar.clientapi.objects.domain.descriptor.DomainNameCreateDescriptor;
 import netistrar.clientapi.objects.domain.descriptor.DomainNameRenewDescriptor;
 import netistrar.clientapi.objects.domain.descriptor.DomainNameUpdateDescriptor;
@@ -43,7 +44,7 @@ class DomainsTest {
 
 		DomainNameCreateDescriptor createDescriptor = new DomainNameCreateDescriptor(
 				new String[] { ukDomain, comDomain }, 1, owner, new String[] { "monkeynameserver" }, null, null, null,
-				null, null);
+				null, null, new String[] {});
 
 		Map<String, Map<String, TransactionError>> validationErrors = this.api.domains().validate(createDescriptor);
 
@@ -66,7 +67,7 @@ class DomainsTest {
 		DomainNameContact owner = new DomainNameContact();
 
 		DomainNameCreateDescriptor createDescriptor = new DomainNameCreateDescriptor(new String[] { ukDomain }, 1,
-				owner, new String[] { "monkeynameserver" }, null, null, null, null, null);
+				owner, new String[] { "monkeynameserver" }, null, null, null, null, null, new String[] {});
 
 		Transaction domainTransaction = this.api.domains().create(createDescriptor, null);
 
@@ -91,7 +92,7 @@ class DomainsTest {
 		owner.setAdditionalData(additionalData);
 
 		Transaction transaction = this.api.domains().create(new DomainNameCreateDescriptor(new String[] { rightsUK }, 1,
-				owner, new String[] { "ns1.netistrar.com", "ns2.netistrar.com" }, null, null, null, 0, false), null);
+				owner, new String[] { "ns1.netistrar.com", "ns2.netistrar.com" }, null, null, null, 0, false, new String[] {}), null);
 
 		assertEquals("ALL_ELEMENTS_FAILED", transaction.getTransactionStatus());
 		assertNotNull(transaction.getTransactionDateTime());
@@ -141,7 +142,7 @@ class DomainsTest {
 		String key = this.api.utility().createBulkOperation();
 
 		Transaction transaction = this.api.domains().create(new DomainNameCreateDescriptor(new String[] { newUKDomain },
-				1, owner, new String[] { "ns1.netistrar.com", "ns2.netistrar.com" }, null, null, null, 1, true), key);
+				1, owner, new String[] { "ns1.netistrar.com", "ns2.netistrar.com" }, null, null, null, 1, true, new String[] {}), key);
 
 		assertTrue(transaction instanceof Transaction);
 		assertNotNull(transaction.getTransactionDateTime());
@@ -189,7 +190,7 @@ class DomainsTest {
 		String key = this.api.utility().createBulkOperation();
 
 		this.api.domains().create(new DomainNameCreateDescriptor(new String[] { newUKDomain }, 1, owner,
-				new String[] { "ns1.netistrar.com", "ns2.netistrar.com" }, null, null, null, 2, true), key);
+				new String[] { "ns1.netistrar.com", "ns2.netistrar.com" }, null, null, null, 2, true, new String[] {}), key);
 
 		// Now confirm that the registration actually took place correctly.
 		DomainNameObject domainName = this.api.domains().get(newUKDomain);
@@ -216,7 +217,7 @@ class DomainsTest {
 		owner.setAdditionalData(additionalData);
 
 		Transaction transaction = this.api.domains().create(new DomainNameCreateDescriptor(new String[] { newUKDomain },
-				1, owner, new String[] { "ns1.netistrar.com", "ns2.netistrar.com" }, null, null, null, 2, false), null);
+				1, owner, new String[] { "ns1.netistrar.com", "ns2.netistrar.com" }, null, null, null, 2, false, new String[] {}), null);
 
 		assertEquals("DOMAIN_CREATE", transaction.getTransactionType());
 		assertEquals("FAILED", transaction.getTransactionStatus());
@@ -250,10 +251,10 @@ class DomainsTest {
 		owner.setAdditionalData(additionalData);
 
 		this.api.domains().create(new DomainNameCreateDescriptor(new String[] { newUKDomain1, newUKDomain2 }, 1, owner,
-				new String[] { "ns1.netistrar.com", "ns2.netistrar.com" }, null, null, null, 2, true), null);
+				new String[] { "ns1.netistrar.com", "ns2.netistrar.com" }, null, null, null, 2, true, new String[] {}), null);
 
 		Transaction transaction = this.api.domains()
-				.renew(new DomainNameRenewDescriptor(new String[] { newUKDomain1, newUKDomain2 }, 10), null);
+				.renewMultiple(new DomainNameRenewDescriptor(new String[] { newUKDomain1, newUKDomain2 }, 10), null);
 
 		assertTrue(transaction instanceof Transaction);
 
@@ -295,14 +296,14 @@ class DomainsTest {
 		Transaction transaction = this.api
 				.domains().create(
 						new DomainNameCreateDescriptor(new String[] { newUKDomain1, newUKDomain2 }, 1, owner,
-								new String[] { "ns1.netistrar.com", "ns2.netistrar.com" }, null, null, null, 2, true),
+								new String[] { "ns1.netistrar.com", "ns2.netistrar.com" }, null, null, null, 2, true, new String[] {}),
 						null);
 
 		// Renew these domains
 		String bulkKey = this.api.utility().createBulkOperation();
 
 		transaction = this.api.domains()
-				.renew(new DomainNameRenewDescriptor(new String[] { newUKDomain1, newUKDomain2 }, 2), bulkKey);
+				.renewMultiple(new DomainNameRenewDescriptor(new String[] { newUKDomain1, newUKDomain2 }, 2), bulkKey);
 
 		assertTrue(transaction instanceof Transaction);
 		assertNotNull(transaction.getTransactionDateTime());
@@ -351,7 +352,7 @@ class DomainsTest {
 		DomainNameContact newContact = new DomainNameContact("Oxil Chocs", "oxil@mylanding.com", null, null, null,
 				"Oxfordshire", "OX4 6DG", "GB", null, null, null, null, null, null, null, null);
 		Transaction transaction = this.api.domains().update(new DomainNameUpdateDescriptor(
-				new String[] { "bingo.com", "bingo.org" }, newContact, null, null, null, null, null, null, null), null);
+				new String[] { "bingo.com", "bingo.org" }, newContact, null, null, null, null, null, null, null, new String[] {}, new String[] {}), null);
 
 		assertTrue(transaction instanceof Transaction);
 		assertEquals("DOMAIN_UPDATE", transaction.getTransactionType());
@@ -380,7 +381,7 @@ class DomainsTest {
 				null, "Oxford", "Oxon", "OX4 2RD", "GB", null, null, null, null, null, null, null);
 
 		this.api.domains().create(new DomainNameCreateDescriptor(new String[] { testInactiveDomain }, 1, owner,
-				new String[] { "ns1.netistrar.com", "ns2.netistrar.com" }, null, null, null, null, true), null);
+				new String[] { "ns1.netistrar.com", "ns2.netistrar.com" }, null, null, null, null, true, new String[] {}), null);
 
 		// Now make the domain inactive
 		this.api.test().updateDomains(
@@ -390,7 +391,7 @@ class DomainsTest {
 		DomainNameContact newContact = new DomainNameContact("Oxil Chocs", "oxil@mylanding.com", null, null, null,
 				"Oxfordshire", "OX4 6DG", "GB", null, null, null, null, null, null, null, null);
 		Transaction transaction = this.api.domains().update(new DomainNameUpdateDescriptor(
-				new String[] { testInactiveDomain }, newContact, null, null, null, null, null, null, null), null);
+				new String[] { testInactiveDomain }, newContact, null, null, null, null, null, null, null, new String[] {}, new String[] {}), null);
 
 		TransactionElement element1 = transaction.getTransactionElements().get(testInactiveDomain);
 		assertEquals(testInactiveDomain, element1.getDescription());
@@ -406,7 +407,7 @@ class DomainsTest {
 		newContact = new DomainNameContact("Oxil Chocs", "oxil@mylanding.com", null, null, null, "Oxfordshire",
 				"OX4 6DG", "GB", null, null, null, null, null, null, null, null);
 		transaction = this.api.domains().update(new DomainNameUpdateDescriptor(new String[] { testInactiveDomain },
-				newContact, null, null, null, null, null, null, null), null);
+				newContact, null, null, null, null, null, null, null, new String[] {}, new String[] {}), null);
 
 		element1 = transaction.getTransactionElements().get(testInactiveDomain);
 		assertEquals(testInactiveDomain, element1.getDescription());
@@ -423,7 +424,7 @@ class DomainsTest {
 				"OX4 6DG", "GB", null, null, null, null, null, null, null, null);
 
 		transaction = this.api.domains().update(new DomainNameUpdateDescriptor(new String[] { testInactiveDomain },
-				newContact, null, null, null, null, null, null, null), null);
+				newContact, null, null, null, null, null, null, null, new String[] {}, new String[] {}), null);
 
 		element1 = transaction.getTransactionElements().get(testInactiveDomain);
 		assertEquals(testInactiveDomain, element1.getDescription());
@@ -445,14 +446,14 @@ class DomainsTest {
 		owner.setAdditionalData(additionalData);
 
 		this.api.domains().create(new DomainNameCreateDescriptor(new String[] { newUKDomain1, newUKDomain2 }, 1, owner,
-				new String[] { "ns1.netistrar.com", "ns2.netistrar.com" }, null, null, null, null, true), null);
+				new String[] { "ns1.netistrar.com", "ns2.netistrar.com" }, null, null, null, null, true, new String[] {}), null);
 
 		DomainNameContact newContact = new DomainNameContact("Oxil Chocs", "oxil@mylanding.com", "Bingo", null, null,
 				null, "Oxfordshire", "OX4 6DG", "GB", null, null, null, null, null, null, null);
 
 		Transaction transaction = this.api.domains()
 				.update(new DomainNameUpdateDescriptor(new String[] { newUKDomain1, newUKDomain2 }, newContact, null,
-						null, null, null, null, null, null), null);
+						null, null, null, null, null, null, new String[] {}, new String[] {}), null);
 
 		assertTrue(transaction instanceof Transaction);
 		assertEquals("DOMAIN_UPDATE", transaction.getTransactionType());
@@ -486,7 +487,7 @@ class DomainsTest {
 		owner.setAdditionalData(additionalData);
 
 		this.api.domains().create(new DomainNameCreateDescriptor(new String[] { newUKDomain }, 1, owner,
-				new String[] { "ns1.netistrar.com", "ns2.netistrar.com" }, null, null, null, null, true), null);
+				new String[] { "ns1.netistrar.com", "ns2.netistrar.com" }, null, null, null, null, true, new String[] {}), null);
 
 		additionalData = new HashMap<String, Object>();
 		additionalData.put("nominetRegistrantType", "STAT");
@@ -495,7 +496,7 @@ class DomainsTest {
 				"123", additionalData);
 
 		Transaction transaction = this.api.domains().update(new DomainNameUpdateDescriptor(new String[] { newUKDomain },
-				newOwner, null, null, null, null, null, null, null), null);
+				newOwner, null, null, null, null, null, null, null, new String[] {}, new String[] {}), null);
 
 		assertTrue(transaction instanceof Transaction);
 		assertEquals("DOMAIN_UPDATE", transaction.getTransactionType());
@@ -538,11 +539,11 @@ class DomainsTest {
 		owner.setAdditionalData(additionalData);
 
 		this.api.domains().create(new DomainNameCreateDescriptor(new String[] { newUKDomain1, newUKDomain2 }, 1, owner,
-				new String[] { "ns1.netistrar.com", "ns2.netistrar.com" }, null, null, null, null, true), null);
+				new String[] { "ns1.netistrar.com", "ns2.netistrar.com" }, null, null, null, null, true, new String[] {}), null);
 
 		Transaction transaction = this.api.domains()
 				.update(new DomainNameUpdateDescriptor(new String[] { newUKDomain1, newUKDomain2 }, null, null, null,
-						null, new String[] { "22.45.66.77", "rubbishdnsname" }, null, null, null), null);
+						null, new String[] { "22.45.66.77", "rubbishdnsname" }, null, null, null, new String[] {}, new String[] {}), null);
 
 		assertTrue(transaction instanceof Transaction);
 		assertEquals("DOMAIN_UPDATE", transaction.getTransactionType());
@@ -575,11 +576,11 @@ class DomainsTest {
 		owner.setAdditionalData(additionalData);
 
 		this.api.domains().create(new DomainNameCreateDescriptor(new String[] { newUKDomain1, newUKDomain2 }, 1, owner,
-				new String[] { "ns1.netistrar.com", "ns2.netistrar.com" }, null, null, null, null, true), null);
+				new String[] { "ns1.netistrar.com", "ns2.netistrar.com" }, null, null, null, null, true, new String[] {}), null);
 
 		Transaction transaction = this.api.domains()
 				.update(new DomainNameUpdateDescriptor(new String[] { newUKDomain1, newUKDomain2 }, null, null, null,
-						null, new String[] { "ns1.oxil.com", "ns2.oxil.com", "ns3.oxil.com" }, null, null, null), null);
+						null, new String[] { "ns1.oxil.com", "ns2.oxil.com", "ns3.oxil.com" }, null, null, null, new String[] {}, new String[] {}), null);
 
 		assertTrue(transaction instanceof Transaction);
 		assertEquals("DOMAIN_UPDATE", transaction.getTransactionType());
@@ -615,10 +616,10 @@ class DomainsTest {
 		DomainNameContact owner = new DomainNameContact("Marky Babes", "mark@oxil.co.uk", "My Org", "33 My Street",
 				null, "Oxford", "Oxon", "OX4 2RD", "GB", "", "", "", "", "", "", null);
 		this.api.domains().create(new DomainNameCreateDescriptor(new String[] { newUKDomain1, newUKDomain2 }, 1, owner,
-				new String[] { "ns1.netistrar.com", "ns2.netistrar.com" }, null, null, null, 2, true), null);
+				new String[] { "ns1.netistrar.com", "ns2.netistrar.com" }, null, null, null, 2, true, new String[] {}), null);
 
 		Transaction transaction = this.api.domains().update(new DomainNameUpdateDescriptor(
-				new String[] { newUKDomain1, newUKDomain2 }, null, null, null, null, null, false, null, null), null);
+				new String[] { newUKDomain1, newUKDomain2 }, null, null, null, null, null, false, null, null, new String[] {}, new String[] {}), null);
 
 		assertTrue(transaction instanceof Transaction);
 		assertEquals("DOMAIN_UPDATE", transaction.getTransactionType());
@@ -651,13 +652,13 @@ class DomainsTest {
 		owner.setAdditionalData(additionalData);
 
 		this.api.domains().create(new DomainNameCreateDescriptor(new String[] { newUKDomain1, newUKDomain2 }, 1, owner,
-				new String[] { "ns1.netistrar.com", "ns2.netistrar.com" }, null, null, null, null, null), null);
+				new String[] { "ns1.netistrar.com", "ns2.netistrar.com" }, null, null, null, null, null, new String[] {}), null);
 
 		this.api.test().updateDomains(
 				new TestDomainNameUpdateDescriptor(new String[] { newUKDomain1 }, null, null, null, null));
 
 		Transaction transaction = this.api.domains().update(new DomainNameUpdateDescriptor(
-				new String[] { newUKDomain1, newUKDomain2 }, null, null, null, null, null, false, 0, true), null);
+				new String[] { newUKDomain1, newUKDomain2 }, null, null, null, null, null, false, 0, true, new String[] {}, new String[] {}), null);
 
 		assertTrue(transaction instanceof Transaction);
 
@@ -684,7 +685,7 @@ class DomainsTest {
 
 		// Now try and set privacy proxy to 2
 		transaction = this.api.domains().update(new DomainNameUpdateDescriptor(
-				new String[] { newUKDomain1, newUKDomain2 }, null, null, null, null, null, null, 2, null), null);
+				new String[] { newUKDomain1, newUKDomain2 }, null, null, null, null, null, null, 2, null, new String[] {}, new String[] {}), null);
 
 		// Now actually pull the domain and check the update
 		domainName = this.api.domains().get(newUKDomain1);
@@ -701,7 +702,7 @@ class DomainsTest {
 		DomainNameContact owner = new DomainNameContact("Marky Babes", "mark@oxil.co.uk", "My Org", "33 My Street",
 				null, "Oxford", "Oxon", "OX4 2RD", "GB", "", "", "", "", "", "", null);
 		this.api.domains().create(new DomainNameCreateDescriptor(new String[] { newUKDomain1, newUKDomain2 }, 1, owner,
-				new String[] { "ns1.netistrar.com", "ns2.netistrar.com" }, null, null, null, null, null), null);
+				new String[] { "ns1.netistrar.com", "ns2.netistrar.com" }, null, null, null, null, null, new String[] {}), null);
 
 		this.api.test().updateDomains(
 				new TestDomainNameUpdateDescriptor(new String[] { newUKDomain1 }, null, "_UNSET", "_UNSET", null));
@@ -711,7 +712,7 @@ class DomainsTest {
 		// Run transaction
 		Transaction transaction = this.api.domains()
 				.update(new DomainNameUpdateDescriptor(new String[] { newUKDomain1, newUKDomain2 }, null, null, null,
-						null, null, false, 0, true), progressKey);
+						null, null, false, 0, true, new String[] {}, new String[] {}), progressKey);
 
 		assertTrue(transaction instanceof Transaction);
 
@@ -755,7 +756,7 @@ class DomainsTest {
 		owner.setAdditionalData(additionalData);
 		
         this.api.domains().create(new DomainNameCreateDescriptor(new String[] {newUKDomain1, newUKDomain2}, 1, owner, 
-        		new String[] {"ns1.netistrar.com", "ns2.netistrar.com"}, null, null, null, 2,false), null);
+        		new String[] {"ns1.netistrar.com", "ns2.netistrar.com"}, null, null, null, 2,false, new String[] {}), null);
 
 
         this.api.test().updateDomains(new TestDomainNameUpdateDescriptor(new String[] {newUKDomain1}, null, "_UNSET", "_UNSET", false));
@@ -831,7 +832,7 @@ class DomainsTest {
 		owner.setAdditionalData(additionalData);
 		
         this.api.domains().create(new DomainNameCreateDescriptor(new String[] {listDomain1, listDomain2, listDomain3, listDomain4, listDomain5, listDomain6}, 1, owner, 
-        		new String[] {"ns1.netistrar.com", "ns2.netistrar.com"}, null, null, null, 2,false), null);
+        		new String[] {"ns1.netistrar.com", "ns2.netistrar.com"}, null, null, null, 2,false, new String[] {}), null);
 
 
         // Try a reverse order list
@@ -934,6 +935,67 @@ class DomainsTest {
 
     }
 
+	
+	@Test
+	void testCanAddTagsToDomainNameOnCreateUpdateThemAndSeeThemInDomainListings() throws Exception {
+
+	        String prefix = "validdomain-" + new Date().getTime();
+	        String newUKDomain = prefix + ".uk";
+	        String newRodeoDomain = prefix + ".rodeo";
+
+	        DomainNameContact owner = new DomainNameContact("Marky Babes", "mark@oxil.co.uk", "My Org", "33 My Street",
+					null, "Oxford", "Oxon", "OX4 2RD", "GB", "", "", "", "", "", "", null);
+	        //owner.__setSerialisablePropertyValue("status", "LIVE");
+	        Map<String, Object> additionalData = new HashMap<String, Object>();
+			additionalData.put("nominetRegistrantType", "IND");
+			owner.setAdditionalData(additionalData);
+			
+			 this.api.domains().create(new DomainNameCreateDescriptor(new String[] {newUKDomain, newRodeoDomain}, 1, owner, 
+		        		new String[] {"ns1.netistrar.com", "ns2.netistrar.com"}, null, null, null, 2,false, new String[] {"Film", "Media", "Television"}), null);
+
+	        // Now grab the domains in question and check for existence of tags
+	        Map<String, DomainNameObject> domains = this.api.domains().getMultiple(new String[] {newUKDomain, newRodeoDomain},true);
+
+	        assertTrue(new String[] {"Film", "Media", "Television"}.equals(domains.get(newUKDomain).getTags()));
+	        assertTrue(new String[] {"Film", "Media", "Television"}.equals(domains.get(newRodeoDomain).getTags()));
+
+
+	        this.api.domains().update(new DomainNameUpdateDescriptor(new String[] {newUKDomain}, null, null, null, null, null, null, null, null, new String[] {"Fishing", "Philosophy"}, null), null);
+	        this.api.domains().update(new DomainNameUpdateDescriptor(new String[] {newRodeoDomain}, null, null, null, null, null, null, null, null, null, new String[] {"Television", "Media"}), null);
+
+
+	        // Now grab the domains in question and check for tag updates
+	        domains = this.api.domains().getMultiple(new String[] {newUKDomain, newRodeoDomain}, true);
+
+	        assertTrue(new String[] {"Film", "Fishing", "Media", "Philosophy", "Television"}.equals(domains.get(newUKDomain).getTags()));
+	        assertTrue(new String[] {"Film"}.equals(domains.get(newRodeoDomain).getTags()));
+
+	        this.api.domains().update(new DomainNameUpdateDescriptor(new String[] {newUKDomain, newRodeoDomain}, null, null, null, null, null, null, null, null, new String[] {"Cooking", "Shopping"}, 
+	        				new String[] {"Film"}), null);
+
+	        // Now grab the domains in question and check for tag updates
+	        domains = this.api.domains().getMultiple(new String[] {newUKDomain, newRodeoDomain}, true);
+
+	        assertTrue(new String[] {"Cooking", "Fishing", "Media", "Philosophy", "Shopping", "Television"}.equals(domains.get(newUKDomain).getTags()));
+	        assertTrue(new String[] {"Cooking", "Shopping"}.equals(domains.get(newRodeoDomain).getTags()));
+
+
+	        // Now get a list and confirm that tags are present
+	        DomainNameListResults list = this.api.domains().list(prefix,null,null,null,null);
+
+	        assertEquals(2, list.getDomainNameSummaries().length);
+	        DomainNameSummary firstSummary = list.getDomainNameSummaries()[0];
+	        assertEquals(prefix + ".rodeo", firstSummary.getDomainName());
+	        assertTrue(new String[] {"Cooking", "Shopping"}.equals(firstSummary.getTags()));
+
+	        DomainNameSummary secondSummary = list.getDomainNameSummaries()[1];
+	        assertEquals(prefix + ".uk", secondSummary.getDomainName());
+	        assertTrue(new String[] {"Cooking", "Fishing", "Media", "Philosophy", "Shopping", "Television"}.equals(secondSummary.getTags()));
+
+
+	    }
+
+	
 	
 	
 

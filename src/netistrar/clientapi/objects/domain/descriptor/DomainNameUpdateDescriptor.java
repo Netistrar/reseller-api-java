@@ -46,6 +46,14 @@ public class DomainNameUpdateDescriptor  {
      */
     private Boolean autoRenew;
 
+    /**
+     */
+    private String[] addTags;
+
+    /**
+     */
+    private String[] removeTags;
+
 
 
 
@@ -68,8 +76,10 @@ public class DomainNameUpdateDescriptor  {
     * @param Boolean $locked
     * @param Integer $privacyProxy
     * @param Boolean $autoRenew
+    * @param String[] $addTags
+    * @param String[] $removeTags
     */
-    public DomainNameUpdateDescriptor(String[] domainNames, DomainNameContact ownerContact, DomainNameContact adminContact, DomainNameContact billingContact, DomainNameContact technicalContact, String[] nameservers, Boolean locked, Integer privacyProxy, Boolean autoRenew){
+    public DomainNameUpdateDescriptor(String[] domainNames, DomainNameContact ownerContact, DomainNameContact adminContact, DomainNameContact billingContact, DomainNameContact technicalContact, String[] nameservers, Boolean locked, Integer privacyProxy, Boolean autoRenew, String[] addTags, String[] removeTags){
 
         this.domainNames = domainNames;
         this.ownerContact = ownerContact;
@@ -80,6 +90,8 @@ public class DomainNameUpdateDescriptor  {
         this.locked = locked;
         this.privacyProxy = privacyProxy;
         this.autoRenew = autoRenew;
+        this.addTags = addTags;
+        this.removeTags = removeTags;
         
     }
 
@@ -246,6 +258,42 @@ public class DomainNameUpdateDescriptor  {
         this.autoRenew = autoRenew;
     }
 
+    /**
+     * Get the addTags
+     *
+     * @return String[]
+     */
+    public String[] getAddTags(){
+        return this.addTags;
+    }
+
+    /**
+     * Set the addTags
+     *
+     * @param String[] $addTags
+     */
+    public void setAddTags(String[] addTags){
+        this.addTags = addTags;
+    }
+
+    /**
+     * Get the removeTags
+     *
+     * @return String[]
+     */
+    public String[] getRemoveTags(){
+        return this.removeTags;
+    }
+
+    /**
+     * Set the removeTags
+     *
+     * @param String[] $removeTags
+     */
+    public void setRemoveTags(String[] removeTags){
+        this.removeTags = removeTags;
+    }
+
 
 
     /**
@@ -280,6 +328,10 @@ public class DomainNameUpdateDescriptor  {
             (this.getPrivacyProxy() != null && this.getPrivacyProxy().equals(castObject.getPrivacyProxy())));
         equals = equals && ( (this.getAutoRenew() == null && castObject.getAutoRenew() == null) ||
             (this.getAutoRenew() != null && this.getAutoRenew().equals(castObject.getAutoRenew())));
+        equals = equals && ( (this.getAddTags() == null && castObject.getAddTags() == null) ||
+            (this.getAddTags() != null && this.getAddTags().equals(castObject.getAddTags())));
+        equals = equals && ( (this.getRemoveTags() == null && castObject.getRemoveTags() == null) ||
+            (this.getRemoveTags() != null && this.getRemoveTags().equals(castObject.getRemoveTags())));
 
         return equals;
     }
