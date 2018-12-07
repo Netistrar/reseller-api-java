@@ -3,57 +3,56 @@ package netistrar.clientapi.objects.domain.descriptor;
 import netistrar.clientapi.objects.domain.DomainNameContact;
 import java.util.Map;
 
-
 /**
  * Descriptor for a domain name update operation.  This should be passed to the update operation on the Domains API.
- *
- */
+*/
 public class DomainNameUpdateDescriptor  {
 
+
     /**
+     * the array of domain names to be updated.
      */
     private String[] domainNames;
-
     /**
+     * A new owner contact to apply to all supplied domains.  If this is supplied as null, no owner contact update will be performed.<br /><br /><b>NB: </b> Key changes to owner details for GTLDs will trigger a verification email to the owner of the domain before these changes will be applied. Once approved by the owner a 60 day transfer lock will be placed on the domain.  If a verification has been triggered, it will be noted in the Transaction Element operation data for the update.  Please see extra documentation in the <a href="domain-name-contact">DomainNameContact</a> object definition.
      */
     private DomainNameContact ownerContact;
-
     /**
+     * A new admin contact to apply to all supplied domains.  If this is supplied as null, no admin contact update will be performed.
      */
     private DomainNameContact adminContact;
-
     /**
+     * A new admin contact to apply to all supplied domains.  If this is supplied as null, no billing contact update will be performed.
      */
     private DomainNameContact billingContact;
-
     /**
+     * A new admin contact to apply to all supplied domains.  If this is supplied as null, no technical contact update will be performed.
      */
     private DomainNameContact technicalContact;
-
     /**
+     * The array of nameservers to apply to the supplied domain names.  If this is supplied as null, no nameserver update will be performed.
      */
     private String[] nameservers;
-
     /**
+     *  When set to 1 or 0 this will set / unset respectively the locked status for all passed domains.  If left unset no change will be made to the locked status for the domains.<br /><br /><b>NB:</b>It may not always be possible to unlock a domain if a mandatory lock has been applied such as after a create / transfer operation.
      */
     private Boolean locked;
-
     /**
+     * This should be set to one of the following values: <br /><br /><b>0</b> if all contact details are to be made public within the WHOIS system for all supplied domains<br /><b>1</b> if the free Netistrar Privacy Proxy service will be used for all supplied domains<br /><b>2</b> if partial details are to be made public within the WHOIS system with other details redacted.  (defaults to 1).
      */
     private Integer privacyProxy;
-
     /**
+     * A boolean indicator as to whether the an attempt will be made to auto renew this domain using account payment methods (defaults to 0)
      */
     private Boolean autoRenew;
-
     /**
+     * An array of tags to add to the supplied domain names for organisational purposes.
      */
     private String[] addTags;
-
     /**
+     * An array of tags to remove from the supplied domain names for organisational purposes.
      */
     private String[] removeTags;
-
 
 
 
@@ -109,9 +108,11 @@ public class DomainNameUpdateDescriptor  {
      * Set the domainNames
      *
      * @param String[] $domainNames
+     * @return DomainNameUpdateDescriptor
      */
-    public void setDomainNames(String[] domainNames){
+    public DomainNameUpdateDescriptor setDomainNames(String[] domainNames){
         this.domainNames = domainNames;
+        return this;
     }
 
     /**
@@ -127,9 +128,11 @@ public class DomainNameUpdateDescriptor  {
      * Set the ownerContact
      *
      * @param DomainNameContact $ownerContact
+     * @return DomainNameUpdateDescriptor
      */
-    public void setOwnerContact(DomainNameContact ownerContact){
+    public DomainNameUpdateDescriptor setOwnerContact(DomainNameContact ownerContact){
         this.ownerContact = ownerContact;
+        return this;
     }
 
     /**
@@ -145,9 +148,11 @@ public class DomainNameUpdateDescriptor  {
      * Set the adminContact
      *
      * @param DomainNameContact $adminContact
+     * @return DomainNameUpdateDescriptor
      */
-    public void setAdminContact(DomainNameContact adminContact){
+    public DomainNameUpdateDescriptor setAdminContact(DomainNameContact adminContact){
         this.adminContact = adminContact;
+        return this;
     }
 
     /**
@@ -163,9 +168,11 @@ public class DomainNameUpdateDescriptor  {
      * Set the billingContact
      *
      * @param DomainNameContact $billingContact
+     * @return DomainNameUpdateDescriptor
      */
-    public void setBillingContact(DomainNameContact billingContact){
+    public DomainNameUpdateDescriptor setBillingContact(DomainNameContact billingContact){
         this.billingContact = billingContact;
+        return this;
     }
 
     /**
@@ -181,9 +188,11 @@ public class DomainNameUpdateDescriptor  {
      * Set the technicalContact
      *
      * @param DomainNameContact $technicalContact
+     * @return DomainNameUpdateDescriptor
      */
-    public void setTechnicalContact(DomainNameContact technicalContact){
+    public DomainNameUpdateDescriptor setTechnicalContact(DomainNameContact technicalContact){
         this.technicalContact = technicalContact;
+        return this;
     }
 
     /**
@@ -199,9 +208,11 @@ public class DomainNameUpdateDescriptor  {
      * Set the nameservers
      *
      * @param String[] $nameservers
+     * @return DomainNameUpdateDescriptor
      */
-    public void setNameservers(String[] nameservers){
+    public DomainNameUpdateDescriptor setNameservers(String[] nameservers){
         this.nameservers = nameservers;
+        return this;
     }
 
     /**
@@ -217,9 +228,11 @@ public class DomainNameUpdateDescriptor  {
      * Set the locked
      *
      * @param Boolean $locked
+     * @return DomainNameUpdateDescriptor
      */
-    public void setLocked(Boolean locked){
+    public DomainNameUpdateDescriptor setLocked(Boolean locked){
         this.locked = locked;
+        return this;
     }
 
     /**
@@ -235,9 +248,11 @@ public class DomainNameUpdateDescriptor  {
      * Set the privacyProxy
      *
      * @param Integer $privacyProxy
+     * @return DomainNameUpdateDescriptor
      */
-    public void setPrivacyProxy(Integer privacyProxy){
+    public DomainNameUpdateDescriptor setPrivacyProxy(Integer privacyProxy){
         this.privacyProxy = privacyProxy;
+        return this;
     }
 
     /**
@@ -253,9 +268,11 @@ public class DomainNameUpdateDescriptor  {
      * Set the autoRenew
      *
      * @param Boolean $autoRenew
+     * @return DomainNameUpdateDescriptor
      */
-    public void setAutoRenew(Boolean autoRenew){
+    public DomainNameUpdateDescriptor setAutoRenew(Boolean autoRenew){
         this.autoRenew = autoRenew;
+        return this;
     }
 
     /**
@@ -271,9 +288,11 @@ public class DomainNameUpdateDescriptor  {
      * Set the addTags
      *
      * @param String[] $addTags
+     * @return DomainNameUpdateDescriptor
      */
-    public void setAddTags(String[] addTags){
+    public DomainNameUpdateDescriptor setAddTags(String[] addTags){
         this.addTags = addTags;
+        return this;
     }
 
     /**
@@ -289,9 +308,11 @@ public class DomainNameUpdateDescriptor  {
      * Set the removeTags
      *
      * @param String[] $removeTags
+     * @return DomainNameUpdateDescriptor
      */
-    public void setRemoveTags(String[] removeTags){
+    public DomainNameUpdateDescriptor setRemoveTags(String[] removeTags){
         this.removeTags = removeTags;
+        return this;
     }
 
 

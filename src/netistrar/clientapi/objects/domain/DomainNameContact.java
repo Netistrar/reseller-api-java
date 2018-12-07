@@ -2,88 +2,108 @@ package netistrar.clientapi.objects.domain;
 
 import java.util.Map;
 
-
 /**
  * An updatable contact object used within the <a href="netistrar-domain-lifecycle-api">Netistrar Domain Lifecycle API</a> methods and as a related object to a <a href="domain-name-object">DomainNameObject</a>.
- * 
  * Changes to key data for the owner contact for GTLD domain names require verification via email to the current owner for the domain name before these changes can be applied.  If the change is accepted the
  * domain name will be locked for 60 days for transfer.
- *
-  */
+*/
 public class DomainNameContact  {
 
+
     /**
+     * The full name of this contact
      */
     private String name;
-
     /**
+     * The email address for this contact.
      */
     private String emailAddress;
-
     /**
+     * The organisation if applicable for this contact.
      */
     private String organisation;
-
     /**
+     * The first line of the street address for this contact
      */
     private String street1;
-
     /**
+     * The second line of the street address for this contact
      */
     private String street2;
-
     /**
+     * The city of the street address for this contact
      */
     private String city;
-
     /**
+     * The county of the street address for this contact
      */
     private String county;
-
     /**
+     * The postcode for this contact
      */
     private String postcode;
-
     /**
+     * The 2 digit country code for this contact (e.g. GB).  If not supplied, this will default to <b>GB</b>
      */
     private String country;
-
     /**
+     * The telephone international dialling code with leading + if a telephone number is being supplied (e.g. +44, +1 etc)
      */
     private String telephoneDiallingCode;
-
     /**
+     * The local telephone number bit after the dialling code with no spaces (e.g. 1235987878)
      */
     private String telephone;
-
     /**
+     * An optional telephone extension (e.g. 201)
      */
     private String telephoneExt;
-
     /**
+     * The fax international dialling code with leading + if a fax number is being supplied (e.g. +44, +1 etc)
      */
     private String faxDiallingCode;
-
     /**
+     * The local number bit after the dialling code with no spaces (e.g. 1235987878)
      */
     private String fax;
-
     /**
+     * An optional fax extension (e.g. 201)
      */
     private String faxExt;
-
     /**
+     * An associative array of data where specific TLDs support / require additional properties
+     * <b>Nominet UK domains:</b>
+     * <br />
+     * The following additional fields are supported for Nominet .UK domains
+     * <b>nominetRegistrantType</b> String (required): One of the following code values
+     * LTD: <i>UK Limited Company: </i><br />
+     * PLC: <i>UK Public Limited Company: </i><br />
+     * PTNR: <i>UK Partnership: </i><br />
+     * STRA: <i>UK Sole Trader: </i><br />
+     * LLP: <i>UK Limited Liability Partnership: </i><br />
+     * IP: <i>UK Industrial/Provident Registered Company: </i><br />
+     * IND: <i>UK Individual (representing self): </i><br />
+     * SCH: <i>UK School: </i><br />
+     * RCHAR: <i>UK Registered Charity: </i><br />
+     * GOV: <i>UK Government Body: </i><br />
+     * CRC: <i>UK Corporation by Royal Charter: </i><br />
+     * STAT: <i>UK Statutory Body: </i><br />
+     * OTHER: <i>UK Entity that does not fit into any of the above (e.g. clubs, associations, : </i><br />
+     * <b>nominetTradingName</b> String (optional): An optional trading name which will display in WHOIS if set.
+     * <b>nominetCompanyNumber</b> String (conditionally required):  The company number - required if the nominetRegistrantType field is set to any of the values
+     * LTD, PLC, LLP, IP, SCH or RCHAR.
      */
     private Map<String,Object> additionalData;
-
     /**
+     * The status of this contact (read only).  This will contain one of the following values.
+     * <b>LIVE:</b> For all Admin, Billing, Technical and newly created Owner contacts
+     * <b>PENDING_CHANGES:</b> For any GTLD Owner Contacts where key data has been changed and is awaiting verification by the owner.  This is usually following a call to <i>updateDomainNames</i> on the <a href="netistrar-domain-lifecycle-api">Netistrar Domain Lifecycle API</a>.  For contacts with pending changes, the <a href="#pendingContact">pendingContact</a> member will contain the queued data awaiting approval.
      */
     protected String status;
-
     /**
+     * Pending contact field.  This is only populated when the <a href="#status">status</a> member is set to <b>PENDING_CHANGES</b>.  This will contain a nested <a href="domain-name-contact">DomainNameContact</a> object containing the data awaiting verification by the owner of the domain.
      */
     protected DomainNameContact pendingContact;
-
 
 
 
@@ -149,9 +169,11 @@ public class DomainNameContact  {
      * Set the name
      *
      * @param String $name
+     * @return DomainNameContact
      */
-    public void setName(String name){
+    public DomainNameContact setName(String name){
         this.name = name;
+        return this;
     }
 
     /**
@@ -167,9 +189,11 @@ public class DomainNameContact  {
      * Set the emailAddress
      *
      * @param String $emailAddress
+     * @return DomainNameContact
      */
-    public void setEmailAddress(String emailAddress){
+    public DomainNameContact setEmailAddress(String emailAddress){
         this.emailAddress = emailAddress;
+        return this;
     }
 
     /**
@@ -185,9 +209,11 @@ public class DomainNameContact  {
      * Set the organisation
      *
      * @param String $organisation
+     * @return DomainNameContact
      */
-    public void setOrganisation(String organisation){
+    public DomainNameContact setOrganisation(String organisation){
         this.organisation = organisation;
+        return this;
     }
 
     /**
@@ -203,9 +229,11 @@ public class DomainNameContact  {
      * Set the street1
      *
      * @param String $street1
+     * @return DomainNameContact
      */
-    public void setStreet1(String street1){
+    public DomainNameContact setStreet1(String street1){
         this.street1 = street1;
+        return this;
     }
 
     /**
@@ -221,9 +249,11 @@ public class DomainNameContact  {
      * Set the street2
      *
      * @param String $street2
+     * @return DomainNameContact
      */
-    public void setStreet2(String street2){
+    public DomainNameContact setStreet2(String street2){
         this.street2 = street2;
+        return this;
     }
 
     /**
@@ -239,9 +269,11 @@ public class DomainNameContact  {
      * Set the city
      *
      * @param String $city
+     * @return DomainNameContact
      */
-    public void setCity(String city){
+    public DomainNameContact setCity(String city){
         this.city = city;
+        return this;
     }
 
     /**
@@ -257,9 +289,11 @@ public class DomainNameContact  {
      * Set the county
      *
      * @param String $county
+     * @return DomainNameContact
      */
-    public void setCounty(String county){
+    public DomainNameContact setCounty(String county){
         this.county = county;
+        return this;
     }
 
     /**
@@ -275,9 +309,11 @@ public class DomainNameContact  {
      * Set the postcode
      *
      * @param String $postcode
+     * @return DomainNameContact
      */
-    public void setPostcode(String postcode){
+    public DomainNameContact setPostcode(String postcode){
         this.postcode = postcode;
+        return this;
     }
 
     /**
@@ -293,9 +329,11 @@ public class DomainNameContact  {
      * Set the country
      *
      * @param String $country
+     * @return DomainNameContact
      */
-    public void setCountry(String country){
+    public DomainNameContact setCountry(String country){
         this.country = country;
+        return this;
     }
 
     /**
@@ -311,9 +349,11 @@ public class DomainNameContact  {
      * Set the telephoneDiallingCode
      *
      * @param String $telephoneDiallingCode
+     * @return DomainNameContact
      */
-    public void setTelephoneDiallingCode(String telephoneDiallingCode){
+    public DomainNameContact setTelephoneDiallingCode(String telephoneDiallingCode){
         this.telephoneDiallingCode = telephoneDiallingCode;
+        return this;
     }
 
     /**
@@ -329,9 +369,11 @@ public class DomainNameContact  {
      * Set the telephone
      *
      * @param String $telephone
+     * @return DomainNameContact
      */
-    public void setTelephone(String telephone){
+    public DomainNameContact setTelephone(String telephone){
         this.telephone = telephone;
+        return this;
     }
 
     /**
@@ -347,9 +389,11 @@ public class DomainNameContact  {
      * Set the telephoneExt
      *
      * @param String $telephoneExt
+     * @return DomainNameContact
      */
-    public void setTelephoneExt(String telephoneExt){
+    public DomainNameContact setTelephoneExt(String telephoneExt){
         this.telephoneExt = telephoneExt;
+        return this;
     }
 
     /**
@@ -365,9 +409,11 @@ public class DomainNameContact  {
      * Set the faxDiallingCode
      *
      * @param String $faxDiallingCode
+     * @return DomainNameContact
      */
-    public void setFaxDiallingCode(String faxDiallingCode){
+    public DomainNameContact setFaxDiallingCode(String faxDiallingCode){
         this.faxDiallingCode = faxDiallingCode;
+        return this;
     }
 
     /**
@@ -383,9 +429,11 @@ public class DomainNameContact  {
      * Set the fax
      *
      * @param String $fax
+     * @return DomainNameContact
      */
-    public void setFax(String fax){
+    public DomainNameContact setFax(String fax){
         this.fax = fax;
+        return this;
     }
 
     /**
@@ -401,9 +449,11 @@ public class DomainNameContact  {
      * Set the faxExt
      *
      * @param String $faxExt
+     * @return DomainNameContact
      */
-    public void setFaxExt(String faxExt){
+    public DomainNameContact setFaxExt(String faxExt){
         this.faxExt = faxExt;
+        return this;
     }
 
     /**
@@ -419,9 +469,11 @@ public class DomainNameContact  {
      * Set the additionalData
      *
      * @param Map<String,Object> $additionalData
+     * @return DomainNameContact
      */
-    public void setAdditionalData(Map<String,Object> additionalData){
+    public DomainNameContact setAdditionalData(Map<String,Object> additionalData){
         this.additionalData = additionalData;
+        return this;
     }
 
     /**

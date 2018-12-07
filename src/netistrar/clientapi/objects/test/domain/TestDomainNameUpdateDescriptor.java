@@ -2,34 +2,45 @@ package netistrar.clientapi.objects.test.domain;
 
 import java.util.Map;
 
-
 /**
  * Update descriptor for updating one or more domain names with attributes not normally updatable for testing
  * purposes.
- *
- */
+*/
 public class TestDomainNameUpdateDescriptor  {
 
+
     /**
+     * An array of domain names to update
      */
     private String[] domainNames;
-
     /**
+     * The new status for the supplied domain names.  This will be applied directly to the name
+     * bypassing any workflow associated with the particular status.
+     * Possible values are:
+     * <b>ACTIVE</b> - The domain name is active and in use.
+     * <b>EXPIRED</b> - The domain name has expired.
+     * <b>SUSPENDED</b> - The domain name has been suspended (either for unlawful behaviour or invalid ownership details).
+     * <b>RGP</b> - The domain has entered the Redemption Grace Period (usually around 45 days after expiry).  During this period additional costs are incurred to redeem the domain.
+     * <b>DELETED</b> - The domain has dropped completely and has been deleted (usually around 75 days after expiry once the RGP has completed).
+     * <b>TRANSFER_IN_PENDING_CONFIRMATION</b> - The domain is being transferred in and is awaiting confirmation from the legal owner.
+     * <b>TRANSFER_IN_OWNER_DECLINED</b> - The domain is being transferred in but the legal owner declined the transfer.
+     * <b>TRANSFER_IN_AWAITING_RESPONSE</b> - The domain transfer in operation has been started and is awaiting a response from the current Registrar.  If no response is received after 5 days the transfer would simply complete.
+     * <b>TRANSFER_IN_REJECTED</b> - The domain transfer in operation has been rejected by the current Registrar.
+     * <b>TRANSFER_OUT_PENDING_CONFIRMATION</b> - The domain has been requested to be transferred out and is awaiting confirmation from the legal owner.
      */
     private String status;
-
     /**
+     * The date of registration in <b>dd/mm/YYYY</b> format.
      */
     private String registeredDate;
-
     /**
+     * The locked until date in <b>dd/mm/YYYY</b> format.  This allows for testing unsetting of locks.
      */
     private String lockedUntil;
-
     /**
+     * Forcibly update the lock status for testing regardless of whether or not this is permitted for a domain.
      */
     private Boolean locked;
-
 
 
 
@@ -73,9 +84,11 @@ public class TestDomainNameUpdateDescriptor  {
      * Set the domainNames
      *
      * @param String[] $domainNames
+     * @return TestDomainNameUpdateDescriptor
      */
-    public void setDomainNames(String[] domainNames){
+    public TestDomainNameUpdateDescriptor setDomainNames(String[] domainNames){
         this.domainNames = domainNames;
+        return this;
     }
 
     /**
@@ -91,9 +104,11 @@ public class TestDomainNameUpdateDescriptor  {
      * Set the status
      *
      * @param String $status
+     * @return TestDomainNameUpdateDescriptor
      */
-    public void setStatus(String status){
+    public TestDomainNameUpdateDescriptor setStatus(String status){
         this.status = status;
+        return this;
     }
 
     /**
@@ -109,9 +124,11 @@ public class TestDomainNameUpdateDescriptor  {
      * Set the registeredDate
      *
      * @param String $registeredDate
+     * @return TestDomainNameUpdateDescriptor
      */
-    public void setRegisteredDate(String registeredDate){
+    public TestDomainNameUpdateDescriptor setRegisteredDate(String registeredDate){
         this.registeredDate = registeredDate;
+        return this;
     }
 
     /**
@@ -127,9 +144,11 @@ public class TestDomainNameUpdateDescriptor  {
      * Set the lockedUntil
      *
      * @param String $lockedUntil
+     * @return TestDomainNameUpdateDescriptor
      */
-    public void setLockedUntil(String lockedUntil){
+    public TestDomainNameUpdateDescriptor setLockedUntil(String lockedUntil){
         this.lockedUntil = lockedUntil;
+        return this;
     }
 
     /**
@@ -145,9 +164,11 @@ public class TestDomainNameUpdateDescriptor  {
      * Set the locked
      *
      * @param Boolean $locked
+     * @return TestDomainNameUpdateDescriptor
      */
-    public void setLocked(Boolean locked){
+    public TestDomainNameUpdateDescriptor setLocked(Boolean locked){
         this.locked = locked;
+        return this;
     }
 
 

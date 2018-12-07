@@ -1,19 +1,12 @@
 package netistrar.clientapi.exception;
 
-import netistrar.clientapi.objects.transaction.TransactionError;
 import java.util.Map;
 
 
 /**
- * Transaction Exception raised when an issue occurs usually in a call to
- * as single update function.
-*/
-public class TransactionException extends Exception {
 
-    /**
-     * Nested array of errors
-     */
-    protected Map<String,TransactionError> transactionErrors;
+*/
+public class RateLimitExceededException extends Exception {
 
     /**
      * Indexed string array of exception data in the case that a non-serialisable
@@ -44,19 +37,10 @@ public class TransactionException extends Exception {
     * Blank Constructor
     *
     */
-    public TransactionException(){
+    public RateLimitExceededException(){
     }
 
 
-
-    /**
-     * Get the transactionErrors
-     *
-     * @return Map<String,TransactionError>
-     */
-    public Map<String,TransactionError> getTransactionErrors(){
-        return this.transactionErrors;
-    }
 
     /**
      * Get the sourceException

@@ -3,41 +3,42 @@ package netistrar.clientapi.objects.domain.descriptor;
 import netistrar.clientapi.objects.domain.DomainNameContact;
 import java.util.Map;
 
-
 /**
  * Descriptor for a domain name create operation.  This should be passed to validate and create transfer operations on the Domains API.
- *
- */
+*/
 public class DomainNameTransferDescriptor  {
 
+
     /**
+     * An array of identifier entries for transfer in.
+     * In the case of GTLDs the entry should be in the format <b>domain name,auth code</b>
+     * For .UK and other non-auth code TLDs this should simply be the domain name.
      */
     private String[] transferIdentifiers;
-
     /**
+     * The details for the owner contact (sometimes called the Registrant)
      */
     private DomainNameContact ownerContact;
-
     /**
+     * The details for the admin contact for these domains (required for some TLDs).  If this is required but not supplied it will use the Default Admin contact details specified in the Netistrar control panel under My Account -> API settings or will generate a Validation Error if these are not defined.
      */
     private DomainNameContact adminContact;
-
     /**
+     * The details for the billing contact for these domains (required for some TLDs).  If this is required but not supplied it will use the Default Billing contact details specified in the Netistrar control panel under My Account -> API settings or will generate a Validation Error if these are not defined.
      */
     private DomainNameContact billingContact;
-
     /**
+     * The details for the technical contact for these domains (required for some TLDs).  If this is required but not supplied it will use the Default Billing contact details specified in the Netistrar control panel under My Account -> API settings or will generate a Validation Error if these are not defined.
      */
     private DomainNameContact technicalContact;
-
     /**
+     * This should be set to one of the following values: <br /><br /><b>0</b> if all contact details are to be made public within the WHOIS system for all supplied domains<br /><b>1</b> if the free Netistrar Privacy Proxy service will be used for all supplied domains<br /><b>2</b> if partial details are to be made public within the WHOIS system with other details redacted.  (defaults to 1).
      */
     private Integer privacyProxy;
-
     /**
+     * A boolean indicator as to whether the an attempt will be made to auto renew this domain using account payment methods (defaults to 0)
      */
     private Boolean autoRenew;
-
 
 
 
@@ -85,9 +86,11 @@ public class DomainNameTransferDescriptor  {
      * Set the transferIdentifiers
      *
      * @param String[] $transferIdentifiers
+     * @return DomainNameTransferDescriptor
      */
-    public void setTransferIdentifiers(String[] transferIdentifiers){
+    public DomainNameTransferDescriptor setTransferIdentifiers(String[] transferIdentifiers){
         this.transferIdentifiers = transferIdentifiers;
+        return this;
     }
 
     /**
@@ -103,9 +106,11 @@ public class DomainNameTransferDescriptor  {
      * Set the ownerContact
      *
      * @param DomainNameContact $ownerContact
+     * @return DomainNameTransferDescriptor
      */
-    public void setOwnerContact(DomainNameContact ownerContact){
+    public DomainNameTransferDescriptor setOwnerContact(DomainNameContact ownerContact){
         this.ownerContact = ownerContact;
+        return this;
     }
 
     /**
@@ -121,9 +126,11 @@ public class DomainNameTransferDescriptor  {
      * Set the adminContact
      *
      * @param DomainNameContact $adminContact
+     * @return DomainNameTransferDescriptor
      */
-    public void setAdminContact(DomainNameContact adminContact){
+    public DomainNameTransferDescriptor setAdminContact(DomainNameContact adminContact){
         this.adminContact = adminContact;
+        return this;
     }
 
     /**
@@ -139,9 +146,11 @@ public class DomainNameTransferDescriptor  {
      * Set the billingContact
      *
      * @param DomainNameContact $billingContact
+     * @return DomainNameTransferDescriptor
      */
-    public void setBillingContact(DomainNameContact billingContact){
+    public DomainNameTransferDescriptor setBillingContact(DomainNameContact billingContact){
         this.billingContact = billingContact;
+        return this;
     }
 
     /**
@@ -157,9 +166,11 @@ public class DomainNameTransferDescriptor  {
      * Set the technicalContact
      *
      * @param DomainNameContact $technicalContact
+     * @return DomainNameTransferDescriptor
      */
-    public void setTechnicalContact(DomainNameContact technicalContact){
+    public DomainNameTransferDescriptor setTechnicalContact(DomainNameContact technicalContact){
         this.technicalContact = technicalContact;
+        return this;
     }
 
     /**
@@ -175,9 +186,11 @@ public class DomainNameTransferDescriptor  {
      * Set the privacyProxy
      *
      * @param Integer $privacyProxy
+     * @return DomainNameTransferDescriptor
      */
-    public void setPrivacyProxy(Integer privacyProxy){
+    public DomainNameTransferDescriptor setPrivacyProxy(Integer privacyProxy){
         this.privacyProxy = privacyProxy;
+        return this;
     }
 
     /**
@@ -193,9 +206,11 @@ public class DomainNameTransferDescriptor  {
      * Set the autoRenew
      *
      * @param Boolean $autoRenew
+     * @return DomainNameTransferDescriptor
      */
-    public void setAutoRenew(Boolean autoRenew){
+    public DomainNameTransferDescriptor setAutoRenew(Boolean autoRenew){
         this.autoRenew = autoRenew;
+        return this;
     }
 
 

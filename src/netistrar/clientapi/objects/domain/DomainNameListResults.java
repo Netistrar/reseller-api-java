@@ -3,50 +3,49 @@ package netistrar.clientapi.objects.domain;
 import netistrar.clientapi.objects.domain.DomainNameSummary;
 import java.util.Map;
 
-
 /**
  * A results object which wraps an array of <a href="domain-name-summary-object">DomainNameSummaryObject</a> items returned from a call to <i>listDomains</i> within the <a href="netistrar-domain-lifecycle-api">Netistrar Domain Lifecycle API</a>.
  * This object encodes the criteria used to obtain and sort this list as well as the total number of items for the list criteria ignoring supplied page and pageSize which allows for the development of paging GUIs.
- *
- */
+*/
 public class DomainNameListResults  {
 
+
     /**
+     * The search term used to filter the list of domains as requested in the call to <i>listDomains</i> within the <a href="netistrar-domain-lifecycle-api">Netistrar Domain Lifecycle API</a>.
      */
     protected String searchTerm;
-
     /**
+     * The maximum number of results as requested in the call to <i>listDomains</i> within the <a href="netistrar-domain-lifecycle-api">Netistrar Domain Lifecycle API</a>.
      */
     protected Integer pageSize;
-
     /**
+     * The page to return of results (starting at 1) as requested in the call to <i>listDomains</i> within the <a href="netistrar-domain-lifecycle-api">Netistrar Domain Lifecycle API</a>.
      */
     protected Integer page;
-
     /**
+     * The property within the <a href="domain-name-summary-object">DomainNameSummaryObject</a> used to sort the results as requested in the call to <i>listDomains</i> within the <a href="netistrar-domain-lifecycle-api">Netistrar Domain Lifecycle API</a>.
      */
     protected String orderBy;
-
     /**
+     * The direction (either ASC or DESC) used to define the direction of sort as requested in the call to <i>listDomains</i> within the <a href="netistrar-domain-lifecycle-api">Netistrar Domain Lifecycle API</a>.
      */
     protected String orderDirection;
-
     /**
+     * The number of domains actually returned
      */
     protected Integer numberOfDomainsReturned;
-
     /**
+     * The total number of domains matching the <a href="#searchTerm">searchTerm</a> ignoring any paging parameters (useful for building GUIs).
      */
     protected Integer totalNumberOfDomains;
-
     /**
+     * The total number of pages based upon the passed page size and the total number of domains matching the <a href="#searchTerm">searchTerm</a>
      */
     protected Integer totalNumberOfPages;
-
     /**
+     * The results of the list query as an array of domain name summary objects.
      */
     protected DomainNameSummary[] domainNameSummaries;
-
 
 
 

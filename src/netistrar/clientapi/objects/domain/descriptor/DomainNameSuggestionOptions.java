@@ -2,26 +2,27 @@ package netistrar.clientapi.objects.domain.descriptor;
 
 import java.util.Map;
 
-
 /**
  * Configuration options for domain name suggestions.
- *
  * Class DomainNameSuggestionOptions
- */
+*/
 public class DomainNameSuggestionOptions  {
 
+
     /**
+     * Specify whether to include Tlds in general suggestions
      */
     private Boolean includeTlds;
-
     /**
+     * Specify whether to include category tlds in general suggestions
      */
     private Boolean includeCategories;
-
     /**
+     * If specified, this will fill the suggestions up to the supplied
+     * number of results.  If supplied as null it will return one suggestion per
+     * included TLD only.
      */
     private Integer fillCount;
-
 
 
 
@@ -61,9 +62,11 @@ public class DomainNameSuggestionOptions  {
      * Set the includeTlds
      *
      * @param Boolean $includeTlds
+     * @return DomainNameSuggestionOptions
      */
-    public void setIncludeTlds(Boolean includeTlds){
+    public DomainNameSuggestionOptions setIncludeTlds(Boolean includeTlds){
         this.includeTlds = includeTlds;
+        return this;
     }
 
     /**
@@ -79,9 +82,11 @@ public class DomainNameSuggestionOptions  {
      * Set the includeCategories
      *
      * @param Boolean $includeCategories
+     * @return DomainNameSuggestionOptions
      */
-    public void setIncludeCategories(Boolean includeCategories){
+    public DomainNameSuggestionOptions setIncludeCategories(Boolean includeCategories){
         this.includeCategories = includeCategories;
+        return this;
     }
 
     /**
@@ -97,9 +102,11 @@ public class DomainNameSuggestionOptions  {
      * Set the fillCount
      *
      * @param Integer $fillCount
+     * @return DomainNameSuggestionOptions
      */
-    public void setFillCount(Integer fillCount){
+    public DomainNameSuggestionOptions setFillCount(Integer fillCount){
         this.fillCount = fillCount;
+        return this;
     }
 
 

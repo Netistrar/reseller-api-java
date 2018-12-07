@@ -3,33 +3,32 @@ package netistrar.clientapi.objects.domain.descriptor;
 import netistrar.clientapi.objects.domain.descriptor.DomainNameSuggestionOptions;
 import java.util.Map;
 
-
 /**
  * Descriptor for a domain name hinted availability operation.  This is passed to the getHintedAvailability function on the Domains API.
- *
- */
+*/
 public class DomainNameAvailabilityDescriptor  {
 
+
     /**
+     * The search string to seed the availability search
      */
     private String searchString;
-
     /**
+     * An optional array of categories to limit the availability search to specific TLD categories as obtained by a call to <b>getTLDCategories</b>.
      */
     private String[] tldCategories;
-
     /**
+     * An optional array of tlds to limit the availability search to specific TLDs as obtained by a call to <b>getTLDs</b>.
      */
     private String[] tlds;
-
     /**
+     * A flag to indicate whether or not to include suggestions in the result set.
      */
     private Boolean suggestions;
-
     /**
+     * If suggestions is set to true an options object may be passed to configure the suggestions
      */
     private DomainNameSuggestionOptions suggestionOptions;
-
 
 
 
@@ -73,9 +72,11 @@ public class DomainNameAvailabilityDescriptor  {
      * Set the searchString
      *
      * @param String $searchString
+     * @return DomainNameAvailabilityDescriptor
      */
-    public void setSearchString(String searchString){
+    public DomainNameAvailabilityDescriptor setSearchString(String searchString){
         this.searchString = searchString;
+        return this;
     }
 
     /**
@@ -91,9 +92,11 @@ public class DomainNameAvailabilityDescriptor  {
      * Set the tldCategories
      *
      * @param String[] $tldCategories
+     * @return DomainNameAvailabilityDescriptor
      */
-    public void setTldCategories(String[] tldCategories){
+    public DomainNameAvailabilityDescriptor setTldCategories(String[] tldCategories){
         this.tldCategories = tldCategories;
+        return this;
     }
 
     /**
@@ -109,9 +112,11 @@ public class DomainNameAvailabilityDescriptor  {
      * Set the tlds
      *
      * @param String[] $tlds
+     * @return DomainNameAvailabilityDescriptor
      */
-    public void setTlds(String[] tlds){
+    public DomainNameAvailabilityDescriptor setTlds(String[] tlds){
         this.tlds = tlds;
+        return this;
     }
 
     /**
@@ -127,9 +132,11 @@ public class DomainNameAvailabilityDescriptor  {
      * Set the suggestions
      *
      * @param Boolean $suggestions
+     * @return DomainNameAvailabilityDescriptor
      */
-    public void setSuggestions(Boolean suggestions){
+    public DomainNameAvailabilityDescriptor setSuggestions(Boolean suggestions){
         this.suggestions = suggestions;
+        return this;
     }
 
     /**
@@ -145,9 +152,11 @@ public class DomainNameAvailabilityDescriptor  {
      * Set the suggestionOptions
      *
      * @param DomainNameSuggestionOptions $suggestionOptions
+     * @return DomainNameAvailabilityDescriptor
      */
-    public void setSuggestionOptions(DomainNameSuggestionOptions suggestionOptions){
+    public DomainNameAvailabilityDescriptor setSuggestionOptions(DomainNameSuggestionOptions suggestionOptions){
         this.suggestionOptions = suggestionOptions;
+        return this;
     }
 
 

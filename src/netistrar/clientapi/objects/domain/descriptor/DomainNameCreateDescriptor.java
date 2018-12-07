@@ -3,53 +3,52 @@ package netistrar.clientapi.objects.domain.descriptor;
 import netistrar.clientapi.objects.domain.DomainNameContact;
 import java.util.Map;
 
-
 /**
  * Descriptor for a domain name create operation.  This should be passed to validate and create operations on the Domains API.
- *
- */
+*/
 public class DomainNameCreateDescriptor  {
 
+
     /**
+     * the array of domain names to be created.
      */
     private String[] domainNames;
-
     /**
+     * The number of years for which these domain names will be created.
      */
     private Integer registrationYears;
-
     /**
+     * The details for the owner contact (sometimes called the Registrant)
      */
     private DomainNameContact ownerContact;
-
     /**
+     * An array of nameserver string to set for this domain name on creation.
      */
     private String[] nameservers;
-
     /**
+     * The details for the admin contact for these domains (required for some TLDs).  If this is required but not supplied it will use the Default Admin contact details specified in the Netistrar control panel under My Account -> API settings or will generate a Validation Error if these are not defined.
      */
     private DomainNameContact adminContact;
-
     /**
+     * The details for the billing contact for these domains (required for some TLDs).  If this is required but not supplied it will use the Default Billing contact details specified in the Netistrar control panel under My Account -> API settings or will generate a Validation Error if these are not defined.
      */
     private DomainNameContact billingContact;
-
     /**
+     * The details for the technical contact for these domains (required for some TLDs).  If this is required but not supplied it will use the Default Billing contact details specified in the Netistrar control panel under My Account -> API settings or will generate a Validation Error if these are not defined.
      */
     private DomainNameContact technicalContact;
-
     /**
+     * This should be set to one of the following values: <br /><br /><b>0</b> if all contact details are to be made public within the WHOIS system for all supplied domains<br /><b>1</b> if the free Netistrar Privacy Proxy service will be used for all supplied domains<br /><b>2</b> if partial details are to be made public within the WHOIS system with other details redacted.  (defaults to 1).
      */
     private Integer privacyProxy;
-
     /**
+     * A boolean indicator as to whether the an attempt will be made to auto renew this domain using account payment methods (defaults to 0)
      */
     private Boolean autoRenew;
-
     /**
+     * An array of string tags to assign to this domain for organisational purposes.
      */
     private String[] tags;
-
 
 
 
@@ -103,9 +102,11 @@ public class DomainNameCreateDescriptor  {
      * Set the domainNames
      *
      * @param String[] $domainNames
+     * @return DomainNameCreateDescriptor
      */
-    public void setDomainNames(String[] domainNames){
+    public DomainNameCreateDescriptor setDomainNames(String[] domainNames){
         this.domainNames = domainNames;
+        return this;
     }
 
     /**
@@ -121,9 +122,11 @@ public class DomainNameCreateDescriptor  {
      * Set the registrationYears
      *
      * @param Integer $registrationYears
+     * @return DomainNameCreateDescriptor
      */
-    public void setRegistrationYears(Integer registrationYears){
+    public DomainNameCreateDescriptor setRegistrationYears(Integer registrationYears){
         this.registrationYears = registrationYears;
+        return this;
     }
 
     /**
@@ -139,9 +142,11 @@ public class DomainNameCreateDescriptor  {
      * Set the ownerContact
      *
      * @param DomainNameContact $ownerContact
+     * @return DomainNameCreateDescriptor
      */
-    public void setOwnerContact(DomainNameContact ownerContact){
+    public DomainNameCreateDescriptor setOwnerContact(DomainNameContact ownerContact){
         this.ownerContact = ownerContact;
+        return this;
     }
 
     /**
@@ -157,9 +162,11 @@ public class DomainNameCreateDescriptor  {
      * Set the nameservers
      *
      * @param String[] $nameservers
+     * @return DomainNameCreateDescriptor
      */
-    public void setNameservers(String[] nameservers){
+    public DomainNameCreateDescriptor setNameservers(String[] nameservers){
         this.nameservers = nameservers;
+        return this;
     }
 
     /**
@@ -175,9 +182,11 @@ public class DomainNameCreateDescriptor  {
      * Set the adminContact
      *
      * @param DomainNameContact $adminContact
+     * @return DomainNameCreateDescriptor
      */
-    public void setAdminContact(DomainNameContact adminContact){
+    public DomainNameCreateDescriptor setAdminContact(DomainNameContact adminContact){
         this.adminContact = adminContact;
+        return this;
     }
 
     /**
@@ -193,9 +202,11 @@ public class DomainNameCreateDescriptor  {
      * Set the billingContact
      *
      * @param DomainNameContact $billingContact
+     * @return DomainNameCreateDescriptor
      */
-    public void setBillingContact(DomainNameContact billingContact){
+    public DomainNameCreateDescriptor setBillingContact(DomainNameContact billingContact){
         this.billingContact = billingContact;
+        return this;
     }
 
     /**
@@ -211,9 +222,11 @@ public class DomainNameCreateDescriptor  {
      * Set the technicalContact
      *
      * @param DomainNameContact $technicalContact
+     * @return DomainNameCreateDescriptor
      */
-    public void setTechnicalContact(DomainNameContact technicalContact){
+    public DomainNameCreateDescriptor setTechnicalContact(DomainNameContact technicalContact){
         this.technicalContact = technicalContact;
+        return this;
     }
 
     /**
@@ -229,9 +242,11 @@ public class DomainNameCreateDescriptor  {
      * Set the privacyProxy
      *
      * @param Integer $privacyProxy
+     * @return DomainNameCreateDescriptor
      */
-    public void setPrivacyProxy(Integer privacyProxy){
+    public DomainNameCreateDescriptor setPrivacyProxy(Integer privacyProxy){
         this.privacyProxy = privacyProxy;
+        return this;
     }
 
     /**
@@ -247,9 +262,11 @@ public class DomainNameCreateDescriptor  {
      * Set the autoRenew
      *
      * @param Boolean $autoRenew
+     * @return DomainNameCreateDescriptor
      */
-    public void setAutoRenew(Boolean autoRenew){
+    public DomainNameCreateDescriptor setAutoRenew(Boolean autoRenew){
         this.autoRenew = autoRenew;
+        return this;
     }
 
     /**
@@ -265,9 +282,11 @@ public class DomainNameCreateDescriptor  {
      * Set the tags
      *
      * @param String[] $tags
+     * @return DomainNameCreateDescriptor
      */
-    public void setTags(String[] tags){
+    public DomainNameCreateDescriptor setTags(String[] tags){
         this.tags = tags;
+        return this;
     }
 
 

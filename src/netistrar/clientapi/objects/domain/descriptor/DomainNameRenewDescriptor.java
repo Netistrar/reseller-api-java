@@ -2,21 +2,20 @@ package netistrar.clientapi.objects.domain.descriptor;
 
 import java.util.Map;
 
-
 /**
  * Descriptor for a domain name renew operation.  This should be passed to the renew operation on the Domains API.
- *
- */
+*/
 public class DomainNameRenewDescriptor  {
 
+
     /**
+     * the array of domain names to be renewed.
      */
     private String[] domainNames;
-
     /**
+     * The number of years to be added to the supplied domain names
      */
     private Integer additionalYears;
-
 
 
 
@@ -54,9 +53,11 @@ public class DomainNameRenewDescriptor  {
      * Set the domainNames
      *
      * @param String[] $domainNames
+     * @return DomainNameRenewDescriptor
      */
-    public void setDomainNames(String[] domainNames){
+    public DomainNameRenewDescriptor setDomainNames(String[] domainNames){
         this.domainNames = domainNames;
+        return this;
     }
 
     /**
@@ -72,9 +73,11 @@ public class DomainNameRenewDescriptor  {
      * Set the additionalYears
      *
      * @param Integer $additionalYears
+     * @return DomainNameRenewDescriptor
      */
-    public void setAdditionalYears(Integer additionalYears){
+    public DomainNameRenewDescriptor setAdditionalYears(Integer additionalYears){
         this.additionalYears = additionalYears;
+        return this;
     }
 
 

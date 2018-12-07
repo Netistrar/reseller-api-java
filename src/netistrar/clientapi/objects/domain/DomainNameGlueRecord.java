@@ -2,32 +2,31 @@ package netistrar.clientapi.objects.domain;
 
 import java.util.Map;
 
-
 /**
  * A value object used within the <b>Domains API</b> when listing or setting glue records for a domain name.
- *
  * Glue records (sometimes called child nameservers) define explicit mappings of subdomains to IP addresses such that the subdomain may be used as a delegated
  * nameserver for other domains or indeed the domain name itself.
- *
- */
+*/
 public class DomainNameGlueRecord  {
 
+
     /**
+     * The domain name for which this glue record applies.  This field is only populated for results returned from the <b>listGlueRecords</b> method on the
+     * <b>Domains API</b> and is not supplied when adding glue records.
      */
     protected String domainName;
-
     /**
+     * The non fully qualified sub domain prefix for the glue record e.g. ns1
      */
     private String subDomainPrefix;
-
     /**
+     * An IPv4 address string matching the sub domain in xxx.xxx.xxx.xxx format
      */
     private String ipv4Address;
-
     /**
+     * An IPv6 address string matching the sub domain in xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx format.
      */
     private String ipv6Address;
-
 
 
 
@@ -76,9 +75,11 @@ public class DomainNameGlueRecord  {
      * Set the subDomainPrefix
      *
      * @param String $subDomainPrefix
+     * @return DomainNameGlueRecord
      */
-    public void setSubDomainPrefix(String subDomainPrefix){
+    public DomainNameGlueRecord setSubDomainPrefix(String subDomainPrefix){
         this.subDomainPrefix = subDomainPrefix;
+        return this;
     }
 
     /**
@@ -94,9 +95,11 @@ public class DomainNameGlueRecord  {
      * Set the ipv4Address
      *
      * @param String $ipv4Address
+     * @return DomainNameGlueRecord
      */
-    public void setIpv4Address(String ipv4Address){
+    public DomainNameGlueRecord setIpv4Address(String ipv4Address){
         this.ipv4Address = ipv4Address;
+        return this;
     }
 
     /**
@@ -112,9 +115,11 @@ public class DomainNameGlueRecord  {
      * Set the ipv6Address
      *
      * @param String $ipv6Address
+     * @return DomainNameGlueRecord
      */
-    public void setIpv6Address(String ipv6Address){
+    public DomainNameGlueRecord setIpv6Address(String ipv6Address){
         this.ipv6Address = ipv6Address;
+        return this;
     }
 
 
