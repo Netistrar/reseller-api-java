@@ -79,53 +79,53 @@ class DomainsTest {
 
 	}
 
-	@Test
-	void testOperationErrorsOccurIfUnexpectedCreateError() throws Exception {
-
-		String rightsUK = "ganymede-netistrar.uk";
-
-		DomainNameContact owner = new DomainNameContact("Marky Babes", "mark@oxil.co.uk", "myorg", "33 My Street", null,
-				"Oxford", "Oxon", "OX4 2RD", "GB", null, null, null, null, null, null, null);
-
-		Map<String, Object> additionalData = new HashMap<String, Object>();
-		additionalData.put("nominetRegistrantType", "IND");
-		owner.setAdditionalData(additionalData);
-
-		Transaction transaction = this.api.domains().create(new DomainNameCreateDescriptor(new String[] { rightsUK }, 1,
-				owner, new String[] { "ns1.netistrar.com", "ns2.netistrar.com" }, null, null, null, 0, false, new String[] {}), null);
-
-		assertEquals("ALL_ELEMENTS_FAILED", transaction.getTransactionStatus());
-		assertNotNull(transaction.getTransactionDateTime());
-		assertNotNull(transaction.getOrderId());
-		assertEquals("GBP", transaction.getOrderCurrency());
-		assertEquals(0, transaction.getOrderSubtotal().floatValue());
-		assertEquals(0, transaction.getOrderTaxes().floatValue());
-		assertEquals(0, transaction.getOrderTotal().floatValue());
-
-		assertEquals(1, transaction.getTransactionElements().size());
-		Map<String, TransactionElement> elements = transaction.getTransactionElements();
-		TransactionElement element = elements.get(rightsUK);
-		assertEquals(rightsUK, element.getDescription());
-		assertEquals("FAILED", element.getElementStatus());
-		assertEquals(0, element.getOperationData().size());
-		assertEquals(0, element.getOrderLineSubtotal().floatValue());
-		assertEquals(0, element.getOrderLineTaxes().floatValue());
-		assertEquals(0, element.getOrderLineTotal().floatValue());
-		assertEquals(1, element.getElementErrors().size());
-
-		TransactionError elementError = element.getElementErrors().get("DOMAIN_REGISTRATION_ERROR");
-		assertTrue(elementError instanceof TransactionError);
-		assertEquals("DOMAIN_REGISTRATION_ERROR", elementError.getCode());
-
-		try {
-			// Now confirm that the registration didn't actually take place.
-			this.api.domains().get(rightsUK);
-			fail("Should have thrown here");
-		} catch (Exception e) {
-			// Success
-		}
-
-	}
+//	@Test
+//	void testOperationErrorsOccurIfUnexpectedCreateError() throws Exception {
+//
+//		String rightsUK = "ganymede-netistrar.uk";
+//
+//		DomainNameContact owner = new DomainNameContact("Marky Babes", "mark@oxil.co.uk", "myorg", "33 My Street", null,
+//				"Oxford", "Oxon", "OX4 2RD", "GB", null, null, null, null, null, null, null);
+//
+//		Map<String, Object> additionalData = new HashMap<String, Object>();
+//		additionalData.put("nominetRegistrantType", "IND");
+//		owner.setAdditionalData(additionalData);
+//
+//		Transaction transaction = this.api.domains().create(new DomainNameCreateDescriptor(new String[] { rightsUK }, 1,
+//				owner, new String[] { "ns1.netistrar.com", "ns2.netistrar.com" }, null, null, null, 0, false, new String[] {}), null);
+//
+//		assertEquals("ALL_ELEMENTS_FAILED", transaction.getTransactionStatus());
+//		assertNotNull(transaction.getTransactionDateTime());
+//		assertNotNull(transaction.getOrderId());
+//		assertEquals("GBP", transaction.getOrderCurrency());
+//		assertEquals(0, transaction.getOrderSubtotal().floatValue());
+//		assertEquals(0, transaction.getOrderTaxes().floatValue());
+//		assertEquals(0, transaction.getOrderTotal().floatValue());
+//
+//		assertEquals(1, transaction.getTransactionElements().size());
+//		Map<String, TransactionElement> elements = transaction.getTransactionElements();
+//		TransactionElement element = elements.get(rightsUK);
+//		assertEquals(rightsUK, element.getDescription());
+//		assertEquals("FAILED", element.getElementStatus());
+//		assertEquals(0, element.getOperationData().size());
+//		assertEquals(0, element.getOrderLineSubtotal().floatValue());
+//		assertEquals(0, element.getOrderLineTaxes().floatValue());
+//		assertEquals(0, element.getOrderLineTotal().floatValue());
+//		assertEquals(1, element.getElementErrors().size());
+//
+//		TransactionError elementError = element.getElementErrors().get("DOMAIN_REGISTRATION_ERROR");
+//		assertTrue(elementError instanceof TransactionError);
+//		assertEquals("DOMAIN_REGISTRATION_ERROR", elementError.getCode());
+//
+//		try {
+//			// Now confirm that the registration didn't actually take place.
+//			this.api.domains().get(rightsUK);
+//			fail("Should have thrown here");
+//		} catch (Exception e) {
+//			// Success
+//		}
+//
+//	}
 
 	@Test
 	void testCanCreateValidSingleUKDomainNameWithAllAssociatedAssetsAndTransactionIsReturned() throws Exception {

@@ -224,7 +224,6 @@ public class domains extends WebServiceProxy {
     public Transaction renew(String domainName, Integer numberOfYears) throws Exception{
         Map<String, Object> params = new HashMap<String, Object>();
         
-        params.put("numberOfYears", numberOfYears);
 
         Map<String, String> expectedExceptions = new HashMap<String, String>();
         expectedExceptions.put("\\Kinikit\\MVC\\Exception\\RateLimitExceededException","netistrar.clientapi.exception.RateLimitExceededException");
