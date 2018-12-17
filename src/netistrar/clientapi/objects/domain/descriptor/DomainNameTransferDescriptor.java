@@ -76,7 +76,7 @@ public class DomainNameTransferDescriptor  {
     /**
      * Get the transferIdentifiers
      *
-     * @return String[]
+     * @return
      */
     public String[] getTransferIdentifiers(){
         return this.transferIdentifiers;
@@ -86,7 +86,7 @@ public class DomainNameTransferDescriptor  {
      * Set the transferIdentifiers
      *
      * @param transferIdentifiers
-     * @return DomainNameTransferDescriptor
+     * @return
      */
     public DomainNameTransferDescriptor setTransferIdentifiers(String[] transferIdentifiers){
         this.transferIdentifiers = transferIdentifiers;
@@ -96,7 +96,7 @@ public class DomainNameTransferDescriptor  {
     /**
      * Get the ownerContact
      *
-     * @return DomainNameContact
+     * @return
      */
     public DomainNameContact getOwnerContact(){
         return this.ownerContact;
@@ -106,7 +106,7 @@ public class DomainNameTransferDescriptor  {
      * Set the ownerContact
      *
      * @param ownerContact
-     * @return DomainNameTransferDescriptor
+     * @return
      */
     public DomainNameTransferDescriptor setOwnerContact(DomainNameContact ownerContact){
         this.ownerContact = ownerContact;
@@ -116,7 +116,7 @@ public class DomainNameTransferDescriptor  {
     /**
      * Get the adminContact
      *
-     * @return DomainNameContact
+     * @return
      */
     public DomainNameContact getAdminContact(){
         return this.adminContact;
@@ -126,7 +126,7 @@ public class DomainNameTransferDescriptor  {
      * Set the adminContact
      *
      * @param adminContact
-     * @return DomainNameTransferDescriptor
+     * @return
      */
     public DomainNameTransferDescriptor setAdminContact(DomainNameContact adminContact){
         this.adminContact = adminContact;
@@ -136,7 +136,7 @@ public class DomainNameTransferDescriptor  {
     /**
      * Get the billingContact
      *
-     * @return DomainNameContact
+     * @return
      */
     public DomainNameContact getBillingContact(){
         return this.billingContact;
@@ -146,7 +146,7 @@ public class DomainNameTransferDescriptor  {
      * Set the billingContact
      *
      * @param billingContact
-     * @return DomainNameTransferDescriptor
+     * @return
      */
     public DomainNameTransferDescriptor setBillingContact(DomainNameContact billingContact){
         this.billingContact = billingContact;
@@ -156,7 +156,7 @@ public class DomainNameTransferDescriptor  {
     /**
      * Get the technicalContact
      *
-     * @return DomainNameContact
+     * @return
      */
     public DomainNameContact getTechnicalContact(){
         return this.technicalContact;
@@ -166,7 +166,7 @@ public class DomainNameTransferDescriptor  {
      * Set the technicalContact
      *
      * @param technicalContact
-     * @return DomainNameTransferDescriptor
+     * @return
      */
     public DomainNameTransferDescriptor setTechnicalContact(DomainNameContact technicalContact){
         this.technicalContact = technicalContact;
@@ -176,7 +176,7 @@ public class DomainNameTransferDescriptor  {
     /**
      * Get the privacyProxy
      *
-     * @return Integer
+     * @return
      */
     public Integer getPrivacyProxy(){
         return this.privacyProxy;
@@ -186,7 +186,7 @@ public class DomainNameTransferDescriptor  {
      * Set the privacyProxy
      *
      * @param privacyProxy
-     * @return DomainNameTransferDescriptor
+     * @return
      */
     public DomainNameTransferDescriptor setPrivacyProxy(Integer privacyProxy){
         this.privacyProxy = privacyProxy;
@@ -196,7 +196,7 @@ public class DomainNameTransferDescriptor  {
     /**
      * Get the autoRenew
      *
-     * @return Boolean
+     * @return
      */
     public Boolean getAutoRenew(){
         return this.autoRenew;
@@ -206,7 +206,7 @@ public class DomainNameTransferDescriptor  {
      * Set the autoRenew
      *
      * @param autoRenew
-     * @return DomainNameTransferDescriptor
+     * @return
      */
     public DomainNameTransferDescriptor setAutoRenew(Boolean autoRenew){
         this.autoRenew = autoRenew;

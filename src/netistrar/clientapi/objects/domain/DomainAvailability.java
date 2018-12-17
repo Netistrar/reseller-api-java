@@ -62,7 +62,7 @@ public class DomainAvailability  {
     /**
      * Get the domainName
      *
-     * @return String
+     * @return
      */
     public String getDomainName(){
         return this.domainName;
@@ -71,7 +71,7 @@ public class DomainAvailability  {
     /**
      * Get the availability
      *
-     * @return String
+     * @return
      */
     public String getAvailability(){
         return this.availability;
@@ -80,7 +80,7 @@ public class DomainAvailability  {
     /**
      * Get the pricingType
      *
-     * @return String
+     * @return
      */
     public String getPricingType(){
         return this.pricingType;
@@ -89,7 +89,7 @@ public class DomainAvailability  {
     /**
      * Get the prices
      *
-     * @return Map<String,Map<Integer,DomainAvailabilityPrice>>
+     * @return
      */
     public Map<String,Map<Integer,DomainAvailabilityPrice>> getPrices(){
         return this.prices;
@@ -98,7 +98,7 @@ public class DomainAvailability  {
     /**
      * Get the additionalData
      *
-     * @return Map<String,Object>
+     * @return
      */
     public Map<String,Object> getAdditionalData(){
         return this.additionalData;

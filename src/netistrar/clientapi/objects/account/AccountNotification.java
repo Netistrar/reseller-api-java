@@ -48,7 +48,7 @@ public class AccountNotification  {
     /**
      * Get the id
      *
-     * @return Integer
+     * @return
      */
     public Integer getId(){
         return this.id;
@@ -57,7 +57,7 @@ public class AccountNotification  {
     /**
      * Get the dateTime
      *
-     * @return String
+     * @return
      */
     public String getDateTime(){
         return this.dateTime;
@@ -66,7 +66,7 @@ public class AccountNotification  {
     /**
      * Get the notificationType
      *
-     * @return String
+     * @return
      */
     public String getNotificationType(){
         return this.notificationType;
@@ -75,7 +75,7 @@ public class AccountNotification  {
     /**
      * Get the notificationSubType
      *
-     * @return String
+     * @return
      */
     public String getNotificationSubType(){
         return this.notificationSubType;
@@ -84,7 +84,7 @@ public class AccountNotification  {
     /**
      * Get the refersTo
      *
-     * @return String
+     * @return
      */
     public String getRefersTo(){
         return this.refersTo;
@@ -93,7 +93,7 @@ public class AccountNotification  {
     /**
      * Get the message
      *
-     * @return String
+     * @return
      */
     public String getMessage(){
         return this.message;

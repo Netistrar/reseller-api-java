@@ -90,7 +90,7 @@ public class DomainNameSummary  {
     /**
      * Get the ownerName
      *
-     * @return String
+     * @return
      */
     public String getOwnerName(){
         return this.ownerName;
@@ -99,7 +99,7 @@ public class DomainNameSummary  {
     /**
      * Get the domainName
      *
-     * @return String
+     * @return
      */
     public String getDomainName(){
         return this.domainName;
@@ -108,7 +108,7 @@ public class DomainNameSummary  {
     /**
      * Get the registeredDate
      *
-     * @return String
+     * @return
      */
     public String getRegisteredDate(){
         return this.registeredDate;
@@ -117,7 +117,7 @@ public class DomainNameSummary  {
     /**
      * Get the expiryDate
      *
-     * @return String
+     * @return
      */
     public String getExpiryDate(){
         return this.expiryDate;
@@ -126,7 +126,7 @@ public class DomainNameSummary  {
     /**
      * Get the locked
      *
-     * @return Boolean
+     * @return
      */
     public Boolean getLocked(){
         return this.locked;
@@ -135,7 +135,7 @@ public class DomainNameSummary  {
     /**
      * Get the lockedUntil
      *
-     * @return String
+     * @return
      */
     public String getLockedUntil(){
         return this.lockedUntil;
@@ -144,7 +144,7 @@ public class DomainNameSummary  {
     /**
      * Get the authCode
      *
-     * @return String
+     * @return
      */
     public String getAuthCode(){
         return this.authCode;
@@ -153,7 +153,7 @@ public class DomainNameSummary  {
     /**
      * Get the autoRenew
      *
-     * @return Boolean
+     * @return
      */
     public Boolean getAutoRenew(){
         return this.autoRenew;
@@ -162,7 +162,7 @@ public class DomainNameSummary  {
     /**
      * Get the privacyProxy
      *
-     * @return Integer
+     * @return
      */
     public Integer getPrivacyProxy(){
         return this.privacyProxy;
@@ -171,7 +171,7 @@ public class DomainNameSummary  {
     /**
      * Get the status
      *
-     * @return String
+     * @return
      */
     public String getStatus(){
         return this.status;
@@ -180,7 +180,7 @@ public class DomainNameSummary  {
     /**
      * Get the tags
      *
-     * @return String[]
+     * @return
      */
     public String[] getTags(){
         return this.tags;
@@ -189,7 +189,7 @@ public class DomainNameSummary  {
     /**
      * Get the dnsProvider
      *
-     * @return String
+     * @return
      */
     public String getDnsProvider(){
         return this.dnsProvider;
@@ -198,7 +198,7 @@ public class DomainNameSummary  {
     /**
      * Get the emailProvider
      *
-     * @return String
+     * @return
      */
     public String getEmailProvider(){
         return this.emailProvider;

@@ -92,7 +92,7 @@ public class DomainNameCreateDescriptor  {
     /**
      * Get the domainNames
      *
-     * @return String[]
+     * @return
      */
     public String[] getDomainNames(){
         return this.domainNames;
@@ -102,7 +102,7 @@ public class DomainNameCreateDescriptor  {
      * Set the domainNames
      *
      * @param domainNames
-     * @return DomainNameCreateDescriptor
+     * @return
      */
     public DomainNameCreateDescriptor setDomainNames(String[] domainNames){
         this.domainNames = domainNames;
@@ -112,7 +112,7 @@ public class DomainNameCreateDescriptor  {
     /**
      * Get the registrationYears
      *
-     * @return Integer
+     * @return
      */
     public Integer getRegistrationYears(){
         return this.registrationYears;
@@ -122,7 +122,7 @@ public class DomainNameCreateDescriptor  {
      * Set the registrationYears
      *
      * @param registrationYears
-     * @return DomainNameCreateDescriptor
+     * @return
      */
     public DomainNameCreateDescriptor setRegistrationYears(Integer registrationYears){
         this.registrationYears = registrationYears;
@@ -132,7 +132,7 @@ public class DomainNameCreateDescriptor  {
     /**
      * Get the ownerContact
      *
-     * @return DomainNameContact
+     * @return
      */
     public DomainNameContact getOwnerContact(){
         return this.ownerContact;
@@ -142,7 +142,7 @@ public class DomainNameCreateDescriptor  {
      * Set the ownerContact
      *
      * @param ownerContact
-     * @return DomainNameCreateDescriptor
+     * @return
      */
     public DomainNameCreateDescriptor setOwnerContact(DomainNameContact ownerContact){
         this.ownerContact = ownerContact;
@@ -152,7 +152,7 @@ public class DomainNameCreateDescriptor  {
     /**
      * Get the nameservers
      *
-     * @return String[]
+     * @return
      */
     public String[] getNameservers(){
         return this.nameservers;
@@ -162,7 +162,7 @@ public class DomainNameCreateDescriptor  {
      * Set the nameservers
      *
      * @param nameservers
-     * @return DomainNameCreateDescriptor
+     * @return
      */
     public DomainNameCreateDescriptor setNameservers(String[] nameservers){
         this.nameservers = nameservers;
@@ -172,7 +172,7 @@ public class DomainNameCreateDescriptor  {
     /**
      * Get the adminContact
      *
-     * @return DomainNameContact
+     * @return
      */
     public DomainNameContact getAdminContact(){
         return this.adminContact;
@@ -182,7 +182,7 @@ public class DomainNameCreateDescriptor  {
      * Set the adminContact
      *
      * @param adminContact
-     * @return DomainNameCreateDescriptor
+     * @return
      */
     public DomainNameCreateDescriptor setAdminContact(DomainNameContact adminContact){
         this.adminContact = adminContact;
@@ -192,7 +192,7 @@ public class DomainNameCreateDescriptor  {
     /**
      * Get the billingContact
      *
-     * @return DomainNameContact
+     * @return
      */
     public DomainNameContact getBillingContact(){
         return this.billingContact;
@@ -202,7 +202,7 @@ public class DomainNameCreateDescriptor  {
      * Set the billingContact
      *
      * @param billingContact
-     * @return DomainNameCreateDescriptor
+     * @return
      */
     public DomainNameCreateDescriptor setBillingContact(DomainNameContact billingContact){
         this.billingContact = billingContact;
@@ -212,7 +212,7 @@ public class DomainNameCreateDescriptor  {
     /**
      * Get the technicalContact
      *
-     * @return DomainNameContact
+     * @return
      */
     public DomainNameContact getTechnicalContact(){
         return this.technicalContact;
@@ -222,7 +222,7 @@ public class DomainNameCreateDescriptor  {
      * Set the technicalContact
      *
      * @param technicalContact
-     * @return DomainNameCreateDescriptor
+     * @return
      */
     public DomainNameCreateDescriptor setTechnicalContact(DomainNameContact technicalContact){
         this.technicalContact = technicalContact;
@@ -232,7 +232,7 @@ public class DomainNameCreateDescriptor  {
     /**
      * Get the privacyProxy
      *
-     * @return Integer
+     * @return
      */
     public Integer getPrivacyProxy(){
         return this.privacyProxy;
@@ -242,7 +242,7 @@ public class DomainNameCreateDescriptor  {
      * Set the privacyProxy
      *
      * @param privacyProxy
-     * @return DomainNameCreateDescriptor
+     * @return
      */
     public DomainNameCreateDescriptor setPrivacyProxy(Integer privacyProxy){
         this.privacyProxy = privacyProxy;
@@ -252,7 +252,7 @@ public class DomainNameCreateDescriptor  {
     /**
      * Get the autoRenew
      *
-     * @return Boolean
+     * @return
      */
     public Boolean getAutoRenew(){
         return this.autoRenew;
@@ -262,7 +262,7 @@ public class DomainNameCreateDescriptor  {
      * Set the autoRenew
      *
      * @param autoRenew
-     * @return DomainNameCreateDescriptor
+     * @return
      */
     public DomainNameCreateDescriptor setAutoRenew(Boolean autoRenew){
         this.autoRenew = autoRenew;
@@ -272,7 +272,7 @@ public class DomainNameCreateDescriptor  {
     /**
      * Get the tags
      *
-     * @return String[]
+     * @return
      */
     public String[] getTags(){
         return this.tags;
@@ -282,7 +282,7 @@ public class DomainNameCreateDescriptor  {
      * Set the tags
      *
      * @param tags
-     * @return DomainNameCreateDescriptor
+     * @return
      */
     public DomainNameCreateDescriptor setTags(String[] tags){
         this.tags = tags;

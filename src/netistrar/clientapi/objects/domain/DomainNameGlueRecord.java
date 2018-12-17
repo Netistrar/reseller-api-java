@@ -56,7 +56,7 @@ public class DomainNameGlueRecord  {
     /**
      * Get the domainName
      *
-     * @return String
+     * @return
      */
     public String getDomainName(){
         return this.domainName;
@@ -65,7 +65,7 @@ public class DomainNameGlueRecord  {
     /**
      * Get the subDomainPrefix
      *
-     * @return String
+     * @return
      */
     public String getSubDomainPrefix(){
         return this.subDomainPrefix;
@@ -75,7 +75,7 @@ public class DomainNameGlueRecord  {
      * Set the subDomainPrefix
      *
      * @param subDomainPrefix
-     * @return DomainNameGlueRecord
+     * @return
      */
     public DomainNameGlueRecord setSubDomainPrefix(String subDomainPrefix){
         this.subDomainPrefix = subDomainPrefix;
@@ -85,7 +85,7 @@ public class DomainNameGlueRecord  {
     /**
      * Get the ipv4Address
      *
-     * @return String
+     * @return
      */
     public String getIpv4Address(){
         return this.ipv4Address;
@@ -95,7 +95,7 @@ public class DomainNameGlueRecord  {
      * Set the ipv4Address
      *
      * @param ipv4Address
-     * @return DomainNameGlueRecord
+     * @return
      */
     public DomainNameGlueRecord setIpv4Address(String ipv4Address){
         this.ipv4Address = ipv4Address;
@@ -105,7 +105,7 @@ public class DomainNameGlueRecord  {
     /**
      * Get the ipv6Address
      *
-     * @return String
+     * @return
      */
     public String getIpv6Address(){
         return this.ipv6Address;
@@ -115,7 +115,7 @@ public class DomainNameGlueRecord  {
      * Set the ipv6Address
      *
      * @param ipv6Address
-     * @return DomainNameGlueRecord
+     * @return
      */
     public DomainNameGlueRecord setIpv6Address(String ipv6Address){
         this.ipv6Address = ipv6Address;

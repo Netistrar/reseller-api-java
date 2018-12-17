@@ -98,7 +98,7 @@ public class DomainNameUpdateDescriptor  {
     /**
      * Get the domainNames
      *
-     * @return String[]
+     * @return
      */
     public String[] getDomainNames(){
         return this.domainNames;
@@ -108,7 +108,7 @@ public class DomainNameUpdateDescriptor  {
      * Set the domainNames
      *
      * @param domainNames
-     * @return DomainNameUpdateDescriptor
+     * @return
      */
     public DomainNameUpdateDescriptor setDomainNames(String[] domainNames){
         this.domainNames = domainNames;
@@ -118,7 +118,7 @@ public class DomainNameUpdateDescriptor  {
     /**
      * Get the ownerContact
      *
-     * @return DomainNameContact
+     * @return
      */
     public DomainNameContact getOwnerContact(){
         return this.ownerContact;
@@ -128,7 +128,7 @@ public class DomainNameUpdateDescriptor  {
      * Set the ownerContact
      *
      * @param ownerContact
-     * @return DomainNameUpdateDescriptor
+     * @return
      */
     public DomainNameUpdateDescriptor setOwnerContact(DomainNameContact ownerContact){
         this.ownerContact = ownerContact;
@@ -138,7 +138,7 @@ public class DomainNameUpdateDescriptor  {
     /**
      * Get the adminContact
      *
-     * @return DomainNameContact
+     * @return
      */
     public DomainNameContact getAdminContact(){
         return this.adminContact;
@@ -148,7 +148,7 @@ public class DomainNameUpdateDescriptor  {
      * Set the adminContact
      *
      * @param adminContact
-     * @return DomainNameUpdateDescriptor
+     * @return
      */
     public DomainNameUpdateDescriptor setAdminContact(DomainNameContact adminContact){
         this.adminContact = adminContact;
@@ -158,7 +158,7 @@ public class DomainNameUpdateDescriptor  {
     /**
      * Get the billingContact
      *
-     * @return DomainNameContact
+     * @return
      */
     public DomainNameContact getBillingContact(){
         return this.billingContact;
@@ -168,7 +168,7 @@ public class DomainNameUpdateDescriptor  {
      * Set the billingContact
      *
      * @param billingContact
-     * @return DomainNameUpdateDescriptor
+     * @return
      */
     public DomainNameUpdateDescriptor setBillingContact(DomainNameContact billingContact){
         this.billingContact = billingContact;
@@ -178,7 +178,7 @@ public class DomainNameUpdateDescriptor  {
     /**
      * Get the technicalContact
      *
-     * @return DomainNameContact
+     * @return
      */
     public DomainNameContact getTechnicalContact(){
         return this.technicalContact;
@@ -188,7 +188,7 @@ public class DomainNameUpdateDescriptor  {
      * Set the technicalContact
      *
      * @param technicalContact
-     * @return DomainNameUpdateDescriptor
+     * @return
      */
     public DomainNameUpdateDescriptor setTechnicalContact(DomainNameContact technicalContact){
         this.technicalContact = technicalContact;
@@ -198,7 +198,7 @@ public class DomainNameUpdateDescriptor  {
     /**
      * Get the nameservers
      *
-     * @return String[]
+     * @return
      */
     public String[] getNameservers(){
         return this.nameservers;
@@ -208,7 +208,7 @@ public class DomainNameUpdateDescriptor  {
      * Set the nameservers
      *
      * @param nameservers
-     * @return DomainNameUpdateDescriptor
+     * @return
      */
     public DomainNameUpdateDescriptor setNameservers(String[] nameservers){
         this.nameservers = nameservers;
@@ -218,7 +218,7 @@ public class DomainNameUpdateDescriptor  {
     /**
      * Get the locked
      *
-     * @return Boolean
+     * @return
      */
     public Boolean getLocked(){
         return this.locked;
@@ -228,7 +228,7 @@ public class DomainNameUpdateDescriptor  {
      * Set the locked
      *
      * @param locked
-     * @return DomainNameUpdateDescriptor
+     * @return
      */
     public DomainNameUpdateDescriptor setLocked(Boolean locked){
         this.locked = locked;
@@ -238,7 +238,7 @@ public class DomainNameUpdateDescriptor  {
     /**
      * Get the privacyProxy
      *
-     * @return Integer
+     * @return
      */
     public Integer getPrivacyProxy(){
         return this.privacyProxy;
@@ -248,7 +248,7 @@ public class DomainNameUpdateDescriptor  {
      * Set the privacyProxy
      *
      * @param privacyProxy
-     * @return DomainNameUpdateDescriptor
+     * @return
      */
     public DomainNameUpdateDescriptor setPrivacyProxy(Integer privacyProxy){
         this.privacyProxy = privacyProxy;
@@ -258,7 +258,7 @@ public class DomainNameUpdateDescriptor  {
     /**
      * Get the autoRenew
      *
-     * @return Boolean
+     * @return
      */
     public Boolean getAutoRenew(){
         return this.autoRenew;
@@ -268,7 +268,7 @@ public class DomainNameUpdateDescriptor  {
      * Set the autoRenew
      *
      * @param autoRenew
-     * @return DomainNameUpdateDescriptor
+     * @return
      */
     public DomainNameUpdateDescriptor setAutoRenew(Boolean autoRenew){
         this.autoRenew = autoRenew;
@@ -278,7 +278,7 @@ public class DomainNameUpdateDescriptor  {
     /**
      * Get the addTags
      *
-     * @return String[]
+     * @return
      */
     public String[] getAddTags(){
         return this.addTags;
@@ -288,7 +288,7 @@ public class DomainNameUpdateDescriptor  {
      * Set the addTags
      *
      * @param addTags
-     * @return DomainNameUpdateDescriptor
+     * @return
      */
     public DomainNameUpdateDescriptor setAddTags(String[] addTags){
         this.addTags = addTags;
@@ -298,7 +298,7 @@ public class DomainNameUpdateDescriptor  {
     /**
      * Get the removeTags
      *
-     * @return String[]
+     * @return
      */
     public String[] getRemoveTags(){
         return this.removeTags;
@@ -308,7 +308,7 @@ public class DomainNameUpdateDescriptor  {
      * Set the removeTags
      *
      * @param removeTags
-     * @return DomainNameUpdateDescriptor
+     * @return
      */
     public DomainNameUpdateDescriptor setRemoveTags(String[] removeTags){
         this.removeTags = removeTags;

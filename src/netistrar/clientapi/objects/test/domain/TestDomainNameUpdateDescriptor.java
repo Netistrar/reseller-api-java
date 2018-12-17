@@ -74,7 +74,7 @@ public class TestDomainNameUpdateDescriptor  {
     /**
      * Get the domainNames
      *
-     * @return String[]
+     * @return
      */
     public String[] getDomainNames(){
         return this.domainNames;
@@ -84,7 +84,7 @@ public class TestDomainNameUpdateDescriptor  {
      * Set the domainNames
      *
      * @param domainNames
-     * @return TestDomainNameUpdateDescriptor
+     * @return
      */
     public TestDomainNameUpdateDescriptor setDomainNames(String[] domainNames){
         this.domainNames = domainNames;
@@ -94,7 +94,7 @@ public class TestDomainNameUpdateDescriptor  {
     /**
      * Get the status
      *
-     * @return String
+     * @return
      */
     public String getStatus(){
         return this.status;
@@ -104,7 +104,7 @@ public class TestDomainNameUpdateDescriptor  {
      * Set the status
      *
      * @param status
-     * @return TestDomainNameUpdateDescriptor
+     * @return
      */
     public TestDomainNameUpdateDescriptor setStatus(String status){
         this.status = status;
@@ -114,7 +114,7 @@ public class TestDomainNameUpdateDescriptor  {
     /**
      * Get the registeredDate
      *
-     * @return String
+     * @return
      */
     public String getRegisteredDate(){
         return this.registeredDate;
@@ -124,7 +124,7 @@ public class TestDomainNameUpdateDescriptor  {
      * Set the registeredDate
      *
      * @param registeredDate
-     * @return TestDomainNameUpdateDescriptor
+     * @return
      */
     public TestDomainNameUpdateDescriptor setRegisteredDate(String registeredDate){
         this.registeredDate = registeredDate;
@@ -134,7 +134,7 @@ public class TestDomainNameUpdateDescriptor  {
     /**
      * Get the lockedUntil
      *
-     * @return String
+     * @return
      */
     public String getLockedUntil(){
         return this.lockedUntil;
@@ -144,7 +144,7 @@ public class TestDomainNameUpdateDescriptor  {
      * Set the lockedUntil
      *
      * @param lockedUntil
-     * @return TestDomainNameUpdateDescriptor
+     * @return
      */
     public TestDomainNameUpdateDescriptor setLockedUntil(String lockedUntil){
         this.lockedUntil = lockedUntil;
@@ -154,7 +154,7 @@ public class TestDomainNameUpdateDescriptor  {
     /**
      * Get the locked
      *
-     * @return Boolean
+     * @return
      */
     public Boolean getLocked(){
         return this.locked;
@@ -164,7 +164,7 @@ public class TestDomainNameUpdateDescriptor  {
      * Set the locked
      *
      * @param locked
-     * @return TestDomainNameUpdateDescriptor
+     * @return
      */
     public TestDomainNameUpdateDescriptor setLocked(Boolean locked){
         this.locked = locked;

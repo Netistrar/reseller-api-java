@@ -43,7 +43,7 @@ public class DomainNameRenewDescriptor  {
     /**
      * Get the domainNames
      *
-     * @return String[]
+     * @return
      */
     public String[] getDomainNames(){
         return this.domainNames;
@@ -53,7 +53,7 @@ public class DomainNameRenewDescriptor  {
      * Set the domainNames
      *
      * @param domainNames
-     * @return DomainNameRenewDescriptor
+     * @return
      */
     public DomainNameRenewDescriptor setDomainNames(String[] domainNames){
         this.domainNames = domainNames;
@@ -63,7 +63,7 @@ public class DomainNameRenewDescriptor  {
     /**
      * Get the additionalYears
      *
-     * @return Integer
+     * @return
      */
     public Integer getAdditionalYears(){
         return this.additionalYears;
@@ -73,7 +73,7 @@ public class DomainNameRenewDescriptor  {
      * Set the additionalYears
      *
      * @param additionalYears
-     * @return DomainNameRenewDescriptor
+     * @return
      */
     public DomainNameRenewDescriptor setAdditionalYears(Integer additionalYears){
         this.additionalYears = additionalYears;

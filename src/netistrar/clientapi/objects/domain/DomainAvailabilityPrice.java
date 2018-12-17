@@ -60,7 +60,7 @@ public class DomainAvailabilityPrice  {
     /**
      * Get the operation
      *
-     * @return String
+     * @return
      */
     public String getOperation(){
         return this.operation;
@@ -69,7 +69,7 @@ public class DomainAvailabilityPrice  {
     /**
      * Get the numberOfYears
      *
-     * @return Integer
+     * @return
      */
     public Integer getNumberOfYears(){
         return this.numberOfYears;
@@ -78,7 +78,7 @@ public class DomainAvailabilityPrice  {
     /**
      * Get the priceType
      *
-     * @return String
+     * @return
      */
     public String getPriceType(){
         return this.priceType;
@@ -87,7 +87,7 @@ public class DomainAvailabilityPrice  {
     /**
      * Get the standardBuyPrice
      *
-     * @return Float
+     * @return
      */
     public Float getStandardBuyPrice(){
         return this.standardBuyPrice;
@@ -96,7 +96,7 @@ public class DomainAvailabilityPrice  {
     /**
      * Get the hintedBuyPrice
      *
-     * @return Float
+     * @return
      */
     public Float getHintedBuyPrice(){
         return this.hintedBuyPrice;
@@ -105,7 +105,7 @@ public class DomainAvailabilityPrice  {
     /**
      * Get the confirmedBuyPrice
      *
-     * @return Float
+     * @return
      */
     public Float getConfirmedBuyPrice(){
         return this.confirmedBuyPrice;

@@ -62,7 +62,7 @@ public class DomainNameAvailabilityDescriptor  {
     /**
      * Get the searchString
      *
-     * @return String
+     * @return
      */
     public String getSearchString(){
         return this.searchString;
@@ -72,7 +72,7 @@ public class DomainNameAvailabilityDescriptor  {
      * Set the searchString
      *
      * @param searchString
-     * @return DomainNameAvailabilityDescriptor
+     * @return
      */
     public DomainNameAvailabilityDescriptor setSearchString(String searchString){
         this.searchString = searchString;
@@ -82,7 +82,7 @@ public class DomainNameAvailabilityDescriptor  {
     /**
      * Get the tldCategories
      *
-     * @return String[]
+     * @return
      */
     public String[] getTldCategories(){
         return this.tldCategories;
@@ -92,7 +92,7 @@ public class DomainNameAvailabilityDescriptor  {
      * Set the tldCategories
      *
      * @param tldCategories
-     * @return DomainNameAvailabilityDescriptor
+     * @return
      */
     public DomainNameAvailabilityDescriptor setTldCategories(String[] tldCategories){
         this.tldCategories = tldCategories;
@@ -102,7 +102,7 @@ public class DomainNameAvailabilityDescriptor  {
     /**
      * Get the tlds
      *
-     * @return String[]
+     * @return
      */
     public String[] getTlds(){
         return this.tlds;
@@ -112,7 +112,7 @@ public class DomainNameAvailabilityDescriptor  {
      * Set the tlds
      *
      * @param tlds
-     * @return DomainNameAvailabilityDescriptor
+     * @return
      */
     public DomainNameAvailabilityDescriptor setTlds(String[] tlds){
         this.tlds = tlds;
@@ -122,7 +122,7 @@ public class DomainNameAvailabilityDescriptor  {
     /**
      * Get the suggestions
      *
-     * @return Boolean
+     * @return
      */
     public Boolean getSuggestions(){
         return this.suggestions;
@@ -132,7 +132,7 @@ public class DomainNameAvailabilityDescriptor  {
      * Set the suggestions
      *
      * @param suggestions
-     * @return DomainNameAvailabilityDescriptor
+     * @return
      */
     public DomainNameAvailabilityDescriptor setSuggestions(Boolean suggestions){
         this.suggestions = suggestions;
@@ -142,7 +142,7 @@ public class DomainNameAvailabilityDescriptor  {
     /**
      * Get the suggestionOptions
      *
-     * @return DomainNameSuggestionOptions
+     * @return
      */
     public DomainNameSuggestionOptions getSuggestionOptions(){
         return this.suggestionOptions;
@@ -152,7 +152,7 @@ public class DomainNameAvailabilityDescriptor  {
      * Set the suggestionOptions
      *
      * @param suggestionOptions
-     * @return DomainNameAvailabilityDescriptor
+     * @return
      */
     public DomainNameAvailabilityDescriptor setSuggestionOptions(DomainNameSuggestionOptions suggestionOptions){
         this.suggestionOptions = suggestionOptions;

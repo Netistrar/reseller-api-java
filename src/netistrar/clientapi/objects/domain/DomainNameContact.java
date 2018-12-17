@@ -159,7 +159,7 @@ public class DomainNameContact  {
     /**
      * Get the name
      *
-     * @return String
+     * @return
      */
     public String getName(){
         return this.name;
@@ -169,7 +169,7 @@ public class DomainNameContact  {
      * Set the name
      *
      * @param name
-     * @return DomainNameContact
+     * @return
      */
     public DomainNameContact setName(String name){
         this.name = name;
@@ -179,7 +179,7 @@ public class DomainNameContact  {
     /**
      * Get the emailAddress
      *
-     * @return String
+     * @return
      */
     public String getEmailAddress(){
         return this.emailAddress;
@@ -189,7 +189,7 @@ public class DomainNameContact  {
      * Set the emailAddress
      *
      * @param emailAddress
-     * @return DomainNameContact
+     * @return
      */
     public DomainNameContact setEmailAddress(String emailAddress){
         this.emailAddress = emailAddress;
@@ -199,7 +199,7 @@ public class DomainNameContact  {
     /**
      * Get the organisation
      *
-     * @return String
+     * @return
      */
     public String getOrganisation(){
         return this.organisation;
@@ -209,7 +209,7 @@ public class DomainNameContact  {
      * Set the organisation
      *
      * @param organisation
-     * @return DomainNameContact
+     * @return
      */
     public DomainNameContact setOrganisation(String organisation){
         this.organisation = organisation;
@@ -219,7 +219,7 @@ public class DomainNameContact  {
     /**
      * Get the street1
      *
-     * @return String
+     * @return
      */
     public String getStreet1(){
         return this.street1;
@@ -229,7 +229,7 @@ public class DomainNameContact  {
      * Set the street1
      *
      * @param street1
-     * @return DomainNameContact
+     * @return
      */
     public DomainNameContact setStreet1(String street1){
         this.street1 = street1;
@@ -239,7 +239,7 @@ public class DomainNameContact  {
     /**
      * Get the street2
      *
-     * @return String
+     * @return
      */
     public String getStreet2(){
         return this.street2;
@@ -249,7 +249,7 @@ public class DomainNameContact  {
      * Set the street2
      *
      * @param street2
-     * @return DomainNameContact
+     * @return
      */
     public DomainNameContact setStreet2(String street2){
         this.street2 = street2;
@@ -259,7 +259,7 @@ public class DomainNameContact  {
     /**
      * Get the city
      *
-     * @return String
+     * @return
      */
     public String getCity(){
         return this.city;
@@ -269,7 +269,7 @@ public class DomainNameContact  {
      * Set the city
      *
      * @param city
-     * @return DomainNameContact
+     * @return
      */
     public DomainNameContact setCity(String city){
         this.city = city;
@@ -279,7 +279,7 @@ public class DomainNameContact  {
     /**
      * Get the county
      *
-     * @return String
+     * @return
      */
     public String getCounty(){
         return this.county;
@@ -289,7 +289,7 @@ public class DomainNameContact  {
      * Set the county
      *
      * @param county
-     * @return DomainNameContact
+     * @return
      */
     public DomainNameContact setCounty(String county){
         this.county = county;
@@ -299,7 +299,7 @@ public class DomainNameContact  {
     /**
      * Get the postcode
      *
-     * @return String
+     * @return
      */
     public String getPostcode(){
         return this.postcode;
@@ -309,7 +309,7 @@ public class DomainNameContact  {
      * Set the postcode
      *
      * @param postcode
-     * @return DomainNameContact
+     * @return
      */
     public DomainNameContact setPostcode(String postcode){
         this.postcode = postcode;
@@ -319,7 +319,7 @@ public class DomainNameContact  {
     /**
      * Get the country
      *
-     * @return String
+     * @return
      */
     public String getCountry(){
         return this.country;
@@ -329,7 +329,7 @@ public class DomainNameContact  {
      * Set the country
      *
      * @param country
-     * @return DomainNameContact
+     * @return
      */
     public DomainNameContact setCountry(String country){
         this.country = country;
@@ -339,7 +339,7 @@ public class DomainNameContact  {
     /**
      * Get the telephoneDiallingCode
      *
-     * @return String
+     * @return
      */
     public String getTelephoneDiallingCode(){
         return this.telephoneDiallingCode;
@@ -349,7 +349,7 @@ public class DomainNameContact  {
      * Set the telephoneDiallingCode
      *
      * @param telephoneDiallingCode
-     * @return DomainNameContact
+     * @return
      */
     public DomainNameContact setTelephoneDiallingCode(String telephoneDiallingCode){
         this.telephoneDiallingCode = telephoneDiallingCode;
@@ -359,7 +359,7 @@ public class DomainNameContact  {
     /**
      * Get the telephone
      *
-     * @return String
+     * @return
      */
     public String getTelephone(){
         return this.telephone;
@@ -369,7 +369,7 @@ public class DomainNameContact  {
      * Set the telephone
      *
      * @param telephone
-     * @return DomainNameContact
+     * @return
      */
     public DomainNameContact setTelephone(String telephone){
         this.telephone = telephone;
@@ -379,7 +379,7 @@ public class DomainNameContact  {
     /**
      * Get the telephoneExt
      *
-     * @return String
+     * @return
      */
     public String getTelephoneExt(){
         return this.telephoneExt;
@@ -389,7 +389,7 @@ public class DomainNameContact  {
      * Set the telephoneExt
      *
      * @param telephoneExt
-     * @return DomainNameContact
+     * @return
      */
     public DomainNameContact setTelephoneExt(String telephoneExt){
         this.telephoneExt = telephoneExt;
@@ -399,7 +399,7 @@ public class DomainNameContact  {
     /**
      * Get the faxDiallingCode
      *
-     * @return String
+     * @return
      */
     public String getFaxDiallingCode(){
         return this.faxDiallingCode;
@@ -409,7 +409,7 @@ public class DomainNameContact  {
      * Set the faxDiallingCode
      *
      * @param faxDiallingCode
-     * @return DomainNameContact
+     * @return
      */
     public DomainNameContact setFaxDiallingCode(String faxDiallingCode){
         this.faxDiallingCode = faxDiallingCode;
@@ -419,7 +419,7 @@ public class DomainNameContact  {
     /**
      * Get the fax
      *
-     * @return String
+     * @return
      */
     public String getFax(){
         return this.fax;
@@ -429,7 +429,7 @@ public class DomainNameContact  {
      * Set the fax
      *
      * @param fax
-     * @return DomainNameContact
+     * @return
      */
     public DomainNameContact setFax(String fax){
         this.fax = fax;
@@ -439,7 +439,7 @@ public class DomainNameContact  {
     /**
      * Get the faxExt
      *
-     * @return String
+     * @return
      */
     public String getFaxExt(){
         return this.faxExt;
@@ -449,7 +449,7 @@ public class DomainNameContact  {
      * Set the faxExt
      *
      * @param faxExt
-     * @return DomainNameContact
+     * @return
      */
     public DomainNameContact setFaxExt(String faxExt){
         this.faxExt = faxExt;
@@ -459,7 +459,7 @@ public class DomainNameContact  {
     /**
      * Get the additionalData
      *
-     * @return Map<String,Object>
+     * @return
      */
     public Map<String,Object> getAdditionalData(){
         return this.additionalData;
@@ -469,7 +469,7 @@ public class DomainNameContact  {
      * Set the additionalData
      *
      * @param additionalData
-     * @return DomainNameContact
+     * @return
      */
     public DomainNameContact setAdditionalData(Map<String,Object> additionalData){
         this.additionalData = additionalData;
@@ -479,7 +479,7 @@ public class DomainNameContact  {
     /**
      * Get the status
      *
-     * @return String
+     * @return
      */
     public String getStatus(){
         return this.status;
@@ -488,7 +488,7 @@ public class DomainNameContact  {
     /**
      * Get the pendingContact
      *
-     * @return DomainNameContact
+     * @return
      */
     public DomainNameContact getPendingContact(){
         return this.pendingContact;

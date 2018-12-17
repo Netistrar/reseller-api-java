@@ -52,7 +52,7 @@ public class DomainNameSuggestionOptions  {
     /**
      * Get the includeTlds
      *
-     * @return Boolean
+     * @return
      */
     public Boolean getIncludeTlds(){
         return this.includeTlds;
@@ -62,7 +62,7 @@ public class DomainNameSuggestionOptions  {
      * Set the includeTlds
      *
      * @param includeTlds
-     * @return DomainNameSuggestionOptions
+     * @return
      */
     public DomainNameSuggestionOptions setIncludeTlds(Boolean includeTlds){
         this.includeTlds = includeTlds;
@@ -72,7 +72,7 @@ public class DomainNameSuggestionOptions  {
     /**
      * Get the includeCategories
      *
-     * @return Boolean
+     * @return
      */
     public Boolean getIncludeCategories(){
         return this.includeCategories;
@@ -82,7 +82,7 @@ public class DomainNameSuggestionOptions  {
      * Set the includeCategories
      *
      * @param includeCategories
-     * @return DomainNameSuggestionOptions
+     * @return
      */
     public DomainNameSuggestionOptions setIncludeCategories(Boolean includeCategories){
         this.includeCategories = includeCategories;
@@ -92,7 +92,7 @@ public class DomainNameSuggestionOptions  {
     /**
      * Get the fillCount
      *
-     * @return Integer
+     * @return
      */
     public Integer getFillCount(){
         return this.fillCount;
@@ -102,7 +102,7 @@ public class DomainNameSuggestionOptions  {
      * Set the fillCount
      *
      * @param fillCount
-     * @return DomainNameSuggestionOptions
+     * @return
      */
     public DomainNameSuggestionOptions setFillCount(Integer fillCount){
         this.fillCount = fillCount;

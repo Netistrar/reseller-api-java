@@ -91,7 +91,7 @@ public class Transaction  {
     /**
      * Get the transactionType
      *
-     * @return String
+     * @return
      */
     public String getTransactionType(){
         return this.transactionType;
@@ -100,7 +100,7 @@ public class Transaction  {
     /**
      * Get the transactionDateTime
      *
-     * @return String
+     * @return
      */
     public String getTransactionDateTime(){
         return this.transactionDateTime;
@@ -109,7 +109,7 @@ public class Transaction  {
     /**
      * Get the transactionStatus
      *
-     * @return String
+     * @return
      */
     public String getTransactionStatus(){
         return this.transactionStatus;
@@ -118,7 +118,7 @@ public class Transaction  {
     /**
      * Get the orderId
      *
-     * @return Integer
+     * @return
      */
     public Integer getOrderId(){
         return this.orderId;
@@ -127,7 +127,7 @@ public class Transaction  {
     /**
      * Get the orderCurrency
      *
-     * @return String
+     * @return
      */
     public String getOrderCurrency(){
         return this.orderCurrency;
@@ -136,7 +136,7 @@ public class Transaction  {
     /**
      * Get the orderSubtotal
      *
-     * @return Float
+     * @return
      */
     public Float getOrderSubtotal(){
         return this.orderSubtotal;
@@ -145,7 +145,7 @@ public class Transaction  {
     /**
      * Get the orderTaxes
      *
-     * @return Float
+     * @return
      */
     public Float getOrderTaxes(){
         return this.orderTaxes;
@@ -154,7 +154,7 @@ public class Transaction  {
     /**
      * Get the orderTotal
      *
-     * @return Float
+     * @return
      */
     public Float getOrderTotal(){
         return this.orderTotal;
@@ -163,7 +163,7 @@ public class Transaction  {
     /**
      * Get the transactionElements
      *
-     * @return Map<String,TransactionElement>
+     * @return
      */
     public Map<String,TransactionElement> getTransactionElements(){
         return this.transactionElements;
@@ -172,7 +172,7 @@ public class Transaction  {
     /**
      * Get the transactionError
      *
-     * @return TransactionError
+     * @return
      */
     public TransactionError getTransactionError(){
         return this.transactionError;
