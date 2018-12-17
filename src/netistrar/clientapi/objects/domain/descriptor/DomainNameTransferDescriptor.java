@@ -52,13 +52,13 @@ public class DomainNameTransferDescriptor  {
     /**
      * Updatable Constructor
      *
-    * @param String[] $transferIdentifiers
-    * @param DomainNameContact $ownerContact
-    * @param DomainNameContact $adminContact
-    * @param DomainNameContact $billingContact
-    * @param DomainNameContact $technicalContact
-    * @param Integer $privacyProxy
-    * @param Boolean $autoRenew
+    * @param transferIdentifiers
+    * @param ownerContact
+    * @param adminContact
+    * @param billingContact
+    * @param technicalContact
+    * @param privacyProxy
+    * @param autoRenew
     */
     public DomainNameTransferDescriptor(String[] transferIdentifiers, DomainNameContact ownerContact, DomainNameContact adminContact, DomainNameContact billingContact, DomainNameContact technicalContact, Integer privacyProxy, Boolean autoRenew){
 
@@ -85,7 +85,7 @@ public class DomainNameTransferDescriptor  {
     /**
      * Set the transferIdentifiers
      *
-     * @param String[] $transferIdentifiers
+     * @param $transferIdentifiers
      * @return DomainNameTransferDescriptor
      */
     public DomainNameTransferDescriptor setTransferIdentifiers(String[] transferIdentifiers){
@@ -105,7 +105,7 @@ public class DomainNameTransferDescriptor  {
     /**
      * Set the ownerContact
      *
-     * @param DomainNameContact $ownerContact
+     * @param $ownerContact
      * @return DomainNameTransferDescriptor
      */
     public DomainNameTransferDescriptor setOwnerContact(DomainNameContact ownerContact){
@@ -125,7 +125,7 @@ public class DomainNameTransferDescriptor  {
     /**
      * Set the adminContact
      *
-     * @param DomainNameContact $adminContact
+     * @param $adminContact
      * @return DomainNameTransferDescriptor
      */
     public DomainNameTransferDescriptor setAdminContact(DomainNameContact adminContact){
@@ -145,7 +145,7 @@ public class DomainNameTransferDescriptor  {
     /**
      * Set the billingContact
      *
-     * @param DomainNameContact $billingContact
+     * @param $billingContact
      * @return DomainNameTransferDescriptor
      */
     public DomainNameTransferDescriptor setBillingContact(DomainNameContact billingContact){
@@ -165,7 +165,7 @@ public class DomainNameTransferDescriptor  {
     /**
      * Set the technicalContact
      *
-     * @param DomainNameContact $technicalContact
+     * @param $technicalContact
      * @return DomainNameTransferDescriptor
      */
     public DomainNameTransferDescriptor setTechnicalContact(DomainNameContact technicalContact){
@@ -185,7 +185,7 @@ public class DomainNameTransferDescriptor  {
     /**
      * Set the privacyProxy
      *
-     * @param Integer $privacyProxy
+     * @param $privacyProxy
      * @return DomainNameTransferDescriptor
      */
     public DomainNameTransferDescriptor setPrivacyProxy(Integer privacyProxy){
@@ -205,7 +205,7 @@ public class DomainNameTransferDescriptor  {
     /**
      * Set the autoRenew
      *
-     * @param Boolean $autoRenew
+     * @param $autoRenew
      * @return DomainNameTransferDescriptor
      */
     public DomainNameTransferDescriptor setAutoRenew(Boolean autoRenew){

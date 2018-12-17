@@ -29,8 +29,8 @@ public class DomainNameRenewDescriptor  {
     /**
      * Updatable Constructor
      *
-    * @param String[] $domainNames
-    * @param Integer $additionalYears
+    * @param domainNames
+    * @param additionalYears
     */
     public DomainNameRenewDescriptor(String[] domainNames, Integer additionalYears){
 
@@ -52,7 +52,7 @@ public class DomainNameRenewDescriptor  {
     /**
      * Set the domainNames
      *
-     * @param String[] $domainNames
+     * @param $domainNames
      * @return DomainNameRenewDescriptor
      */
     public DomainNameRenewDescriptor setDomainNames(String[] domainNames){
@@ -72,7 +72,7 @@ public class DomainNameRenewDescriptor  {
     /**
      * Set the additionalYears
      *
-     * @param Integer $additionalYears
+     * @param $additionalYears
      * @return DomainNameRenewDescriptor
      */
     public DomainNameRenewDescriptor setAdditionalYears(Integer additionalYears){

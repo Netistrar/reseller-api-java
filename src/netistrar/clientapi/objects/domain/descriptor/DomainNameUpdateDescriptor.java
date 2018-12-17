@@ -66,17 +66,17 @@ public class DomainNameUpdateDescriptor  {
     /**
      * Updatable Constructor
      *
-    * @param String[] $domainNames
-    * @param DomainNameContact $ownerContact
-    * @param DomainNameContact $adminContact
-    * @param DomainNameContact $billingContact
-    * @param DomainNameContact $technicalContact
-    * @param String[] $nameservers
-    * @param Boolean $locked
-    * @param Integer $privacyProxy
-    * @param Boolean $autoRenew
-    * @param String[] $addTags
-    * @param String[] $removeTags
+    * @param domainNames
+    * @param ownerContact
+    * @param adminContact
+    * @param billingContact
+    * @param technicalContact
+    * @param nameservers
+    * @param locked
+    * @param privacyProxy
+    * @param autoRenew
+    * @param addTags
+    * @param removeTags
     */
     public DomainNameUpdateDescriptor(String[] domainNames, DomainNameContact ownerContact, DomainNameContact adminContact, DomainNameContact billingContact, DomainNameContact technicalContact, String[] nameservers, Boolean locked, Integer privacyProxy, Boolean autoRenew, String[] addTags, String[] removeTags){
 
@@ -107,7 +107,7 @@ public class DomainNameUpdateDescriptor  {
     /**
      * Set the domainNames
      *
-     * @param String[] $domainNames
+     * @param $domainNames
      * @return DomainNameUpdateDescriptor
      */
     public DomainNameUpdateDescriptor setDomainNames(String[] domainNames){
@@ -127,7 +127,7 @@ public class DomainNameUpdateDescriptor  {
     /**
      * Set the ownerContact
      *
-     * @param DomainNameContact $ownerContact
+     * @param $ownerContact
      * @return DomainNameUpdateDescriptor
      */
     public DomainNameUpdateDescriptor setOwnerContact(DomainNameContact ownerContact){
@@ -147,7 +147,7 @@ public class DomainNameUpdateDescriptor  {
     /**
      * Set the adminContact
      *
-     * @param DomainNameContact $adminContact
+     * @param $adminContact
      * @return DomainNameUpdateDescriptor
      */
     public DomainNameUpdateDescriptor setAdminContact(DomainNameContact adminContact){
@@ -167,7 +167,7 @@ public class DomainNameUpdateDescriptor  {
     /**
      * Set the billingContact
      *
-     * @param DomainNameContact $billingContact
+     * @param $billingContact
      * @return DomainNameUpdateDescriptor
      */
     public DomainNameUpdateDescriptor setBillingContact(DomainNameContact billingContact){
@@ -187,7 +187,7 @@ public class DomainNameUpdateDescriptor  {
     /**
      * Set the technicalContact
      *
-     * @param DomainNameContact $technicalContact
+     * @param $technicalContact
      * @return DomainNameUpdateDescriptor
      */
     public DomainNameUpdateDescriptor setTechnicalContact(DomainNameContact technicalContact){
@@ -207,7 +207,7 @@ public class DomainNameUpdateDescriptor  {
     /**
      * Set the nameservers
      *
-     * @param String[] $nameservers
+     * @param $nameservers
      * @return DomainNameUpdateDescriptor
      */
     public DomainNameUpdateDescriptor setNameservers(String[] nameservers){
@@ -227,7 +227,7 @@ public class DomainNameUpdateDescriptor  {
     /**
      * Set the locked
      *
-     * @param Boolean $locked
+     * @param $locked
      * @return DomainNameUpdateDescriptor
      */
     public DomainNameUpdateDescriptor setLocked(Boolean locked){
@@ -247,7 +247,7 @@ public class DomainNameUpdateDescriptor  {
     /**
      * Set the privacyProxy
      *
-     * @param Integer $privacyProxy
+     * @param $privacyProxy
      * @return DomainNameUpdateDescriptor
      */
     public DomainNameUpdateDescriptor setPrivacyProxy(Integer privacyProxy){
@@ -267,7 +267,7 @@ public class DomainNameUpdateDescriptor  {
     /**
      * Set the autoRenew
      *
-     * @param Boolean $autoRenew
+     * @param $autoRenew
      * @return DomainNameUpdateDescriptor
      */
     public DomainNameUpdateDescriptor setAutoRenew(Boolean autoRenew){
@@ -287,7 +287,7 @@ public class DomainNameUpdateDescriptor  {
     /**
      * Set the addTags
      *
-     * @param String[] $addTags
+     * @param $addTags
      * @return DomainNameUpdateDescriptor
      */
     public DomainNameUpdateDescriptor setAddTags(String[] addTags){
@@ -307,7 +307,7 @@ public class DomainNameUpdateDescriptor  {
     /**
      * Set the removeTags
      *
-     * @param String[] $removeTags
+     * @param $removeTags
      * @return DomainNameUpdateDescriptor
      */
     public DomainNameUpdateDescriptor setRemoveTags(String[] removeTags){

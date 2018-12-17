@@ -42,11 +42,11 @@ public class DomainNameAvailabilityDescriptor  {
     /**
      * Updatable Constructor
      *
-    * @param String $searchString
-    * @param String[] $tldCategories
-    * @param String[] $tlds
-    * @param Boolean $suggestions
-    * @param DomainNameSuggestionOptions $suggestionOptions
+    * @param searchString
+    * @param tldCategories
+    * @param tlds
+    * @param suggestions
+    * @param suggestionOptions
     */
     public DomainNameAvailabilityDescriptor(String searchString, String[] tldCategories, String[] tlds, Boolean suggestions, DomainNameSuggestionOptions suggestionOptions){
 
@@ -71,7 +71,7 @@ public class DomainNameAvailabilityDescriptor  {
     /**
      * Set the searchString
      *
-     * @param String $searchString
+     * @param $searchString
      * @return DomainNameAvailabilityDescriptor
      */
     public DomainNameAvailabilityDescriptor setSearchString(String searchString){
@@ -91,7 +91,7 @@ public class DomainNameAvailabilityDescriptor  {
     /**
      * Set the tldCategories
      *
-     * @param String[] $tldCategories
+     * @param $tldCategories
      * @return DomainNameAvailabilityDescriptor
      */
     public DomainNameAvailabilityDescriptor setTldCategories(String[] tldCategories){
@@ -111,7 +111,7 @@ public class DomainNameAvailabilityDescriptor  {
     /**
      * Set the tlds
      *
-     * @param String[] $tlds
+     * @param $tlds
      * @return DomainNameAvailabilityDescriptor
      */
     public DomainNameAvailabilityDescriptor setTlds(String[] tlds){
@@ -131,7 +131,7 @@ public class DomainNameAvailabilityDescriptor  {
     /**
      * Set the suggestions
      *
-     * @param Boolean $suggestions
+     * @param $suggestions
      * @return DomainNameAvailabilityDescriptor
      */
     public DomainNameAvailabilityDescriptor setSuggestions(Boolean suggestions){
@@ -151,7 +151,7 @@ public class DomainNameAvailabilityDescriptor  {
     /**
      * Set the suggestionOptions
      *
-     * @param DomainNameSuggestionOptions $suggestionOptions
+     * @param $suggestionOptions
      * @return DomainNameAvailabilityDescriptor
      */
     public DomainNameAvailabilityDescriptor setSuggestionOptions(DomainNameSuggestionOptions suggestionOptions){

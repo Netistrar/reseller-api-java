@@ -40,9 +40,9 @@ public class DomainNameGlueRecord  {
     /**
      * Updatable Constructor
      *
-    * @param String $subDomainPrefix
-    * @param String $ipv4Address
-    * @param String $ipv6Address
+    * @param subDomainPrefix
+    * @param ipv4Address
+    * @param ipv6Address
     */
     public DomainNameGlueRecord(String subDomainPrefix, String ipv4Address, String ipv6Address){
 
@@ -74,7 +74,7 @@ public class DomainNameGlueRecord  {
     /**
      * Set the subDomainPrefix
      *
-     * @param String $subDomainPrefix
+     * @param $subDomainPrefix
      * @return DomainNameGlueRecord
      */
     public DomainNameGlueRecord setSubDomainPrefix(String subDomainPrefix){
@@ -94,7 +94,7 @@ public class DomainNameGlueRecord  {
     /**
      * Set the ipv4Address
      *
-     * @param String $ipv4Address
+     * @param $ipv4Address
      * @return DomainNameGlueRecord
      */
     public DomainNameGlueRecord setIpv4Address(String ipv4Address){
@@ -114,7 +114,7 @@ public class DomainNameGlueRecord  {
     /**
      * Set the ipv6Address
      *
-     * @param String $ipv6Address
+     * @param $ipv6Address
      * @return DomainNameGlueRecord
      */
     public DomainNameGlueRecord setIpv6Address(String ipv6Address){

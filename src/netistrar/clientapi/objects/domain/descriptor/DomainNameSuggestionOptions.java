@@ -36,9 +36,9 @@ public class DomainNameSuggestionOptions  {
     /**
      * Updatable Constructor
      *
-    * @param Boolean $includeTlds
-    * @param Boolean $includeCategories
-    * @param Integer $fillCount
+    * @param includeTlds
+    * @param includeCategories
+    * @param fillCount
     */
     public DomainNameSuggestionOptions(Boolean includeTlds, Boolean includeCategories, Integer fillCount){
 
@@ -61,7 +61,7 @@ public class DomainNameSuggestionOptions  {
     /**
      * Set the includeTlds
      *
-     * @param Boolean $includeTlds
+     * @param $includeTlds
      * @return DomainNameSuggestionOptions
      */
     public DomainNameSuggestionOptions setIncludeTlds(Boolean includeTlds){
@@ -81,7 +81,7 @@ public class DomainNameSuggestionOptions  {
     /**
      * Set the includeCategories
      *
-     * @param Boolean $includeCategories
+     * @param $includeCategories
      * @return DomainNameSuggestionOptions
      */
     public DomainNameSuggestionOptions setIncludeCategories(Boolean includeCategories){
@@ -101,7 +101,7 @@ public class DomainNameSuggestionOptions  {
     /**
      * Set the fillCount
      *
-     * @param Integer $fillCount
+     * @param $fillCount
      * @return DomainNameSuggestionOptions
      */
     public DomainNameSuggestionOptions setFillCount(Integer fillCount){

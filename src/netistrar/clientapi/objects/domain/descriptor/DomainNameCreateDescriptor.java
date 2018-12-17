@@ -62,16 +62,16 @@ public class DomainNameCreateDescriptor  {
     /**
      * Updatable Constructor
      *
-    * @param String[] $domainNames
-    * @param Integer $registrationYears
-    * @param DomainNameContact $ownerContact
-    * @param String[] $nameservers
-    * @param DomainNameContact $adminContact
-    * @param DomainNameContact $billingContact
-    * @param DomainNameContact $technicalContact
-    * @param Integer $privacyProxy
-    * @param Boolean $autoRenew
-    * @param String[] $tags
+    * @param domainNames
+    * @param registrationYears
+    * @param ownerContact
+    * @param nameservers
+    * @param adminContact
+    * @param billingContact
+    * @param technicalContact
+    * @param privacyProxy
+    * @param autoRenew
+    * @param tags
     */
     public DomainNameCreateDescriptor(String[] domainNames, Integer registrationYears, DomainNameContact ownerContact, String[] nameservers, DomainNameContact adminContact, DomainNameContact billingContact, DomainNameContact technicalContact, Integer privacyProxy, Boolean autoRenew, String[] tags){
 
@@ -101,7 +101,7 @@ public class DomainNameCreateDescriptor  {
     /**
      * Set the domainNames
      *
-     * @param String[] $domainNames
+     * @param $domainNames
      * @return DomainNameCreateDescriptor
      */
     public DomainNameCreateDescriptor setDomainNames(String[] domainNames){
@@ -121,7 +121,7 @@ public class DomainNameCreateDescriptor  {
     /**
      * Set the registrationYears
      *
-     * @param Integer $registrationYears
+     * @param $registrationYears
      * @return DomainNameCreateDescriptor
      */
     public DomainNameCreateDescriptor setRegistrationYears(Integer registrationYears){
@@ -141,7 +141,7 @@ public class DomainNameCreateDescriptor  {
     /**
      * Set the ownerContact
      *
-     * @param DomainNameContact $ownerContact
+     * @param $ownerContact
      * @return DomainNameCreateDescriptor
      */
     public DomainNameCreateDescriptor setOwnerContact(DomainNameContact ownerContact){
@@ -161,7 +161,7 @@ public class DomainNameCreateDescriptor  {
     /**
      * Set the nameservers
      *
-     * @param String[] $nameservers
+     * @param $nameservers
      * @return DomainNameCreateDescriptor
      */
     public DomainNameCreateDescriptor setNameservers(String[] nameservers){
@@ -181,7 +181,7 @@ public class DomainNameCreateDescriptor  {
     /**
      * Set the adminContact
      *
-     * @param DomainNameContact $adminContact
+     * @param $adminContact
      * @return DomainNameCreateDescriptor
      */
     public DomainNameCreateDescriptor setAdminContact(DomainNameContact adminContact){
@@ -201,7 +201,7 @@ public class DomainNameCreateDescriptor  {
     /**
      * Set the billingContact
      *
-     * @param DomainNameContact $billingContact
+     * @param $billingContact
      * @return DomainNameCreateDescriptor
      */
     public DomainNameCreateDescriptor setBillingContact(DomainNameContact billingContact){
@@ -221,7 +221,7 @@ public class DomainNameCreateDescriptor  {
     /**
      * Set the technicalContact
      *
-     * @param DomainNameContact $technicalContact
+     * @param $technicalContact
      * @return DomainNameCreateDescriptor
      */
     public DomainNameCreateDescriptor setTechnicalContact(DomainNameContact technicalContact){
@@ -241,7 +241,7 @@ public class DomainNameCreateDescriptor  {
     /**
      * Set the privacyProxy
      *
-     * @param Integer $privacyProxy
+     * @param $privacyProxy
      * @return DomainNameCreateDescriptor
      */
     public DomainNameCreateDescriptor setPrivacyProxy(Integer privacyProxy){
@@ -261,7 +261,7 @@ public class DomainNameCreateDescriptor  {
     /**
      * Set the autoRenew
      *
-     * @param Boolean $autoRenew
+     * @param $autoRenew
      * @return DomainNameCreateDescriptor
      */
     public DomainNameCreateDescriptor setAutoRenew(Boolean autoRenew){
@@ -281,7 +281,7 @@ public class DomainNameCreateDescriptor  {
     /**
      * Set the tags
      *
-     * @param String[] $tags
+     * @param $tags
      * @return DomainNameCreateDescriptor
      */
     public DomainNameCreateDescriptor setTags(String[] tags){

@@ -54,11 +54,11 @@ public class TestDomainNameUpdateDescriptor  {
     /**
      * Updatable Constructor
      *
-    * @param String[] $domainNames
-    * @param String $status
-    * @param String $registeredDate
-    * @param String $lockedUntil
-    * @param Boolean $locked
+    * @param domainNames
+    * @param status
+    * @param registeredDate
+    * @param lockedUntil
+    * @param locked
     */
     public TestDomainNameUpdateDescriptor(String[] domainNames, String status, String registeredDate, String lockedUntil, Boolean locked){
 
@@ -83,7 +83,7 @@ public class TestDomainNameUpdateDescriptor  {
     /**
      * Set the domainNames
      *
-     * @param String[] $domainNames
+     * @param $domainNames
      * @return TestDomainNameUpdateDescriptor
      */
     public TestDomainNameUpdateDescriptor setDomainNames(String[] domainNames){
@@ -103,7 +103,7 @@ public class TestDomainNameUpdateDescriptor  {
     /**
      * Set the status
      *
-     * @param String $status
+     * @param $status
      * @return TestDomainNameUpdateDescriptor
      */
     public TestDomainNameUpdateDescriptor setStatus(String status){
@@ -123,7 +123,7 @@ public class TestDomainNameUpdateDescriptor  {
     /**
      * Set the registeredDate
      *
-     * @param String $registeredDate
+     * @param $registeredDate
      * @return TestDomainNameUpdateDescriptor
      */
     public TestDomainNameUpdateDescriptor setRegisteredDate(String registeredDate){
@@ -143,7 +143,7 @@ public class TestDomainNameUpdateDescriptor  {
     /**
      * Set the lockedUntil
      *
-     * @param String $lockedUntil
+     * @param $lockedUntil
      * @return TestDomainNameUpdateDescriptor
      */
     public TestDomainNameUpdateDescriptor setLockedUntil(String lockedUntil){
@@ -163,7 +163,7 @@ public class TestDomainNameUpdateDescriptor  {
     /**
      * Set the locked
      *
-     * @param Boolean $locked
+     * @param $locked
      * @return TestDomainNameUpdateDescriptor
      */
     public TestDomainNameUpdateDescriptor setLocked(Boolean locked){
