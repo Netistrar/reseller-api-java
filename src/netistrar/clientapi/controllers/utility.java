@@ -14,6 +14,10 @@ import netistrar.clientapi.objects.utility.BulkOperationProgress;
 */
 public class utility extends WebServiceProxy {
 
+    /**
+    * @param webServiceURL
+    * @param globalParameters
+    */
     public utility(String webServiceURL, Map<String,String> globalParameters){
         super(webServiceURL, globalParameters);
     }
@@ -61,7 +65,7 @@ public class utility extends WebServiceProxy {
      * Get the progress for a bulk operation as a BulkOperationProgress object using a progress key generated using the createBulkOperation method.  This will typically be attached to an operation in
      * e.g. the Domain API after which repeated calls can be made asynchronously to this method to check progress.
      *
-     * @param String bulkOperationProgressKey
+     * @param bulkOperationProgressKey
      */
     public BulkOperationProgress getBulkOperationProgress(String bulkOperationProgressKey) throws Exception{
         Map<String, Object> params = new HashMap<String, Object>();

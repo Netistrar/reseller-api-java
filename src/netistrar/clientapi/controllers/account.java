@@ -14,6 +14,10 @@ import netistrar.clientapi.objects.account.AccountNotification;
 */
 public class account extends WebServiceProxy {
 
+    /**
+    * @param webServiceURL
+    * @param globalParameters
+    */
     public account(String webServiceURL, Map<String,String> globalParameters){
         super(webServiceURL, globalParameters);
     }
@@ -41,9 +45,9 @@ public class account extends WebServiceProxy {
      * List account notifications ordered by the latest first.  This can be optionally limited to a number of notifications
      * and one or more notification types (supplied as an array) for filtering.
      *
-     * @param Integer maxResults
-     * @param String types
-     * @param String subTypes
+     * @param maxResults
+     * @param types
+     * @param subTypes
      */
     public AccountNotification[] listNotifications(Integer maxResults, String types, String subTypes) throws Exception{
         Map<String, Object> params = new HashMap<String, Object>();
@@ -66,7 +70,7 @@ public class account extends WebServiceProxy {
     /**
      * Get an account notification by id.
      *
-     * @param Integer notificationId
+     * @param notificationId
      */
     public AccountNotification getNotification(Integer notificationId) throws Exception{
         Map<String, Object> params = new HashMap<String, Object>();
