@@ -52,7 +52,7 @@ public class TransactionException extends Exception {
     /**
      * Get the transactionErrors
      *
-     * @return Map<String,TransactionError>
+     * @return
      */
     public Map<String,TransactionError> getTransactionErrors(){
         return this.transactionErrors;
@@ -61,7 +61,7 @@ public class TransactionException extends Exception {
     /**
      * Get the sourceException
      *
-     * @return Map<String,String>
+     * @return
      */
     public Map<String,String> getSourceException(){
         return this.sourceException;
@@ -70,7 +70,7 @@ public class TransactionException extends Exception {
     /**
      * Get the message
      *
-     * @return String
+     * @return
      */
     public String getMessage(){
         return this.message;
@@ -79,7 +79,7 @@ public class TransactionException extends Exception {
     /**
      * Get the code
      *
-     * @return String
+     * @return
      */
     public String getCode(){
         return this.code;
@@ -88,7 +88,7 @@ public class TransactionException extends Exception {
     /**
      * Get the file
      *
-     * @return String
+     * @return
      */
     public String getFile(){
         return this.file;
@@ -97,7 +97,7 @@ public class TransactionException extends Exception {
     /**
      * Get the line
      *
-     * @return String
+     * @return
      */
     public String getLine(){
         return this.line;
