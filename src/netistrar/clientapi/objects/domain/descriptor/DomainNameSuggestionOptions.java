@@ -61,7 +61,7 @@ public class DomainNameSuggestionOptions  {
     /**
      * Set the includeTlds
      *
-     * @param $includeTlds
+     * @param includeTlds
      * @return DomainNameSuggestionOptions
      */
     public DomainNameSuggestionOptions setIncludeTlds(Boolean includeTlds){
@@ -81,7 +81,7 @@ public class DomainNameSuggestionOptions  {
     /**
      * Set the includeCategories
      *
-     * @param $includeCategories
+     * @param includeCategories
      * @return DomainNameSuggestionOptions
      */
     public DomainNameSuggestionOptions setIncludeCategories(Boolean includeCategories){
@@ -101,7 +101,7 @@ public class DomainNameSuggestionOptions  {
     /**
      * Set the fillCount
      *
-     * @param $fillCount
+     * @param fillCount
      * @return DomainNameSuggestionOptions
      */
     public DomainNameSuggestionOptions setFillCount(Integer fillCount){

@@ -52,7 +52,7 @@ public class DomainNameRenewDescriptor  {
     /**
      * Set the domainNames
      *
-     * @param $domainNames
+     * @param domainNames
      * @return DomainNameRenewDescriptor
      */
     public DomainNameRenewDescriptor setDomainNames(String[] domainNames){
@@ -72,7 +72,7 @@ public class DomainNameRenewDescriptor  {
     /**
      * Set the additionalYears
      *
-     * @param $additionalYears
+     * @param additionalYears
      * @return DomainNameRenewDescriptor
      */
     public DomainNameRenewDescriptor setAdditionalYears(Integer additionalYears){

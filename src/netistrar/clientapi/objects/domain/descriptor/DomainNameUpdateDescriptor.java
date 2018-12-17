@@ -107,7 +107,7 @@ public class DomainNameUpdateDescriptor  {
     /**
      * Set the domainNames
      *
-     * @param $domainNames
+     * @param domainNames
      * @return DomainNameUpdateDescriptor
      */
     public DomainNameUpdateDescriptor setDomainNames(String[] domainNames){
@@ -127,7 +127,7 @@ public class DomainNameUpdateDescriptor  {
     /**
      * Set the ownerContact
      *
-     * @param $ownerContact
+     * @param ownerContact
      * @return DomainNameUpdateDescriptor
      */
     public DomainNameUpdateDescriptor setOwnerContact(DomainNameContact ownerContact){
@@ -147,7 +147,7 @@ public class DomainNameUpdateDescriptor  {
     /**
      * Set the adminContact
      *
-     * @param $adminContact
+     * @param adminContact
      * @return DomainNameUpdateDescriptor
      */
     public DomainNameUpdateDescriptor setAdminContact(DomainNameContact adminContact){
@@ -167,7 +167,7 @@ public class DomainNameUpdateDescriptor  {
     /**
      * Set the billingContact
      *
-     * @param $billingContact
+     * @param billingContact
      * @return DomainNameUpdateDescriptor
      */
     public DomainNameUpdateDescriptor setBillingContact(DomainNameContact billingContact){
@@ -187,7 +187,7 @@ public class DomainNameUpdateDescriptor  {
     /**
      * Set the technicalContact
      *
-     * @param $technicalContact
+     * @param technicalContact
      * @return DomainNameUpdateDescriptor
      */
     public DomainNameUpdateDescriptor setTechnicalContact(DomainNameContact technicalContact){
@@ -207,7 +207,7 @@ public class DomainNameUpdateDescriptor  {
     /**
      * Set the nameservers
      *
-     * @param $nameservers
+     * @param nameservers
      * @return DomainNameUpdateDescriptor
      */
     public DomainNameUpdateDescriptor setNameservers(String[] nameservers){
@@ -227,7 +227,7 @@ public class DomainNameUpdateDescriptor  {
     /**
      * Set the locked
      *
-     * @param $locked
+     * @param locked
      * @return DomainNameUpdateDescriptor
      */
     public DomainNameUpdateDescriptor setLocked(Boolean locked){
@@ -247,7 +247,7 @@ public class DomainNameUpdateDescriptor  {
     /**
      * Set the privacyProxy
      *
-     * @param $privacyProxy
+     * @param privacyProxy
      * @return DomainNameUpdateDescriptor
      */
     public DomainNameUpdateDescriptor setPrivacyProxy(Integer privacyProxy){
@@ -267,7 +267,7 @@ public class DomainNameUpdateDescriptor  {
     /**
      * Set the autoRenew
      *
-     * @param $autoRenew
+     * @param autoRenew
      * @return DomainNameUpdateDescriptor
      */
     public DomainNameUpdateDescriptor setAutoRenew(Boolean autoRenew){
@@ -287,7 +287,7 @@ public class DomainNameUpdateDescriptor  {
     /**
      * Set the addTags
      *
-     * @param $addTags
+     * @param addTags
      * @return DomainNameUpdateDescriptor
      */
     public DomainNameUpdateDescriptor setAddTags(String[] addTags){
@@ -307,7 +307,7 @@ public class DomainNameUpdateDescriptor  {
     /**
      * Set the removeTags
      *
-     * @param $removeTags
+     * @param removeTags
      * @return DomainNameUpdateDescriptor
      */
     public DomainNameUpdateDescriptor setRemoveTags(String[] removeTags){

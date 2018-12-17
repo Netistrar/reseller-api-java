@@ -85,7 +85,7 @@ public class DomainNameTransferDescriptor  {
     /**
      * Set the transferIdentifiers
      *
-     * @param $transferIdentifiers
+     * @param transferIdentifiers
      * @return DomainNameTransferDescriptor
      */
     public DomainNameTransferDescriptor setTransferIdentifiers(String[] transferIdentifiers){
@@ -105,7 +105,7 @@ public class DomainNameTransferDescriptor  {
     /**
      * Set the ownerContact
      *
-     * @param $ownerContact
+     * @param ownerContact
      * @return DomainNameTransferDescriptor
      */
     public DomainNameTransferDescriptor setOwnerContact(DomainNameContact ownerContact){
@@ -125,7 +125,7 @@ public class DomainNameTransferDescriptor  {
     /**
      * Set the adminContact
      *
-     * @param $adminContact
+     * @param adminContact
      * @return DomainNameTransferDescriptor
      */
     public DomainNameTransferDescriptor setAdminContact(DomainNameContact adminContact){
@@ -145,7 +145,7 @@ public class DomainNameTransferDescriptor  {
     /**
      * Set the billingContact
      *
-     * @param $billingContact
+     * @param billingContact
      * @return DomainNameTransferDescriptor
      */
     public DomainNameTransferDescriptor setBillingContact(DomainNameContact billingContact){
@@ -165,7 +165,7 @@ public class DomainNameTransferDescriptor  {
     /**
      * Set the technicalContact
      *
-     * @param $technicalContact
+     * @param technicalContact
      * @return DomainNameTransferDescriptor
      */
     public DomainNameTransferDescriptor setTechnicalContact(DomainNameContact technicalContact){
@@ -185,7 +185,7 @@ public class DomainNameTransferDescriptor  {
     /**
      * Set the privacyProxy
      *
-     * @param $privacyProxy
+     * @param privacyProxy
      * @return DomainNameTransferDescriptor
      */
     public DomainNameTransferDescriptor setPrivacyProxy(Integer privacyProxy){
@@ -205,7 +205,7 @@ public class DomainNameTransferDescriptor  {
     /**
      * Set the autoRenew
      *
-     * @param $autoRenew
+     * @param autoRenew
      * @return DomainNameTransferDescriptor
      */
     public DomainNameTransferDescriptor setAutoRenew(Boolean autoRenew){

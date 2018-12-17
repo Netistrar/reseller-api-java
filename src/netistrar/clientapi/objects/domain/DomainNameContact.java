@@ -168,7 +168,7 @@ public class DomainNameContact  {
     /**
      * Set the name
      *
-     * @param $name
+     * @param name
      * @return DomainNameContact
      */
     public DomainNameContact setName(String name){
@@ -188,7 +188,7 @@ public class DomainNameContact  {
     /**
      * Set the emailAddress
      *
-     * @param $emailAddress
+     * @param emailAddress
      * @return DomainNameContact
      */
     public DomainNameContact setEmailAddress(String emailAddress){
@@ -208,7 +208,7 @@ public class DomainNameContact  {
     /**
      * Set the organisation
      *
-     * @param $organisation
+     * @param organisation
      * @return DomainNameContact
      */
     public DomainNameContact setOrganisation(String organisation){
@@ -228,7 +228,7 @@ public class DomainNameContact  {
     /**
      * Set the street1
      *
-     * @param $street1
+     * @param street1
      * @return DomainNameContact
      */
     public DomainNameContact setStreet1(String street1){
@@ -248,7 +248,7 @@ public class DomainNameContact  {
     /**
      * Set the street2
      *
-     * @param $street2
+     * @param street2
      * @return DomainNameContact
      */
     public DomainNameContact setStreet2(String street2){
@@ -268,7 +268,7 @@ public class DomainNameContact  {
     /**
      * Set the city
      *
-     * @param $city
+     * @param city
      * @return DomainNameContact
      */
     public DomainNameContact setCity(String city){
@@ -288,7 +288,7 @@ public class DomainNameContact  {
     /**
      * Set the county
      *
-     * @param $county
+     * @param county
      * @return DomainNameContact
      */
     public DomainNameContact setCounty(String county){
@@ -308,7 +308,7 @@ public class DomainNameContact  {
     /**
      * Set the postcode
      *
-     * @param $postcode
+     * @param postcode
      * @return DomainNameContact
      */
     public DomainNameContact setPostcode(String postcode){
@@ -328,7 +328,7 @@ public class DomainNameContact  {
     /**
      * Set the country
      *
-     * @param $country
+     * @param country
      * @return DomainNameContact
      */
     public DomainNameContact setCountry(String country){
@@ -348,7 +348,7 @@ public class DomainNameContact  {
     /**
      * Set the telephoneDiallingCode
      *
-     * @param $telephoneDiallingCode
+     * @param telephoneDiallingCode
      * @return DomainNameContact
      */
     public DomainNameContact setTelephoneDiallingCode(String telephoneDiallingCode){
@@ -368,7 +368,7 @@ public class DomainNameContact  {
     /**
      * Set the telephone
      *
-     * @param $telephone
+     * @param telephone
      * @return DomainNameContact
      */
     public DomainNameContact setTelephone(String telephone){
@@ -388,7 +388,7 @@ public class DomainNameContact  {
     /**
      * Set the telephoneExt
      *
-     * @param $telephoneExt
+     * @param telephoneExt
      * @return DomainNameContact
      */
     public DomainNameContact setTelephoneExt(String telephoneExt){
@@ -408,7 +408,7 @@ public class DomainNameContact  {
     /**
      * Set the faxDiallingCode
      *
-     * @param $faxDiallingCode
+     * @param faxDiallingCode
      * @return DomainNameContact
      */
     public DomainNameContact setFaxDiallingCode(String faxDiallingCode){
@@ -428,7 +428,7 @@ public class DomainNameContact  {
     /**
      * Set the fax
      *
-     * @param $fax
+     * @param fax
      * @return DomainNameContact
      */
     public DomainNameContact setFax(String fax){
@@ -448,7 +448,7 @@ public class DomainNameContact  {
     /**
      * Set the faxExt
      *
-     * @param $faxExt
+     * @param faxExt
      * @return DomainNameContact
      */
     public DomainNameContact setFaxExt(String faxExt){
@@ -468,7 +468,7 @@ public class DomainNameContact  {
     /**
      * Set the additionalData
      *
-     * @param $additionalData
+     * @param additionalData
      * @return DomainNameContact
      */
     public DomainNameContact setAdditionalData(Map<String,Object> additionalData){

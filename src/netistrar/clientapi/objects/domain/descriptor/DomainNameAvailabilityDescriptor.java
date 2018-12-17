@@ -71,7 +71,7 @@ public class DomainNameAvailabilityDescriptor  {
     /**
      * Set the searchString
      *
-     * @param $searchString
+     * @param searchString
      * @return DomainNameAvailabilityDescriptor
      */
     public DomainNameAvailabilityDescriptor setSearchString(String searchString){
@@ -91,7 +91,7 @@ public class DomainNameAvailabilityDescriptor  {
     /**
      * Set the tldCategories
      *
-     * @param $tldCategories
+     * @param tldCategories
      * @return DomainNameAvailabilityDescriptor
      */
     public DomainNameAvailabilityDescriptor setTldCategories(String[] tldCategories){
@@ -111,7 +111,7 @@ public class DomainNameAvailabilityDescriptor  {
     /**
      * Set the tlds
      *
-     * @param $tlds
+     * @param tlds
      * @return DomainNameAvailabilityDescriptor
      */
     public DomainNameAvailabilityDescriptor setTlds(String[] tlds){
@@ -131,7 +131,7 @@ public class DomainNameAvailabilityDescriptor  {
     /**
      * Set the suggestions
      *
-     * @param $suggestions
+     * @param suggestions
      * @return DomainNameAvailabilityDescriptor
      */
     public DomainNameAvailabilityDescriptor setSuggestions(Boolean suggestions){
@@ -151,7 +151,7 @@ public class DomainNameAvailabilityDescriptor  {
     /**
      * Set the suggestionOptions
      *
-     * @param $suggestionOptions
+     * @param suggestionOptions
      * @return DomainNameAvailabilityDescriptor
      */
     public DomainNameAvailabilityDescriptor setSuggestionOptions(DomainNameSuggestionOptions suggestionOptions){

@@ -83,7 +83,7 @@ public class TestDomainNameUpdateDescriptor  {
     /**
      * Set the domainNames
      *
-     * @param $domainNames
+     * @param domainNames
      * @return TestDomainNameUpdateDescriptor
      */
     public TestDomainNameUpdateDescriptor setDomainNames(String[] domainNames){
@@ -103,7 +103,7 @@ public class TestDomainNameUpdateDescriptor  {
     /**
      * Set the status
      *
-     * @param $status
+     * @param status
      * @return TestDomainNameUpdateDescriptor
      */
     public TestDomainNameUpdateDescriptor setStatus(String status){
@@ -123,7 +123,7 @@ public class TestDomainNameUpdateDescriptor  {
     /**
      * Set the registeredDate
      *
-     * @param $registeredDate
+     * @param registeredDate
      * @return TestDomainNameUpdateDescriptor
      */
     public TestDomainNameUpdateDescriptor setRegisteredDate(String registeredDate){
@@ -143,7 +143,7 @@ public class TestDomainNameUpdateDescriptor  {
     /**
      * Set the lockedUntil
      *
-     * @param $lockedUntil
+     * @param lockedUntil
      * @return TestDomainNameUpdateDescriptor
      */
     public TestDomainNameUpdateDescriptor setLockedUntil(String lockedUntil){
@@ -163,7 +163,7 @@ public class TestDomainNameUpdateDescriptor  {
     /**
      * Set the locked
      *
-     * @param $locked
+     * @param locked
      * @return TestDomainNameUpdateDescriptor
      */
     public TestDomainNameUpdateDescriptor setLocked(Boolean locked){

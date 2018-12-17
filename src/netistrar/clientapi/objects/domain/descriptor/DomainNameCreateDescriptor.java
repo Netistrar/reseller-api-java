@@ -101,7 +101,7 @@ public class DomainNameCreateDescriptor  {
     /**
      * Set the domainNames
      *
-     * @param $domainNames
+     * @param domainNames
      * @return DomainNameCreateDescriptor
      */
     public DomainNameCreateDescriptor setDomainNames(String[] domainNames){
@@ -121,7 +121,7 @@ public class DomainNameCreateDescriptor  {
     /**
      * Set the registrationYears
      *
-     * @param $registrationYears
+     * @param registrationYears
      * @return DomainNameCreateDescriptor
      */
     public DomainNameCreateDescriptor setRegistrationYears(Integer registrationYears){
@@ -141,7 +141,7 @@ public class DomainNameCreateDescriptor  {
     /**
      * Set the ownerContact
      *
-     * @param $ownerContact
+     * @param ownerContact
      * @return DomainNameCreateDescriptor
      */
     public DomainNameCreateDescriptor setOwnerContact(DomainNameContact ownerContact){
@@ -161,7 +161,7 @@ public class DomainNameCreateDescriptor  {
     /**
      * Set the nameservers
      *
-     * @param $nameservers
+     * @param nameservers
      * @return DomainNameCreateDescriptor
      */
     public DomainNameCreateDescriptor setNameservers(String[] nameservers){
@@ -181,7 +181,7 @@ public class DomainNameCreateDescriptor  {
     /**
      * Set the adminContact
      *
-     * @param $adminContact
+     * @param adminContact
      * @return DomainNameCreateDescriptor
      */
     public DomainNameCreateDescriptor setAdminContact(DomainNameContact adminContact){
@@ -201,7 +201,7 @@ public class DomainNameCreateDescriptor  {
     /**
      * Set the billingContact
      *
-     * @param $billingContact
+     * @param billingContact
      * @return DomainNameCreateDescriptor
      */
     public DomainNameCreateDescriptor setBillingContact(DomainNameContact billingContact){
@@ -221,7 +221,7 @@ public class DomainNameCreateDescriptor  {
     /**
      * Set the technicalContact
      *
-     * @param $technicalContact
+     * @param technicalContact
      * @return DomainNameCreateDescriptor
      */
     public DomainNameCreateDescriptor setTechnicalContact(DomainNameContact technicalContact){
@@ -241,7 +241,7 @@ public class DomainNameCreateDescriptor  {
     /**
      * Set the privacyProxy
      *
-     * @param $privacyProxy
+     * @param privacyProxy
      * @return DomainNameCreateDescriptor
      */
     public DomainNameCreateDescriptor setPrivacyProxy(Integer privacyProxy){
@@ -261,7 +261,7 @@ public class DomainNameCreateDescriptor  {
     /**
      * Set the autoRenew
      *
-     * @param $autoRenew
+     * @param autoRenew
      * @return DomainNameCreateDescriptor
      */
     public DomainNameCreateDescriptor setAutoRenew(Boolean autoRenew){
@@ -281,7 +281,7 @@ public class DomainNameCreateDescriptor  {
     /**
      * Set the tags
      *
-     * @param $tags
+     * @param tags
      * @return DomainNameCreateDescriptor
      */
     public DomainNameCreateDescriptor setTags(String[] tags){
