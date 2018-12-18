@@ -15,8 +15,8 @@ import netistrar.clientapi.objects.utility.BulkOperationProgress;
 public class utility extends WebServiceProxy {
 
     /**
-    * @param webServiceURL
-    * @param globalParameters
+    * @param webServiceURL The URL to call for this webservice
+    * @param globalParameters Any global parameters required for this webservice e.g. API Keys etc.
     */
     public utility(String webServiceURL, Map<String,String> globalParameters){
         super(webServiceURL, globalParameters);
@@ -25,6 +25,8 @@ public class utility extends WebServiceProxy {
     /**
      * Ping function for checking API service availability.  Returns OK if successful
      *
+     * @return Result from function
+     * @throws Exception Throws server side exceptions of variable types.
      */
     public String ping() throws Exception{
         Map<String, Object> params = new HashMap<String, Object>();
@@ -45,6 +47,8 @@ public class utility extends WebServiceProxy {
      * Create a bulk operation progress key.  This can then be passed to a bulk operation method in e.g. the Domain API to allow progress tracking of the operation
      * using the getBulkOperationProgress method.
      *
+     * @return Result from function
+     * @throws Exception Throws server side exceptions of variable types.
      */
     public String createBulkOperation() throws Exception{
         Map<String, Object> params = new HashMap<String, Object>();
@@ -65,7 +69,9 @@ public class utility extends WebServiceProxy {
      * Get the progress for a bulk operation as a BulkOperationProgress object using a progress key generated using the createBulkOperation method.  This will typically be attached to an operation in
      * e.g. the Domain API after which repeated calls can be made asynchronously to this method to check progress.
      *
-     * @param bulkOperationProgressKey
+     * @param bulkOperationProgressKey bulkOperationProgressKey
+     * @return Result from function
+     * @throws Exception Throws server side exceptions of variable types.
      */
     public BulkOperationProgress getBulkOperationProgress(String bulkOperationProgressKey) throws Exception{
         Map<String, Object> params = new HashMap<String, Object>();

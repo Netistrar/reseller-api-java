@@ -71,7 +71,7 @@ public class TransactionElement  {
     /**
      * Get the type
      *
-     * @return
+     * @return type
      */
     public String getType(){
         return this.type;
@@ -80,7 +80,7 @@ public class TransactionElement  {
     /**
      * Get the description
      *
-     * @return
+     * @return description
      */
     public String getDescription(){
         return this.description;
@@ -89,7 +89,7 @@ public class TransactionElement  {
     /**
      * Get the elementStatus
      *
-     * @return
+     * @return elementStatus
      */
     public String getElementStatus(){
         return this.elementStatus;
@@ -98,7 +98,7 @@ public class TransactionElement  {
     /**
      * Get the operationData
      *
-     * @return
+     * @return operationData
      */
     public Map<String,Object> getOperationData(){
         return this.operationData;
@@ -107,7 +107,7 @@ public class TransactionElement  {
     /**
      * Get the elementErrors
      *
-     * @return
+     * @return elementErrors
      */
     public Map<String,TransactionError> getElementErrors(){
         return this.elementErrors;
@@ -116,7 +116,7 @@ public class TransactionElement  {
     /**
      * Get the orderLineSubtotal
      *
-     * @return
+     * @return orderLineSubtotal
      */
     public Float getOrderLineSubtotal(){
         return this.orderLineSubtotal;
@@ -125,7 +125,7 @@ public class TransactionElement  {
     /**
      * Get the orderLineTaxes
      *
-     * @return
+     * @return orderLineTaxes
      */
     public Float getOrderLineTaxes(){
         return this.orderLineTaxes;
@@ -134,7 +134,7 @@ public class TransactionElement  {
     /**
      * Get the orderLineTotal
      *
-     * @return
+     * @return orderLineTotal
      */
     public Float getOrderLineTotal(){
         return this.orderLineTotal;

@@ -62,16 +62,16 @@ public class DomainNameCreateDescriptor  {
     /**
      * Updatable Constructor
      *
-    * @param domainNames
-    * @param registrationYears
-    * @param ownerContact
-    * @param nameservers
-    * @param adminContact
-    * @param billingContact
-    * @param technicalContact
-    * @param privacyProxy
-    * @param autoRenew
-    * @param tags
+    * @param domainNames the domainNames
+    * @param registrationYears the registrationYears
+    * @param ownerContact the ownerContact
+    * @param nameservers the nameservers
+    * @param adminContact the adminContact
+    * @param billingContact the billingContact
+    * @param technicalContact the technicalContact
+    * @param privacyProxy the privacyProxy
+    * @param autoRenew the autoRenew
+    * @param tags the tags
     */
     public DomainNameCreateDescriptor(String[] domainNames, Integer registrationYears, DomainNameContact ownerContact, String[] nameservers, DomainNameContact adminContact, DomainNameContact billingContact, DomainNameContact technicalContact, Integer privacyProxy, Boolean autoRenew, String[] tags){
 
@@ -92,7 +92,7 @@ public class DomainNameCreateDescriptor  {
     /**
      * Get the domainNames
      *
-     * @return
+     * @return domainNames
      */
     public String[] getDomainNames(){
         return this.domainNames;
@@ -101,8 +101,8 @@ public class DomainNameCreateDescriptor  {
     /**
      * Set the domainNames
      *
-     * @param domainNames
-     * @return
+     * @param domainNames the domainNames
+     * @return DomainNameCreateDescriptor
      */
     public DomainNameCreateDescriptor setDomainNames(String[] domainNames){
         this.domainNames = domainNames;
@@ -112,7 +112,7 @@ public class DomainNameCreateDescriptor  {
     /**
      * Get the registrationYears
      *
-     * @return
+     * @return registrationYears
      */
     public Integer getRegistrationYears(){
         return this.registrationYears;
@@ -121,8 +121,8 @@ public class DomainNameCreateDescriptor  {
     /**
      * Set the registrationYears
      *
-     * @param registrationYears
-     * @return
+     * @param registrationYears the registrationYears
+     * @return DomainNameCreateDescriptor
      */
     public DomainNameCreateDescriptor setRegistrationYears(Integer registrationYears){
         this.registrationYears = registrationYears;
@@ -132,7 +132,7 @@ public class DomainNameCreateDescriptor  {
     /**
      * Get the ownerContact
      *
-     * @return
+     * @return ownerContact
      */
     public DomainNameContact getOwnerContact(){
         return this.ownerContact;
@@ -141,8 +141,8 @@ public class DomainNameCreateDescriptor  {
     /**
      * Set the ownerContact
      *
-     * @param ownerContact
-     * @return
+     * @param ownerContact the ownerContact
+     * @return DomainNameCreateDescriptor
      */
     public DomainNameCreateDescriptor setOwnerContact(DomainNameContact ownerContact){
         this.ownerContact = ownerContact;
@@ -152,7 +152,7 @@ public class DomainNameCreateDescriptor  {
     /**
      * Get the nameservers
      *
-     * @return
+     * @return nameservers
      */
     public String[] getNameservers(){
         return this.nameservers;
@@ -161,8 +161,8 @@ public class DomainNameCreateDescriptor  {
     /**
      * Set the nameservers
      *
-     * @param nameservers
-     * @return
+     * @param nameservers the nameservers
+     * @return DomainNameCreateDescriptor
      */
     public DomainNameCreateDescriptor setNameservers(String[] nameservers){
         this.nameservers = nameservers;
@@ -172,7 +172,7 @@ public class DomainNameCreateDescriptor  {
     /**
      * Get the adminContact
      *
-     * @return
+     * @return adminContact
      */
     public DomainNameContact getAdminContact(){
         return this.adminContact;
@@ -181,8 +181,8 @@ public class DomainNameCreateDescriptor  {
     /**
      * Set the adminContact
      *
-     * @param adminContact
-     * @return
+     * @param adminContact the adminContact
+     * @return DomainNameCreateDescriptor
      */
     public DomainNameCreateDescriptor setAdminContact(DomainNameContact adminContact){
         this.adminContact = adminContact;
@@ -192,7 +192,7 @@ public class DomainNameCreateDescriptor  {
     /**
      * Get the billingContact
      *
-     * @return
+     * @return billingContact
      */
     public DomainNameContact getBillingContact(){
         return this.billingContact;
@@ -201,8 +201,8 @@ public class DomainNameCreateDescriptor  {
     /**
      * Set the billingContact
      *
-     * @param billingContact
-     * @return
+     * @param billingContact the billingContact
+     * @return DomainNameCreateDescriptor
      */
     public DomainNameCreateDescriptor setBillingContact(DomainNameContact billingContact){
         this.billingContact = billingContact;
@@ -212,7 +212,7 @@ public class DomainNameCreateDescriptor  {
     /**
      * Get the technicalContact
      *
-     * @return
+     * @return technicalContact
      */
     public DomainNameContact getTechnicalContact(){
         return this.technicalContact;
@@ -221,8 +221,8 @@ public class DomainNameCreateDescriptor  {
     /**
      * Set the technicalContact
      *
-     * @param technicalContact
-     * @return
+     * @param technicalContact the technicalContact
+     * @return DomainNameCreateDescriptor
      */
     public DomainNameCreateDescriptor setTechnicalContact(DomainNameContact technicalContact){
         this.technicalContact = technicalContact;
@@ -232,7 +232,7 @@ public class DomainNameCreateDescriptor  {
     /**
      * Get the privacyProxy
      *
-     * @return
+     * @return privacyProxy
      */
     public Integer getPrivacyProxy(){
         return this.privacyProxy;
@@ -241,8 +241,8 @@ public class DomainNameCreateDescriptor  {
     /**
      * Set the privacyProxy
      *
-     * @param privacyProxy
-     * @return
+     * @param privacyProxy the privacyProxy
+     * @return DomainNameCreateDescriptor
      */
     public DomainNameCreateDescriptor setPrivacyProxy(Integer privacyProxy){
         this.privacyProxy = privacyProxy;
@@ -252,7 +252,7 @@ public class DomainNameCreateDescriptor  {
     /**
      * Get the autoRenew
      *
-     * @return
+     * @return autoRenew
      */
     public Boolean getAutoRenew(){
         return this.autoRenew;
@@ -261,8 +261,8 @@ public class DomainNameCreateDescriptor  {
     /**
      * Set the autoRenew
      *
-     * @param autoRenew
-     * @return
+     * @param autoRenew the autoRenew
+     * @return DomainNameCreateDescriptor
      */
     public DomainNameCreateDescriptor setAutoRenew(Boolean autoRenew){
         this.autoRenew = autoRenew;
@@ -272,7 +272,7 @@ public class DomainNameCreateDescriptor  {
     /**
      * Get the tags
      *
-     * @return
+     * @return tags
      */
     public String[] getTags(){
         return this.tags;
@@ -281,8 +281,8 @@ public class DomainNameCreateDescriptor  {
     /**
      * Set the tags
      *
-     * @param tags
-     * @return
+     * @param tags the tags
+     * @return DomainNameCreateDescriptor
      */
     public DomainNameCreateDescriptor setTags(String[] tags){
         this.tags = tags;

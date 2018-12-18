@@ -54,11 +54,11 @@ public class TestDomainNameUpdateDescriptor  {
     /**
      * Updatable Constructor
      *
-    * @param domainNames
-    * @param status
-    * @param registeredDate
-    * @param lockedUntil
-    * @param locked
+    * @param domainNames the domainNames
+    * @param status the status
+    * @param registeredDate the registeredDate
+    * @param lockedUntil the lockedUntil
+    * @param locked the locked
     */
     public TestDomainNameUpdateDescriptor(String[] domainNames, String status, String registeredDate, String lockedUntil, Boolean locked){
 
@@ -74,7 +74,7 @@ public class TestDomainNameUpdateDescriptor  {
     /**
      * Get the domainNames
      *
-     * @return
+     * @return domainNames
      */
     public String[] getDomainNames(){
         return this.domainNames;
@@ -83,8 +83,8 @@ public class TestDomainNameUpdateDescriptor  {
     /**
      * Set the domainNames
      *
-     * @param domainNames
-     * @return
+     * @param domainNames the domainNames
+     * @return TestDomainNameUpdateDescriptor
      */
     public TestDomainNameUpdateDescriptor setDomainNames(String[] domainNames){
         this.domainNames = domainNames;
@@ -94,7 +94,7 @@ public class TestDomainNameUpdateDescriptor  {
     /**
      * Get the status
      *
-     * @return
+     * @return status
      */
     public String getStatus(){
         return this.status;
@@ -103,8 +103,8 @@ public class TestDomainNameUpdateDescriptor  {
     /**
      * Set the status
      *
-     * @param status
-     * @return
+     * @param status the status
+     * @return TestDomainNameUpdateDescriptor
      */
     public TestDomainNameUpdateDescriptor setStatus(String status){
         this.status = status;
@@ -114,7 +114,7 @@ public class TestDomainNameUpdateDescriptor  {
     /**
      * Get the registeredDate
      *
-     * @return
+     * @return registeredDate
      */
     public String getRegisteredDate(){
         return this.registeredDate;
@@ -123,8 +123,8 @@ public class TestDomainNameUpdateDescriptor  {
     /**
      * Set the registeredDate
      *
-     * @param registeredDate
-     * @return
+     * @param registeredDate the registeredDate
+     * @return TestDomainNameUpdateDescriptor
      */
     public TestDomainNameUpdateDescriptor setRegisteredDate(String registeredDate){
         this.registeredDate = registeredDate;
@@ -134,7 +134,7 @@ public class TestDomainNameUpdateDescriptor  {
     /**
      * Get the lockedUntil
      *
-     * @return
+     * @return lockedUntil
      */
     public String getLockedUntil(){
         return this.lockedUntil;
@@ -143,8 +143,8 @@ public class TestDomainNameUpdateDescriptor  {
     /**
      * Set the lockedUntil
      *
-     * @param lockedUntil
-     * @return
+     * @param lockedUntil the lockedUntil
+     * @return TestDomainNameUpdateDescriptor
      */
     public TestDomainNameUpdateDescriptor setLockedUntil(String lockedUntil){
         this.lockedUntil = lockedUntil;
@@ -154,7 +154,7 @@ public class TestDomainNameUpdateDescriptor  {
     /**
      * Get the locked
      *
-     * @return
+     * @return locked
      */
     public Boolean getLocked(){
         return this.locked;
@@ -163,8 +163,8 @@ public class TestDomainNameUpdateDescriptor  {
     /**
      * Set the locked
      *
-     * @param locked
-     * @return
+     * @param locked the locked
+     * @return TestDomainNameUpdateDescriptor
      */
     public TestDomainNameUpdateDescriptor setLocked(Boolean locked){
         this.locked = locked;

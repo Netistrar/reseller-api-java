@@ -118,7 +118,7 @@ public class TransactionError  {
     /**
      * Get the type
      *
-     * @return
+     * @return type
      */
     public String getType(){
         return this.type;
@@ -127,7 +127,7 @@ public class TransactionError  {
     /**
      * Get the code
      *
-     * @return
+     * @return code
      */
     public String getCode(){
         return this.code;
@@ -136,7 +136,7 @@ public class TransactionError  {
     /**
      * Get the message
      *
-     * @return
+     * @return message
      */
     public String getMessage(){
         return this.message;
@@ -145,7 +145,7 @@ public class TransactionError  {
     /**
      * Get the additionalInfo
      *
-     * @return
+     * @return additionalInfo
      */
     public Map<String,Object> getAdditionalInfo(){
         return this.additionalInfo;
@@ -154,7 +154,7 @@ public class TransactionError  {
     /**
      * Get the relatedErrors
      *
-     * @return
+     * @return relatedErrors
      */
     public Map<String,TransactionError> getRelatedErrors(){
         return this.relatedErrors;

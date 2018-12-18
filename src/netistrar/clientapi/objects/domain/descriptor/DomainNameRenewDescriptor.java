@@ -29,8 +29,8 @@ public class DomainNameRenewDescriptor  {
     /**
      * Updatable Constructor
      *
-    * @param domainNames
-    * @param additionalYears
+    * @param domainNames the domainNames
+    * @param additionalYears the additionalYears
     */
     public DomainNameRenewDescriptor(String[] domainNames, Integer additionalYears){
 
@@ -43,7 +43,7 @@ public class DomainNameRenewDescriptor  {
     /**
      * Get the domainNames
      *
-     * @return
+     * @return domainNames
      */
     public String[] getDomainNames(){
         return this.domainNames;
@@ -52,8 +52,8 @@ public class DomainNameRenewDescriptor  {
     /**
      * Set the domainNames
      *
-     * @param domainNames
-     * @return
+     * @param domainNames the domainNames
+     * @return DomainNameRenewDescriptor
      */
     public DomainNameRenewDescriptor setDomainNames(String[] domainNames){
         this.domainNames = domainNames;
@@ -63,7 +63,7 @@ public class DomainNameRenewDescriptor  {
     /**
      * Get the additionalYears
      *
-     * @return
+     * @return additionalYears
      */
     public Integer getAdditionalYears(){
         return this.additionalYears;
@@ -72,8 +72,8 @@ public class DomainNameRenewDescriptor  {
     /**
      * Set the additionalYears
      *
-     * @param additionalYears
-     * @return
+     * @param additionalYears the additionalYears
+     * @return DomainNameRenewDescriptor
      */
     public DomainNameRenewDescriptor setAdditionalYears(Integer additionalYears){
         this.additionalYears = additionalYears;

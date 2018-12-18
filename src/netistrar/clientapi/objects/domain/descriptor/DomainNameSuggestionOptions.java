@@ -36,9 +36,9 @@ public class DomainNameSuggestionOptions  {
     /**
      * Updatable Constructor
      *
-    * @param includeTlds
-    * @param includeCategories
-    * @param fillCount
+    * @param includeTlds the includeTlds
+    * @param includeCategories the includeCategories
+    * @param fillCount the fillCount
     */
     public DomainNameSuggestionOptions(Boolean includeTlds, Boolean includeCategories, Integer fillCount){
 
@@ -52,7 +52,7 @@ public class DomainNameSuggestionOptions  {
     /**
      * Get the includeTlds
      *
-     * @return
+     * @return includeTlds
      */
     public Boolean getIncludeTlds(){
         return this.includeTlds;
@@ -61,8 +61,8 @@ public class DomainNameSuggestionOptions  {
     /**
      * Set the includeTlds
      *
-     * @param includeTlds
-     * @return
+     * @param includeTlds the includeTlds
+     * @return DomainNameSuggestionOptions
      */
     public DomainNameSuggestionOptions setIncludeTlds(Boolean includeTlds){
         this.includeTlds = includeTlds;
@@ -72,7 +72,7 @@ public class DomainNameSuggestionOptions  {
     /**
      * Get the includeCategories
      *
-     * @return
+     * @return includeCategories
      */
     public Boolean getIncludeCategories(){
         return this.includeCategories;
@@ -81,8 +81,8 @@ public class DomainNameSuggestionOptions  {
     /**
      * Set the includeCategories
      *
-     * @param includeCategories
-     * @return
+     * @param includeCategories the includeCategories
+     * @return DomainNameSuggestionOptions
      */
     public DomainNameSuggestionOptions setIncludeCategories(Boolean includeCategories){
         this.includeCategories = includeCategories;
@@ -92,7 +92,7 @@ public class DomainNameSuggestionOptions  {
     /**
      * Get the fillCount
      *
-     * @return
+     * @return fillCount
      */
     public Integer getFillCount(){
         return this.fillCount;
@@ -101,8 +101,8 @@ public class DomainNameSuggestionOptions  {
     /**
      * Set the fillCount
      *
-     * @param fillCount
-     * @return
+     * @param fillCount the fillCount
+     * @return DomainNameSuggestionOptions
      */
     public DomainNameSuggestionOptions setFillCount(Integer fillCount){
         this.fillCount = fillCount;

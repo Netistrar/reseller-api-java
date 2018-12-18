@@ -15,8 +15,8 @@ import netistrar.clientapi.objects.account.AccountNotification;
 public class account extends WebServiceProxy {
 
     /**
-    * @param webServiceURL
-    * @param globalParameters
+    * @param webServiceURL The URL to call for this webservice
+    * @param globalParameters Any global parameters required for this webservice e.g. API Keys etc.
     */
     public account(String webServiceURL, Map<String,String> globalParameters){
         super(webServiceURL, globalParameters);
@@ -25,6 +25,8 @@ public class account extends WebServiceProxy {
     /**
      * Get current account balance for your reseller account in current working currency as defined in the control panel.
      *
+     * @return Result from function
+     * @throws Exception Throws server side exceptions of variable types.
      */
     public Float balance() throws Exception{
         Map<String, Object> params = new HashMap<String, Object>();
@@ -45,9 +47,11 @@ public class account extends WebServiceProxy {
      * List account notifications ordered by the latest first.  This can be optionally limited to a number of notifications
      * and one or more notification types (supplied as an array) for filtering.
      *
-     * @param maxResults
-     * @param types
-     * @param subTypes
+     * @param maxResults maxResults
+     * @param types types
+     * @param subTypes subTypes
+     * @return Result from function
+     * @throws Exception Throws server side exceptions of variable types.
      */
     public AccountNotification[] listNotifications(Integer maxResults, String types, String subTypes) throws Exception{
         Map<String, Object> params = new HashMap<String, Object>();
@@ -70,7 +74,9 @@ public class account extends WebServiceProxy {
     /**
      * Get an account notification by id.
      *
-     * @param notificationId
+     * @param notificationId notificationId
+     * @return Result from function
+     * @throws Exception Throws server side exceptions of variable types.
      */
     public AccountNotification getNotification(Integer notificationId) throws Exception{
         Map<String, Object> params = new HashMap<String, Object>();

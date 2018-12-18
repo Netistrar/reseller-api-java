@@ -52,13 +52,13 @@ public class DomainNameTransferDescriptor  {
     /**
      * Updatable Constructor
      *
-    * @param transferIdentifiers
-    * @param ownerContact
-    * @param adminContact
-    * @param billingContact
-    * @param technicalContact
-    * @param privacyProxy
-    * @param autoRenew
+    * @param transferIdentifiers the transferIdentifiers
+    * @param ownerContact the ownerContact
+    * @param adminContact the adminContact
+    * @param billingContact the billingContact
+    * @param technicalContact the technicalContact
+    * @param privacyProxy the privacyProxy
+    * @param autoRenew the autoRenew
     */
     public DomainNameTransferDescriptor(String[] transferIdentifiers, DomainNameContact ownerContact, DomainNameContact adminContact, DomainNameContact billingContact, DomainNameContact technicalContact, Integer privacyProxy, Boolean autoRenew){
 
@@ -76,7 +76,7 @@ public class DomainNameTransferDescriptor  {
     /**
      * Get the transferIdentifiers
      *
-     * @return
+     * @return transferIdentifiers
      */
     public String[] getTransferIdentifiers(){
         return this.transferIdentifiers;
@@ -85,8 +85,8 @@ public class DomainNameTransferDescriptor  {
     /**
      * Set the transferIdentifiers
      *
-     * @param transferIdentifiers
-     * @return
+     * @param transferIdentifiers the transferIdentifiers
+     * @return DomainNameTransferDescriptor
      */
     public DomainNameTransferDescriptor setTransferIdentifiers(String[] transferIdentifiers){
         this.transferIdentifiers = transferIdentifiers;
@@ -96,7 +96,7 @@ public class DomainNameTransferDescriptor  {
     /**
      * Get the ownerContact
      *
-     * @return
+     * @return ownerContact
      */
     public DomainNameContact getOwnerContact(){
         return this.ownerContact;
@@ -105,8 +105,8 @@ public class DomainNameTransferDescriptor  {
     /**
      * Set the ownerContact
      *
-     * @param ownerContact
-     * @return
+     * @param ownerContact the ownerContact
+     * @return DomainNameTransferDescriptor
      */
     public DomainNameTransferDescriptor setOwnerContact(DomainNameContact ownerContact){
         this.ownerContact = ownerContact;
@@ -116,7 +116,7 @@ public class DomainNameTransferDescriptor  {
     /**
      * Get the adminContact
      *
-     * @return
+     * @return adminContact
      */
     public DomainNameContact getAdminContact(){
         return this.adminContact;
@@ -125,8 +125,8 @@ public class DomainNameTransferDescriptor  {
     /**
      * Set the adminContact
      *
-     * @param adminContact
-     * @return
+     * @param adminContact the adminContact
+     * @return DomainNameTransferDescriptor
      */
     public DomainNameTransferDescriptor setAdminContact(DomainNameContact adminContact){
         this.adminContact = adminContact;
@@ -136,7 +136,7 @@ public class DomainNameTransferDescriptor  {
     /**
      * Get the billingContact
      *
-     * @return
+     * @return billingContact
      */
     public DomainNameContact getBillingContact(){
         return this.billingContact;
@@ -145,8 +145,8 @@ public class DomainNameTransferDescriptor  {
     /**
      * Set the billingContact
      *
-     * @param billingContact
-     * @return
+     * @param billingContact the billingContact
+     * @return DomainNameTransferDescriptor
      */
     public DomainNameTransferDescriptor setBillingContact(DomainNameContact billingContact){
         this.billingContact = billingContact;
@@ -156,7 +156,7 @@ public class DomainNameTransferDescriptor  {
     /**
      * Get the technicalContact
      *
-     * @return
+     * @return technicalContact
      */
     public DomainNameContact getTechnicalContact(){
         return this.technicalContact;
@@ -165,8 +165,8 @@ public class DomainNameTransferDescriptor  {
     /**
      * Set the technicalContact
      *
-     * @param technicalContact
-     * @return
+     * @param technicalContact the technicalContact
+     * @return DomainNameTransferDescriptor
      */
     public DomainNameTransferDescriptor setTechnicalContact(DomainNameContact technicalContact){
         this.technicalContact = technicalContact;
@@ -176,7 +176,7 @@ public class DomainNameTransferDescriptor  {
     /**
      * Get the privacyProxy
      *
-     * @return
+     * @return privacyProxy
      */
     public Integer getPrivacyProxy(){
         return this.privacyProxy;
@@ -185,8 +185,8 @@ public class DomainNameTransferDescriptor  {
     /**
      * Set the privacyProxy
      *
-     * @param privacyProxy
-     * @return
+     * @param privacyProxy the privacyProxy
+     * @return DomainNameTransferDescriptor
      */
     public DomainNameTransferDescriptor setPrivacyProxy(Integer privacyProxy){
         this.privacyProxy = privacyProxy;
@@ -196,7 +196,7 @@ public class DomainNameTransferDescriptor  {
     /**
      * Get the autoRenew
      *
-     * @return
+     * @return autoRenew
      */
     public Boolean getAutoRenew(){
         return this.autoRenew;
@@ -205,8 +205,8 @@ public class DomainNameTransferDescriptor  {
     /**
      * Set the autoRenew
      *
-     * @param autoRenew
-     * @return
+     * @param autoRenew the autoRenew
+     * @return DomainNameTransferDescriptor
      */
     public DomainNameTransferDescriptor setAutoRenew(Boolean autoRenew){
         this.autoRenew = autoRenew;

@@ -21,7 +21,7 @@ public class SerialisableException extends Exception {
     /**
     * Get the controller name
     *
-    * @return
+    * @return Controller Name
     */
     public String getControllerName() {
         return controllerName;
@@ -30,7 +30,7 @@ public class SerialisableException extends Exception {
     /**
     * Get the controller method
     *
-    * @return
+    * @return Controller Method
     */
     public String getControllerMethod() {
         return controllerMethod;
@@ -39,7 +39,7 @@ public class SerialisableException extends Exception {
     /**
     * Get the exception class
     *
-    * @return
+    * @return Exception Class
     */
     public String getExceptionClass() {
         return exceptionClass;
@@ -48,7 +48,7 @@ public class SerialisableException extends Exception {
     /**
     * Get the exception code
     *
-    * @return
+    * @return Exception Code
     */
     public int getExceptionCode() {
         return exceptionCode;
@@ -57,7 +57,7 @@ public class SerialisableException extends Exception {
     /**
     * Get the exception message
     *
-    * @return
+    * @return Exception Message
     */
     public String getExceptionMessage() {
         return exceptionMessage;
@@ -67,7 +67,7 @@ public class SerialisableException extends Exception {
     * Get the exception line number
     *
     *
-    * @return
+    * @return Exception Line Number
     */
     public int getExceptionLineNumber() {
         return exceptionLineNumber;
@@ -76,7 +76,7 @@ public class SerialisableException extends Exception {
     /**
     * Get the exception file
     *
-    * @return
+    * @return Exception File
     */
     public String getExceptionFile() {
         return exceptionFile;
@@ -85,7 +85,7 @@ public class SerialisableException extends Exception {
     /**
     * Get the exception trace
     *
-    * @return
+    * @return Exception Trace
     */
     public String getExceptionTrace() {
         return exceptionTrace;

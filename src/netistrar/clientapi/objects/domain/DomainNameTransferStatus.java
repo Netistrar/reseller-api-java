@@ -59,7 +59,7 @@ public class DomainNameTransferStatus  {
     /**
      * Get the domainName
      *
-     * @return
+     * @return domainName
      */
     public String getDomainName(){
         return this.domainName;
@@ -68,7 +68,7 @@ public class DomainNameTransferStatus  {
     /**
      * Get the status
      *
-     * @return
+     * @return status
      */
     public String getStatus(){
         return this.status;
@@ -77,7 +77,7 @@ public class DomainNameTransferStatus  {
     /**
      * Get the transferStatus
      *
-     * @return
+     * @return transferStatus
      */
     public String getTransferStatus(){
         return this.transferStatus;
@@ -86,7 +86,7 @@ public class DomainNameTransferStatus  {
     /**
      * Get the transferStartedDate
      *
-     * @return
+     * @return transferStartedDate
      */
     public String getTransferStartedDate(){
         return this.transferStartedDate;
@@ -95,7 +95,7 @@ public class DomainNameTransferStatus  {
     /**
      * Get the transferExpiryDate
      *
-     * @return
+     * @return transferExpiryDate
      */
     public String getTransferExpiryDate(){
         return this.transferExpiryDate;
@@ -104,7 +104,7 @@ public class DomainNameTransferStatus  {
     /**
      * Get the domainExpiryDate
      *
-     * @return
+     * @return domainExpiryDate
      */
     public String getDomainExpiryDate(){
         return this.domainExpiryDate;

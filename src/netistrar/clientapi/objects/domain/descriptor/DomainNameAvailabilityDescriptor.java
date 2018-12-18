@@ -42,11 +42,11 @@ public class DomainNameAvailabilityDescriptor  {
     /**
      * Updatable Constructor
      *
-    * @param searchString
-    * @param tldCategories
-    * @param tlds
-    * @param suggestions
-    * @param suggestionOptions
+    * @param searchString the searchString
+    * @param tldCategories the tldCategories
+    * @param tlds the tlds
+    * @param suggestions the suggestions
+    * @param suggestionOptions the suggestionOptions
     */
     public DomainNameAvailabilityDescriptor(String searchString, String[] tldCategories, String[] tlds, Boolean suggestions, DomainNameSuggestionOptions suggestionOptions){
 
@@ -62,7 +62,7 @@ public class DomainNameAvailabilityDescriptor  {
     /**
      * Get the searchString
      *
-     * @return
+     * @return searchString
      */
     public String getSearchString(){
         return this.searchString;
@@ -71,8 +71,8 @@ public class DomainNameAvailabilityDescriptor  {
     /**
      * Set the searchString
      *
-     * @param searchString
-     * @return
+     * @param searchString the searchString
+     * @return DomainNameAvailabilityDescriptor
      */
     public DomainNameAvailabilityDescriptor setSearchString(String searchString){
         this.searchString = searchString;
@@ -82,7 +82,7 @@ public class DomainNameAvailabilityDescriptor  {
     /**
      * Get the tldCategories
      *
-     * @return
+     * @return tldCategories
      */
     public String[] getTldCategories(){
         return this.tldCategories;
@@ -91,8 +91,8 @@ public class DomainNameAvailabilityDescriptor  {
     /**
      * Set the tldCategories
      *
-     * @param tldCategories
-     * @return
+     * @param tldCategories the tldCategories
+     * @return DomainNameAvailabilityDescriptor
      */
     public DomainNameAvailabilityDescriptor setTldCategories(String[] tldCategories){
         this.tldCategories = tldCategories;
@@ -102,7 +102,7 @@ public class DomainNameAvailabilityDescriptor  {
     /**
      * Get the tlds
      *
-     * @return
+     * @return tlds
      */
     public String[] getTlds(){
         return this.tlds;
@@ -111,8 +111,8 @@ public class DomainNameAvailabilityDescriptor  {
     /**
      * Set the tlds
      *
-     * @param tlds
-     * @return
+     * @param tlds the tlds
+     * @return DomainNameAvailabilityDescriptor
      */
     public DomainNameAvailabilityDescriptor setTlds(String[] tlds){
         this.tlds = tlds;
@@ -122,7 +122,7 @@ public class DomainNameAvailabilityDescriptor  {
     /**
      * Get the suggestions
      *
-     * @return
+     * @return suggestions
      */
     public Boolean getSuggestions(){
         return this.suggestions;
@@ -131,8 +131,8 @@ public class DomainNameAvailabilityDescriptor  {
     /**
      * Set the suggestions
      *
-     * @param suggestions
-     * @return
+     * @param suggestions the suggestions
+     * @return DomainNameAvailabilityDescriptor
      */
     public DomainNameAvailabilityDescriptor setSuggestions(Boolean suggestions){
         this.suggestions = suggestions;
@@ -142,7 +142,7 @@ public class DomainNameAvailabilityDescriptor  {
     /**
      * Get the suggestionOptions
      *
-     * @return
+     * @return suggestionOptions
      */
     public DomainNameSuggestionOptions getSuggestionOptions(){
         return this.suggestionOptions;
@@ -151,8 +151,8 @@ public class DomainNameAvailabilityDescriptor  {
     /**
      * Set the suggestionOptions
      *
-     * @param suggestionOptions
-     * @return
+     * @param suggestionOptions the suggestionOptions
+     * @return DomainNameAvailabilityDescriptor
      */
     public DomainNameAvailabilityDescriptor setSuggestionOptions(DomainNameSuggestionOptions suggestionOptions){
         this.suggestionOptions = suggestionOptions;

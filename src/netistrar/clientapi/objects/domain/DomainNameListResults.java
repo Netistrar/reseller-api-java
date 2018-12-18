@@ -61,7 +61,7 @@ public class DomainNameListResults  {
     /**
      * Get the searchTerm
      *
-     * @return
+     * @return searchTerm
      */
     public String getSearchTerm(){
         return this.searchTerm;
@@ -70,7 +70,7 @@ public class DomainNameListResults  {
     /**
      * Get the pageSize
      *
-     * @return
+     * @return pageSize
      */
     public Integer getPageSize(){
         return this.pageSize;
@@ -79,7 +79,7 @@ public class DomainNameListResults  {
     /**
      * Get the page
      *
-     * @return
+     * @return page
      */
     public Integer getPage(){
         return this.page;
@@ -88,7 +88,7 @@ public class DomainNameListResults  {
     /**
      * Get the orderBy
      *
-     * @return
+     * @return orderBy
      */
     public String getOrderBy(){
         return this.orderBy;
@@ -97,7 +97,7 @@ public class DomainNameListResults  {
     /**
      * Get the orderDirection
      *
-     * @return
+     * @return orderDirection
      */
     public String getOrderDirection(){
         return this.orderDirection;
@@ -106,7 +106,7 @@ public class DomainNameListResults  {
     /**
      * Get the numberOfDomainsReturned
      *
-     * @return
+     * @return numberOfDomainsReturned
      */
     public Integer getNumberOfDomainsReturned(){
         return this.numberOfDomainsReturned;
@@ -115,7 +115,7 @@ public class DomainNameListResults  {
     /**
      * Get the totalNumberOfDomains
      *
-     * @return
+     * @return totalNumberOfDomains
      */
     public Integer getTotalNumberOfDomains(){
         return this.totalNumberOfDomains;
@@ -124,7 +124,7 @@ public class DomainNameListResults  {
     /**
      * Get the totalNumberOfPages
      *
-     * @return
+     * @return totalNumberOfPages
      */
     public Integer getTotalNumberOfPages(){
         return this.totalNumberOfPages;
@@ -133,7 +133,7 @@ public class DomainNameListResults  {
     /**
      * Get the domainNameSummaries
      *
-     * @return
+     * @return domainNameSummaries
      */
     public DomainNameSummary[] getDomainNameSummaries(){
         return this.domainNameSummaries;

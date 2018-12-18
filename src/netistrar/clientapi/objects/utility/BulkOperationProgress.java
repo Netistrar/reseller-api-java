@@ -51,7 +51,7 @@ public class BulkOperationProgress  {
     /**
      * Get the status
      *
-     * @return
+     * @return status
      */
     public String getStatus(){
         return this.status;
@@ -60,7 +60,7 @@ public class BulkOperationProgress  {
     /**
      * Get the totalNumberOfItems
      *
-     * @return
+     * @return totalNumberOfItems
      */
     public Integer getTotalNumberOfItems(){
         return this.totalNumberOfItems;
@@ -69,7 +69,7 @@ public class BulkOperationProgress  {
     /**
      * Get the completedItems
      *
-     * @return
+     * @return completedItems
      */
     public Integer getCompletedItems(){
         return this.completedItems;
@@ -78,7 +78,7 @@ public class BulkOperationProgress  {
     /**
      * Get the percentageComplete
      *
-     * @return
+     * @return percentageComplete
      */
     public Float getPercentageComplete(){
         return this.percentageComplete;
@@ -87,7 +87,7 @@ public class BulkOperationProgress  {
     /**
      * Get the hasFailedItems
      *
-     * @return
+     * @return hasFailedItems
      */
     public Boolean getHasFailedItems(){
         return this.hasFailedItems;
@@ -96,7 +96,7 @@ public class BulkOperationProgress  {
     /**
      * Get the progressItems
      *
-     * @return
+     * @return progressItems
      */
     public BulkOperationProgressItem[] getProgressItems(){
         return this.progressItems;

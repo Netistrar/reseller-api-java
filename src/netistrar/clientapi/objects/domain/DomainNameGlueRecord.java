@@ -40,9 +40,9 @@ public class DomainNameGlueRecord  {
     /**
      * Updatable Constructor
      *
-    * @param subDomainPrefix
-    * @param ipv4Address
-    * @param ipv6Address
+    * @param subDomainPrefix the subDomainPrefix
+    * @param ipv4Address the ipv4Address
+    * @param ipv6Address the ipv6Address
     */
     public DomainNameGlueRecord(String subDomainPrefix, String ipv4Address, String ipv6Address){
 
@@ -56,7 +56,7 @@ public class DomainNameGlueRecord  {
     /**
      * Get the domainName
      *
-     * @return
+     * @return domainName
      */
     public String getDomainName(){
         return this.domainName;
@@ -65,7 +65,7 @@ public class DomainNameGlueRecord  {
     /**
      * Get the subDomainPrefix
      *
-     * @return
+     * @return subDomainPrefix
      */
     public String getSubDomainPrefix(){
         return this.subDomainPrefix;
@@ -74,8 +74,8 @@ public class DomainNameGlueRecord  {
     /**
      * Set the subDomainPrefix
      *
-     * @param subDomainPrefix
-     * @return
+     * @param subDomainPrefix the subDomainPrefix
+     * @return DomainNameGlueRecord
      */
     public DomainNameGlueRecord setSubDomainPrefix(String subDomainPrefix){
         this.subDomainPrefix = subDomainPrefix;
@@ -85,7 +85,7 @@ public class DomainNameGlueRecord  {
     /**
      * Get the ipv4Address
      *
-     * @return
+     * @return ipv4Address
      */
     public String getIpv4Address(){
         return this.ipv4Address;
@@ -94,8 +94,8 @@ public class DomainNameGlueRecord  {
     /**
      * Set the ipv4Address
      *
-     * @param ipv4Address
-     * @return
+     * @param ipv4Address the ipv4Address
+     * @return DomainNameGlueRecord
      */
     public DomainNameGlueRecord setIpv4Address(String ipv4Address){
         this.ipv4Address = ipv4Address;
@@ -105,7 +105,7 @@ public class DomainNameGlueRecord  {
     /**
      * Get the ipv6Address
      *
-     * @return
+     * @return ipv6Address
      */
     public String getIpv6Address(){
         return this.ipv6Address;
@@ -114,8 +114,8 @@ public class DomainNameGlueRecord  {
     /**
      * Set the ipv6Address
      *
-     * @param ipv6Address
-     * @return
+     * @param ipv6Address the ipv6Address
+     * @return DomainNameGlueRecord
      */
     public DomainNameGlueRecord setIpv6Address(String ipv6Address){
         this.ipv6Address = ipv6Address;

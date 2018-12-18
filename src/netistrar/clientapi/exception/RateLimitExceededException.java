@@ -45,7 +45,7 @@ public class RateLimitExceededException extends Exception {
     /**
      * Get the sourceException
      *
-     * @return
+     * @return sourceException
      */
     public Map<String,String> getSourceException(){
         return this.sourceException;
@@ -54,7 +54,7 @@ public class RateLimitExceededException extends Exception {
     /**
      * Get the message
      *
-     * @return
+     * @return message
      */
     public String getMessage(){
         return this.message;
@@ -63,7 +63,7 @@ public class RateLimitExceededException extends Exception {
     /**
      * Get the code
      *
-     * @return
+     * @return code
      */
     public String getCode(){
         return this.code;
@@ -72,7 +72,7 @@ public class RateLimitExceededException extends Exception {
     /**
      * Get the file
      *
-     * @return
+     * @return file
      */
     public String getFile(){
         return this.file;
@@ -81,7 +81,7 @@ public class RateLimitExceededException extends Exception {
     /**
      * Get the line
      *
-     * @return
+     * @return line
      */
     public String getLine(){
         return this.line;

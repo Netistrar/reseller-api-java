@@ -108,7 +108,7 @@ public class DomainNameObject  {
     /**
      * Get the ownerContact
      *
-     * @return
+     * @return ownerContact
      */
     public DomainNameContact getOwnerContact(){
         return this.ownerContact;
@@ -117,7 +117,7 @@ public class DomainNameObject  {
     /**
      * Get the adminContact
      *
-     * @return
+     * @return adminContact
      */
     public DomainNameContact getAdminContact(){
         return this.adminContact;
@@ -126,7 +126,7 @@ public class DomainNameObject  {
     /**
      * Get the billingContact
      *
-     * @return
+     * @return billingContact
      */
     public DomainNameContact getBillingContact(){
         return this.billingContact;
@@ -135,7 +135,7 @@ public class DomainNameObject  {
     /**
      * Get the technicalContact
      *
-     * @return
+     * @return technicalContact
      */
     public DomainNameContact getTechnicalContact(){
         return this.technicalContact;
@@ -144,7 +144,7 @@ public class DomainNameObject  {
     /**
      * Get the nameservers
      *
-     * @return
+     * @return nameservers
      */
     public String[] getNameservers(){
         return this.nameservers;
@@ -153,7 +153,7 @@ public class DomainNameObject  {
     /**
      * Get the domainName
      *
-     * @return
+     * @return domainName
      */
     public String getDomainName(){
         return this.domainName;
@@ -162,7 +162,7 @@ public class DomainNameObject  {
     /**
      * Get the registeredDate
      *
-     * @return
+     * @return registeredDate
      */
     public String getRegisteredDate(){
         return this.registeredDate;
@@ -171,7 +171,7 @@ public class DomainNameObject  {
     /**
      * Get the expiryDate
      *
-     * @return
+     * @return expiryDate
      */
     public String getExpiryDate(){
         return this.expiryDate;
@@ -180,7 +180,7 @@ public class DomainNameObject  {
     /**
      * Get the locked
      *
-     * @return
+     * @return locked
      */
     public Boolean getLocked(){
         return this.locked;
@@ -189,7 +189,7 @@ public class DomainNameObject  {
     /**
      * Get the lockedUntil
      *
-     * @return
+     * @return lockedUntil
      */
     public String getLockedUntil(){
         return this.lockedUntil;
@@ -198,7 +198,7 @@ public class DomainNameObject  {
     /**
      * Get the authCode
      *
-     * @return
+     * @return authCode
      */
     public String getAuthCode(){
         return this.authCode;
@@ -207,7 +207,7 @@ public class DomainNameObject  {
     /**
      * Get the autoRenew
      *
-     * @return
+     * @return autoRenew
      */
     public Boolean getAutoRenew(){
         return this.autoRenew;
@@ -216,7 +216,7 @@ public class DomainNameObject  {
     /**
      * Get the privacyProxy
      *
-     * @return
+     * @return privacyProxy
      */
     public Integer getPrivacyProxy(){
         return this.privacyProxy;
@@ -225,7 +225,7 @@ public class DomainNameObject  {
     /**
      * Get the status
      *
-     * @return
+     * @return status
      */
     public String getStatus(){
         return this.status;
@@ -234,7 +234,7 @@ public class DomainNameObject  {
     /**
      * Get the tags
      *
-     * @return
+     * @return tags
      */
     public String[] getTags(){
         return this.tags;
@@ -243,7 +243,7 @@ public class DomainNameObject  {
     /**
      * Get the dnsProvider
      *
-     * @return
+     * @return dnsProvider
      */
     public String getDnsProvider(){
         return this.dnsProvider;
@@ -252,7 +252,7 @@ public class DomainNameObject  {
     /**
      * Get the emailProvider
      *
-     * @return
+     * @return emailProvider
      */
     public String getEmailProvider(){
         return this.emailProvider;

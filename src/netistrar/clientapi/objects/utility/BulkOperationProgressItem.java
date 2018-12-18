@@ -46,7 +46,7 @@ public class BulkOperationProgressItem  {
     /**
      * Get the title
      *
-     * @return
+     * @return title
      */
     public String getTitle(){
         return this.title;
@@ -55,7 +55,7 @@ public class BulkOperationProgressItem  {
     /**
      * Get the progressPercentage
      *
-     * @return
+     * @return progressPercentage
      */
     public Float getProgressPercentage(){
         return this.progressPercentage;
@@ -64,7 +64,7 @@ public class BulkOperationProgressItem  {
     /**
      * Get the status
      *
-     * @return
+     * @return status
      */
     public String getStatus(){
         return this.status;
@@ -73,7 +73,7 @@ public class BulkOperationProgressItem  {
     /**
      * Get the failureErrors
      *
-     * @return
+     * @return failureErrors
      */
     public Map<String,TransactionError> getFailureErrors(){
         return this.failureErrors;

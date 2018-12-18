@@ -23,8 +23,8 @@ public class WebServiceProxy {
     * Construct the proxy object with a webservice endpoint URL and optionally any global parameters
     * which will be appended to every request.
     *
-    * @param String $webServiceURL
-    * @param Map<String,String> $globalParameters
+    * @param webServiceURL The URL to call for the web service.
+    * @param globalParameters A map of global parameters to pass to all web service calls.
     */
     public WebServiceProxy(String webServiceURL, Map<String,String> globalParameters) {
         this.webServiceURL = webServiceURL;
@@ -35,9 +35,15 @@ public class WebServiceProxy {
     /**
     * Implement the call method to call a proxy service
     *
-    * @param String name
-    * @param Map<String,Object> $params
-    * @param String returnClass
+    * @param name The name of the method to call
+    * @param httpMethod The HTTP type
+    * @param params A map of parameters to pass to the method
+    * @param payload An optional payload object
+    * @param returnClass The class type to return
+    * @param expectedExceptions A map of exception types which we expect to be returned from this method explicitly.
+    *
+    * @return The result of the method as an Object
+    * @throws Exception generic exceptions raised.
     */
     public Object callMethod(String name, String httpMethod, Map<String,Object> params, Object payload, Object returnClass, Map<String, String> expectedExceptions) throws Exception {
 

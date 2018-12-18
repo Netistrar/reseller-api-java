@@ -18,9 +18,9 @@ public class APIProvider  {
     /**
     * Construct with the api url and the api key for access.
     *
-    * @param String apiURL
-    * @param String apiKey
-    * @param String apiSecret
+    * @param apiURL The URL to connect to
+    * @param apiKey The apiKey
+    * @param apiSecret The apiSecret
     */
     public APIProvider(String apiURL, String apiKey, String apiSecret){
         this.apiURL = apiURL;
@@ -31,7 +31,7 @@ public class APIProvider  {
     /**
     * Get an instance of the domains API
     *
-    * @return 
+    * @return domains
     */
     public domains domains(){
         if (this.instances.get("domains") == null){
@@ -43,7 +43,7 @@ public class APIProvider  {
     /**
     * Get an instance of the utility API
     *
-    * @return 
+    * @return utility
     */
     public utility utility(){
         if (this.instances.get("utility") == null){
@@ -55,7 +55,7 @@ public class APIProvider  {
     /**
     * Get an instance of the account API
     *
-    * @return 
+    * @return account
     */
     public account account(){
         if (this.instances.get("account") == null){
@@ -67,7 +67,7 @@ public class APIProvider  {
     /**
     * Get an instance of the test API
     *
-    * @return 
+    * @return test
     */
     public test test(){
         if (this.instances.get("test") == null){
