@@ -73,22 +73,22 @@ public class DomainNameContact  {
     /**
      * An associative array of data where specific TLDs support / require additional properties
      * <b>Nominet UK domains:</b>
-     * <br />
+     * <br>
      * The following additional fields are supported for Nominet .UK domains
      * <b>nominetRegistrantType</b> String (required): One of the following code values
-     * LTD: <i>UK Limited Company: </i><br />
-     * PLC: <i>UK Public Limited Company: </i><br />
-     * PTNR: <i>UK Partnership: </i><br />
-     * STRA: <i>UK Sole Trader: </i><br />
-     * LLP: <i>UK Limited Liability Partnership: </i><br />
-     * IP: <i>UK Industrial/Provident Registered Company: </i><br />
-     * IND: <i>UK Individual (representing self): </i><br />
-     * SCH: <i>UK School: </i><br />
-     * RCHAR: <i>UK Registered Charity: </i><br />
-     * GOV: <i>UK Government Body: </i><br />
-     * CRC: <i>UK Corporation by Royal Charter: </i><br />
-     * STAT: <i>UK Statutory Body: </i><br />
-     * OTHER: <i>UK Entity that does not fit into any of the above (e.g. clubs, associations, : </i><br />
+     * LTD: <i>UK Limited Company: </i><br>
+     * PLC: <i>UK Public Limited Company: </i><br>
+     * PTNR: <i>UK Partnership: </i><br>
+     * STRA: <i>UK Sole Trader: </i><br>
+     * LLP: <i>UK Limited Liability Partnership: </i><br>
+     * IP: <i>UK Industrial/Provident Registered Company: </i><br>
+     * IND: <i>UK Individual (representing self): </i><br>
+     * SCH: <i>UK School: </i><br>
+     * RCHAR: <i>UK Registered Charity: </i><br>
+     * GOV: <i>UK Government Body: </i><br>
+     * CRC: <i>UK Corporation by Royal Charter: </i><br>
+     * STAT: <i>UK Statutory Body: </i><br>
+     * OTHER: <i>UK Entity that does not fit into any of the above (e.g. clubs, associations, : </i><br>
      * <b>nominetTradingName</b> String (optional): An optional trading name which will display in WHOIS if set.
      * <b>nominetCompanyNumber</b> String (conditionally required):  The company number - required if the nominetRegistrantType field is set to any of the values
      * LTD, PLC, LLP, IP, SCH or RCHAR.

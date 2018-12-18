@@ -22,25 +22,25 @@ public class DomainNameTransferStatus  {
     protected String status;
     /**
      * The transfer status as returned from the Registry.  This is usually "Pending"
-     * <br /><br />
+     * <br><br>
      * This is only set when the <a href="#status">status</a> is set to <i>TRANSFER_IN_AWAITING_RESPONSE</i> otherwise <b>N/A</b> will be returned.
      */
     protected String transferStatus;
     /**
      * The date and time that the transfer was started in <b>dd/mm/YYYY HH:mm:ss</b> format
-     * <br /><br />
+     * <br><br>
      * This is only set when the <a href="#status">status</a> is set to <i>TRANSFER_IN_AWAITING_RESPONSE</i> otherwise <b>N/A</b> will be returned.
      */
     protected String transferStartedDate;
     /**
      * The date and time that the transfer expires - usually 5 days after the transfer started date in <b>dd/mm/YYYY HH:mm:ss</b> format
-     * <br /><br />
+     * <br><br>
      * This is only set when the <a href="#status">status</a> is set to <i>TRANSFER_IN_AWAITING_RESPONSE</i> otherwise <b>N/A</b> will be returned.
      */
     protected String transferExpiryDate;
     /**
      * The date and time for the new expiry date for the domain after the transfer completes (usually 1yr more than current expiry) in <b>dd/mm/YYYY HH:mm:ss</b> format
-     * <br /><br />
+     * <br><br>
      * This is only set when the <a href="#status">status</a> is set to <i>TRANSFER_IN_AWAITING_RESPONSE</i> otherwise <b>N/A</b> will be returned.
      */
     protected String domainExpiryDate;

@@ -18,7 +18,7 @@ public class TransactionError  {
      * <b>DOMAIN_UNAVAILABLE_FOR_REGISTRATION:</b> When an attempt is made to register a domain which is not available.
      * <b>DOMAIN_ALREADY_IN_ACCOUNT:</b> When an attempt is made to register a domain which is already in your account.
      * <b>DOMAIN_NOT_IN_ACCOUNT:</b> When an attempt is made to modify a domain which is not in your account.
-     * <b>DOMAIN_INVALID_FOR_CANCELLATION:</b> When an attempt is made to cancel a domain which is not in a valid state for cancellation</br><br />
+     * <b>DOMAIN_INVALID_FOR_CANCELLATION:</b> When an attempt is made to cancel a domain which is not in a valid state for cancellation</br><br>
      * <b>DOMAIN_INVALID_FOR_RENEWAL:</b> An attempt has been made to renew a domain which is not valid for renewal.  Only domains with a status value of <b>ACTIVE</b> or <b>EXPIRED</b> can be renewed.
      * <b>DOMAIN_INVALID_FOR_GLUE_RECORD:</b> An attempt has been made to manage glue records for a domain which is not in <b>ACTIVE</b> status.
      * <b>DOMAIN_MISSING_GLUE_RECORD:</b> An attempt has been made to remove a glue record for a domain where the glue record has not been defined.
@@ -48,7 +48,7 @@ public class TransactionError  {
      * <b>DOMAIN_INVALID_NAMESERVER_FORMAT:</b> When one or more of the array of nameservers supplied for a domain operation is not in valid nameserver format.  In this case the <a href="#extraData">extraData</a> member will be populated with an
      * array of integers representing the index(es) of the problematic nameserver(s) in the supplied nameserver array.
      * <b>DOMAIN_TOO_MANY_REGISTRATION_YEARS:</b> When the number of years supplied to a domain name operation exceeds the maximum allowed for that domain name.
-     *  <br />
+     *  <br>
      * The following Contact Validation error codes can occur for Domain Transfer operations
      * <b>TRANSFER_DOMAIN_IN_ACCOUNT:</b> The domain name requested for transfer is already in your account
      * <b>TRANSFER_DOMAIN_NOT_REGISTERED:</b> If the domain name requested for transfer has not yet been registered
@@ -58,7 +58,7 @@ public class TransactionError  {
      * <b>TRANSFER_DOMAIN_60_DAY_REG_LOCK:</b> If a request is made for a domain which was registered less than 60 days ago.
      * <b>TRANSFER_ALREADY_STARTED:</b> If a request is made for a domain which is already in the middle of a transfer operation to another Registrar
      * <b>TRANSFER_DOMAIN_NOT_ASSIGNED:</b> If the transfer for a given domain requires a push operation and the domain has not yet been pushed (assigned) to Netistrar.
-     * <br />
+     * <br>
      * The following Contact Validation error codes can occur for Contact and Domain operations
      * <b>CONTACT_MISSING_NAME:</b> When a blank name is supplied for a domain contact.
      * <b>CONTACT_MISSING_EMAIL:</b> When a blank email address is supplied for a domain contact.
@@ -77,12 +77,12 @@ public class TransactionError  {
      * <b>CONTACT_INVALID_FAX:</b> When an invalid fax number is supplied for a domain contact (i.e. should be a local number without spaces).
      * <b>CONTACT_MISSING_FAX_DIALLING_CODE:</b> When a blank fax dialling code is supplied for a domain contact when a fax number has also been supplied.
      * <b>CONTACT_INVALID_FAX_DIALLING_CODE:</b> When the fax dialling code has been supplied in an invalid format (should start with a + e.g. +44 or +1)
-     * <br />
+     * <br>
      * The following Validation error codes can occur for Contact operations on UK Nominet Domains.
      * <b>CONTACT_MISSING_NOMINETREGISTRANTTYPE:</b> When a blank value has been supplied for the additional Nominet Registrant Type field for a UK domain contact
      * <b>CONTACT_INVALID_NOMINETREGISTRANTTYPE:</b> When an invalid value has been supplied for the additional Nominet Registrant Type field for a UK domain contact (should be one of LTD,PLC,PTNR,STRA,LLP,IP,IND,SCH,RCHAR,GOV,CRC,STAT,OTHER).
      *<b>CONTACT_MISSING_NOMINETCOMPANYNUMBER:</b> When a blank value has been supplied for the additional Nominet Company Number field for a UK domain contact when it is required (in the cases that the Registrant Type is LTD, PLC, LLP, IP, SCH or RCHAR).
-     * <br />
+     * <br>
      * The following Validation error codes can occur for Domain Glue Record operations.
      * <b>GLUE_RECORD_MISSING_SUBDOMAIN:</b> When no subdomain (prefix) is supplied for a Domain Glue Record.
      * <b>GLUE_RECORD_INVALID_SUBDOMAIN:</b> When an invalid subdomain (prefix) has been supplied for a Domain Glue Record.

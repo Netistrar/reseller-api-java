@@ -38,7 +38,7 @@ public class DomainNameCreateDescriptor  {
      */
     private DomainNameContact technicalContact;
     /**
-     * This should be set to one of the following values: <br /><br /><b>0</b> if all contact details are to be made public within the WHOIS system for all supplied domains<br /><b>1</b> if the free Netistrar Privacy Proxy service will be used for all supplied domains<br /><b>2</b> if partial details are to be made public within the WHOIS system with other details redacted.  (defaults to 1).
+     * This should be set to one of the following values: <br><br><b>0</b> if all contact details are to be made public within the WHOIS system for all supplied domains<br><b>1</b> if the free Netistrar Privacy Proxy service will be used for all supplied domains<br><b>2</b> if partial details are to be made public within the WHOIS system with other details redacted.  (defaults to 1).
      */
     private Integer privacyProxy;
     /**
