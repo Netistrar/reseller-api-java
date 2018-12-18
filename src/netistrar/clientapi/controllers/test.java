@@ -114,7 +114,7 @@ public class test extends WebServiceProxy {
     }
 
     /**
-     * Create one or more UK domains in the Netistrar Registrar account as if they had just been TAG changed to Netistrar.  This allows for testing of the push transfer in logic.<br /><br />
+     * Create one or more UK domains in the Netistrar Registrar account as if they had just been TAG changed to Netistrar.  This allows for testing of the push transfer in logic.<br><br>
      * You can create up to 10 domains using this method and it will return an array of string domain names for the test domains created
      *
      * @param numberOfDomains numberOfDomains
@@ -211,7 +211,7 @@ public class test extends WebServiceProxy {
     }
 
     /**
-     * Accepts incoming pull transfers at the other registrar for a set of pull transfer Rodeo domains.  This should be called after a call is made to the <b">createPullTransferRodeoDomains</b> to expedite the
+     * Accepts incoming pull transfers at the other registrar for a set of pull transfer Rodeo domains.  This should be called after a call is made to the <b>createPullTransferRodeoDomains</b> to expedite the
      * transfer in operation at the other end for testing.
      *
      * @param domainNames domainNames

@@ -5,7 +5,7 @@ import java.util.Map;
 /**
  * This encodes details about a domain transfer.  When a domain name is in the <i>TRANSFER_IN_AWAITING_RESPONSE</i> status this will be fully populated with details about the
  * transfer window as obtained from the Registry.
- * <br /><br />
+ * <br><br>
  * Otherwise if the domain name is in a pending confirmation status this will only have the <a href="#domainName">domainName</a> and <a href="#status">status</a> members set.
 */
 public class DomainNameTransferStatus  {
