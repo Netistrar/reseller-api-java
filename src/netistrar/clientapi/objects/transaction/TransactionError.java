@@ -68,7 +68,7 @@ public class TransactionError  {
      * <b>CONTACT_MISSING_COUNTY:</b> When a blank county value is supplied for a domain contact.
      * <b>CONTACT_MISSING_POSTCODE:</b> When a blank postcode value is supplied for a domain contact.
      * <b>CONTACT_INVALID_COUNTRY:</b> When an invalid country value (i.e. not in ISO 2 digit country code format) is supplied for a domain contact.
-     * <b>CONTACT_UNSUPPORTED_COUNTRY:</b> When the TLD represented by a domain contact only allows contact within certain countries e.g. .EU and another country code is supplied</b>
+     * <b>CONTACT_UNSUPPORTED_COUNTRY:</b> When the TLD represented by a domain contact only allows contact within certain countries e.g. .EU and another country code is supplied
      * <b>CONTACT_MISSING_TELEPHONE:</b> When the TLD represented by a domain contact requires a telephone number to be supplied and it is blank.
      * <b>CONTACT_INVALID_TELEPHONE:</b> When an invalid telephone number is supplied for a domain contact (i.e. should be a local number without spaces).
      * <b>CONTACT_MISSING_TELEPHONE_DIALLING_CODE:</b> When a blank telephone dialling code is supplied for a domain contact when a telephone number has also been supplied.
