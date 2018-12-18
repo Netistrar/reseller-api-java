@@ -18,7 +18,7 @@ public class TransactionError  {
      * <b>DOMAIN_UNAVAILABLE_FOR_REGISTRATION:</b> When an attempt is made to register a domain which is not available.
      * <b>DOMAIN_ALREADY_IN_ACCOUNT:</b> When an attempt is made to register a domain which is already in your account.
      * <b>DOMAIN_NOT_IN_ACCOUNT:</b> When an attempt is made to modify a domain which is not in your account.
-     * <b>DOMAIN_INVALID_FOR_CANCELLATION:</b> When an attempt is made to cancel a domain which is not in a valid state for cancellation</b><br>
+     * <b>DOMAIN_INVALID_FOR_CANCELLATION:</b> When an attempt is made to cancel a domain which is not in a valid state for cancellation<br>
      * <b>DOMAIN_INVALID_FOR_RENEWAL:</b> An attempt has been made to renew a domain which is not valid for renewal.  Only domains with a status value of <b>ACTIVE</b> or <b>EXPIRED</b> can be renewed.
      * <b>DOMAIN_INVALID_FOR_GLUE_RECORD:</b> An attempt has been made to manage glue records for a domain which is not in <b>ACTIVE</b> status.
      * <b>DOMAIN_MISSING_GLUE_RECORD:</b> An attempt has been made to remove a glue record for a domain where the glue record has not been defined.
