@@ -1,4 +1,6 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
 	<name>Netistrar Reseller API</name>
@@ -13,6 +15,24 @@
 			<distribution>repo</distribution>
 		</license>
 	</licenses>
+
+	<developers>
+		<developer>
+			<id>mrobertshaw</id>
+			<name>Mark Robertshaw</name>
+			<email>mark@oxil.co.uk</email>
+			<url>http://www.oxil.co.uk</url>
+			<organization>OXIL</organization>
+			<organizationUrl>http://www.oxil.co.uk</organizationUrl>
+			<roles>
+				<role>architect</role>
+				<role>developer</role>
+			</roles>
+			<timezone>Europe/London</timezone>
+		</developer>
+	</developers>
+
+
 
 	<properties>
 		<maven.compiler.source>1.7</maven.compiler.source>
@@ -31,6 +51,27 @@
 					<outputDirectory>dist</outputDirectory>
 				</configuration>
 			</plugin>
+
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-release-plugin</artifactId>
+				<version>2.5.3</version>
+				<configuration>
+					<localCheckout>true</localCheckout>
+					<pushChanges>false</pushChanges>
+					<mavenExecutorId>forked-path</mavenExecutorId>
+					<arguments>-Dgpg.secretkey=keyring:id=A11B71F821A8C17FF7F48FBADB5A2C536E58AE93</arguments>
+				</configuration>
+				<dependencies>
+					<dependency>
+						<groupId>org.apache.maven.scm</groupId>
+						<artifactId>maven-scm-provider-gitexe</artifactId>
+						<version>1.9.5</version>
+					</dependency>
+				</dependencies>
+			</plugin>
+
 
 			<plugin>
 				<artifactId>maven-deploy-plugin</artifactId>
