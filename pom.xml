@@ -5,6 +5,8 @@
 	<groupId>com.netistrar</groupId>
 	<artifactId>reseller-api</artifactId>
 	<version>1.25-SNAPSHOT</version>
+	<description>Netistrar Java Reseller API</description>
+	<url>https://github.com/Netistrar/reseller-api-java</url>
 
 	<licenses>
 		<license>
