@@ -4,7 +4,7 @@
 	<name>Netistrar Reseller API</name>
 	<groupId>com.netistrar</groupId>
 	<artifactId>reseller-api</artifactId>
-	<version>1.25-SNAPSHOT</version>
+	<version>1.25</version>
 	<description>Netistrar Java Reseller API</description>
 	<url>https://github.com/Netistrar/reseller-api-java</url>
 
@@ -164,7 +164,7 @@
 		<connection>scm:git:git://github.com/Netistrar/reseller-api-java.git</connection>
 		<developerConnection>scm:git:git@github.com:Netistrar/reseller-api-java.git</developerConnection>
 		<url>https://github.com/Netistrar/reseller-api-java</url>
-		<tag>HEAD</tag>
+		<tag>reseller-api-1.25</tag>
 	</scm>
 
 
