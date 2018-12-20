@@ -42,7 +42,7 @@ public class DomainAvailability  {
      * and <b>HINTED_UNAVAILABLE</b> cases this will comprise an array containing a single <a href="domain-availability-price-object">DomainAvailabilityPrice</a> item for one year renewal price.
      * Transfer prices are included only when the availability property is set to <b>UNAVAILABLE</b> or <b>HINTED_UNAVAILABLE</b>.  This will comprise an array containing a single <a href="domain-availability-price-object">DomainAvailabilityPrice</a> item for one year transfer price.
      */
-    protected Map<String,Map<Integer,DomainAvailabilityPrice>> prices;
+    protected Map<String,DomainAvailabilityPrice[]> prices;
     /**
      * An arbitrary array of additional data included to qualify given availability and pricing states when required.
      */
@@ -91,7 +91,7 @@ public class DomainAvailability  {
      *
      * @return prices
      */
-    public Map<String,Map<Integer,DomainAvailabilityPrice>> getPrices(){
+    public Map<String,DomainAvailabilityPrice[]> getPrices(){
         return this.prices;
     }
 
