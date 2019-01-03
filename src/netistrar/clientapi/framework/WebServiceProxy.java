@@ -157,8 +157,7 @@ public class WebServiceProxy {
                 String className = expectedExceptions.get(((SerialisableException)exception).getExceptionClass());
                 exception = (Exception)gson.fromJson(content.toString(), Class.forName(className));
             }
-
-
+            
 			throw exception;
 		}
 
