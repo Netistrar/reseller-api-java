@@ -37,10 +37,9 @@ public class domains extends WebServiceProxy {
 
     /**
      * Provides fast hinted search results for one or more TLDs or predefined TLD Categories for a supplied domain prefix string.  This allows for rapid indicative search results without the overhead of real time checking via each registry.
-     * It is strongly recommended that a call is made to the <b>getLiveAvailability</b> function for individual domains before confirming a sale or adding to an application cart.
-     * Hinted availability is provided via the use of cached zone file data and an indicator of the cache age is returned
-     * as part of the results.  Pricing data is returned according to the availability detected and where premium pricing may apply for a given TLD, a hint of the premium status and pricing is returned via cached premium data where available.
-     * The returned object contains DomainAvailability objects structured according to the parameters passed.
+     * <br>It is strongly recommended that a call is made to the <b>getLiveAvailability</b> function for individual domains before confirming a sale or adding to an application cart.
+     * Hinted availability is provided via the use of cached zone file data.  Pricing data is returned according to the availability detected and where premium pricing may apply for a given TLD, a hint of the premium status and pricing is returned via cached premium data where available.
+     * <br>The returned object contains DomainAvailability objects structured according to the parameters passed.
      *
      * @param descriptor descriptor
      * @return Result from function

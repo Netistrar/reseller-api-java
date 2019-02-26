@@ -108,7 +108,7 @@ public class WebServiceProxy {
 				String payloadString = null;
 
 				if (payload != null) {
-					payloadString  = URLEncoder.encode(gson.toJson(payload), "UTF-8");
+					payloadString  = gson.toJson(payload);
 				} else if (paramString.length() > 0) {
 					payloadString = paramString;
 				}
@@ -157,7 +157,8 @@ public class WebServiceProxy {
                 String className = expectedExceptions.get(((SerialisableException)exception).getExceptionClass());
                 exception = (Exception)gson.fromJson(content.toString(), Class.forName(className));
             }
-            
+
+
 			throw exception;
 		}
 

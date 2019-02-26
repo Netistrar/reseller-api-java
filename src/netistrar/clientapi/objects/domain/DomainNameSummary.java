@@ -9,10 +9,6 @@ public class DomainNameSummary  {
 
 
     /**
-     * The owner of this domain name
-     */
-    protected String ownerName;
-    /**
      * The full domain name as a string
      */
     protected String domainName;
@@ -75,6 +71,10 @@ public class DomainNameSummary  {
     /**
      */
     protected String emailProvider;
+    /**
+     * The owner of this domain name
+     */
+    protected String ownerName;
 
 
 
@@ -86,15 +86,6 @@ public class DomainNameSummary  {
     }
 
 
-
-    /**
-     * Get the ownerName
-     *
-     * @return ownerName
-     */
-    public String getOwnerName(){
-        return this.ownerName;
-    }
 
     /**
      * Get the domainName
@@ -204,6 +195,15 @@ public class DomainNameSummary  {
         return this.emailProvider;
     }
 
+    /**
+     * Get the ownerName
+     *
+     * @return ownerName
+     */
+    public String getOwnerName(){
+        return this.ownerName;
+    }
+
 
 
     /**
@@ -220,8 +220,6 @@ public class DomainNameSummary  {
         DomainNameSummary castObject = (DomainNameSummary)otherObject;
 
         boolean equals = true;
-        equals = equals && ( (this.getOwnerName() == null && castObject.getOwnerName() == null) ||
-            (this.getOwnerName() != null && this.getOwnerName().equals(castObject.getOwnerName())));
         equals = equals && ( (this.getDomainName() == null && castObject.getDomainName() == null) ||
             (this.getDomainName() != null && this.getDomainName().equals(castObject.getDomainName())));
         equals = equals && ( (this.getRegisteredDate() == null && castObject.getRegisteredDate() == null) ||
@@ -246,6 +244,8 @@ public class DomainNameSummary  {
             (this.getDnsProvider() != null && this.getDnsProvider().equals(castObject.getDnsProvider())));
         equals = equals && ( (this.getEmailProvider() == null && castObject.getEmailProvider() == null) ||
             (this.getEmailProvider() != null && this.getEmailProvider().equals(castObject.getEmailProvider())));
+        equals = equals && ( (this.getOwnerName() == null && castObject.getOwnerName() == null) ||
+            (this.getOwnerName() != null && this.getOwnerName().equals(castObject.getOwnerName())));
 
         return equals;
     }

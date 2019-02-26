@@ -34,6 +34,12 @@ public class DomainAvailability  {
      */
     protected String pricingType;
     /**
+     * An indicator as to whether or not the tld for this domain name
+     * supports premium domains.  This is particularly useful when searching for hinted availability as it
+     * allows marking up of prices as "from" etc.
+     */
+    protected String premiumSupported;
+    /**
      * An associative array containing sets of domain prices for Registration, Renewal and Transfer for this domain name.  These pricing sets are indexed using the keys <b>registration</b>, <b>renewal</b> and <b>transfer</b> and are included according
      * to the following rules depending upon the availability property.
      * Registration prices are included when the availability property is set to <b>AVAILABLE</b> or <b>HINTED_AVAILABLE</b> or <b>NO_HINTED_AVAILABILITY</b>,  these comprise an array of <a href="domain-availability-price-object">DomainAvailabilityPrice</a> items for all possible registration years (usually 10).
@@ -87,6 +93,15 @@ public class DomainAvailability  {
     }
 
     /**
+     * Get the premiumSupported
+     *
+     * @return premiumSupported
+     */
+    public String getPremiumSupported(){
+        return this.premiumSupported;
+    }
+
+    /**
      * Get the prices
      *
      * @return prices
@@ -126,6 +141,8 @@ public class DomainAvailability  {
             (this.getAvailability() != null && this.getAvailability().equals(castObject.getAvailability())));
         equals = equals && ( (this.getPricingType() == null && castObject.getPricingType() == null) ||
             (this.getPricingType() != null && this.getPricingType().equals(castObject.getPricingType())));
+        equals = equals && ( (this.getPremiumSupported() == null && castObject.getPremiumSupported() == null) ||
+            (this.getPremiumSupported() != null && this.getPremiumSupported().equals(castObject.getPremiumSupported())));
         equals = equals && ( (this.getPrices() == null && castObject.getPrices() == null) ||
             (this.getPrices() != null && this.getPrices().equals(castObject.getPrices())));
         equals = equals && ( (this.getAdditionalData() == null && castObject.getAdditionalData() == null) ||

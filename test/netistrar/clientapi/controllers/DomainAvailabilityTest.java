@@ -62,7 +62,7 @@ class DomainAvailabilityTest {
 		DomainAvailabilityResults availability = this.api.domains().hintedAvailability(descriptor);
 
 		assertTrue(availability instanceof DomainAvailabilityResults);
-		assertEquals(availability.getSuggestions().length, 0);
+		assertNull(availability.getTldResults());
 	}
 
 	@Test
@@ -88,7 +88,7 @@ class DomainAvailabilityTest {
 
 		tlds = this.api.domains().tldList("National");
 		tldList = Arrays.asList(tlds);
-		assertEquals(6, tlds.length);
+		assertEquals(7, tlds.length);
 		assertTrue(tldList.contains("uk"));
 		assertTrue(tldList.contains("scot"));
 

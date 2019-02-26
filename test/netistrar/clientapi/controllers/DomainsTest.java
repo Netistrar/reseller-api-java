@@ -43,6 +43,7 @@ class DomainsTest {
 		String comDomain = "validationdomain.com";
 		DomainNameContact owner = new DomainNameContact();
 
+		
 		DomainNameCreateDescriptor createDescriptor = new DomainNameCreateDescriptor(
 				new String[] { ukDomain, comDomain }, 1, owner, new String[] { "monkeynameserver" }, null, null, null,
 				null, null, new String[] {});
@@ -304,13 +305,15 @@ class DomainsTest {
 				.create(new DomainNameCreateDescriptor(new String[] { newUKDomain1, newUKDomain2 }, 1, owner,
 						new String[] { "ns1.netistrar.com", "ns2.netistrar.com" }, null, null, null, 2, true,
 						new String[] {}), null);
-
+	
+		
 		// Renew these domains
 		String bulkKey = this.api.utility().createBulkOperation();
 
 		transaction = this.api.domains()
 				.renewMultiple(new DomainNameRenewDescriptor(new String[] { newUKDomain1, newUKDomain2 }, 2), bulkKey);
 
+			
 		assertTrue(transaction instanceof Transaction);
 		assertNotNull(transaction.getTransactionDateTime());
 		assertEquals("DOMAIN_RENEW", transaction.getTransactionType());

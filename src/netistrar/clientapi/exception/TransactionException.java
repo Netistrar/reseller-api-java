@@ -11,17 +11,6 @@ import java.util.Map;
 public class TransactionException extends Exception {
 
     /**
-     * Nested array of errors
-     */
-    protected Map<String,TransactionError> transactionErrors;
-
-    /**
-     * Indexed string array of exception data in the case that a non-serialisable
-     * exception has been shunted into this class
-     */
-    protected Map<String,String> sourceException;
-
-    /**
      */
     protected String message;
 
@@ -37,6 +26,17 @@ public class TransactionException extends Exception {
      */
     protected String line;
 
+    /**
+     * Indexed string array of exception data in the case that a non-serialisable
+     * exception has been shunted into this class
+     */
+    protected Map<String,String> sourceException;
+
+    /**
+     * Nested array of errors
+     */
+    protected Map<String,TransactionError> transactionErrors;
+
 
 
 
@@ -48,24 +48,6 @@ public class TransactionException extends Exception {
     }
 
 
-
-    /**
-     * Get the transactionErrors
-     *
-     * @return transactionErrors
-     */
-    public Map<String,TransactionError> getTransactionErrors(){
-        return this.transactionErrors;
-    }
-
-    /**
-     * Get the sourceException
-     *
-     * @return sourceException
-     */
-    public Map<String,String> getSourceException(){
-        return this.sourceException;
-    }
 
     /**
      * Get the message
@@ -101,6 +83,24 @@ public class TransactionException extends Exception {
      */
     public String getLine(){
         return this.line;
+    }
+
+    /**
+     * Get the sourceException
+     *
+     * @return sourceException
+     */
+    public Map<String,String> getSourceException(){
+        return this.sourceException;
+    }
+
+    /**
+     * Get the transactionErrors
+     *
+     * @return transactionErrors
+     */
+    public Map<String,TransactionError> getTransactionErrors(){
+        return this.transactionErrors;
     }
 
 

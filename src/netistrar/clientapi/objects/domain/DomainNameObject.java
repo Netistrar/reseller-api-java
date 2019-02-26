@@ -11,26 +11,6 @@ public class DomainNameObject  {
 
 
     /**
-     * The owner contact for this domain as a  <a href="domain-name-contact-object">DomainNameContact</a> object.
-     */
-    protected DomainNameContact ownerContact;
-    /**
-     * The admin contact for this domain (if defined) as a <a href="domain-name-contact-object">DomainNameContact</a> object.
-     */
-    protected DomainNameContact adminContact;
-    /**
-     * The billing contact for this domain (if defined) as a <a href="domain-name-contact-object">DomainNameContact</a> object.
-     */
-    protected DomainNameContact billingContact;
-    /**
-     * The technical contact for this domain (if defined) as a  <a href="domain-name-contact-object">DomainNameContact</a> object.
-     */
-    protected DomainNameContact technicalContact;
-    /**
-     * The array of nameservers currently in use for this domain name.
-     */
-    protected String[] nameservers;
-    /**
      * The full domain name as a string
      */
     protected String domainName;
@@ -93,6 +73,30 @@ public class DomainNameObject  {
     /**
      */
     protected String emailProvider;
+    /**
+     * The owner contact for this domain as a  <a href="domain-name-contact-object">DomainNameContact</a> object.
+     */
+    protected DomainNameContact ownerContact;
+    /**
+     * The admin contact for this domain (if defined) as a <a href="domain-name-contact-object">DomainNameContact</a> object.
+     */
+    protected DomainNameContact adminContact;
+    /**
+     * The billing contact for this domain (if defined) as a <a href="domain-name-contact-object">DomainNameContact</a> object.
+     */
+    protected DomainNameContact billingContact;
+    /**
+     * The technical contact for this domain (if defined) as a  <a href="domain-name-contact-object">DomainNameContact</a> object.
+     */
+    protected DomainNameContact technicalContact;
+    /**
+     * The array of nameservers currently in use for this domain name.
+     */
+    protected String[] nameservers;
+    /**
+     * Related information for this item
+     */
+    protected String[] relatedProductInfo;
 
 
 
@@ -104,51 +108,6 @@ public class DomainNameObject  {
     }
 
 
-
-    /**
-     * Get the ownerContact
-     *
-     * @return ownerContact
-     */
-    public DomainNameContact getOwnerContact(){
-        return this.ownerContact;
-    }
-
-    /**
-     * Get the adminContact
-     *
-     * @return adminContact
-     */
-    public DomainNameContact getAdminContact(){
-        return this.adminContact;
-    }
-
-    /**
-     * Get the billingContact
-     *
-     * @return billingContact
-     */
-    public DomainNameContact getBillingContact(){
-        return this.billingContact;
-    }
-
-    /**
-     * Get the technicalContact
-     *
-     * @return technicalContact
-     */
-    public DomainNameContact getTechnicalContact(){
-        return this.technicalContact;
-    }
-
-    /**
-     * Get the nameservers
-     *
-     * @return nameservers
-     */
-    public String[] getNameservers(){
-        return this.nameservers;
-    }
 
     /**
      * Get the domainName
@@ -258,6 +217,60 @@ public class DomainNameObject  {
         return this.emailProvider;
     }
 
+    /**
+     * Get the ownerContact
+     *
+     * @return ownerContact
+     */
+    public DomainNameContact getOwnerContact(){
+        return this.ownerContact;
+    }
+
+    /**
+     * Get the adminContact
+     *
+     * @return adminContact
+     */
+    public DomainNameContact getAdminContact(){
+        return this.adminContact;
+    }
+
+    /**
+     * Get the billingContact
+     *
+     * @return billingContact
+     */
+    public DomainNameContact getBillingContact(){
+        return this.billingContact;
+    }
+
+    /**
+     * Get the technicalContact
+     *
+     * @return technicalContact
+     */
+    public DomainNameContact getTechnicalContact(){
+        return this.technicalContact;
+    }
+
+    /**
+     * Get the nameservers
+     *
+     * @return nameservers
+     */
+    public String[] getNameservers(){
+        return this.nameservers;
+    }
+
+    /**
+     * Get the relatedProductInfo
+     *
+     * @return relatedProductInfo
+     */
+    public String[] getRelatedProductInfo(){
+        return this.relatedProductInfo;
+    }
+
 
 
     /**
@@ -274,16 +287,6 @@ public class DomainNameObject  {
         DomainNameObject castObject = (DomainNameObject)otherObject;
 
         boolean equals = true;
-        equals = equals && ( (this.getOwnerContact() == null && castObject.getOwnerContact() == null) ||
-            (this.getOwnerContact() != null && this.getOwnerContact().equals(castObject.getOwnerContact())));
-        equals = equals && ( (this.getAdminContact() == null && castObject.getAdminContact() == null) ||
-            (this.getAdminContact() != null && this.getAdminContact().equals(castObject.getAdminContact())));
-        equals = equals && ( (this.getBillingContact() == null && castObject.getBillingContact() == null) ||
-            (this.getBillingContact() != null && this.getBillingContact().equals(castObject.getBillingContact())));
-        equals = equals && ( (this.getTechnicalContact() == null && castObject.getTechnicalContact() == null) ||
-            (this.getTechnicalContact() != null && this.getTechnicalContact().equals(castObject.getTechnicalContact())));
-        equals = equals && ( (this.getNameservers() == null && castObject.getNameservers() == null) ||
-            (this.getNameservers() != null && this.getNameservers().equals(castObject.getNameservers())));
         equals = equals && ( (this.getDomainName() == null && castObject.getDomainName() == null) ||
             (this.getDomainName() != null && this.getDomainName().equals(castObject.getDomainName())));
         equals = equals && ( (this.getRegisteredDate() == null && castObject.getRegisteredDate() == null) ||
@@ -308,6 +311,18 @@ public class DomainNameObject  {
             (this.getDnsProvider() != null && this.getDnsProvider().equals(castObject.getDnsProvider())));
         equals = equals && ( (this.getEmailProvider() == null && castObject.getEmailProvider() == null) ||
             (this.getEmailProvider() != null && this.getEmailProvider().equals(castObject.getEmailProvider())));
+        equals = equals && ( (this.getOwnerContact() == null && castObject.getOwnerContact() == null) ||
+            (this.getOwnerContact() != null && this.getOwnerContact().equals(castObject.getOwnerContact())));
+        equals = equals && ( (this.getAdminContact() == null && castObject.getAdminContact() == null) ||
+            (this.getAdminContact() != null && this.getAdminContact().equals(castObject.getAdminContact())));
+        equals = equals && ( (this.getBillingContact() == null && castObject.getBillingContact() == null) ||
+            (this.getBillingContact() != null && this.getBillingContact().equals(castObject.getBillingContact())));
+        equals = equals && ( (this.getTechnicalContact() == null && castObject.getTechnicalContact() == null) ||
+            (this.getTechnicalContact() != null && this.getTechnicalContact().equals(castObject.getTechnicalContact())));
+        equals = equals && ( (this.getNameservers() == null && castObject.getNameservers() == null) ||
+            (this.getNameservers() != null && this.getNameservers().equals(castObject.getNameservers())));
+        equals = equals && ( (this.getRelatedProductInfo() == null && castObject.getRelatedProductInfo() == null) ||
+            (this.getRelatedProductInfo() != null && this.getRelatedProductInfo().equals(castObject.getRelatedProductInfo())));
 
         return equals;
     }
