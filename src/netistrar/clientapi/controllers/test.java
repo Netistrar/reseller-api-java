@@ -69,7 +69,7 @@ public class test extends WebServiceProxy {
 
     /**
      * Remove a domain name from your account.  This doesn't remove the domain from the registry if it has been previously registered.
-     * This is particularly useful when performing transfer testing etc.
+     * <br>This is particularly useful when performing transfer testing etc.
      *
      * @param domainName domainName
      * @throws Exception Throws server side exceptions of variable types.
@@ -87,6 +87,72 @@ public class test extends WebServiceProxy {
         returnType = Object.class;
 
         super.callMethod("removeDomainFromAccount/" + domainName + "", "GET", params, null, returnType,expectedExceptions);
+    }
+
+    /**
+     * Delete a domain - this both removes the domain from your account and issues a delete.  NB:  The delete will behave
+     * differently at the Registry end according to the current status of the domain.  This is particularly useful for repeatable testing of
+     * registrations of known domains (e.g. Premium Domain testing)
+     *
+     * @param domainName domainName
+     * @throws Exception Throws server side exceptions of variable types.
+     */
+    public void deleteDomain( domainName) throws Exception{
+        Map<String, Object> params = new HashMap<String, Object>();
+        
+
+        Map<String, String> expectedExceptions = new HashMap<String, String>();
+        expectedExceptions.put("\\Kinikit\\MVC\\Exception\\RateLimitExceededException","netistrar.clientapi.exception.RateLimitExceededException");
+
+
+        Type returnType;
+
+        returnType = Object.class;
+
+        super.callMethod("deleteDomain/" + domainName + "", "GET", params, null, returnType,expectedExceptions);
+    }
+
+    /**
+     * Create a domain in RGP
+     *
+     * @return Result from function
+     * @throws Exception Throws server side exceptions of variable types.
+     */
+    public String createRGPDomain() throws Exception{
+        Map<String, Object> params = new HashMap<String, Object>();
+        
+
+        Map<String, String> expectedExceptions = new HashMap<String, String>();
+        expectedExceptions.put("\\Kinikit\\MVC\\Exception\\RateLimitExceededException","netistrar.clientapi.exception.RateLimitExceededException");
+
+
+        Type returnType;
+
+        returnType = new TypeToken<String>(){}.getType();
+
+        return (String)super.callMethod("createRGPDomain", "GET", params, null, returnType,expectedExceptions);
+    }
+
+    /**
+     * Create a set of premium domains for transfer testing.  This will return an array of
+     * arrays containing a domain name and auth code
+     *
+     * @return Result from function
+     * @throws Exception Throws server side exceptions of variable types.
+     */
+    public String[][] createTransferPremiums() throws Exception{
+        Map<String, Object> params = new HashMap<String, Object>();
+        
+
+        Map<String, String> expectedExceptions = new HashMap<String, String>();
+        expectedExceptions.put("\\Kinikit\\MVC\\Exception\\RateLimitExceededException","netistrar.clientapi.exception.RateLimitExceededException");
+
+
+        Type returnType;
+
+        returnType = new TypeToken<String[][]>(){}.getType();
+
+        return (String[][])super.callMethod("createTransferPremium", "GET", params, null, returnType,expectedExceptions);
     }
 
     /**
@@ -118,12 +184,14 @@ public class test extends WebServiceProxy {
      * You can create up to 10 domains using this method and it will return an array of string domain names for the test domains created
      *
      * @param numberOfDomains numberOfDomains
+     * @param contactAdditionalData contactAdditionalData
      * @return Result from function
      * @throws Exception Throws server side exceptions of variable types.
      */
-    public String[] createPushTransferUKDomains(Integer numberOfDomains) throws Exception{
+    public String[] createPushTransferUKDomains(Integer numberOfDomains, Map<String,Object> contactAdditionalData) throws Exception{
         Map<String, Object> params = new HashMap<String, Object>();
         
+        params.put("contactAdditionalData", contactAdditionalData);
 
         Map<String, String> expectedExceptions = new HashMap<String, String>();
         expectedExceptions.put("\\Kinikit\\MVC\\Exception\\RateLimitExceededException","netistrar.clientapi.exception.RateLimitExceededException");
@@ -160,11 +228,11 @@ public class test extends WebServiceProxy {
 
     /**
      * Accept Ownership confirmation for a transfer for a set of domain names (either .RODEO or .UK) which have been started for transfer in / out
-     * using the <i>createIncomingTransferDomains</i> method on the <a href="netistrar-domain-transfer-api">Domain API</a> or
+     * using the <i>createIncomingTransferDomains</i> method on the <a href="api:domains-api">Domain API</a> or
      * using the <b>startTransferOutRodeo</b> method above respectively.
-     * This is equivalent to clicking the links sent via email to the owner to confirm that the transfer can proceed.
-     * In the case of an incoming transfer this will start the transfer operation at the Registry.
-     * In the case of an outgoing transfer this will accept the transfer operation started by the <a href="#startTransferOutForPullTransferRodeoDomains">startTransferOutForPullTransferRodeoDomains</a> method.
+     * <br>This is equivalent to clicking the links sent via email to the owner to confirm that the transfer can proceed.
+     * <br>In the case of an incoming transfer this will start the transfer operation at the Registry.
+     * <br>In the case of an outgoing transfer this will accept the transfer operation started by the <b>startTransferOutForPullTransferRodeoDomains</b> method.
      *
      * @param domainNames domainNames
      * @throws Exception Throws server side exceptions of variable types.
@@ -186,11 +254,11 @@ public class test extends WebServiceProxy {
 
     /**
      * Decline Ownership confirmation for a transfer for a set of domain names (either .RODEO or .UK) which have been started for transfer in / out
-     * using the <i>createIncomingTransferDomains</i> method on the <a href="netistrar-domain-transfer-api">Domain API</a> or
+     * using the <b>createIncomingTransferDomains</b> method on the <a href="api:domains-api">Domain API</a> or
      * using the <b>startTransferOutRodeo</b> method above respectively.
-     * This is equivalent to clicking the links sent via email to the owner to decline  the transfer .
-     * In the case of an incoming transfer this will abandon the incoming transfer and restore the domain to active state.
-     * In the case of an outgoing transfer this will reject the operation started by the <b>startTransferOutForPullTransferRodeoDomains</b> method.
+     * <br>This is equivalent to clicking the links sent via email to the owner to decline  the transfer .
+     * <br>In the case of an incoming transfer this will abandon the incoming transfer and restore the domain to active state.
+     * <br>In the case of an outgoing transfer this will reject the operation started by the <b>startTransferOutForPullTransferRodeoDomains</b> method.
      *
      * @param domainNames domainNames
      * @throws Exception Throws server side exceptions of variable types.

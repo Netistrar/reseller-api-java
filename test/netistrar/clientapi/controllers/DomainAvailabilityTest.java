@@ -19,7 +19,7 @@ class DomainAvailabilityTest {
 	private APIProvider api;
 
 	public DomainAvailabilityTest() {
-		this.api = new APIProvider("http://restapi.netistrar.test", "TESTAPIKEY", "TESTAPISECRET");
+		this.api = new APIProvider("http://restapi.netistrar.test:8080", "TESTAPIKEY", "TESTAPISECRET");
 	}
 
 	@Test

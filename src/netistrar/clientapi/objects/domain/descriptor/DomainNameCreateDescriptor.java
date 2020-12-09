@@ -38,9 +38,12 @@ public class DomainNameCreateDescriptor  {
      */
     private DomainNameContact technicalContact;
     /**
-     * This should be set to one of the following values: <br><br><b>0</b> if all contact details are to be made public within the WHOIS system for all supplied domains<br><b>1</b> if the free Netistrar Privacy Proxy service will be used for all supplied domains<br><b>2</b> if partial details are to be made public within the WHOIS system with other details redacted.  (defaults to 1).
+     * This should be set to one of the following values: <br><br><b>0</b> If limited details are to be published via the WHOIS system for all supplied domains according to Registry policy.<br><b>1</b> if the free Netistrar Privacy Proxy service will be used for all supplied domains.
      */
     private Integer privacyProxy;
+    /**
+     */
+    private Map<String,bool> disclosedFields;
     /**
      * A boolean indicator as to whether the an attempt will be made to auto renew this domain using account payment methods (defaults to 0)
      */
@@ -49,6 +52,10 @@ public class DomainNameCreateDescriptor  {
      * An array of string tags to assign to this domain for organisational purposes.
      */
     private String[] tags;
+    /**
+     * An associative array of registration codes indexed by domain name which must be supplied as a confirmation check for any domain names which are premium names.  These codes are obtained via a call to the <b>getLiveAvailability</b> function on the <a href="api:domains-api">Domain API</a> where it will be contained in the <b>premiumRegistrationCode</b> sub property of the <b>additionalData</b> member on the returned <a href="object:Netistrar/WebServices/Common/Objects/Domain/DomainAvailability">DomainAvailability</a> object.
+     */
+    private Map<String,String> premiumRegistrationCodes;
 
 
 
@@ -70,10 +77,12 @@ public class DomainNameCreateDescriptor  {
     * @param billingContact the billingContact
     * @param technicalContact the technicalContact
     * @param privacyProxy the privacyProxy
+    * @param disclosedFields the disclosedFields
     * @param autoRenew the autoRenew
     * @param tags the tags
+    * @param premiumRegistrationCodes the premiumRegistrationCodes
     */
-    public DomainNameCreateDescriptor(String[] domainNames, Integer registrationYears, DomainNameContact ownerContact, String[] nameservers, DomainNameContact adminContact, DomainNameContact billingContact, DomainNameContact technicalContact, Integer privacyProxy, Boolean autoRenew, String[] tags){
+    public DomainNameCreateDescriptor(String[] domainNames, Integer registrationYears, DomainNameContact ownerContact, String[] nameservers, DomainNameContact adminContact, DomainNameContact billingContact, DomainNameContact technicalContact, Integer privacyProxy, Map<String,bool> disclosedFields, Boolean autoRenew, String[] tags, Map<String,String> premiumRegistrationCodes){
 
         this.domainNames = domainNames;
         this.registrationYears = registrationYears;
@@ -83,8 +92,10 @@ public class DomainNameCreateDescriptor  {
         this.billingContact = billingContact;
         this.technicalContact = technicalContact;
         this.privacyProxy = privacyProxy;
+        this.disclosedFields = disclosedFields;
         this.autoRenew = autoRenew;
         this.tags = tags;
+        this.premiumRegistrationCodes = premiumRegistrationCodes;
         
     }
 
@@ -250,6 +261,26 @@ public class DomainNameCreateDescriptor  {
     }
 
     /**
+     * Get the disclosedFields
+     *
+     * @return disclosedFields
+     */
+    public Map<String,bool> getDisclosedFields(){
+        return this.disclosedFields;
+    }
+
+    /**
+     * Set the disclosedFields
+     *
+     * @param disclosedFields the disclosedFields
+     * @return DomainNameCreateDescriptor
+     */
+    public DomainNameCreateDescriptor setDisclosedFields(Map<String,bool> disclosedFields){
+        this.disclosedFields = disclosedFields;
+        return this;
+    }
+
+    /**
      * Get the autoRenew
      *
      * @return autoRenew
@@ -289,6 +320,26 @@ public class DomainNameCreateDescriptor  {
         return this;
     }
 
+    /**
+     * Get the premiumRegistrationCodes
+     *
+     * @return premiumRegistrationCodes
+     */
+    public Map<String,String> getPremiumRegistrationCodes(){
+        return this.premiumRegistrationCodes;
+    }
+
+    /**
+     * Set the premiumRegistrationCodes
+     *
+     * @param premiumRegistrationCodes the premiumRegistrationCodes
+     * @return DomainNameCreateDescriptor
+     */
+    public DomainNameCreateDescriptor setPremiumRegistrationCodes(Map<String,String> premiumRegistrationCodes){
+        this.premiumRegistrationCodes = premiumRegistrationCodes;
+        return this;
+    }
+
 
 
     /**
@@ -321,10 +372,14 @@ public class DomainNameCreateDescriptor  {
             (this.getTechnicalContact() != null && this.getTechnicalContact().equals(castObject.getTechnicalContact())));
         equals = equals && ( (this.getPrivacyProxy() == null && castObject.getPrivacyProxy() == null) ||
             (this.getPrivacyProxy() != null && this.getPrivacyProxy().equals(castObject.getPrivacyProxy())));
+        equals = equals && ( (this.getDisclosedFields() == null && castObject.getDisclosedFields() == null) ||
+            (this.getDisclosedFields() != null && this.getDisclosedFields().equals(castObject.getDisclosedFields())));
         equals = equals && ( (this.getAutoRenew() == null && castObject.getAutoRenew() == null) ||
             (this.getAutoRenew() != null && this.getAutoRenew().equals(castObject.getAutoRenew())));
         equals = equals && ( (this.getTags() == null && castObject.getTags() == null) ||
             (this.getTags() != null && this.getTags().equals(castObject.getTags())));
+        equals = equals && ( (this.getPremiumRegistrationCodes() == null && castObject.getPremiumRegistrationCodes() == null) ||
+            (this.getPremiumRegistrationCodes() != null && this.getPremiumRegistrationCodes().equals(castObject.getPremiumRegistrationCodes())));
 
         return equals;
     }

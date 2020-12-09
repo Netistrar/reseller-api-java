@@ -15,8 +15,8 @@ public class TestDomainNameUpdateDescriptor  {
     private String[] domainNames;
     /**
      * The new status for the supplied domain names.  This will be applied directly to the name
-     * bypassing any workflow associated with the particular status.
-     * Possible values are:
+     * bypassing any workflow associated with the particular status.<br>
+     * Possible values are:<br>
      * <b>ACTIVE</b> - The domain name is active and in use.
      * <b>EXPIRED</b> - The domain name has expired.
      * <b>SUSPENDED</b> - The domain name has been suspended (either for unlawful behaviour or invalid ownership details).

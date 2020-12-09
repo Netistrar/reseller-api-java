@@ -4,6 +4,8 @@ import java.util.Map;
 import java.util.HashMap;
 import netistrar.clientapi.framework.WebServiceProxy;
 import netistrar.clientapi.controllers.domains;
+import netistrar.clientapi.controllers.dns;
+import netistrar.clientapi.controllers.gsuite;
 import netistrar.clientapi.controllers.utility;
 import netistrar.clientapi.controllers.account;
 import netistrar.clientapi.controllers.test;
@@ -38,6 +40,30 @@ public class APIProvider  {
             this.instances.put("domains", new domains(this.apiURL + "/domains", this.globalParameters));
         }
         return (domains)this.instances.get("domains");
+    }
+
+    /**
+    * Get an instance of the dns API
+    *
+    * @return dns
+    */
+    public dns dns(){
+        if (this.instances.get("dns") == null){
+            this.instances.put("dns", new dns(this.apiURL + "/dns", this.globalParameters));
+        }
+        return (dns)this.instances.get("dns");
+    }
+
+    /**
+    * Get an instance of the gsuite API
+    *
+    * @return gsuite
+    */
+    public gsuite gsuite(){
+        if (this.instances.get("gsuite") == null){
+            this.instances.put("gsuite", new gsuite(this.apiURL + "/gsuite", this.globalParameters));
+        }
+        return (gsuite)this.instances.get("gsuite");
     }
 
     /**

@@ -17,7 +17,7 @@ public class AccountTest {
 	private APIProvider api;
 
 	public AccountTest() {
-		this.api = new APIProvider("http://restapi.netistrar.test", "TESTAPIKEY", "TESTAPISECRET");
+		this.api = new APIProvider("http://restapi.netistrar.test:8080", "TESTAPIKEY", "TESTAPISECRET");
 	}
 
 	@Test

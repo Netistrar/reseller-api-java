@@ -16,6 +16,10 @@ public class DomainNameRenewDescriptor  {
      * The number of years to be added to the supplied domain names
      */
     private Integer additionalYears;
+    /**
+     * An associative array of renewal codes indexed by domain name which must be supplied as a confirmation check for any domain names which are premium names.  These codes are obtained via a call to the <b>getLiveAvailability</b> function on the <a href="api:domains-api">Domain API</a> where it will be contained in the <b>premiumRenewalCode</b> sub property of the <b>additionalData</b> member on the returned <a href="object:Netistrar/WebServices/Common/Objects/Domain/DomainAvailability">DomainAvailability</a> object.
+     */
+    private Map<String,String> premiumRenewalCodes;
 
 
 
@@ -31,11 +35,13 @@ public class DomainNameRenewDescriptor  {
      *
     * @param domainNames the domainNames
     * @param additionalYears the additionalYears
+    * @param premiumRenewalCodes the premiumRenewalCodes
     */
-    public DomainNameRenewDescriptor(String[] domainNames, Integer additionalYears){
+    public DomainNameRenewDescriptor(String[] domainNames, Integer additionalYears, Map<String,String> premiumRenewalCodes){
 
         this.domainNames = domainNames;
         this.additionalYears = additionalYears;
+        this.premiumRenewalCodes = premiumRenewalCodes;
         
     }
 
@@ -80,6 +86,26 @@ public class DomainNameRenewDescriptor  {
         return this;
     }
 
+    /**
+     * Get the premiumRenewalCodes
+     *
+     * @return premiumRenewalCodes
+     */
+    public Map<String,String> getPremiumRenewalCodes(){
+        return this.premiumRenewalCodes;
+    }
+
+    /**
+     * Set the premiumRenewalCodes
+     *
+     * @param premiumRenewalCodes the premiumRenewalCodes
+     * @return DomainNameRenewDescriptor
+     */
+    public DomainNameRenewDescriptor setPremiumRenewalCodes(Map<String,String> premiumRenewalCodes){
+        this.premiumRenewalCodes = premiumRenewalCodes;
+        return this;
+    }
+
 
 
     /**
@@ -100,6 +126,8 @@ public class DomainNameRenewDescriptor  {
             (this.getDomainNames() != null && this.getDomainNames().equals(castObject.getDomainNames())));
         equals = equals && ( (this.getAdditionalYears() == null && castObject.getAdditionalYears() == null) ||
             (this.getAdditionalYears() != null && this.getAdditionalYears().equals(castObject.getAdditionalYears())));
+        equals = equals && ( (this.getPremiumRenewalCodes() == null && castObject.getPremiumRenewalCodes() == null) ||
+            (this.getPremiumRenewalCodes() != null && this.getPremiumRenewalCodes().equals(castObject.getPremiumRenewalCodes())));
 
         return equals;
     }

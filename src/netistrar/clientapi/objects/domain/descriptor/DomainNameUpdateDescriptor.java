@@ -14,7 +14,7 @@ public class DomainNameUpdateDescriptor  {
      */
     private String[] domainNames;
     /**
-     * A new owner contact to apply to all supplied domains.  If this is supplied as null, no owner contact update will be performed.<br><br><b>NB: </b> Key changes to owner details for GTLDs will trigger a verification email to the owner of the domain before these changes will be applied. Once approved by the owner a 60 day transfer lock will be placed on the domain.  If a verification has been triggered, it will be noted in the Transaction Element operation data for the update.  Please see extra documentation in the <a href="domain-name-contact">DomainNameContact</a> object definition.
+     * A new owner contact to apply to all supplied domains.  If this is supplied as null, no owner contact update will be performed.<br><br><b>NB: </b> Key changes to owner details for GTLDs will trigger a verification email to the owner of the domain before these changes will be applied. Once approved by the owner a 60 day transfer lock will be placed on the domain.  If a verification has been triggered, it will be noted in the Transaction Element operation data for the update.  Please see extra documentation in the <a href="object:Netistrar/WebServices/Common/Objects/Domain/DomainNameContact">DomainNameContact</a> object definition.
      */
     private DomainNameContact ownerContact;
     /**
@@ -38,7 +38,7 @@ public class DomainNameUpdateDescriptor  {
      */
     private Boolean locked;
     /**
-     * This should be set to one of the following values: <br><br><b>0</b> if all contact details are to be made public within the WHOIS system for all supplied domains<br><b>1</b> if the free Netistrar Privacy Proxy service will be used for all supplied domains<br><b>2</b> if partial details are to be made public within the WHOIS system with other details redacted.  (defaults to 1).
+     * This should be set to one of the following values: <br><br><b>0</b> If limited details are to be published via the WHOIS system for all supplied domains according to Registry policy.<br><b>1</b> if the free Netistrar Privacy Proxy service will be used for all supplied domains.
      */
     private Integer privacyProxy;
     /**

@@ -4,30 +4,30 @@ import netistrar.clientapi.objects.domain.DomainNameSummary;
 import java.util.Map;
 
 /**
- * A results object which wraps an array of <a href="domain-name-summary-object">DomainNameSummaryObject</a> items returned from a call to <i>listDomains</i> within the <a href="netistrar-domain-lifecycle-api">Netistrar Domain Lifecycle API</a>.
+ * A results object which wraps an array of <a href="object:Netistrar/WebServices/Common/Objects/Domain/DomainNameSummary">DomainNameSummary</a> items returned from a call to <b>listDomains</b> within the <a href="api:domains-api">Domains API</a>.
  * This object encodes the criteria used to obtain and sort this list as well as the total number of items for the list criteria ignoring supplied page and pageSize which allows for the development of paging GUIs.
 */
 public class DomainNameListResults  {
 
 
     /**
-     * The search term used to filter the list of domains as requested in the call to <i>listDomains</i> within the <a href="netistrar-domain-lifecycle-api">Netistrar Domain Lifecycle API</a>.
+     * The search term used to filter the list of domains as requested in the call to <b>listDomains</b> within the  <a href="api:domains-api">Domains API</a>.
      */
     protected String searchTerm;
     /**
-     * The maximum number of results as requested in the call to <i>listDomains</i> within the <a href="netistrar-domain-lifecycle-api">Netistrar Domain Lifecycle API</a>.
+     * The maximum number of results as requested in the call to <b>listDomains</b> within the  <a href="api:domains-api">Domains API</a>.
      */
     protected Integer pageSize;
     /**
-     * The page to return of results (starting at 1) as requested in the call to <i>listDomains</i> within the <a href="netistrar-domain-lifecycle-api">Netistrar Domain Lifecycle API</a>.
+     * The page to return of results (starting at 1) as requested in the call to <b>listDomains</b> within the  <a href="api:domains-api">Domains API</a>.
      */
     protected Integer page;
     /**
-     * The property within the <a href="domain-name-summary-object">DomainNameSummaryObject</a> used to sort the results as requested in the call to <i>listDomains</i> within the <a href="netistrar-domain-lifecycle-api">Netistrar Domain Lifecycle API</a>.
+     * The property within the <a href="domain-name-summary-object">DomainNameSummaryObject</a> used to sort the results as requested in the call to <b>listDomains</b> within the  <a href="api:domains-api">Domains API</a>.
      */
     protected String orderBy;
     /**
-     * The direction (either ASC or DESC) used to define the direction of sort as requested in the call to <i>listDomains</i> within the <a href="netistrar-domain-lifecycle-api">Netistrar Domain Lifecycle API</a>.
+     * The direction (either ASC or DESC) used to define the direction of sort as requested in the call to <b>listDomains</b> within the  <a href="api:domains-api">Domains API</a>.
      */
     protected String orderDirection;
     /**
@@ -39,7 +39,7 @@ public class DomainNameListResults  {
      */
     protected Integer totalNumberOfDomains;
     /**
-     * The total number of pages based upon the passed page size and the total number of domains matching the <a href="#searchTerm">searchTerm</a>
+     * The total number of pages based upon the passed page size and the total number of domains matching the <b>searchTerm</b>
      */
     protected Integer totalNumberOfPages;
     /**

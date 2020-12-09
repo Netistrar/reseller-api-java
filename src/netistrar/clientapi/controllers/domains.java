@@ -21,6 +21,7 @@ import netistrar.clientapi.objects.domain.descriptor.DomainNameRenewDescriptor;
 import netistrar.clientapi.objects.domain.DomainNameTransferStatus;
 import netistrar.clientapi.objects.domain.descriptor.DomainNameTransferDescriptor;
 import netistrar.clientapi.objects.domain.DomainNameGlueRecord;
+import netistrar.clientapi.objects.domain.DomainNameDNSSECRecord;
 
 /**
  * The Domains API provides the core services for managing Domains within the Netistrar Registrar system.
@@ -61,7 +62,7 @@ public class domains extends WebServiceProxy {
     }
 
     /**
-     * Get live domain availability for a single domain name.  This actually checks the real time availability with the Registry and returns a single <a href="domain-availability-object">DomainAvailability</a> object with actual availability and confirmed pricing.  This method
+     * Get live domain availability for a single domain name.  This actually checks the real time availability with the Registry and returns a single <a href="object:Netistrar/WebServices/Common/Objects/Domain/DomainAvailability">DomainAvailability</a> object with actual availability and confirmed pricing.  This method
      * should be called before committing to a sale (usually at the point of adding to a cart).
      *
      * @param domainName domainName
@@ -84,7 +85,7 @@ public class domains extends WebServiceProxy {
     }
 
     /**
-     * List domains currently contained within your account as <a href="../../object/DomainNameSummaryObject">DomainNameSummaryObject</a> items.
+     * List domains currently contained within your account as <a href="object:Netistrar/WebServices/Common/Objects/Domain/DomainNameSummary">DomainNameSummary</a> items.
      * This method supports paging operations using the <i>pageSize</i> and <i>page</i> parameters and allows for sorting of results using the <i>orderBy</i> and <i>orderDirection</i> parameters.
      *
      * @param searchTerm searchTerm
@@ -239,12 +240,14 @@ public class domains extends WebServiceProxy {
      *
      * @param domainName domainName
      * @param numberOfYears numberOfYears
+     * @param premiumRenewalCode premiumRenewalCode
      * @return Result from function
      * @throws Exception Throws server side exceptions of variable types.
      */
-    public Transaction renew(String domainName, Integer numberOfYears) throws Exception{
+    public Transaction renew(String domainName, Integer numberOfYears, String premiumRenewalCode) throws Exception{
         Map<String, Object> params = new HashMap<String, Object>();
         
+        params.put("premiumRenewalCode", premiumRenewalCode);
 
         Map<String, String> expectedExceptions = new HashMap<String, String>();
         expectedExceptions.put("\\Kinikit\\MVC\\Exception\\RateLimitExceededException","netistrar.clientapi.exception.RateLimitExceededException");
@@ -282,8 +285,35 @@ public class domains extends WebServiceProxy {
     }
 
     /**
-     * Check the transfer status for a domain name.  This will return a <b>DomainNameTransferStatus</b> object detailing the timings for the transfer window in progress where the
-     * domain is currently in a transfer cycle or N/A if this is not the case
+     * Restore a single domain name from RGP using the supplied <b>restoreCode</b> and then renew the domain using the number of renewal years supplied.  This is modelled as a GET
+     * method for convenience of use in e.g. a browser etc.
+     * The Restore Code is obtained via a call to the <b>getLiveAvailability</b> function where it will be contained in the <b>restoreCode</b>
+     * sub property of the <b>additionalData</b> member on the returned <a href="object:Netistrar/WebServices/Common/Objects/Domain/DomainAvailability">DomainAvailability</a> object
+     *
+     * @param domainName domainName
+     * @param restoreCode restoreCode
+     * @param numberOfRenewalYears numberOfRenewalYears
+     * @return Result from function
+     * @throws Exception Throws server side exceptions of variable types.
+     */
+    public Transaction restore( domainName,  restoreCode,  numberOfRenewalYears) throws Exception{
+        Map<String, Object> params = new HashMap<String, Object>();
+        
+        params.put("restoreCode", restoreCode);
+
+        Map<String, String> expectedExceptions = new HashMap<String, String>();
+        expectedExceptions.put("\\Kinikit\\MVC\\Exception\\RateLimitExceededException","netistrar.clientapi.exception.RateLimitExceededException");
+
+
+        Type returnType;
+
+        returnType = new TypeToken<Transaction>(){}.getType();
+
+        return (Transaction)super.callMethod("restore/" + domainName + "/" + redemptionCode + "/" + numberOfRenewalYears + "", "GET", params, null, returnType,expectedExceptions);
+    }
+
+    /**
+     * Check the transfer status for a domain name.  This will return a <a href="object:Netistrar/WebServices/Common/Objects/Domain/DomainNameTransferStatus">DomainNameTransferStatus</a> object detailing the timings for the transfer window in progress where the domain is currently in a transfer cycle or N/A if this is not the case
      *
      * @param domainName domainName
      * @return Result from function
@@ -307,7 +337,7 @@ public class domains extends WebServiceProxy {
 
     /**
      * Validate multiple domains for transfer in.  This accepts a transfer descriptor which encodes one or more domain names for transfer in along with proposed contact details.
-     * <b>NB: </b>Since the introduction of the 2018 Temporary Specification for GTLD registration data, post transfer contact details need to be supplied upfront when creating / validating incoming transfers
+     * <br><b>NB: </b>Since the introduction of the 2018 Temporary Specification for GTLD registration data, post transfer contact details need to be supplied upfront when creating / validating incoming transfers
      * as these are no longer readable via WHOIS due to privacy redaction.
      *
      * @param transferDescriptor transferDescriptor
@@ -331,11 +361,11 @@ public class domains extends WebServiceProxy {
 
     /**
      * Create multiple domains for transfer in. This accepts a transfer descriptor which encodes one or more domain names for transfer in along with proposed contact details.  This call should usually be preceded by a call to <b>validateIncomingTransferDomains</b> to confirm auth codes etc.
-     * <b>NB: </b>Since the introduction of the 2018 Temporary Specification for GTLD registration data, post transfer contact details need to be supplied upfront when creating / validating incoming transfers
+     * <br><b>NB: </b>Since the introduction of the 2018 Temporary Specification for GTLD registration data, post transfer contact details need to be supplied upfront when creating / validating incoming transfers
      * as these are no longer readable via WHOIS due to privacy redaction.
-     * <br><br>
+     * <br>
      * If successful, this method starts the transfer process for the supplied domains by taking payment for the transfer (for Pull Transfer operations) and starting the transfer operation with the Registry.
-     * It returns a <b>DomainNameTransaction</b> object detailing the result of the operation.
+     * It returns a <a href="object:Netistrar/WebServices/Common/Objects/Transaction/Transaction">Transaction</a> object detailing the result of the operation.
      * <b>For Pull Transfers:</b> Once a transfer is created it will be added to your account with a status of <i>TRANSFER_IN_AWAITING_RESPONSE</i> until it is either cancelled, accepted,
      * rejected or automatically accepted after 5 days.
      * <b>For Push Transfers</b>: the domain name will be imported and activated within your account.
@@ -364,8 +394,8 @@ public class domains extends WebServiceProxy {
     /**
      * Cancel incoming transfer operations for one or more domain names.  Domain transfers can be cancelled while domains have <i>TRANSFER_IN_PENDING_CONFIRMATION</i> or <i>TRANSFER_IN_AWAITING_RESPONSE</i>
      * status (applicable for Pull Transfers only).
-     * This operation if successful will cancel the transfer operation and remove the domain name from your account.
-     * A <b>DomainNameTransaction</b> object is returned detailing the success or failure for each attempted domain name.
+     * <br>This operation if successful will cancel the transfer operation and remove the domain name from your account.
+     * <br>A a <a href="object:Netistrar/WebServices/Common/Objects/Transaction/Transaction">Transaction</a> object is returned detailing the success or failure for each attempted domain name.
      *
      * @param domainNames domainNames
      * @return Result from function
@@ -388,7 +418,7 @@ public class domains extends WebServiceProxy {
 
     /**
      * Cancel any pending owner contact changes for the supplied domain names.  Pending changes arise when a call to the <b>updateDomainNames</b> method has resulted in a change to key fields for the owner contact of a GTLD.
-     * In this case the owner contact will be returned with a status of <b>PENDING_CHANGES</b>.  This method will remove the pending data awaiting verification and restore the Owner contact back a status of <b>LIVE</b> with the previous details intact.  This returns a DomainNameTransaction object with transaction elements which will be successful if the owner contact is pending changes or will contain an operation error if not successful.
+     * <br>In this case the owner contact will be returned with a status of <b>PENDING_CHANGES</b>.  This method will remove the pending data awaiting verification and restore the Owner contact back a status of <b>LIVE</b> with the previous details intact.  This returns a DomainNameTransaction object with transaction elements which will be successful if the owner contact is pending changes or will contain an operation error if not successful.
      *
      * @param domainNames domainNames
      * @return Result from function
@@ -412,8 +442,8 @@ public class domains extends WebServiceProxy {
     /**
      * List all previously set glue records for a domain name.   Glue records (sometimes called child nameservers) define explicit mappings of subdomains to IP addresses such that the subdomain may be used as a delegated
      * nameserver for other domains or indeed the domain name itself.
-     * PLEASE NOTE:  This method will only list glue records which have been explicitly set using the <b>setGlueRecords</b> method or via the Netistrar Control Panel.  There is no guarantee that this list is the complete list of records defined at the registry if this name has been transferred into Netistrar with existing additional glue records intact.
-     * This method returns an array of <b>DomainNameGlueRecord</b> objects currently defined for the domain name
+     * <br>PLEASE NOTE:  This method will only list glue records which have been explicitly set using the <b>setGlueRecords</b> method or via the Netistrar Control Panel.  There is no guarantee that this list is the complete list of records defined at the registry if this name has been transferred into Netistrar with existing additional glue records intact.
+     * <br>This method returns an array of <a href="object:Netistrar/WebServices/Common/Objects/Domain/DomainNameGlueRecord">DomainNameGlueRecord</a> objects currently defined for the domain name
      *
      * @param domainName domainName
      * @return Result from function
@@ -438,8 +468,8 @@ public class domains extends WebServiceProxy {
     /**
      * Set one or more glue records for a domain name.  Glue records (sometimes called child nameservers) define explicit mappings of subdomains to IP addresses such that the subdomain may be used as a delegated
      * nameserver for other domains or indeed the domain name itself.
-     * This method accepts a domain name and an array of <b>DomainNameGlueRecord</b> objects which comprise a subdomain prefix and either an ipv4 or ipv6 address or both.
-     * It returns a <b>DomainNameTransaction</b> object which encodes the result of the set operation with a transaction element for each glue record passed.  If the glue records are
+     * <br>This method accepts a domain name and an array of <a href="object:Netistrar/WebServices/Common/Objects/Domain/DomainNameGlueRecord">DomainNameGlueRecord</a> objects which comprise a subdomain prefix and either an ipv4 or ipv6 address or both.
+     * <br>It returns a <a href="object:Netistrar/WebServices/Common/Objects/Transaction/Transaction">Transaction</a> object which encodes the result of the set operation with a transaction element for each glue record passed.  If the glue records are
      * in an invalid format or have missing data, a validation error will be returned as part of the element.
      *
      * @param domainName domainName
@@ -466,8 +496,8 @@ public class domains extends WebServiceProxy {
 
     /**
      * Remove one or more glue records for a domain name.  Glue records (sometimes called child nameservers) define explicit mappings of subdomains to IP addresses such that the subdomain may be used as a delegated nameserver for other domains or indeed the domain name itself.
-     * This method accepts a domain name and an array of String objects which represent the subdomains to remove as glue records.
-     * It returns a <b>DomainNameTransaction</b> object which encodes the result of the remove operation with a transaction element for each glue record passed.  Operation errors will be raised
+     * <br>This method accepts a domain name and an array of String objects which represent the subdomains to remove as glue records.
+     * <br>It returns a <a href="object:Netistrar/WebServices/Common/Objects/Transaction/Transaction">Transaction</a> object which encodes the result of the remove operation with a transaction element for each glue record passed.  Operation errors will be raised
      * if the glue record does not exist or cannot be removed
      *
      * @param domainName domainName
@@ -490,6 +520,103 @@ public class domains extends WebServiceProxy {
         returnType = new TypeToken<Transaction>(){}.getType();
 
         return (Transaction)super.callMethod("gluerecords/" + domainName + "", "DELETE", params, glueRecordSubdomains, returnType,expectedExceptions);
+    }
+
+    /**
+     * List DNSSEC Records for a supplied domain name.  DNSSEC records are obtained from the DNS provider for the domain name and represent a secure DNS
+     * chain of trust up to the internet root nameservers.
+     *
+     * @param domainName domainName
+     * @return Result from function
+     * @throws Exception Throws server side exceptions of variable types.
+     */
+    public DomainNameDNSSECRecord[] dnssecRecordsList(String domainName) throws Exception{
+        Map<String, Object> params = new HashMap<String, Object>();
+        
+
+        Map<String, String> expectedExceptions = new HashMap<String, String>();
+        expectedExceptions.put("\\Netistrar\\WebServices\\Common\\Exception\\TransactionException","netistrar.clientapi.exception.TransactionException");
+        expectedExceptions.put("\\Kinikit\\MVC\\Exception\\RateLimitExceededException","netistrar.clientapi.exception.RateLimitExceededException");
+
+
+        Type returnType;
+
+        returnType = new TypeToken<DomainNameDNSSECRecord[]>(){}.getType();
+
+        return (DomainNameDNSSECRecord[])super.callMethod("dnssec/" + domainName + "", "GET", params, null, returnType,expectedExceptions);
+    }
+
+    /**
+     * Add DNSSEC Records for a supplied domain name  DNSSEC records are obtained from the DNS provider for the domain name and represent a secure DNS
+     * chain of trust up to the internet root nameservers.
+     * <br>It returns a <a href="object:Netistrar/WebServices/Common/Objects/Transaction/Transaction">Transaction</a> object which encodes the result of the set operation with a transaction element for each DNSSEC record passed.  If the DNSSEC records are
+     * in an invalid format or have missing data, a validation error will be returned as part of the element.
+     *
+     * @param domainName domainName
+     * @param dnsSecRecords dnsSecRecords
+     * @return Result from function
+     * @throws Exception Throws server side exceptions of variable types.
+     */
+    public Transaction dnssecRecordsAdd(String domainName, DomainNameDNSSECRecord[] dnsSecRecords) throws Exception{
+        Map<String, Object> params = new HashMap<String, Object>();
+        
+
+        Map<String, String> expectedExceptions = new HashMap<String, String>();
+        expectedExceptions.put("\\Kinikit\\MVC\\Exception\\RateLimitExceededException","netistrar.clientapi.exception.RateLimitExceededException");
+
+
+        Type returnType;
+
+        returnType = new TypeToken<Transaction>(){}.getType();
+
+        return (Transaction)super.callMethod("dnssec/" + domainName + "", "POST", params, dnsSecRecords, returnType,expectedExceptions);
+    }
+
+    /**
+     * Remove one or more DNSSEC Records for a supplied domain name and array of key tag strings
+     * <br>It returns a <a href="object:Netistrar/WebServices/Common/Objects/Transaction/Transaction">Transaction</a> object which encodes the result of the remove operation with a transaction element for each DNSSEC record passed.  Operation errors will be raised
+     * if the DNSSEC record does not exist or cannot be removed
+     *
+     * @param domainName domainName
+     * @param keyTags keyTags
+     * @return Result from function
+     * @throws Exception Throws server side exceptions of variable types.
+     */
+    public Transaction dnssecRecordsRemove(String domainName, String[] keyTags) throws Exception{
+        Map<String, Object> params = new HashMap<String, Object>();
+        
+
+        Map<String, String> expectedExceptions = new HashMap<String, String>();
+        expectedExceptions.put("\\Kinikit\\MVC\\Exception\\RateLimitExceededException","netistrar.clientapi.exception.RateLimitExceededException");
+
+
+        Type returnType;
+
+        returnType = new TypeToken<Transaction>(){}.getType();
+
+        return (Transaction)super.callMethod("dnssec/" + domainName + "", "DELETE", params, keyTags, returnType,expectedExceptions);
+    }
+
+    /**
+     * Remove all DNSSEC Records for a supplied domain name.  This will effectively remove all DNSSEC records and mark the domain as not enabled for DNSSEC.
+     *
+     * @param domainName domainName
+     * @return Result from function
+     * @throws Exception Throws server side exceptions of variable types.
+     */
+    public Transaction dnssecDisable(String domainName) throws Exception{
+        Map<String, Object> params = new HashMap<String, Object>();
+        
+
+        Map<String, String> expectedExceptions = new HashMap<String, String>();
+        expectedExceptions.put("\\Kinikit\\MVC\\Exception\\RateLimitExceededException","netistrar.clientapi.exception.RateLimitExceededException");
+
+
+        Type returnType;
+
+        returnType = new TypeToken<Transaction>(){}.getType();
+
+        return (Transaction)super.callMethod("dnssec/disable/" + domainName + "", "DELETE", params, null, returnType,expectedExceptions);
     }
 
     /**

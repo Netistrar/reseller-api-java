@@ -32,13 +32,17 @@ public class DomainNameTransferDescriptor  {
      */
     private DomainNameContact technicalContact;
     /**
-     * This should be set to one of the following values: <br><br><b>0</b> if all contact details are to be made public within the WHOIS system for all supplied domains<br><b>1</b> if the free Netistrar Privacy Proxy service will be used for all supplied domains<br><b>2</b> if partial details are to be made public within the WHOIS system with other details redacted.  (defaults to 1).
+     * This should be set to one of the following values: <br><br><b>0</b> If limited details are to be published via the WHOIS system for all supplied domains according to Registry policy.<br><b>1</b> if the free Netistrar Privacy Proxy service will be used for all supplied domains.
      */
     private Integer privacyProxy;
     /**
      * A boolean indicator as to whether the an attempt will be made to auto renew this domain using account payment methods (defaults to 0)
      */
     private Boolean autoRenew;
+    /**
+     * An associative array of transfer codes indexed by domain name which must be supplied as a confirmation check for any domain names which are premium names.  These codes are obtained via a call to the <b>getLiveAvailability</b> function on the <a href="api:domains-api">Domain API</a> where it will be contained in the <b>premiumTransferCode</b> sub property of the <b>additionalData</b> member on the returned <a href="object:Netistrar/WebServices/Common/Objects/Domain/DomainAvailability">DomainAvailability</a> object.
+     */
+    private Map<String,String> premiumTransferCodes;
 
 
 
@@ -59,8 +63,9 @@ public class DomainNameTransferDescriptor  {
     * @param technicalContact the technicalContact
     * @param privacyProxy the privacyProxy
     * @param autoRenew the autoRenew
+    * @param premiumTransferCodes the premiumTransferCodes
     */
-    public DomainNameTransferDescriptor(String[] transferIdentifiers, DomainNameContact ownerContact, DomainNameContact adminContact, DomainNameContact billingContact, DomainNameContact technicalContact, Integer privacyProxy, Boolean autoRenew){
+    public DomainNameTransferDescriptor(String[] transferIdentifiers, DomainNameContact ownerContact, DomainNameContact adminContact, DomainNameContact billingContact, DomainNameContact technicalContact, Integer privacyProxy, Boolean autoRenew, Map<String,String> premiumTransferCodes){
 
         this.transferIdentifiers = transferIdentifiers;
         this.ownerContact = ownerContact;
@@ -69,6 +74,7 @@ public class DomainNameTransferDescriptor  {
         this.technicalContact = technicalContact;
         this.privacyProxy = privacyProxy;
         this.autoRenew = autoRenew;
+        this.premiumTransferCodes = premiumTransferCodes;
         
     }
 
@@ -213,6 +219,26 @@ public class DomainNameTransferDescriptor  {
         return this;
     }
 
+    /**
+     * Get the premiumTransferCodes
+     *
+     * @return premiumTransferCodes
+     */
+    public Map<String,String> getPremiumTransferCodes(){
+        return this.premiumTransferCodes;
+    }
+
+    /**
+     * Set the premiumTransferCodes
+     *
+     * @param premiumTransferCodes the premiumTransferCodes
+     * @return DomainNameTransferDescriptor
+     */
+    public DomainNameTransferDescriptor setPremiumTransferCodes(Map<String,String> premiumTransferCodes){
+        this.premiumTransferCodes = premiumTransferCodes;
+        return this;
+    }
+
 
 
     /**
@@ -243,6 +269,8 @@ public class DomainNameTransferDescriptor  {
             (this.getPrivacyProxy() != null && this.getPrivacyProxy().equals(castObject.getPrivacyProxy())));
         equals = equals && ( (this.getAutoRenew() == null && castObject.getAutoRenew() == null) ||
             (this.getAutoRenew() != null && this.getAutoRenew().equals(castObject.getAutoRenew())));
+        equals = equals && ( (this.getPremiumTransferCodes() == null && castObject.getPremiumTransferCodes() == null) ||
+            (this.getPremiumTransferCodes() != null && this.getPremiumTransferCodes().equals(castObject.getPremiumTransferCodes())));
 
         return equals;
     }

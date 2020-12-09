@@ -18,15 +18,14 @@ public class TransactionElement  {
      */
     protected String description;
     /**
-     * The status of this element.  This will contain one of the following values:
-     * <br><br>
-     * <b>SUCCEEDED:</b> When this element succeeded.<br>
+     * The status of this element.  This will contain one of the following values:<br />
+     * <b>SUCCEEDED:</b> When this element succeeded.
      * <b>FAILED:</b> When this element failed.
      */
     protected String elementStatus;
     /**
-     * An associative array of operation data relevant to the operation type returned in the case that the <a href="#elementStatus">elementStatus</a> member is set to <b>SUCCEEDED</b>.
-     * For <b>DOMAIN_CREATE</b> and <b>DOMAIN_RENEW</b> operations this will contain an array with the following keys
+     * An associative array of operation data relevant to the operation type returned in the case that the <b>elementStatus</b> member is set to <b>SUCCEEDED</b>.<br />
+     * For <b>DOMAIN_CREATE</b> and <b>DOMAIN_RENEW</b> operations this will contain an array with the following keys<br />
      * <b>expiryDate:</b> The new expiry date for this domain name following the operation in dd/mm/YYYY format.
      * <b>registrationYears:</b> The number of years added to this domain following the operation.
      */
@@ -36,23 +35,19 @@ public class TransactionElement  {
      */
     protected Map<String,TransactionError> elementErrors;
     /**
-     * The subtotal for the Netistrar order line for this domain name if applicable for this transaction.  This will be set when the <i>netistrarOrderId</i> element is defined for the wrapping <a href="domain-name-transaction">DomainNameTransaction</a> object
-     * and will be the net total (pre taxes) for this domain operation in the currency defined in the transaction.
-     * <br><br>
+     * The subtotal for the Netistrar order line for this domain name if applicable for this transaction.  This will be set when the <b>orderId</b> element is defined for the wrapping <a href="object:Netistrar/WebServices/Common/Objects/Transaction/Transaction">Transaction</a> object and will be the net total (pre taxes) for this domain operation in the currency defined in the transaction.<br />
      * This property defaults to <b>N/A</b> if no order id is available for this transaction.
      */
     protected Float orderLineSubtotal;
     /**
-     * The taxes for the Netistrar order line for this domain name if applicable for this transaction.  This will be set when the <i>netistrarOrderId</i> element is defined for the wrapping <a href="domain-name-transaction">DomainNameTransaction</a> object
-     * and will be the tax amount (VAT) for this domain operation in the currency defined in the transaction.
-     * <br><br>
+     * The taxes for the Netistrar order line for this domain name if applicable for this transaction.  This will be set when the <b>orderId</b> element is defined for the wrapping <a href="object:Netistrar/WebServices/Common/Objects/Transaction/Transaction">Transaction</a> object
+     * and will be the tax amount (VAT) for this domain operation in the currency defined in the transaction.<br />
      * This property defaults to <b>N/A</b> if no order id is available for this transaction.
      */
     protected Float orderLineTaxes;
     /**
-     * The total for the Netistrar order line for this domain name if applicable for this transaction.  This will be set when the <i>netistrarOrderId</i> element is defined for the wrapping <a href="domain-name-transaction">DomainNameTransaction</a> object
-     * and will be the total including taxes for this domain operation in the currency defined in the transaction.
-     * <br><br>
+     * The total for the Netistrar order line for this domain name if applicable for this transaction.  This will be set when the <b>orderId</b> element is defined for the wrapping <a href="object:Netistrar/WebServices/Common/Objects/Transaction/Transaction">Transaction</a> object
+     * and will be the total including taxes for this domain operation in the currency defined in the transaction.<br />
      * This property defaults to <b>N/A</b> if no order id is available for this transaction.
      */
     protected Float orderLineTotal;

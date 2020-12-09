@@ -1,13 +1,12 @@
-package netistrar.clientapi.objects.domain;
+package netistrar.clientapi.objects.contact;
 
 import java.util.Map;
 
 /**
- * An updatable contact object used within the  <a href="api:domains-api">Domains API</a> methods and as a related object to a <a href="object:Netistrar/WebServices/Common/Objects/Domain/DomainNameObject">DomainNameObject</a>.
- * Changes to key data for the owner contact for GTLD domain names require verification via email to the current owner for the domain name before these changes can be applied.  If the change is accepted the
- * domain name will be locked for 60 days for transfer.
+ * Base contact class used for general API use.
+ * Class Contact
 */
-public class DomainNameContact  {
+public class Contact  {
 
 
     /**
@@ -70,39 +69,6 @@ public class DomainNameContact  {
      * An optional fax extension (e.g. 201)
      */
     private String faxExt;
-    /**
-     * An associative array of data where specific TLDs support / require additional properties
-     * <b>Nominet UK domains:</b><br />
-     * The following additional fields are supported for Nominet .UK domains<br />
-     * <b>nominetRegistrantType</b> String (required): One of the following code values<br />
-     * LTD: <i>UK Limited Company: </i>
-     * PLC: <i>UK Public Limited Company: </i>
-     * PTNR: <i>UK Partnership: </i><
-     * STRA: <i>UK Sole Trader: </i>
-     * LLP: <i>UK Limited Liability Partnership: </i>
-     * IP: <i>UK Industrial/Provident Registered Company: </i>
-     * IND: <i>UK Individual (representing self): </i>
-     * SCH: <i>UK School: </i>
-     * RCHAR: <i>UK Registered Charity: </i>
-     * GOV: <i>UK Government Body: </i>
-     * CRC: <i>UK Corporation by Royal Charter: </i>
-     * STAT: <i>UK Statutory Body: </i>
-     * OTHER: <i>UK Entity that does not fit into any of the above (e.g. clubs, associations, : </i><br />
-     * <b>nominetTradingName</b> String (optional): An optional trading name which will display in WHOIS if set.<br />
-     * <b>nominetCompanyNumber</b> String (conditionally required):  The company number - required if the nominetRegistrantType field is set to any of the values
-     * LTD, PLC, LLP, IP, SCH or RCHAR.
-     */
-    private Map<String,Object> additionalData;
-    /**
-     * The status of this contact (read only).  This will contain one of the following values.<br />
-     * <b>LIVE:</b> For all Admin, Billing, Technical and newly created Owner contacts
-     * <b>PENDING_CHANGES:</b> For any GTLD Owner Contacts where key data has been changed and is awaiting verification by the owner.  This is usually following a call to <b>updateDomainNames</b> on the <a href="api:domains-api">Domains API</a>.  For contacts with pending changes, the <b>pendingContact</b> member will contain the queued data awaiting approval.
-     */
-    protected String status;
-    /**
-     * Pending contact field.  This is only populated when the <b>status</b> member is set to <b>PENDING_CHANGES</b>.  This will contain a nested <a href="object:Netistrar/WebServices/Common/Objects/Domain/DomainNameContact">DomainNameContact</a> object containing the data awaiting verification by the owner of the domain.
-     */
-    protected DomainNameContact pendingContact;
 
 
 
@@ -110,7 +76,7 @@ public class DomainNameContact  {
     * Blank Constructor
     *
     */
-    public DomainNameContact(){
+    public Contact(){
     }
 
     /**
@@ -131,9 +97,8 @@ public class DomainNameContact  {
     * @param faxDiallingCode the faxDiallingCode
     * @param fax the fax
     * @param faxExt the faxExt
-    * @param additionalData the additionalData
     */
-    public DomainNameContact(String name, String emailAddress, String organisation, String street1, String street2, String city, String county, String postcode, String country, String telephoneDiallingCode, String telephone, String telephoneExt, String faxDiallingCode, String fax, String faxExt, Map<String,Object> additionalData){
+    public Contact(String name, String emailAddress, String organisation, String street1, String street2, String city, String county, String postcode, String country, String telephoneDiallingCode, String telephone, String telephoneExt, String faxDiallingCode, String fax, String faxExt){
 
         this.name = name;
         this.emailAddress = emailAddress;
@@ -150,7 +115,6 @@ public class DomainNameContact  {
         this.faxDiallingCode = faxDiallingCode;
         this.fax = fax;
         this.faxExt = faxExt;
-        this.additionalData = additionalData;
         
     }
 
@@ -168,9 +132,9 @@ public class DomainNameContact  {
      * Set the name
      *
      * @param name the name
-     * @return DomainNameContact
+     * @return Contact
      */
-    public DomainNameContact setName(String name){
+    public Contact setName(String name){
         this.name = name;
         return this;
     }
@@ -188,9 +152,9 @@ public class DomainNameContact  {
      * Set the emailAddress
      *
      * @param emailAddress the emailAddress
-     * @return DomainNameContact
+     * @return Contact
      */
-    public DomainNameContact setEmailAddress(String emailAddress){
+    public Contact setEmailAddress(String emailAddress){
         this.emailAddress = emailAddress;
         return this;
     }
@@ -208,9 +172,9 @@ public class DomainNameContact  {
      * Set the organisation
      *
      * @param organisation the organisation
-     * @return DomainNameContact
+     * @return Contact
      */
-    public DomainNameContact setOrganisation(String organisation){
+    public Contact setOrganisation(String organisation){
         this.organisation = organisation;
         return this;
     }
@@ -228,9 +192,9 @@ public class DomainNameContact  {
      * Set the street1
      *
      * @param street1 the street1
-     * @return DomainNameContact
+     * @return Contact
      */
-    public DomainNameContact setStreet1(String street1){
+    public Contact setStreet1(String street1){
         this.street1 = street1;
         return this;
     }
@@ -248,9 +212,9 @@ public class DomainNameContact  {
      * Set the street2
      *
      * @param street2 the street2
-     * @return DomainNameContact
+     * @return Contact
      */
-    public DomainNameContact setStreet2(String street2){
+    public Contact setStreet2(String street2){
         this.street2 = street2;
         return this;
     }
@@ -268,9 +232,9 @@ public class DomainNameContact  {
      * Set the city
      *
      * @param city the city
-     * @return DomainNameContact
+     * @return Contact
      */
-    public DomainNameContact setCity(String city){
+    public Contact setCity(String city){
         this.city = city;
         return this;
     }
@@ -288,9 +252,9 @@ public class DomainNameContact  {
      * Set the county
      *
      * @param county the county
-     * @return DomainNameContact
+     * @return Contact
      */
-    public DomainNameContact setCounty(String county){
+    public Contact setCounty(String county){
         this.county = county;
         return this;
     }
@@ -308,9 +272,9 @@ public class DomainNameContact  {
      * Set the postcode
      *
      * @param postcode the postcode
-     * @return DomainNameContact
+     * @return Contact
      */
-    public DomainNameContact setPostcode(String postcode){
+    public Contact setPostcode(String postcode){
         this.postcode = postcode;
         return this;
     }
@@ -328,9 +292,9 @@ public class DomainNameContact  {
      * Set the country
      *
      * @param country the country
-     * @return DomainNameContact
+     * @return Contact
      */
-    public DomainNameContact setCountry(String country){
+    public Contact setCountry(String country){
         this.country = country;
         return this;
     }
@@ -348,9 +312,9 @@ public class DomainNameContact  {
      * Set the telephoneDiallingCode
      *
      * @param telephoneDiallingCode the telephoneDiallingCode
-     * @return DomainNameContact
+     * @return Contact
      */
-    public DomainNameContact setTelephoneDiallingCode(String telephoneDiallingCode){
+    public Contact setTelephoneDiallingCode(String telephoneDiallingCode){
         this.telephoneDiallingCode = telephoneDiallingCode;
         return this;
     }
@@ -368,9 +332,9 @@ public class DomainNameContact  {
      * Set the telephone
      *
      * @param telephone the telephone
-     * @return DomainNameContact
+     * @return Contact
      */
-    public DomainNameContact setTelephone(String telephone){
+    public Contact setTelephone(String telephone){
         this.telephone = telephone;
         return this;
     }
@@ -388,9 +352,9 @@ public class DomainNameContact  {
      * Set the telephoneExt
      *
      * @param telephoneExt the telephoneExt
-     * @return DomainNameContact
+     * @return Contact
      */
-    public DomainNameContact setTelephoneExt(String telephoneExt){
+    public Contact setTelephoneExt(String telephoneExt){
         this.telephoneExt = telephoneExt;
         return this;
     }
@@ -408,9 +372,9 @@ public class DomainNameContact  {
      * Set the faxDiallingCode
      *
      * @param faxDiallingCode the faxDiallingCode
-     * @return DomainNameContact
+     * @return Contact
      */
-    public DomainNameContact setFaxDiallingCode(String faxDiallingCode){
+    public Contact setFaxDiallingCode(String faxDiallingCode){
         this.faxDiallingCode = faxDiallingCode;
         return this;
     }
@@ -428,9 +392,9 @@ public class DomainNameContact  {
      * Set the fax
      *
      * @param fax the fax
-     * @return DomainNameContact
+     * @return Contact
      */
-    public DomainNameContact setFax(String fax){
+    public Contact setFax(String fax){
         this.fax = fax;
         return this;
     }
@@ -448,49 +412,11 @@ public class DomainNameContact  {
      * Set the faxExt
      *
      * @param faxExt the faxExt
-     * @return DomainNameContact
+     * @return Contact
      */
-    public DomainNameContact setFaxExt(String faxExt){
+    public Contact setFaxExt(String faxExt){
         this.faxExt = faxExt;
         return this;
-    }
-
-    /**
-     * Get the additionalData
-     *
-     * @return additionalData
-     */
-    public Map<String,Object> getAdditionalData(){
-        return this.additionalData;
-    }
-
-    /**
-     * Set the additionalData
-     *
-     * @param additionalData the additionalData
-     * @return DomainNameContact
-     */
-    public DomainNameContact setAdditionalData(Map<String,Object> additionalData){
-        this.additionalData = additionalData;
-        return this;
-    }
-
-    /**
-     * Get the status
-     *
-     * @return status
-     */
-    public String getStatus(){
-        return this.status;
-    }
-
-    /**
-     * Get the pendingContact
-     *
-     * @return pendingContact
-     */
-    public DomainNameContact getPendingContact(){
-        return this.pendingContact;
     }
 
 
@@ -503,10 +429,10 @@ public class DomainNameContact  {
         if (otherObject == this)
             return true;
 
-        if (!(otherObject instanceof DomainNameContact))
+        if (!(otherObject instanceof Contact))
             return false;
 
-        DomainNameContact castObject = (DomainNameContact)otherObject;
+        Contact castObject = (Contact)otherObject;
 
         boolean equals = true;
         equals = equals && ( (this.getName() == null && castObject.getName() == null) ||
@@ -539,12 +465,6 @@ public class DomainNameContact  {
             (this.getFax() != null && this.getFax().equals(castObject.getFax())));
         equals = equals && ( (this.getFaxExt() == null && castObject.getFaxExt() == null) ||
             (this.getFaxExt() != null && this.getFaxExt().equals(castObject.getFaxExt())));
-        equals = equals && ( (this.getAdditionalData() == null && castObject.getAdditionalData() == null) ||
-            (this.getAdditionalData() != null && this.getAdditionalData().equals(castObject.getAdditionalData())));
-        equals = equals && ( (this.getStatus() == null && castObject.getStatus() == null) ||
-            (this.getStatus() != null && this.getStatus().equals(castObject.getStatus())));
-        equals = equals && ( (this.getPendingContact() == null && castObject.getPendingContact() == null) ||
-            (this.getPendingContact() != null && this.getPendingContact().equals(castObject.getPendingContact())));
 
         return equals;
     }

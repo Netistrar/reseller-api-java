@@ -66,8 +66,7 @@ public class utility extends WebServiceProxy {
     }
 
     /**
-     * Get the progress for a bulk operation as a BulkOperationProgress object using a progress key generated using the createBulkOperation method.  This will typically be attached to an operation in
-     * e.g. the Domain API after which repeated calls can be made asynchronously to this method to check progress.
+     * Get the progress for a bulk operation as a BulkOperationProgress object using a progress key generated using the <b>createBulkOperation</b> method.  This will typically be attached to an operation in e.g. the Domain API after which repeated calls can be made asynchronously to this method to check progress.
      *
      * @param bulkOperationProgressKey bulkOperationProgressKey
      * @return Result from function

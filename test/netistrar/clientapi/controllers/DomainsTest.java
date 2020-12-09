@@ -33,7 +33,7 @@ class DomainsTest {
 	private APIProvider api;
 
 	public DomainsTest() {
-		this.api = new APIProvider("http://restapi.netistrar.test", "TESTAPIKEY", "TESTAPISECRET");
+		this.api = new APIProvider("http://restapi.netistrar.test:8080", "TESTAPIKEY", "TESTAPISECRET");
 	}
 
 	@Test

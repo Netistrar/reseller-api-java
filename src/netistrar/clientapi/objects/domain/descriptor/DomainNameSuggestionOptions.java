@@ -23,6 +23,10 @@ public class DomainNameSuggestionOptions  {
      * included TLD only.
      */
     private Integer fillCount;
+    /**
+     * Max length of domain name to return for suggestions - between 2 and 63.
+     */
+    private Integer maxNameLength;
 
 
 
@@ -39,12 +43,14 @@ public class DomainNameSuggestionOptions  {
     * @param includeTlds the includeTlds
     * @param includeCategories the includeCategories
     * @param fillCount the fillCount
+    * @param maxNameLength the maxNameLength
     */
-    public DomainNameSuggestionOptions(Boolean includeTlds, Boolean includeCategories, Integer fillCount){
+    public DomainNameSuggestionOptions(Boolean includeTlds, Boolean includeCategories, Integer fillCount, Integer maxNameLength){
 
         this.includeTlds = includeTlds;
         this.includeCategories = includeCategories;
         this.fillCount = fillCount;
+        this.maxNameLength = maxNameLength;
         
     }
 
@@ -109,6 +115,26 @@ public class DomainNameSuggestionOptions  {
         return this;
     }
 
+    /**
+     * Get the maxNameLength
+     *
+     * @return maxNameLength
+     */
+    public Integer getMaxNameLength(){
+        return this.maxNameLength;
+    }
+
+    /**
+     * Set the maxNameLength
+     *
+     * @param maxNameLength the maxNameLength
+     * @return DomainNameSuggestionOptions
+     */
+    public DomainNameSuggestionOptions setMaxNameLength(Integer maxNameLength){
+        this.maxNameLength = maxNameLength;
+        return this;
+    }
+
 
 
     /**
@@ -131,6 +157,8 @@ public class DomainNameSuggestionOptions  {
             (this.getIncludeCategories() != null && this.getIncludeCategories().equals(castObject.getIncludeCategories())));
         equals = equals && ( (this.getFillCount() == null && castObject.getFillCount() == null) ||
             (this.getFillCount() != null && this.getFillCount().equals(castObject.getFillCount())));
+        equals = equals && ( (this.getMaxNameLength() == null && castObject.getMaxNameLength() == null) ||
+            (this.getMaxNameLength() != null && this.getMaxNameLength().equals(castObject.getMaxNameLength())));
 
         return equals;
     }

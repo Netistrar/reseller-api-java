@@ -21,19 +21,17 @@ public class DomainNameSummary  {
      */
     protected String expiryDate;
     /**
-     * An indicator as to whether or not this domain name is currently locked.  Locking a domain provides an extra level of security as it prevents it from being either deleted or transferred until the lock is removed.
-     * <br><br>
-     * When unlocked the <a href="#authCode">authCode</a> field will be populated with the authorisation code required to move this domain to another provider.
-     * <br><br>
-     * Some operations (e.g. new registration, transfer) result in a mandatory lock of a domain for a period of time.  In this case the <a href="#lockedUntil">lockedUntil</a> field will be populated with a date after which the domain will be available for unlocking.
+     * An indicator as to whether or not this domain name is currently locked.  Locking a domain provides an extra level of security as it prevents it from being either deleted or transferred until the lock is removed.<br />
+     * When unlocked the <b>authCode</b> field will be populated with the authorisation code required to move this domain to another provider.<br />
+     * Some operations (e.g. new registration, transfer) result in a mandatory lock of a domain for a period of time.  In this case the <b>lockedUntil</b> field will be populated with a date after which the domain will be available for unlocking.
      */
     protected Boolean locked;
     /**
-     * A date after which the mandatory lock period for this domain name will cease.  This is used in conjunction with the <a href="#locked">locked</a> field in the case that a mandatory lock has been applied to this domain following an operation (e.g. new registration, transfer).
+     * A date after which the mandatory lock period for this domain name will cease.  This is used in conjunction with the <b>locked</b> field in the case that a mandatory lock has been applied to this domain following an operation (e.g. new registration, transfer).
      */
     protected String lockedUntil;
     /**
-     * The authorisation code required for most domain transfers (notable exceptions are .UK domains and some other country TLDs).  This is only available when this domain is unlocked (i.e. the <a href="#locked">locked</a> member is true).
+     * The authorisation code required for most domain transfers (notable exceptions are .UK domains and some other country TLDs).  This is only available when this domain is unlocked (i.e. the <b>locked</b> member is true).
      * If the domain is locked this will be set to <b>N/A</b>.
      */
     protected String authCode;
@@ -48,7 +46,7 @@ public class DomainNameSummary  {
      */
     protected Integer privacyProxy;
     /**
-     * One of the following status values representing the current Netistrar Domain Name status for this domain name.
+     * One of the following status values representing the current Netistrar Domain Name status for this domain name.<br />
      * <b>ACTIVE</b> - The domain name is active and in use.
      * <b>EXPIRED</b> - The domain name has expired.
      * <b>SUSPENDED</b> - The domain name has been suspended (either for unlawful behaviour or invalid ownership details).
@@ -66,9 +64,11 @@ public class DomainNameSummary  {
      */
     protected String[] tags;
     /**
+     * A string either set to <b>External</b> or another DNS provider (for future use).
      */
     protected String dnsProvider;
     /**
+     * A string either set to <b>External</b> or another Mail provider (for future use).
      */
     protected String emailProvider;
     /**

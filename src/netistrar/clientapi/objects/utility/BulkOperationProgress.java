@@ -4,13 +4,13 @@ import netistrar.clientapi.objects.utility.BulkOperationProgressItem;
 import java.util.Map;
 
 /**
- * Encodes information about the current progress of a bulk operation.  This includes the status of all contained <a href="bulk-operation-progress-item">BulkOperationProgressItem</a> objects which make up the bulk operation as well as general information about the progress of the whole operation both as a percentage and as a number of completed items for use in progressively updating GUIs etc.
+ * Encodes information about the current progress of a bulk operation.  This includes the status of all contained <a href="object:Netistrar/WebServices/Common/Objects/Utility/BulkOperationProgressItem">BulkOperationProgressItem</a> objects which make up the bulk operation as well as general information about the progress of the whole operation both as a percentage and as a number of completed items for use in progressively updating GUIs etc.
 */
 public class BulkOperationProgress  {
 
 
     /**
-     * The overall status of this bulk operation.  This will be set to one of the following values.
+     * The overall status of this bulk operation.  This will be set to one of the following values.<br />
      * <b>PENDING:</b> When the bulk operation has been created but not yet started.
      * <b>RUNNING:</b> When the bulk operation has been started.
      * <b>COMPLETED:</b> When the bulk operation has finished.
@@ -33,7 +33,7 @@ public class BulkOperationProgress  {
      */
     protected Boolean hasFailedItems;
     /**
-     * An array of <a href="bulk-operation-progress-item">BulkOperationProgressItem</a> items each representing the progress for an individual element within a bulk operation.
+     * An array of <a href="object:Netistrar/WebServices/Common/Objects/Utility/BulkOperationProgressItem">BulkOperationProgressItem</a> items each representing the progress for an individual element within a bulk operation.
      */
     protected BulkOperationProgressItem[] progressItems;
 

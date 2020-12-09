@@ -12,19 +12,20 @@ public class Transaction  {
 
 
     /**
-     * The type of transaction represented by this object.  This will contain one of the following values:
-     * <b>DOMAIN_CREATE:</b> For domain create operations initiated by a call to <i>createDomainName</i> on the <a href="netistrar-domain-lifecycle-api">Netistrar Domain Lifecycle API</a>.
-     * <b>DOMAIN_RENEW:</b> For domain renew operations initiated by a call to <i>renewDomains</i> on the <a href="netistrar-domain-lifecycle-api">Netistrar Domain Lifecycle API</a>.
-     * <b>DOMAIN_UPDATE:</b> For domain update operations initiated by a call to <i>updateDomainNames</i> on the <a href="netistrar-domain-lifecycle-api">Netistrar Domain Lifecycle API</a>.
-     * <b>DOMAIN_GLUE_RECORD_SET:</b> For domain glue record set operations initiated by a call to <i>setGlueRecords</i> on the <a href="netistrar-domain-lifecycle-api">Netistrar Domain Lifecycle API</a>.
-     * <b>DOMAIN_GLUE_RECORD_REMOVE:</b> For domain glue record remove operations initiated by a call to <i>removeGlueRecords</i> on the <a href="netistrar-domain-lifecycle-api">Netistrar Domain Lifecycle API</a>.
-     * <b>DOMAIN_TRANSFER_IN_CREATE</b> For domain transfer in operations initiated by a call to <i>createIncomingTransferDomains</i> on the <a href="netistrar-domain-transfer-api">Netistrar Domain Transfer API</a>.
-     * <b>DOMAIN_TRANSFER_IN_CONFIRMATION</b> For domain transfer in confirmation resend operations initiated by  a call to <i>resendIncomingTransferConfirmations</i> on the <a href="netistrar-domain-transfer-api">Netistrar Domain Transfer API</a>.
-     * <b>DOMAIN_TRANSFER_IN_CANCEL</b> For domain transfer cancellations initiated by a call to <i>cancelIncomingTransferDomains</i> on the <a href="netistrar-domain-transfer-api">Netistrar Domain Transfer API</a>.
-     * <b>DOMAIN_TRANSFER_OUT_CREATE</b> For domain transfer out operations initiated by a call to <i>createOutgoingPushTransferDomains</i> on the <a href="netistrar-domain-transfer-api">Netistrar Domain Transfer API</a>.
-     * <b>DOMAIN_TRANSFER_OUT_CONFIRMATION</b> For domain transfer out confirmation resend operations initiated by a call to <i>resendOutgoingPushTransferConfirmations</i> on the <a href="netistrar-domain-transfer-api">Netistrar Domain Transfer API</a>.
-     * <b>DOMAIN_TRANSFER_OUT_CANCEL</b> For domain transfer out cancellations initiated by a call to <i>cancelOutgoingPushTransferDomains</i> on the <a href="netistrar-domain-transfer-api">Netistrar Domain Transfer API</a>.
-     * <b>DOMAIN_CANCEL_PENDING_OWNER_CHANGES</b> For cancellation of pending owner changes for GTLDs initiated by a call to <i>cancelPendingOwnerContactChanges</i> on the <a href="netistrar-domain-lifecycle-api">Netistrar Domain Lifecycle API</a>.
+     * The type of transaction represented by this object.  This will contain one of the following values:<br />
+     * <b>DOMAIN_CREATE:</b> For domain create operations.
+     * <b>DOMAIN_RENEW:</b> For domain renew operations.
+     * <b>DOMAIN_UPDATE:</b> For domain update operations.
+     * <b>DOMAIN_GLUE_RECORD_SET:</b> For domain glue record set operations.
+     * <b>DOMAIN_GLUE_RECORD_REMOVE:</b> For domain glue record remove operations.
+     * <b>DOMAIN_TRANSFER_IN_CREATE</b> For domain transfer in operations.
+     * <b>DOMAIN_TRANSFER_IN_CONFIRMATION</b> For domain transfer in confirmation resend operations.
+     * <b>DOMAIN_TRANSFER_IN_CANCEL</b> For domain transfer cancellations.
+     * <b>DOMAIN_TRANSFER_OUT_CREATE</b> For domain transfer out operations.
+     * <b>DOMAIN_TRANSFER_OUT_CONFIRMATION</b> For domain transfer out confirmation resend operations.
+     * <b>DOMAIN_TRANSFER_OUT_CANCEL</b> For domain transfer out cancellations.
+     * <b>DOMAIN_CANCEL_PENDING_OWNER_CHANGES</b> For cancellation of pending owner changes for GTLDs.
+     * <b>GSUITE_CREATE</b> For G Suite subscription create operations.
      */
     protected String transactionType;
     /**
@@ -32,7 +33,7 @@ public class Transaction  {
      */
     protected String transactionDateTime;
     /**
-     * The status of this transaction.  This will contain one of the following values.
+     * The status of this transaction.  This will contain one of the following values.<br />
      * <b>SUCCEEDED:</b> When the operation succeeded for all involved domain names.
      * <b>PARTIALLY_SUCCEEDED:</b> When the operation succeeded only for some of the involved domain names.  In this case any failed transaction elements will contain errors detailing the reasons for the partial failure.
      * <b>ALL_ELEMENTS_FAILED:</b> When the operation failed for all involved domain names and the errors were downstream in the operation workflow.  In this case all elements will contain errors detailing the reasons for the failure.
@@ -40,31 +41,31 @@ public class Transaction  {
      */
     protected String transactionStatus;
     /**
-     * A Netistrar Order ID if applicable for the given transaction.  This will be set when the transaction has resulted in a costed order and facilitates reconciliation with orders in the Netistrar Control Panel.
-     * Currently, this will be set when the transaction type is <b>DOMAIN_CREATE</b> or <b>DOMAIN_RENEW</b>.
+     * A Netistrar Order ID if applicable for the given transaction.  This will be set when the transaction has resulted in a costed order and facilitates reconciliation with orders in the Netistrar Control Panel.<br />
+     * Currently, this will be set when the transaction type is <b>DOMAIN_CREATE</b> or <b>DOMAIN_RENEW</b>.<br />
      * This property defaults to <b>N/A</b> if no order id is available for this transaction.
      */
     protected Integer orderId;
     /**
-     * The currency for the Netistrar Order if applicable for the given transaction.  This will be set when the <a href="#netistrarOrderId">netistrarOrderId</a> element is set and will be a 3 digit currency code (e.g. GBP)
+     * The currency for the Netistrar Order if applicable for the given transaction.  This will be set when the <b>orderId</b> element is set and will be a 3 digit currency code (e.g. GBP)<br />
      * This property defaults to <b>N/A</b> if no order id is available for this transaction.
      */
     protected String orderCurrency;
     /**
-     * The subtotal for the Netistrar Order if applicable for the given transaction.  This will be set when the <a href="#netistrarOrderId">netistrarOrderId</a> element is set and will be the net total (pre taxes) in the
-     * currency set in the <a href="netistrarOrderCurrency">netistrarOrderCurrency</a> member.
+     * The subtotal for the Netistrar Order if applicable for the given transaction.  This will be set when the <b>orderId</b> element is set and will be the net total (pre taxes) in the
+     * currency set in the <b>orderCurrency</b> member.<br />
      * This property defaults to <b>N/A</b> if no order id is available for this transaction.
      */
     protected Float orderSubtotal;
     /**
-     * The taxes for the Netistrar Order if applicable for the given transaction.  This will be set when the <a href="#netistrarOrderId">netistrarOrderId</a> element is set and will be the taxes amount (VAT) in the
-     * currency set in the <a href="netistrarOrderCurrency">netistrarOrderCurrency</a> member.
+     * The taxes for the Netistrar Order if applicable for the given transaction.  This will be set when the <b>orderId</b> element is set and will be the taxes amount (VAT) in the
+     * currency set in the <b>orderCurrency</b> member.<br />
      * This property defaults to <b>N/A</b> if no order id is available for this transaction.
      */
     protected Float orderTaxes;
     /**
-     * The subtotal for the Netistrar Order if applicable for the given transaction.  This will be set when the <a href="#netistrarOrderId">netistrarOrderId</a> element is set and will be the total including taxes in the
-     * currency set in the <a href="netistrarOrderCurrency">netistrarOrderCurrency</a> member.
+     * The subtotal for the Netistrar Order if applicable for the given transaction.  This will be set when the <b>orderId</b> element is set and will be the total including taxes in the
+     * currency set in the <b>orderCurrency</b> member.<br />
      * This property defaults to <b>N/A</b> if no order id is available for this transaction.
      */
     protected Float orderTotal;
